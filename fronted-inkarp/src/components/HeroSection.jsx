@@ -39,7 +39,7 @@ function HeroSection() {
         </div>
 
         {/* Image Slider / Right Section */}
-        <div className="w-full lg:w-1/2 h-[450px] relative flex items-center justify-center">
+        <div className="w-full lg:w-1/2 h-[500px] relative flex items-center justify-center">
           <img
             key={currentIndex}
             className={`rounded-2xl w-full h-full object-cover transition-opacity duration-700 ${

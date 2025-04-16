@@ -22,7 +22,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className={`rounded-2xl transition-all duration-300 shadow-xl w-[96%] sticky top-3 z-50 bg-white mx-auto ${scrolled ? 'py-2 scale-95' : 'py-2 scale-100'}`}>
+    <nav className={`rounded-full transition-all duration-300 shadow-xl w-[96%] sticky top-3 z-50 bg-white mx-auto ${scrolled ? 'py-2 scale-95' : 'py-2 scale-100'}`}>
       <div className="container px-4 mx-auto lg:flex lg:justify-between lg:items-center">
         <div className="flex items-center justify-between">
           <Link to="/">
