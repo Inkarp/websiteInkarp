@@ -32,7 +32,7 @@ const Navbar = () => {
               alt="Logo"
             />
           </Link>
-          <button className="flex items-center justify-center px-3 py-2 mx-5 text-sm font-medium tracking-wide text-white bg-red-700 rounded-lg hover:bg-gray-600 transition duration-300">
+          <button  className="flex items-center justify-center px-3 py-2 mx-5 text-sm font-medium tracking-wide text-white bg-red-700 rounded-lg hover:bg-gray-600 transition duration-300">
             Product Profile <ArrowDownToLine className="ml-2" />
           </button>
 
