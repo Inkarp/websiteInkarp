@@ -4,6 +4,9 @@ import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Principles from "./pages/UI/Principles";
+import Slider from "./pages/UI/Slider";
+import OurStory from "./pages/OurStory";
+import About from "./pages/About";
 
 export default function MainLayout() {
   return (
@@ -13,7 +16,10 @@ export default function MainLayout() {
       <main className="flex-grow">
         <Outlet />
       </main>
+     
       <Principles />
+      <About />
+      <Slider />
       <Footer />
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-400 text-black text-sm ">
+    <footer className="bg-gray-400 text-black text-sm mt-10">
       <div className='px-10 pt-4'>
         <img src="inkarp old.svg" alt="Inkarp Logo" className="h-40 w-40" />
       </div>

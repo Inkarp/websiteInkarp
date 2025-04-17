@@ -3,14 +3,14 @@ import AnimatedNumbers from 'react-animated-numbers';
 
 const counters = [
   { label: 'Principals', value: 50, suffix: '+', color: 'from-red-500 to-red-300' },
-  { label: 'Customers', value: 50, suffix: 'k+', color: 'from-green-500 to-green-300' },
+  { label: 'Customers', value: 50000, suffix: '+', color: 'from-green-500 to-green-300' },
   { label: 'Branches', value: 12, suffix: '', color: 'from-purple-500 to-purple-300' },
   { label: 'Awards', value: 10, suffix: '', color: 'from-pink-500 to-pink-300' },
 ];
 
 const Principles = () => {
   return (
-    <section className="py-10 mx-auto bg-white w-[96%] text-gray-800 rounded-full shadow-xl">
+    <section className="py-15 mx-auto bg-white w-[96%] text-gray-800 rounded-full shadow-xl">
       {/* Inline animation keyframes */}
       <style>
         {`
@@ -26,18 +26,18 @@ const Principles = () => {
           }
         `}
       </style>
-      <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-between gap-y-14 text-center">
+      <div className="max-w-7xl mx-auto px-20 flex flex-wrap justify-between items-center gap-y-14 text-center">
         {counters.map((counter, index) => (
           <div
             key={index}
-            className="flex flex-col items-center justify-center"
+            // className="flex flex-col items-center justify-center"
             style={{
               animation: 'fadeUp 0.8s ease-out',
               animationDelay: `${index * 0.2}s`,
               animationFillMode: 'both',
             }}
           >
-            <div className="text-5xl font-extrabold flex items-end">
+            <div className="text-5xl font-extrabold flex items-center justify-center">
               <AnimatedNumbers
                 animateToNumber={counter.value}
                 transitions={(i) => ({
@@ -46,7 +46,7 @@ const Principles = () => {
                 })}
                 fontStyle={{
                   fontWeight: 'bold',
-                  background: 'linear-gradient(90deg, black, red, white)',
+                  background: 'linear-gradient(90deg, black, red)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                 }}
