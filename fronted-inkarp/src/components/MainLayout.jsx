@@ -16,10 +16,6 @@ export default function MainLayout() {
       <main className="flex-grow">
         <Outlet />
       </main>
-     
-      <Principles />
-      <About />
-      <Slider />
       <Footer />
     </div>
   );

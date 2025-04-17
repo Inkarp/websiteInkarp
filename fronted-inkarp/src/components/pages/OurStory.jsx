@@ -1,6 +1,8 @@
+import Team from "../Team/Team";
 
 const OurStory = () => {
     return (
+        <>
         <div className="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
             <div className="flex items-center justify-center w-full h-96 lg:w-1/2">
                 <img
@@ -29,9 +31,10 @@ const OurStory = () => {
                    
                 </div>
             </div>
-
-
+        
         </div>
+        <Team />
+        </>
     );
 };
 

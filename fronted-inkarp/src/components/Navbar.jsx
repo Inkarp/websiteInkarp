@@ -23,11 +23,11 @@ const Navbar = () => {
 
   return (
     <nav className={`rounded-full transition-all duration-300 shadow-xl w-[96%] sticky top-3 z-50 bg-white mx-auto ${scrolled ? 'py-2 scale-95' : 'py-2 scale-100'}`}>
-      <div className="container px-4 mx-auto lg:flex lg:justify-between lg:items-center">
+      <div className="container px-2 mx-auto lg:flex lg:justify-between lg:items-center">
         <div className="flex items-center justify-between">
           <Link to="/">
             <img
-              className="w-32 h-auto transition-transform duration-300 sm:w-32 sm:h-24"
+              className="w-32 h-auto ml-10  transition-transform duration-300 sm:w-32 sm:h-24"
               src="/inkarp old.svg"
               alt="Logo"
             />
@@ -117,7 +117,7 @@ const Navbar = () => {
             /></Link>
 
             {/* Search Button (Desktop) */}
-            <div className="hidden lg:flex ml-4">
+            <div className="hidden lg:flex ">
               <button className="flex items-center px-4 py-2 text-white bg-red-700 rounded-lg hover:bg-gray-600 transition duration-300">
                 <Search className="h-5 w-5" />
               </button>

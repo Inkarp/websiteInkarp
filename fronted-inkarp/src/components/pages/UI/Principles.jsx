@@ -32,8 +32,8 @@ const Principles = () => {
             key={index}
             // className="flex flex-col items-center justify-center"
             style={{
-              animation: 'fadeUp 0.8s ease-out',
-              animationDelay: `${index * 0.2}s`,
+              animation: 'fadeUp 0.5s ease-out',
+              animationDelay: `${index * 0.8}s`,
               animationFillMode: 'both',
             }}
           >
