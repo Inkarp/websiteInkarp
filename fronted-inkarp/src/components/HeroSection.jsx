@@ -55,6 +55,7 @@ function HeroSection() {
           <img
             key={currentIndex}
             className="rounded-2xl w-full h-full object-cover transition-opacity duration-500"
+            style={{ filter: "url(#turbulent-dissolve)" }}
             src={images[currentIndex]}
             alt={`Slide ${currentIndex + 1}`}
           />

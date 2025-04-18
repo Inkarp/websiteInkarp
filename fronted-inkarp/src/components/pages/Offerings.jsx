@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Linkedin, Facebook, Instagram, Share2 } from "lucide-react";
 
-
-// Array of profile data
 const profiles = [
   {
     name: "John Doe",
@@ -58,84 +56,88 @@ const profiles = [
     image:
       "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=500&q=60",
   },
- 
 ];
 
-// Individual profile card
 function ProfileCard({ profile }) {
-  const [isHovered, setIsHovered] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   return (
-    <div className="w-full max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 relative">
+    <div className="w-full max-w-xs bg-red-100 dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden relative flex flex-col justify-between transition-transform duration-300 hover:scale-105">
       <img
-        className="object-cover w-full h-56"
+        className="object-cover w-[90%] rounded-lg ml-5 mt-5"
         src={profile.image}
         alt={profile.name}
       />
+
       <div className="py-5 text-center">
-        <a
-          href="#"
-          className="block text-xl font-bold text-gray-800 dark:text-white"
-        >
+        <p className="text-xl font-bold text-gray-800 dark:text-white">
           {profile.name}
-        </a>
-        <span className="text-sm text-gray-700 dark:text-gray-200">
+        </p>
+        <p className="text-sm text-gray-700 dark:text-gray-200">
           {profile.title}
-        </span>
+        </p>
       </div>
 
-      {/* Button and Dropdown */}
-      <div className="flex justify-center pb-4">
+      <div className="relative h-14">
         <div
-          className="relative"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          className="absolute bottom-4 right-0 z-20"
+          onMouseEnter={() => setShowDropdown(true)}
+          onMouseLeave={() => setShowDropdown(false)}
         >
-          <button className="px-4 py-4 bg-red-500 text-white rounded-full shadow hover:bg-blue-700 transition">
-          <Share2 />
-          </button>
+          {/* Dropdown */}
+          <div
+            className={`absolute bottom-14 right-0 bg-white dark:bg-gray-700 rounded-lg shadow-md py-2 px-3 space-y-2 z-10 transition-all duration-300 ${showDropdown
+                ? "opacity-100 translate-y-0 pointer-events-auto"
+                : "opacity-0 translate-y-2 pointer-events-none"
+              }`}
+          >
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center gap-2 text-sm text-gray-800 dark:text-white hover:text-blue-600 transition-all duration-300 ${showDropdown ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2"
+                }`}
+            >
+              <Linkedin size={20} />
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center gap-2 text-sm text-gray-800 dark:text-white hover:text-blue-600 transition-all duration-300 ${showDropdown ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2"
+                }`}
+            >
+              <Facebook size={20} />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center gap-2 text-sm text-gray-800 dark:text-white hover:text-pink-500 transition-all duration-300 ${showDropdown ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2"
+                }`}
+            >
+              <Instagram size={20} />
+            </a>
+          </div>
 
-          {isHovered && (
-            <div className="absolute bottom-15 left-1/2 transform -translate-x-1/2 bg-white dark:bg-gray-700 rounded-lg shadow-md py-2 px-4 space-y-2 z-10">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-gray-800 dark:text-white hover:text-blue-600"
-              >
-                <Linkedin size={20} /> 
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-gray-800 dark:text-white hover:text-blue-600"
-              >
-                <Facebook size={20} /> 
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-gray-800 dark:text-white hover:text-blue-600"
-              >
-                <Instagram size={20} /> 
-              </a>
-            </div>
-          )}
+          {/* Share button */}
+          <button className="flex items-center justify-center w-12 h-12 bg-red-500 text-white rounded-2xl shadow hover:bg-red-600 transition-transform duration-300 hover:scale-110">
+            <Share2 size={20} />
+          </button>
         </div>
       </div>
     </div>
   );
 }
 
-// Parent component that maps over all profiles
 function Offerings() {
   return (
-    <div className="flex flex-wrap gap-6 justify-center p-6">
-      {profiles.map((profile, index) => (
-        <ProfileCard key={index} profile={profile} />
-      ))}
+    <div className="w-full py-5 flex justify-center">
+      <div className="flex flex-wrap gap-4 justify-center items-start">
+        {profiles.map((profile, index) => (
+          <ProfileCard key={index} profile={profile} />
+        ))}
+      </div>
     </div>
   );
 }

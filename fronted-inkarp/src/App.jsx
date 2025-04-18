@@ -14,6 +14,7 @@ import Principles from "./components/pages/UI/Principles";
 function App() {
   return (
     <Router>
+      <></>
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />

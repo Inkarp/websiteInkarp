@@ -6,6 +6,7 @@ import Slider from './UI/Slider';
 import OurCompanies from './OurCompanies';
 import OurPrinciples from './OurPrinciples';
 import Offerings from './Offerings';
+import Reviews from './UI/Reviews';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
         <OurCompanies/>
         <OurPrinciples/>
         <Offerings/>
+        <Reviews/>
         </>
     );
 };
