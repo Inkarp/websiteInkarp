@@ -3,58 +3,64 @@ import { Linkedin, Facebook, Instagram, Share2 } from "lucide-react";
 
 const profiles = [
   {
-    name: "John Doe",
-    title: "Software Engineer",
+    name: "Synthesis and Flow Chemistry", 
+   
     image:
       "https://images.unsplash.com/photo-1542156822-6924d1a71ace?auto=format&fit=crop&w=500&q=60",
   },
   {
-    name: "Jane Smith",
-    title: "UI/UX Designer",
+    name: "Analytical Chemistry and Chromotography Solutions",
+   
+    
     image:
       "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=500&q=60",
   },
   {
-    name: "Carlos Reyes",
-    title: "Product Manager",
+    name: "Analytical Chemistry and Weighing",
+   
+    
     image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1542156822-6924d1a71ace?auto=format&fit=crop&w=500&q=60",
   },
   {
-    name: "Sarah Johnson",
-    title: "Frontend Developer",
+    name: "Material Science and Battery",
+   
+    
     image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1542156822-6924d1a71ace?auto=format&fit=crop&w=500&q=60",
   },
   {
-    name: "Ali Khan",
-    title: "Backend Developer",
+    name: "Pilot Plants and Automation ",
+   
     image:
-      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1542156822-6924d1a71ace?auto=format&fit=crop&w=500&q=60",
   },
   {
-    name: "Lisa Wong",
-    title: "QA Engineer",
+    name: "Lifesciences",
+   
     image:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1542156822-6924d1a71ace?auto=format&fit=crop&w=500&q=60",
   },
   {
-    name: "David Kim",
-    title: "DevOps Engineer",
+    name: "Extrusion and Homogenization",
+   
+    
     image:
-      "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1542156822-6924d1a71ace?auto=format&fit=crop&w=500&q=60",
   },
   {
-    name: "Emily Brown",
-    title: "Data Scientist",
+    name: "Rheology and Thermal Analysis",
+   
+    
     image:
-      "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1542156822-6924d1a71ace?auto=format&fit=crop&w=500&q=60",
   },
   {
-    name: "Mohammed Ali",
-    title: "AI Engineer",
+    name: "General Laboratory Instruments",
+   
+    
     image:
-      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1542156822-6924d1a71ace?auto=format&fit=crop&w=500&q=60",
   },
 ];
 
@@ -62,9 +68,9 @@ function ProfileCard({ profile }) {
   const [showDropdown, setShowDropdown] = useState(false);
 
   return (
-    <div className="w-full max-w-xs bg-red-100 dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden relative flex flex-col justify-between transition-transform duration-300 hover:scale-105">
+    <div className="w-full max-w-xs bg-red-100 dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden relative flex flex-col justify-between hover:z-10 transition-transform duration-100 hover:scale-105">
       <img
-        className="object-cover w-[90%] rounded-lg ml-5 mt-5"
+        className="object-cover rounded-lg  transition-transform duration-300 hover:scale-110 hover:shadow-lg hover:z-10"
         src={profile.image}
         alt={profile.name}
       />
@@ -80,17 +86,18 @@ function ProfileCard({ profile }) {
 
       <div className="relative h-14">
         <div
-          className="absolute bottom-4 right-0 z-20"
+          className="absolute bottom-0 right-0 z-20"
           onMouseEnter={() => setShowDropdown(true)}
           onMouseLeave={() => setShowDropdown(false)}
         >
           {/* Dropdown */}
           <div
-            className={`absolute bottom-14 right-0 bg-white dark:bg-gray-700 rounded-lg shadow-md py-2 px-3 space-y-2 z-10 transition-all duration-300 ${showDropdown
+            className={`absolute bottom-14 right-2 dark:bg-gray-700 rounded-lg  py-2 px-3 space-y-2 z-10 transition-all duration-300 ${showDropdown
                 ? "opacity-100 translate-y-0 pointer-events-auto"
                 : "opacity-0 translate-y-2 pointer-events-none"
               }`}
           >
+            <div className="bg-gray-500 rounded-full bg-blue-800 p-2 ">
             <a
               href="https://linkedin.com"
               target="_blank"
@@ -98,8 +105,10 @@ function ProfileCard({ profile }) {
               className={`flex items-center gap-2 text-sm text-gray-800 dark:text-white hover:text-blue-600 transition-all duration-300 ${showDropdown ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2"
                 }`}
             >
-              <Linkedin size={20} />
+              <Linkedin size={20} color="black" />
             </a>
+            </div>
+            <div className="bg-gray-500 rounded-full bg-blue-800 p-2 ">
             <a
               href="https://facebook.com"
               target="_blank"
@@ -109,6 +118,8 @@ function ProfileCard({ profile }) {
             >
               <Facebook size={20} />
             </a>
+            </div>
+            <div className="bg-gray-500 rounded-full bg-blue-800 p-2 ">
             <a
               href="https://instagram.com"
               target="_blank"
@@ -118,12 +129,15 @@ function ProfileCard({ profile }) {
             >
               <Instagram size={20} />
             </a>
+            </div>
           </div>
 
           {/* Share button */}
-          <button className="flex items-center justify-center w-12 h-12 bg-red-500 text-white rounded-2xl shadow hover:bg-red-600 transition-transform duration-300 hover:scale-110">
-            <Share2 size={20} />
+          <div className="bg-gray-500 rounded-full bg-white p-2 ">
+          <button className="flex items-center justify-center w-12 h-12 rounded-2xl transition-transform duration-300 hover:scale-110">
+            <Share2 size={20} color="black" />
           </button>
+          </div>
         </div>
       </div>
     </div>
@@ -133,7 +147,7 @@ function ProfileCard({ profile }) {
 function Offerings() {
   return (
     <div className="w-full py-5 flex justify-center">
-      <div className="flex flex-wrap gap-4 justify-center items-start">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
         {profiles.map((profile, index) => (
           <ProfileCard key={index} profile={profile} />
         ))}
@@ -141,5 +155,6 @@ function Offerings() {
     </div>
   );
 }
+
 
 export default Offerings;

@@ -10,7 +10,7 @@ import About from "./pages/About";
 
 export default function MainLayout() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
+    <div className="flex flex-col min-h-screen bg-red-100">
       {/* <Header /> */}
       <Navbar />
       <main className="flex-grow">

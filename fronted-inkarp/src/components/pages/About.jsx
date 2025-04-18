@@ -5,7 +5,7 @@ function About() {
     <div className="container flex flex-col-reverse px-6 py-10 mx-auto space-y-6 lg:h-[32rem] lg:py-20 mt-5 lg:flex-row lg:items-center">
         <div className="flex items-center justify-center w-full h-[100] lg:w-1/2">
         <img
-            className="object-cover w-full h-full max-w-2xl rounded-lg shadow-md"
+            className="object-cover w-full h-full max-w-2xl rounded-lg shadow-md bg-white"
             src="inkarp old.svg"
             alt="Inkarp Overview"
         />

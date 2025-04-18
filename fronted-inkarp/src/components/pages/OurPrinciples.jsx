@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 
 function OurPrinciples() {
+  const images=[
+    "zeiss.png",
+    "bandelin.png",
+    "inkarp old.svg",
+  ]
   return (
-    <section className="bg-gray-300 dark:bg-gray-900 shadow-xl rounded-lg w-[96%] mx-auto mt-10">
+    <section className=" dark:bg-gray-900 shadow-xl rounded-lg w-[96%] mx-auto mt-10">
       <div className="container px-4 py-10 mx-auto text-center">
         <button className="bg-red-100 text-red-800 font-semibold rounded-full px-4 py-1 mb-4 shadow-sm">
           Our Principles
@@ -18,9 +23,11 @@ function OurPrinciples() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {Array.from({ length: 46 }).map((_, index) => (
+            <>
             <motion.img
               key={index}
-              src="inkarp old.svg"
+              src={images[index % images.length]}
+              // alt={`Brand ${index + 1}`}
               className="w-40 h-auto mx-auto rounded-lg shadow-md bg-white p-2"
               whileHover={{
                 scale: 1.15,
@@ -29,8 +36,11 @@ function OurPrinciples() {
               }}
               whileTap={{ scale: 0.95 }}
             />
+            {/* <motion.img src="bandelin.png"/> */}
+            </>
           ))}
         </motion.div>
+
       </div>
     </section>
   );

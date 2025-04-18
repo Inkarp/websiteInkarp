@@ -7,6 +7,7 @@ import OurCompanies from './OurCompanies';
 import OurPrinciples from './OurPrinciples';
 import Offerings from './Offerings';
 import Reviews from './UI/Reviews';
+import SubBlog from './UI/SubBlog';
 
 const Home = () => {
     return (
@@ -19,6 +20,7 @@ const Home = () => {
         <OurPrinciples/>
         <Offerings/>
         <Reviews/>
+        <SubBlog/>
         </>
     );
 };
