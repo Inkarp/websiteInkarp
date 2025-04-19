@@ -16,7 +16,7 @@ function Reviews() {
   `;
 
   return (
-    <div className="overflow-hidden relative w-full p-6 bg-white shadow-xl rounded-lg">
+    <div className="overflow-hidden relative w-full p-6 shadow-xl rounded-lg">
       {/* Inject keyframes for sliding animation */}
       <style>{slideAnimation}</style>
 

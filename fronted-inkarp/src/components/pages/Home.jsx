@@ -8,6 +8,7 @@ import OurPrinciples from './OurPrinciples';
 import Offerings from './Offerings';
 import Reviews from './UI/Reviews';
 import SubBlog from './UI/SubBlog';
+import NewsEvents from './UI/NewsEvents';
 
 const Home = () => {
     return (
@@ -21,6 +22,7 @@ const Home = () => {
         <Offerings/>
         <Reviews/>
         <SubBlog/>
+        <NewsEvents/>
         </>
     );
 };

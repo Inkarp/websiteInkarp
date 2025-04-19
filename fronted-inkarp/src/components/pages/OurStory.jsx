@@ -1,4 +1,5 @@
 import Team from "../Team/Team";
+import Mission from "./UI/Mission";
 
 const OurStory = () => {
     return (
@@ -33,6 +34,7 @@ const OurStory = () => {
             </div>
         
         </div>
+        <Mission />
         <Team />
         </>
     );
