@@ -54,6 +54,7 @@ function ProfileCard({ profile }) {
 
   return (
     <div className="w-full max-w-xs bg-red-100 dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden relative flex flex-col justify-between hover:z-10 transition-transform duration-100 hover:scale-105">
+      
       <img
         className="object-cover rounded-lg transition-transform duration-300 hover:scale-110 hover:shadow-lg hover:z-10"
         src={profile.image}
@@ -81,7 +82,7 @@ function ProfileCard({ profile }) {
             {[Linkedin, Facebook, Instagram, Mail, MessageCircle].map((Icon, i) => (
               <a
                 key={i}
-                href="#"
+                href="http://wa.me/8019828999"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-blue-800 p-2 hover:bg-gray-600 transition-transform duration-200"
@@ -106,6 +107,7 @@ function ProfileCard({ profile }) {
 function Offerings() {
   return (
     <div className="w-full py-5 flex justify-center">
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
         {profiles.map((profile, index) => (
           <ProfileCard key={index} profile={profile} />

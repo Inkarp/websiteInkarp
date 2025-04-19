@@ -40,9 +40,9 @@ function HeroSection() {
           {/* Responsive Watch Video Button */}
           <a
             href="https://www.youtube.com/@InkarpInstrument/videos"
-            className="absolute bottom-5 right-5 md:bottom-10 md:right-10 bg-white px-4 py-2 rounded-full flex items-center gap-2 z-10 shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="absolute bottom-5 right-5 md:bottom-10 md:right-10 bg-white px-4 py-2 rounded-full flex items-center gap-2 z-10 shadow-lg hover:shadow-xl transition-shadow duration-300 hover:bg-red-800 rounded-full transition duration-300 hover:text-white"
           >
-            <div className="relative w-10 h-10 flex items-center justify-center">
+            <div className="relative w-10 h-10 flex items-center justify-center ">
               <Circle className="absolute w-full h-full" />
               <Play className="relative z-10" />
             </div>

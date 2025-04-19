@@ -1,5 +1,8 @@
+import Branches from "./UI/Branches";
+
 function ContactUs() {
   return (
+    <>
     <section
       className="min-h-screen bg-cover mt-5"
       style={{
@@ -102,7 +105,10 @@ function ContactUs() {
           </div>
         </div>
       </div>
+      
     </section>
+    <Branches />
+    </>
   );
 }
 

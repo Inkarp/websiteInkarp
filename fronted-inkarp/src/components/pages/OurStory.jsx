@@ -1,4 +1,6 @@
 import Team from "../Team/Team";
+import AboutSupport from "./UI/AboutSupport";
+import Clients from "./UI/Clients";
 import Mission from "./UI/Mission";
 
 const OurStory = () => {
@@ -31,11 +33,12 @@ const OurStory = () => {
                     </p>
                    
                 </div>
-            </div>
-        
+            </div>     
         </div>
         <Mission />
-        <Team />
+        <AboutSupport />
+        <Clients/>
+        <Team />    
         </>
     );
 };
