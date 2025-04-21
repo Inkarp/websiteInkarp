@@ -11,7 +11,7 @@ function SubBlog() {
                 
                 <div className="mt-2 md:mx-6">
                     <div>
-                        <h1 className=" text-white">Blogs</h1>                     
+                        <h1 className=" text-white text-3xl font-bold">Blogs</h1>                     
                     </div>
 
                     <p className="mt-4 text-lg leading-relaxed text-white md:text-xl"> “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda”.</p>

@@ -2,10 +2,10 @@ import { MoveRight } from "lucide-react";
 
 function About() {
   return (
-    <div className="container flex flex-col-reverse px-6 py-10 mx-auto space-y-6 lg:space-y-0 lg:h-[36rem] lg:py-20 mt-5 lg:flex-row lg:items-center">
+    <div className="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:space-y-0 lg:h-[36rem] lg:py-20 mt-5 lg:flex-row lg:items-center">
       
       {/* Left: Image Section */}
-      <div className="flex items-center justify-center w-full min-h-[300px] lg:w-3/4">
+      <div className="flex items-center justify-center w-full min-h-[500px] lg:w-full">
         <img
           className="object-cover w-full h-full max-w-3xl rounded-lg bg-white shadow-md"
           src="inkarp old.svg"
@@ -14,7 +14,7 @@ function About() {
       </div>
 
       {/* Right: Text Content */}
-      <div className="w-full lg:w-2/5">
+      <div className="w-full lg:w-3/5">
         <button className="bg-red-300 shadow-xl  rounded-lg px-3 py-2 text-sm font-semibold text-red-800">
           About Inkarp
         </button>

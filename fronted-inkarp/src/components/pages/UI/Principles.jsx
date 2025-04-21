@@ -10,7 +10,7 @@ const counters = [
 
 const Principles = () => {
   return (
-    <section className="py-15 mx-auto bg-white w-[96%] text-gray-800 rounded-full shadow-xl">
+    <section className="py-10 mx-auto bg-white w-[96%] text-gray-800 rounded-full shadow-xl">
       {/* Inline animation keyframes */}
       <style>
         {`
@@ -26,18 +26,18 @@ const Principles = () => {
           }
         `}
       </style>
-      <div className="max-w-7xl mx-auto px-20 flex flex-wrap justify-between items-center gap-y-14 text-center">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20 flex flex-wrap justify-center gap-y-10 text-center">
         {counters.map((counter, index) => (
           <div
             key={index}
-            // className="flex flex-col items-center justify-center"
+            className="w-full sm:w-1/2 md:w-1/4"
             style={{
               animation: 'fadeUp 0.5s ease-out',
               animationDelay: `${index * 0.8}s`,
               animationFillMode: 'both',
             }}
           >
-            <div className="text-5xl font-extrabold flex items-center justify-center">
+            <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold flex items-center justify-center">
               <AnimatedNumbers
                 animateToNumber={counter.value}
                 transitions={(i) => ({
@@ -53,7 +53,7 @@ const Principles = () => {
                 includeComma
               />
               <span
-                className="ml-1 text-3xl text-transparent bg-clip-text"
+                className="ml-1 text-xl sm:text-2xl md:text-3xl text-transparent bg-clip-text"
                 style={{
                   backgroundImage: 'linear-gradient(90deg, black, red, white)',
                 }}
@@ -61,7 +61,7 @@ const Principles = () => {
                 {counter.suffix}
               </span>
             </div>
-            <p className="mt-3 text-lg text-gray-700 font-semibold">{counter.label}</p>
+            <p className="mt-2 text-sm sm:text-base md:text-lg text-gray-700 font-semibold">{counter.label}</p>
           </div>
         ))}
       </div>

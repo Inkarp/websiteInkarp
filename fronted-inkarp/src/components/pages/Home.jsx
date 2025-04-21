@@ -13,16 +13,16 @@ import NewsEvents from './UI/NewsEvents';
 const Home = () => {
     return (
         <>
-        <HeroSection/>
-        <Principles/>
-        <About/>
-        <Slider/>
-        <OurCompanies/>
-        <OurPrinciples/>
-        <Offerings/>
-        <Reviews/>
-        <SubBlog/>
-        <NewsEvents/>
+            <HeroSection />
+            <Principles />
+            <About />
+            <Slider />
+            <OurCompanies />
+            <OurPrinciples />
+            <Offerings />
+            <Reviews />
+            <SubBlog />
+            <NewsEvents />
         </>
     );
 };

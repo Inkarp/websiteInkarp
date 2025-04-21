@@ -1,7 +1,7 @@
 function Team() {
     return (
       <section className="bg-white dark:bg-gray-900">
-        <div className="container px-6 py-10 mx-auto">
+        <div className="container px-6 py-10 mx-auto text-red-500">
           <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
             Our <span className="text-blue-500">Executive Team</span>
           </h1>
@@ -10,7 +10,7 @@ function Team() {
           The strength of Inkarp lies in the dedication, vision, and expertise of our leadership team. Their combined experience and commitment to scientific excellence have been instrumental in shaping Inkarp into a trusted partner for researchers and industries across India. Here’s an introduction to the leaders driving our mission forward:
           </p>
           <div className="flex flex-col items-center justify-center gap-4">
-          <div className=" w-[70%] px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 dark:border-gray-700 dark:hover:border-transparent">
+          <div className=" w-[70%] h-3/5 px-12 py-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 dark:border-gray-700 dark:hover:border-transparent">
               <div className="flex flex-col sm:-mx-4 sm:flex-row">
                 <img
                   className="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300"

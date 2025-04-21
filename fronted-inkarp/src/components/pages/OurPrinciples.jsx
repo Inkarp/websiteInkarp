@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 function OurPrinciples() {
-  const images=[
+  const images = [
     "zeiss.png",
     "bandelin.png",
     "inkarp old.svg",
@@ -24,19 +24,19 @@ function OurPrinciples() {
         >
           {Array.from({ length: 46 }).map((_, index) => (
             <>
-            <motion.img
-              key={index}
-              src={images[index % images.length]}
-              // alt={`Brand ${index + 1}`}
-              className="w-40 h-auto mx-auto rounded-lg shadow-md bg-white p-2"
-              whileHover={{
-                scale: 1.15,
-                rotate: [0, 5, -5, 0],
-                transition: { duration: 0.5 },
-              }}
-              whileTap={{ scale: 0.95 }}
-            />
-            {/* <motion.img src="bandelin.png"/> */}
+              <motion.img
+                key={index}
+                src={images[index % images.length]}
+                // alt={`Brand ${index + 1}`}
+                className="w-40 h-auto mx-auto rounded-lg shadow-md bg-white p-2"
+                whileHover={{
+                  scale: 1.15,
+                  rotate: [0, 5, -5, 0],
+                  transition: { duration: 0.5 },
+                }}
+                whileTap={{ scale: 0.95 }}
+              />
+              {/* <motion.img src="bandelin.png"/> */}
             </>
           ))}
         </motion.div>

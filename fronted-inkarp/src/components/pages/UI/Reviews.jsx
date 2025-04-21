@@ -44,7 +44,10 @@ function Reviews() {
     .slice(index, index + chunkSize);
 
   return (
+    <>
+    <h1 className="text-2xl font-bold ml-50">Google Reviews</h1>
     <div className="overflow-hidden relative w-full p-6 shadow-xl rounded-lg">
+      
       <style>{waveAnimation}</style>
 
       <div className="flex gap-6 justify-center flex-wrap transition-opacity duration-700 ease-in-out">
@@ -66,6 +69,7 @@ function Reviews() {
         ))}
       </div>
     </div>
+    </>
   );
 }
 

@@ -113,13 +113,18 @@ function ProfileCard({ profile }) {
 
 function Offerings() {
   return (
-    <div className="w-full py-5 flex justify-center">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-        {profiles.map((profile, index) => (
-          <ProfileCard key={index} profile={profile} />
-        ))}
+    <>
+      <h1 className="mt-10 px-4 sm:px-6 md:px-10 py-3 mx-auto max-w-3xl rounded-full bg-red-100 shadow-lg text-red-500 text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6">
+        Our Offerings
+      </h1>
+      <div className="w-full py-5 flex justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-4">
+          {profiles.map((profile, index) => (
+            <ProfileCard key={index} profile={profile} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
