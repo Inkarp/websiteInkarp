@@ -7,7 +7,7 @@ function About() {
       {/* Left: Image Section */}
       <div className="flex items-center justify-center w-full min-h-[300px] lg:w-3/4">
         <img
-          className="object-cover w-full h-full max-w-3xl rounded-lg shadow-md"
+          className="object-cover w-full h-full max-w-3xl rounded-lg bg-white shadow-md"
           src="inkarp old.svg"
           alt="Inkarp Overview"
         />

@@ -4,7 +4,7 @@ function Clients() {
     <section className="bg-white dark:bg-gray-900 shadow-xl rounded-lg w-[96%] mx-auto ">
       <div className="container px-4 py-10 mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-10">
-          Trsusted By
+          Trusted By
         </h2>
 
         <div className="max-w-screen-xl mx-auto mt-10 flex flex-col lg:flex-row justify-center items-center gap-10">
