@@ -1,46 +1,48 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+
+const verticalsList = [
+  "Synthesis and Flow Chemistry",
+  "Analytical and Chromatography Solutions",
+  "Analytical Chemistry and Weighing",
+  "Material Science and Battery",
+  "General Laboratory Instrument",
+  "Lifesciences",
+  "Extrusion and Homogenization",
+  "Rheology and Thermal Analysis",
+  "Pilot Plants and Automation",
+];
 
 const Verticals = () => {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
+  return (
+    <>
+    <div className="flex bg-black text-white justify-center items-center h-80 w-[90%] shadow-full mt-8 mx-auto rounded-lg lining-2">
+    <img src='inkarp old.svg' className='h-75 '/>
+    </div>
+    <div className="flex min-h-screen bg-gray-100 mt-3 w-[95%] mx-auto rounded-lg shadow-lg">
+      {/* Sidebar */}
+      <aside className="w-64 bg-white shadow-md">
+        <div className="p-4 border-b text-xl font-semibold">
+          Verticals
+        </div>
+        <ul className="p-4 space-y-2">
+          {verticalsList.map((item, index) => (
+            <li
+              key={index}
+              className="px-3 py-2 rounded-md hover:bg-red-100 cursor-pointer transition"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </aside>
 
-    const fetchData = async () => {
-        try {
-            const response = await fetch('http://localhost:5000/api/verticals');
-            const result = await response.json();
-            setData(result); 
-            setLoading(false);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-            setLoading(false);
-        }
-    };
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-    console.log(data);
-    return (
-        <>
-            <div className="container mx-auto px-4 py-8">
-                <h1 className="text-3xl font-bold mb-6">Verticals</h1>
-                {loading ? (
-                    <p>Loading...</p>
-                ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {data.map((item) => (
-                            <div key={item._id} className="bg-white shadow-md rounded-lg p-4">
-                                {/* <img src={item.imageUrl} alt={item.name} className="w-full h-48 object-cover rounded-t-lg" /> */}
-                                <h2 className="text-xl font-semibold mt-2">{item.name}</h2>
-                                <p className="text-gray-600">{item.description}</p>
-                                <p className="text-lg font-bold mt-2">Price: ₹{item.price}</p>
-                            </div>
-                        ))}
-                    </div>
-                )}
-            </div>
-        </>
-    );
+      {/* Placeholder for main content */}
+      <main className="flex-1 p-6">
+        <h1 className="text-2xl font-bold">Select a vertical from the sidebar</h1>
+      </main>
+    </div>
+    </>
+  );
 };
 
 export default Verticals;

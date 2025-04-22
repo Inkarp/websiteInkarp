@@ -3,69 +3,65 @@ import { MoveRight, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react'
 
 const Footer = () => {
   return (
-    <footer className=" text-white bg-black w-[98%] mx-auto my-5 rounded-xl shadow-lg">
-      {/* Top Area - Logo and Newsletter */}
-      <div className="py-10">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            {/* Logo */}
-            <div className="flex justify-center lg:justify-start">
-              <img
-                className="h-24 w-auto bg-white rounded-md p-2"
-                src="inkarp old.svg"
-                alt="Inkarp Logo"
-                title="Inkarp"
-              />
-            </div>
+    <footer className="text-white bg-black w-[98%] mx-auto mt-5 rounded-xl shadow-lg">
 
-            {/* Newsletter */}
-            <div className="w-full max-w-xl text-start sm:text-left">
-              <h3 className="text-2xl font-bold leading-loose mb-4">
-                Subscribe to Our Newsletter
-              </h3>
-              <div className="relative">
-                <input
-                  type="email"
-                  placeholder="Enter Your Email Address"
-                  className="w-full px-4 py-3 pr-36 rounded-full text-black bg-white outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <button className="absolute top-1/2 right-0 transform -translate-y-1/2 flex items-center gap-2 bg-red-500 text-white px-5 py-3 rounded-full hover:bg-gray-800 transition">
-                  <span>Subscribe</span>
-                  <MoveRight size={18} />
-                </button>
-              </div>
-            </div>
+      {/* Top Section - Newsletter */}
+      <div className="py-10">
+        <div className="container mx-auto px-4 text-center">
+          <h3 className="text-2xl font-bold mb-4">Subscribe to Our Newsletter</h3>
+          <div className="relative max-w-2xl mx-auto">
+            <input
+              type="email"
+              placeholder="Enter Your Email Address"
+              className="w-full px-6 py-3 pr-36 rounded-full text-black bg-white outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <button className="absolute top-1/2 right-0 transform -translate-y-1/2 flex items-center gap-2 bg-red-500 text-white px-4 py-3 rounded-full hover:bg-gray-800 transition">
+              <span>Subscribe</span>
+              <MoveRight size={18} />
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Widgets Section */}
-      <div className="py-10">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Social Links */}
+      {/* Bottom Section */}
+      <div className="py-10 container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row justify-between gap-10">
+          
+          {/* Left: Logo and Social Icons */}
+          <div className="flex flex-col items-center justify-center gap-6 lg:w-1/3">
+            <img
+              className="h-24 w-auto bg-white rounded-md p-2"
+              src="inkarp old.svg"
+              alt="Inkarp Logo"
+              title="Inkarp"
+            />
             <div>
               <h2 className="text-lg font-semibold mb-3">Follow Us</h2>
-             
               <ul className="flex space-x-4">
                 {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
                   <li key={i}>
-                    <div className='flex justify-center items-center p-2 rounded-full bg-red-500 hover:bg-gray-700 transition duration-300 ease-in-out'>
-                    <a href="#" className="hover:text-gray-400 bg-white p-1 rounded-full transition duration-300 ease-in-out">
-                      <Icon color='black'/>
-                    </a>
+                    <div className="flex justify-center items-center p-2 rounded-full bg-red-500 hover:bg-gray-700 transition duration-300 ease-in-out">
+                      <a href="#" className="bg-white p-1 rounded-full">
+                        <Icon color="black" />
+                      </a>
                     </div>
                   </li>
                 ))}
               </ul>
             </div>
+          </div>
 
-            {/* Useful Links (2 Columns) */}
+          {/* Divider (only starts where right content begins) */}
+          <div className="hidden lg:block w-px bg-white opacity-30"></div>
+
+          {/* Right: Links and Contact */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left w-full lg:w-2/3 ">
+            {/* Quick Links */}
             <div>
               <h2 className="text-lg font-semibold mb-3">Quick Links</h2>
               <div className="grid grid-cols-2 gap-4">
                 <ul className="space-y-2">
-                  {['Home', 'About', 'Contact Us',].map((item, idx) => (
+                  {['Home', 'About', 'Contact Us'].map((item, idx) => (
                     <li key={idx}>
                       <a href="#" className="hover:underline">
                         {item}
@@ -109,11 +105,16 @@ const Footer = () => {
                 </a>
               </p>
             </div>
+            <div className='bg-white h-10'></div>
+            <div className='bg-white h-10'></div>
+            <div className='bg-white h-10'></div>
           </div>
+          
         </div>
+        
       </div>
-
-      {/* Bottom Text Area */}
+      
+      {/* Bottom Bar */}
       <div className="bg-white py-5 text-sm w-[96%] mx-auto rounded-t-full shadow-inner text-black">
         <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center w-full gap-4">
           <p>
@@ -133,7 +134,6 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-
 
     </footer>
   );
