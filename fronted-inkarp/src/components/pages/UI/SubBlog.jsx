@@ -1,6 +1,6 @@
 function SubBlog() {
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className=" dark:bg-gray-900">
     <div className="max-w-6xl px-6 py-10 mx-auto">
 
         <main className="relative z-20 w-full mt-8 md:flex md:items-center xl:mt-12">

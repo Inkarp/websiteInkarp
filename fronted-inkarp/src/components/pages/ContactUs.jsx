@@ -1,3 +1,4 @@
+import { Linkedin, Mail, Youtube, MessageCircle } from "lucide-react";
 import Branches from "./UI/Branches";
 
 function ContactUs() {
@@ -25,30 +26,58 @@ function ContactUs() {
                   doloremque ducimus numquam doloribus, error sed.
                 </p>
                 <button className="px-8 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
-                  get in touch
+                  Get in touch
                 </button>
 
                 {/* Socials */}
                 <div className="mt-6 md:mt-8">
-                  <h3 className="text-gray-300">Follow us</h3>
-                  <div className="flex mt-4 -mx-1.5">
-                    {["#", "#", "#", "#"].map((href, index) => (
-                      <a
-                        key={index}
-                        className="mx-1.5 text-white transition-colors duration-300 transform hover:text-blue-500"
-                        href={href}
-                      >
-                        {/* Placeholder SVG icon */}
-                        <svg
-                          className="w-8 h-8 fill-current"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle cx="12" cy="12" r="10" />
-                        </svg>
-                      </a>
-                    ))}
+                  <h3 className="text-gray-300 text-lg font-semibold">Follow us</h3>
+                  <div className="flex gap-4 mt-4">
+                    {/* LinkedIn */}
+                    <a
+                      href="https://www.linkedin.com/company/inkarp-instruments/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-700 transition transform hover:scale-110"
+                    >
+                      <div className="rounded-lg bg-blue-200 p-4 hover:bg-gray-300 transition duration-300">
+                        <Linkedin size={20} />
+                      </div>
+                    </a>
+
+                    {/* WhatsApp */}
+                    <a
+                      href="https://wa.me/919000000000"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-500 hover:text-green-600 transition transform hover:scale-110"
+                    >
+                      <div className="rounded-lg bg-green-800 hover:bg-gray-300 transition duration-300 p-4">
+                        <MessageCircle size={20} color="white" />         
+                      </div>
+                    </a>
+
+                    {/* Email */}
+                    <a
+                      href="mailto:info@inkarp.co.in"
+                      className="text-red-500 hover:text-red-600 transition transform hover:scale-110"
+                    >
+                      <div className="rounded-lg bg-red-200 p-4 hover:bg-gray-300 transition duration-300">
+                        <Mail size={20} color="black" />
+                      </div>
+                    </a>
+
+                    {/* YouTube */}
+                    <a
+                      href="https://www.youtube.com/channel/UCxxxx" // Replace with actual link
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-red-600 hover:text-red-700 transition transform hover:scale-110"
+                    >
+                      <div className="rounded-lg bg-red-200 p-4 hover:bg-gray-300 transition duration-300">
+                        <Youtube size={20} />
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -97,7 +126,7 @@ function ContactUs() {
                     </div>
 
                     <button className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
-                      get in touch
+                      Get in touch
                     </button>
                   </form>
                 </div>

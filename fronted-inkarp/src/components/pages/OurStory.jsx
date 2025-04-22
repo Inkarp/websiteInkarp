@@ -35,6 +35,13 @@ const OurStory = () => {
             <AboutSupport />
             <Clients />
             <Team />
+            <div className="container px-6 py-10 mx-auto space-y-6 flex flex-col items-center justify-center">
+                <h1 className="text-4xl font-semibold tracking-wide text-red-800 dark:text-white">
+                Driving Innovation, Quality, and Customer Satisfaction
+                
+                </h1>
+                <p className="text-xl font-bold text-black">Together, our leadership team embodies Inkarp’s core values of integrity, customer-centricity, and continuous improvement. By fostering a culture of collaboration and excellence, they ensure that we stay ahead of the curve, bringing innovative solutions and unmatched service to our customers.</p>
+            </div>
         </>
     );
 };
