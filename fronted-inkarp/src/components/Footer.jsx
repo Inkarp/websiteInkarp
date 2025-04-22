@@ -105,9 +105,9 @@ const Footer = () => {
                 </a>
               </p>
             </div>
+            {/* <div className='bg-white h-10'></div>
             <div className='bg-white h-10'></div>
-            <div className='bg-white h-10'></div>
-            <div className='bg-white h-10'></div>
+            <div className='bg-white h-10'></div> */}
           </div>
           
         </div>
