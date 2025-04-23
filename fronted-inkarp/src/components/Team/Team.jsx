@@ -6,7 +6,7 @@ function Team() {
     {
       name: "S. Balu",
       title: "Chairman & Managing Director",
-      image: "/images/chairman.jpg",
+      image: "inkarp old.svg",
       description:
         "Founder of Inkarp in 1985, committed to providing unmatched after-sale service and unwavering support to customers.",
       linkedin: "https://www.linkedin.com/in/sbalu",
