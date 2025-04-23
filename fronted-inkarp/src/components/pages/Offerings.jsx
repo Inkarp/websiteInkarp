@@ -114,7 +114,7 @@ function ProfileCard({ profile }) {
 function Offerings() {
   return (
     <>
-      <h1 className="mt-10 px-4 sm:px-6 md:px-10 py-3 mx-auto max-w-3xl rounded-full bg-red-100 shadow-lg text-red-500 text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6">
+      <h1 className="mt-10 px-4 sm:px-6 md:px-10 py-3 mx-auto max-w-3xl rounded-full bg-red-100 shadow-lg text-red-500 text-3xl/3 sm:text-4xl md:text-5xl font-bold text-center mb-6" style={{ fontFamily: 'MaxOT' }}>
         Our Offerings
       </h1>
       <div className="w-full py-5 flex justify-center">

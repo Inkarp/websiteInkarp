@@ -131,20 +131,20 @@ const Navbar = () => {
 
       {/* 🔍 Full-Screen Search Modal */}
       {showSearchModal && (
-        <div className="fixed inset-0 z-50 bg-white flex flex-col items-center justify-center p-6 w-[50%">
+        <div className="fixed inset-0 z-50 bg-gray-100 flex flex-col items-center justify-center p-6 mx-auto rounded-lg shadow-lg transition-transform duration-300 transform scale-100 opacity-85">
           <button
             onClick={() => setShowSearchModal(false)}
             className="absolute top-5 right-5 text-gray-600 hover:text-black"
           >
             <X size={28} />
           </button>
-          <h2 className="text-2xl font-bold mb-6">Search</h2>
+          <h2 className="text-3xl/20 font-bold mb-6 text-red-500">Search</h2>
           <input
             type="text"
-            placeholder="Type to search..."
-            className="w-full max-w-xl px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400"
+            placeholder="Start Typing ...."
+            className="w-full max-w-xl px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-red-400 focus:ring-opacity-50"
           />
-          {/* Optional: Add search results or filters here */}
+         
         </div>
       )}
     </>
