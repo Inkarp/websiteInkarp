@@ -58,7 +58,7 @@ const AboutSupport = () => {
             transition={{ duration: 5 }}
           >
             <div className="mb-6">
-              <h5 className="text-sm font-semibold uppercase text-indigo-600 mb-2">Inkarp</h5>
+              <h5 className="text-sm font-semibold uppercase text-red-600 ">Inkarp</h5>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
                 A Step to Robust <br /> Customer Support
               </h2>

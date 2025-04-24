@@ -1,43 +1,25 @@
 import React, { useState, useEffect } from 'react';
 
 const Careers = () => {
-    const dummyJobs = [
-        {
-            id: 1,
-            title: "Frontend Developer",
-            location: "New York",
-            description: "Work with React, Tailwind, and modern frontend stack."
-        },
-        {
-            id: 2,
-            title: "Backend Engineer",
-            location: "San Francisco",
-            description: "Develop robust APIs and backend systems with Node.js."
-        },
-        {
-            id: 3,
-            title: "UI/UX Designer",
-            location: "Remote",
-            description: "Design intuitive interfaces and experiences."
-        },
-        {
-            id: 4,
-            title: "DevOps Engineer",
-            location: "New York",
-            description: "Manage CI/CD pipelines and cloud infrastructure."
-        }
-    ];
-
     const [jobs, setJobs] = useState([]);
     const [filteredJobs, setFilteredJobs] = useState([]);
     const [locationFilter, setLocationFilter] = useState("");
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Simulate API call
-        setTimeout(() => {
-            setJobs(dummyJobs);
-            setFilteredJobs(dummyJobs);
-        }, 500);
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/api/careers');
+                const jsonData = await response.json();
+                setJobs(jsonData);
+                setFilteredJobs(jsonData);
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                setLoading(false);
+            }
+        };
+        fetchData();
     }, []);
 
     useEffect(() => {
@@ -49,6 +31,7 @@ const Careers = () => {
             );
         }
     }, [locationFilter, jobs]);
+
     return (
         <div className="flex min-h-screen p-6 gap-6 bg-gray-50">
             {/* Sidebar Filter */}
@@ -68,14 +51,19 @@ const Careers = () => {
             {/* Job Cards */}
             <div className="flex-1 p-4 bg-white rounded-2xl shadow space-y-4 overflow-y-auto">
                 <h1 className="text-2xl font-bold mb-4">Open Positions</h1>
-                {filteredJobs.map((job) => (
-                    <div key={job.id} className="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
-                        <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
-                        <p className="text-sm text-gray-500 mb-1">Location: {job.location}</p>
-                        <p className="text-gray-700">{job.description}</p>
-                    </div>
-                ))}
-                {filteredJobs.length === 0 && <p className="text-gray-500">No jobs found for this location.</p>}
+                {loading ? (
+                    <p className="text-gray-500">Loading jobs...</p>
+                ) : filteredJobs.length > 0 ? (
+                    filteredJobs.map((job, index) => (
+                        <div key={index} className="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
+                            <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
+                            <p className="text-sm text-gray-500 mb-1">Location: {job.location}</p>
+                            <p className="text-gray-700">{job.description}</p>
+                        </div>
+                    ))
+                ) : (
+                    <p className="text-gray-500">No jobs found for this location.</p>
+                )}
             </div>
         </div>
     );

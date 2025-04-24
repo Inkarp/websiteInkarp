@@ -9,6 +9,8 @@ const allReviews = [
   { name: "Sara Lee", text: "Easy to use and super efficient!" },
   { name: "Tom Cruise", text: "Impressed beyond words." },
   { name: "Linda Scott", text: "This tool is now essential for me." },
+  { name: "Tom Cruise", text: "Impressed beyond words." },
+  { name: "Linda Scott", text: "This tool is now essential for me." },
 ];
 
 function Reviews() {
@@ -26,33 +28,43 @@ function Reviews() {
   `;
 
   const [index, setIndex] = useState(0);
-  const chunkSize = 4;
+  const [fade, setFade] = useState(true);
+  const chunkSize = 5;
   const delay = 4000;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + chunkSize) % allReviews.length);
+      setFade(false);
+      setTimeout(() => {
+        setIndex((prev) => (prev + chunkSize) % allReviews.length);
+        setFade(true);
+      }, 500);
     }, delay);
     return () => clearInterval(interval);
   }, []);
 
-  const visibleReviews = allReviews
-    .concat(allReviews)
-    .slice(index, index + chunkSize);
+  // Seamlessly wrap reviews using duplication logic
+  const visibleReviews = [
+    ...allReviews,
+    ...allReviews,
+  ].slice(index, index + chunkSize);
 
   return (
     <>
-      <h1 className="text-3xl font-bold text-center mb-6 text-gray-800">
-        Google Reviews
+      <style>{waveAnimation}</style>
+      <h1 className="text-4xl font-bold text-center mb-2 mt-10  tracking-tight">
+        What People Are Saying
       </h1>
-      <div className="overflow-hidden relative w-full p-6 shadow-xl rounded-lg">
-        <style>{waveAnimation}</style>
-
-        <div className="flex gap-6 justify-center flex-wrap transition-opacity duration-700 ease-in-out">
+      <div className="overflow-hidden relative w-full max-w-6xl mx-auto p-6  rounded-3xl">
+        <div
+          className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center transition-all duration-500 ease-in-out transform ${
+            fade ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+          }`}
+        >
           {visibleReviews.map(({ name, text }, i) => (
             <div
               key={i}
-              className="min-w-[250px] p-4 bg-gray-50 rounded-lg text-center shadow-md flex flex-col items-center"
+              className="w-full p-4 bg-gray-50 rounded-xl text-center shadow-md flex flex-col items-center bg-red-50"
               style={{
                 animation: "waveFloat 3s ease-in-out infinite",
                 animationDelay: `${i * 0.3}s`,

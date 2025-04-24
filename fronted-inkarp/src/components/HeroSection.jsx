@@ -31,7 +31,7 @@ function HeroSection() {
     <section className="w-full py-10 px-4 lg:px-8">
       <div className="w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-6">
         {/* Static Image / Left Section */}
-        <div className="relative w-full lg:w-1/2 h-[400px] md:h-[500px]">
+        <div className="relative  lg:w-1/2 mx-auto h-[400px] md:h-[500px]">
           <img
             className="rounded-2xl w-full h-full object-cover"
             src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1050&q=80"

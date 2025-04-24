@@ -93,7 +93,7 @@ const Navbar = () => {
                 {/* Dropdown Items */}
                 <div className="absolute left-0 top-full hidden group-hover:flex flex-col bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-1 z-50 min-w-[180px]">
                   <Link
-                    to="/insights&updates/blog"
+                    to="/insights&updates/blogs"
                     className="px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-red-100 dark:hover:bg-gray-800 rounded-t-lg"
                   >
                     Blog
@@ -138,11 +138,12 @@ const Navbar = () => {
           >
             <X size={28} />
           </button>
-          <h2 className="text-3xl/20 font-bold mb-6 text-red-500">Search</h2>
+          <h2 className="text-3xl/20 font-bold mb-2 text-red-500">Start Searching....</h2>
           <input
             type="text"
             placeholder="Start Typing ...."
-            className="w-full max-w-xl px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-red-400 focus:ring-opacity-50"
+            className="w-full max-w-xl px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-red-400 focus:ring-opacity-100 focus:ring-offset-2 transition duration-300"
+            autoFocus
           />
          
         </div>

@@ -60,7 +60,7 @@ function ProfileCard({ profile }) {
   const [showDropdown, setShowDropdown] = useState(false);
 
   return (
-    <div className="w-full max-w-xs bg-red-100 dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden relative flex flex-col justify-between hover:z-10 transition-transform duration-100 hover:scale-105">
+    <div className="w-full max-w-xs bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden relative flex flex-col justify-between hover:z-10 transition-transform duration-100 hover:scale-105">
       <img
         className="object-cover rounded-lg transition-transform duration-300 hover:scale-110 hover:shadow-lg hover:z-10"
         src={profile.image}
@@ -89,7 +89,7 @@ function ProfileCard({ profile }) {
                 href="http://wa.me/8019828999"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-blue-800 p-2 hover:bg-gray-600 transition-transform duration-200"
+                className="rounded-full bg-red-500 p-2 hover:bg-gray-600 transition-transform duration-200"
               >
                 <Icon size={20} color="white" />
               </a>
@@ -97,14 +97,14 @@ function ProfileCard({ profile }) {
           </div>
 
           {/* Share Button */}
-          <div
-            className="bg-white rounded-full p-1 shadow hover:bg-gray-300 hover:scale-110 transition-transform duration-300"
+          {/* <div
+            className="bg-black rounded-full p-1 shadow hover:bg-gray-300 hover:scale-110 transition-transform duration-300"
             onMouseEnter={() => setShowDropdown(true)}
-          >
-            <button className="flex items-center justify-center w-12 h-12 rounded-2xl" onMouseLeave={() => setShowDropdown(false)} >
+          > */}
+            <button className="flex items-center justify-center w-12 h-12 rounded-2xl bg-red-100" onMouseLeave={() => setShowDropdown(false)} onMouseEnter={() => setShowDropdown(true)} >
               <Share2 size={20} color="black" />
             </button>
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </div>
@@ -114,7 +114,7 @@ function ProfileCard({ profile }) {
 function Offerings() {
   return (
     <>
-      <h1 className="mt-10 px-4 sm:px-6 md:px-10 py-3 mx-auto max-w-3xl rounded-full bg-red-100 shadow-lg text-red-500 text-3xl/3 sm:text-4xl md:text-5xl font-bold text-center mb-6" style={{ fontFamily: 'MaxOT' }}>
+      <h1 className="mt-10 px-4 sm:px-6 md:px-10 py-3 mx-auto max-w-3xl rounded-full bg-white shadow-lg text-red-500 text-3xl/3 sm:text-4xl md:text-5xl font-bold text-center mb-6" style={{ fontFamily: 'MaxOT' }}>
         Our Offerings
       </h1>
       <div className="w-full py-5 flex justify-center">

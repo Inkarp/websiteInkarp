@@ -7,12 +7,14 @@ import Principles from "./pages/UI/Principles";
 import Slider from "./pages/UI/Slider";
 import OurStory from "./pages/OurStory";
 import About from "./pages/About";
+import HeroSection from "./HeroSection";
 
 export default function MainLayout() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* <Header /> */}
       <Navbar />
+       
       <main className="flex-grow">
         <Outlet />
       </main>
