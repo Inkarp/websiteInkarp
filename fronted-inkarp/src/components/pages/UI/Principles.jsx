@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AnimatedNumbers from 'react-animated-numbers';
+import { motion } from 'framer-motion';
 
 const counters = [
   { label: 'Principals', value: 50, suffix: '+' },
@@ -8,9 +9,9 @@ const counters = [
   { label: 'Awards', value: 10, suffix: '' },
 ];
 
-const CIRCLE_RADIUS = 90;
+const CIRCLE_RADIUS = 80;
 const CIRCUMFERENCE = 2 * Math.PI * CIRCLE_RADIUS;
-const SHARED_FILL_PERCENT = 90; // All circles will stop at 90%
+const SHARED_FILL_PERCENT = 90;
 
 const Principles = () => {
   const [strokeOffset, setStrokeOffset] = useState(CIRCUMFERENCE);
@@ -24,13 +25,22 @@ const Principles = () => {
     <section className="py-10 mx-auto w-[96%] rounded-xl">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 text-center">
         {counters.map((counter, index) => (
-          <div
+          <motion.div
             key={index}
             className="w-full"
+            initial={{ rotateX: 0, rotateY: 0, scale: 1 }}
+            whileHover={{
+              rotateX: -5,
+              rotateY: 5,
+              scale: 1.07,
+              transition: { type: 'spring', stiffness: 200, damping: 10 },
+            }}
+            animate={{ rotateX: 0, rotateY: 0, scale: 1 }}
             style={{
               animation: 'fadeUp 0.6s ease-out',
               animationDelay: `${index * 0.6}s`,
               animationFillMode: 'both',
+              transformStyle: 'preserve-3d',
             }}
           >
             <div className="relative w-46 h-46 mx-auto">
@@ -70,7 +80,7 @@ const Principles = () => {
                         stiffness: 120,
                       })}
                       fontStyle={{
-                        fontWeight: '500',
+                        fontWeight: '700',
                         fontSize: '28px',
                         color: 'white',
                       }}
@@ -78,7 +88,7 @@ const Principles = () => {
                     <span
                       className="ml-1 text-xl sm:text-2xl md:text-3xl"
                       style={{
-                        fontWeight: '500',
+                        fontWeight: '600',
                         fontSize: '25px',
                         color: 'white',
                       }}
@@ -86,15 +96,19 @@ const Principles = () => {
                       {counter.suffix}
                     </span>
                   </div>
-                  <p className=" text-xl sm:text-base md:text-lg text-gray-800 font-semibold absolute left-35.5 top-[15%]">
+                  <p className="text-xl font-semibold sm:text-center md:text-lg text-gray-800 absolute left-34 top-[15%] hidden lg:block" style={{ fontFamily: 'MaxOT' }}>
                     {counter.label}
                   </p>
                 </div>
               </div>
-
+              <p
+                className="block lg:hidden text-xl font-semibold text-gray-800"
+                style={{ fontFamily: 'MaxOT' }}
+              >
+                {counter.label}
+              </p>
             </div>
-
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

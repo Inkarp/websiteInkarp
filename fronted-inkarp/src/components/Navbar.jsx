@@ -119,7 +119,7 @@ const Navbar = () => {
               <div className="hidden lg:flex md:ml-2 lg:ml-4">
                 <button
                   onClick={() => setShowSearchModal(true)}
-                  className="flex items-center mr-5 px-4 py-2 text-white bg-red-700 rounded-lg hover:bg-gray-600 transition duration-300"
+                  className="flex items-center mr-3 px-4 py-2  text-white bg-red-700 rounded-lg hover:bg-gray-600 transition duration-300"
                 >
                   <Search className="h-5 w-5" />
                 </button>
@@ -138,11 +138,12 @@ const Navbar = () => {
           >
             <X size={28} />
           </button>
-          <h2 className="text-3xl/20 font-bold mb-2 text-red-500">Start Searching....</h2>
+          <h2 className="text-3xl/20 font-bold mb-2 text-black">Start Searching</h2>
           <input
             type="text"
             placeholder="Start Typing ...."
-            className="w-full max-w-xl px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-red-400 focus:ring-opacity-100 focus:ring-offset-2 transition duration-300"
+            
+            className="w-full max-w-xl px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-red-400 focus:ring-opacity-100 focus:ring-offset-2 transition duration-300 placeholder:text-lg placeholder:text-black placeholder:font-bold"
             autoFocus
           />
          
