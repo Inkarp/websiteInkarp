@@ -15,12 +15,12 @@ function OurCompanies() {
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true }}
           >
             <div className="flex flex-wrap justify-center gap-6">
-              <img src="inkarp old.svg" className="w-32 sm:w-36 md:w-40 h-auto" />
-              <img src="inkarp old.svg" className="w-32 sm:w-36 md:w-40 h-auto" />
-              <img src="inkarp old.svg" className="w-32 sm:w-36 md:w-40 h-auto" />
+              <img src="https://www.inkarp.co.in/assets/images/sparksci.png" alt="Subsidiary 1" className="w-32 sm:w-36 md:w-40 h-auto" />
+              <img src="https://www.inkarp.co.in/assets/images/inkarp-instrumental-services.png" alt="Subsidiary 2" className="w-32 sm:w-36 md:w-40 h-auto" />
+              <img src="https://www.inkarp.co.in/assets/images/inkarp-telecom.png" alt="Subsidiary 3" className="w-32 sm:w-36 md:w-40 h-auto" />
             </div>
             <div className="font-semibold text-xl text-red-800 mt-3 text-center">
               100% Owned Subsidiaries
@@ -36,11 +36,11 @@ function OurCompanies() {
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true }}
           >
             <div className="flex flex-wrap justify-center gap-6">
-              <img src="inkarp old.svg" className="w-32 sm:w-36 md:w-40 h-auto" />
-              <img src="inkarp old.svg" className="w-32 sm:w-36 md:w-40 h-auto" />
+              <img src="inkarp old.svg" alt="Joint Venture 1" className="w-32 sm:w-36 md:w-40 h-auto" />
+              <img src="inkarp old.svg" alt="Joint Venture 2" className="w-32 sm:w-36 md:w-40 h-auto" />
             </div>
             <div className="font-semibold text-xl text-red-800 mt-3 text-center">
               Our Joint Ventures

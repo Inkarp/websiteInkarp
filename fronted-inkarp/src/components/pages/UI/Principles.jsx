@@ -22,11 +22,11 @@ const Principles = () => {
 
   return (
     <section className="py-10 mx-auto w-[96%] rounded-xl">
-      <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-y-10 text-center">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 text-center">
         {counters.map((counter, index) => (
           <div
             key={index}
-            className="w-full sm:w-1/2 md:w-1/4"
+            className="w-full"
             style={{
               animation: 'fadeUp 0.6s ease-out',
               animationDelay: `${index * 0.6}s`,
@@ -39,7 +39,7 @@ const Principles = () => {
                   cx="50%"
                   cy="50%"
                   r={CIRCLE_RADIUS}
-                  stroke="white"
+                  stroke=""
                   strokeWidth="3"
                   fill="transparent"
                 />
@@ -85,7 +85,6 @@ const Principles = () => {
                     >
                       {counter.suffix}
                     </span>
-
                   </div>
                   <p className=" text-xl sm:text-base md:text-lg text-gray-800 font-semibold absolute left-35.5 top-[15%]">
                     {counter.label}

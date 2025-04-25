@@ -11,10 +11,9 @@ import HeroSection from "./HeroSection";
 
 export default function MainLayout() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-gray-100">
       {/* <Header /> */}
       <Navbar />
-       
       <main className="flex-grow">
         <Outlet />
       </main>

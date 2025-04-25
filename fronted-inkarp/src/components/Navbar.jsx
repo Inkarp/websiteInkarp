@@ -26,7 +26,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             <Link to="/">
               <img
-                className="w-32 h-auto lg:ml-10 transition-transform duration-300 sm:w-32 sm:h-24"
+                className="w-32 h-auto lg:ml-10 md:ml-2 sm:ml-2 transition-transform duration-300 sm:w-32 sm:h-24"
                 src="/inkarp old.svg"
                 alt="Logo"
               />
@@ -46,10 +46,10 @@ const Navbar = () => {
             </div>
 
             {/* Mobile menu button */}
-            <div className="flex lg:hidden">
+            <div className="flex lg:hidden md:ml-2 sm:ml-2">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-500 dark:text-gray-200 hover:text-gray-600 ml-2 focus:outline-none"
+                className="text-gray-500 dark:text-gray-200 hover:text-gray-600 sm:ml-2 md:ml-2 focus:outline-none"
                 aria-label="toggle menu"
               >
                 {!isOpen ? (
@@ -116,7 +116,7 @@ const Navbar = () => {
               </Link>
 
               {/* Search Button (Desktop) */}
-              <div className="hidden lg:flex">
+              <div className="hidden lg:flex md:ml-2 lg:ml-4">
                 <button
                   onClick={() => setShowSearchModal(true)}
                   className="flex items-center mr-5 px-4 py-2 text-white bg-red-700 rounded-lg hover:bg-gray-600 transition duration-300"

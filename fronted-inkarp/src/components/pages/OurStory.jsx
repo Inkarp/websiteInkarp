@@ -2,6 +2,7 @@ import Team from "../Team/Team";
 import AboutSupport from "./UI/AboutSupport";
 import Clients from "./UI/Clients";
 import Mission from "./UI/Mission";
+import SubBlog from "./UI/SubBlog";
 
 const OurStory = () => {
     return (
@@ -10,7 +11,7 @@ const OurStory = () => {
                 <div className="flex items-center justify-center w-full lg:w-[45%] h-[20rem] lg:h-full">
                     <img
                         className="object-cover w-full h-full max-w-2xl rounded-md"
-                        src="https://images.unsplash.com/photo-1555181126-cf46a03827c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                        src="https://www.inkarp.co.in/assets/images/inkarp-building.png"
                         alt="Laboratory Instruments"
                     />
                 </div>
@@ -34,7 +35,7 @@ const OurStory = () => {
                     </div>
                 </div>
             </div>
-
+            {/* <SubBlog /> */}
             <Mission />
             <AboutSupport />
             <Clients />

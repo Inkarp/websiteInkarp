@@ -1,5 +1,5 @@
 import { Linkedin } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { MotionDiv, MotionImage, MotionLink } from '../../utils/MotionWrapper';
 
 function Team() {
   const teamMembers = [
@@ -53,26 +53,6 @@ function Team() {
     },
   ];
 
-  const cardVariant = {
-    hover: {
-      scale: 1.05,
-      boxShadow: "0px 10px 15px rgba(0,0,0,0.15)",
-    },
-  };
-
-  const imageVariant = {
-    hover: {
-      scale: 1.1,
-    },
-  };
-
-  const iconVariant = {
-    hover: {
-      scale: 1.2,
-      rotate: 10,
-    },
-  };
-
   return (
     <section className="py-16 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 text-center">
@@ -90,32 +70,32 @@ function Team() {
             )
             .map((member, index) => (
               <div key={index} className="flex justify-center">
-                <motion.div
-                  variants={cardVariant}
-                  whileHover="hover"
+                <MotionDiv
+                  key={`executive-${index}`}
+                  whileHover={{ scale: 1.05, boxShadow: "0px 10px 15px rgba(0,0,0,0.15)" }}
                   className="bg-white rounded-xl shadow-md p-6 w-full max-w-2xl"
                 >
-                  <motion.img
+                  <MotionImage
                     src={member.image}
-                    // alt={member.name}
+                    alt={member.name}
                     className="w-28 h-28 mx-auto rounded-full object-cover mb-4"
-                    variants={imageVariant}
+                    whileHover={{ scale: 1.1 }}
                   />
-                  <h3 className="text-xl font-semibold text-red-600 font-bold text-xl">{member.name}</h3>
+                  <h3 className="text-xl font-semibold text-red-600 font-bold">{member.name}</h3>
                   <p className="text-sm font-medium text-gray-600 mb-2">{member.title}</p>
                   <p className="text-sm text-gray-700 mb-4">{member.description}</p>
-                  <a
+                  <MotionLink
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block"
-                    variants={iconVariant}
+                    whileHover={{ scale: 1.2, rotate: 10 }}
                   >
                     <div className='rounded-full bg-red-200 p-2 hover:bg-gray-300 transition duration-300'>
-                    <Linkedin size={24} />
+                      <Linkedin size={24} />
                     </div>
-                  </a>
-                </motion.div>
+                  </MotionLink>
+                </MotionDiv>
               </div>
             ))}
 
@@ -128,33 +108,32 @@ function Team() {
                   !m.title.includes("Executive Director")
               )
               .map((member, index) => (
-                <motion.div
-                  key={index}
-                  variants={cardVariant}
-                  whileHover="hover"
+                <MotionDiv
+                  key={`member-${index}`}
+                  whileHover={{ scale: 1.05, boxShadow: "0px 10px 15px rgba(0,0,0,0.15)" }}
                   className="bg-white rounded-xl shadow-md p-6"
                 >
-                  <motion.img
+                  <MotionImage
                     src={member.image}
-                    // alt={member.name}
+                    alt={member.name}
                     className="w-28 h-28 mx-auto rounded-full object-cover mb-4"
-                    variants={imageVariant}
+                    whileHover={{ scale: 1.1 }}
                   />
                   <h3 className="text-xl font-semibold text-red-600">{member.name}</h3>
                   <p className="text-sm font-medium text-gray-600 mb-2">{member.title}</p>
                   <p className="text-sm text-gray-700 mb-4">{member.description}</p>
-                  <a
+                  <MotionLink
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block"
-                    variants={iconVariant}
+                    whileHover={{ scale: 1.2, rotate: 10 }}
                   >
                     <div className='rounded-full bg-red-200 p-2 hover:bg-gray-300 transition duration-300'>
-                    <Linkedin size={24} />
+                      <Linkedin size={24} />
                     </div>
-                  </a>
-                </motion.div>
+                  </MotionLink>
+                </MotionDiv>
               ))}
           </div>
         </div>

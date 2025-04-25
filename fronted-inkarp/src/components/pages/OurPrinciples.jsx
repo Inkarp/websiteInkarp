@@ -1,10 +1,17 @@
 import { motion } from "framer-motion";
+import { MotionDiv } from "../../utils/MotionWrapper";
 
 function OurPrinciples() {
   const images = [
     "zeiss.png",
     "bandelin.png",
     "inkarp old.svg",
+  ];
+
+  const imageNames = [
+    "Zeiss",
+    "Bandelin",
+    "Inkarp",
   ];
 
   return (
@@ -20,21 +27,27 @@ function OurPrinciples() {
         <motion.div
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 justify-center items-center"
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {Array.from({ length: 46 }).map((_, index) => (
-            <motion.img
-              key={index}
-              src={images[index % images.length]}
-              className="w-40 h-auto mx-auto rounded-lg shadow-md bg-white p-2"
-              whileHover={{
-                scale: 1.15,
-                transition: { duration: 0.3 },
-              }}
-              whileTap={{ scale: 0.95 }}
-            />
-          ))}
+          {Array.from({ length: 46 }).map((_, index) => {
+            const imageIndex = index % images.length;
+            return (
+              <MotionDiv
+                key={index}
+                whileHover={{ scale: 1.15 }}
+                transition={{ duration: 0.3 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <img
+                  src={images[imageIndex]}
+                  alt={`${imageNames[imageIndex]} Logo`}
+                  className="w-40 h-auto mx-auto rounded-lg shadow-md bg-white p-2"
+                />
+              </MotionDiv>
+            );
+          })}
         </motion.div>
       </div>
     </section>

@@ -65,24 +65,24 @@ const Footer = () => {
               Our dedicated team is at the heart of our success, reflecting our commitment to excellence.
             </p>
             <div className="flex flex-col items-center lg:items-start mt-5">
-            <h2 className="text-2xl font-semibold mb-3 " style={{ fontFamily: 'MaxOT' }}>Follow Us</h2>
-            <div className="flex space-x-4">
-              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
-                <a key={i} href="#" className="p-2 bg-red-500 hover:bg-gray-700 rounded-full transition">
-                  <Icon color="white" size={20} />
-                </a>
-              ))}
+              <h2 className="text-2xl font-semibold mb-3 " style={{ fontFamily: 'MaxOT' }}>Follow Us</h2>
+              <div className="flex space-x-4">
+                {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
+                  <a key={i} href="#" className="p-2 bg-red-500 hover:bg-gray-700 rounded-full transition">
+                    <Icon color="white" size={20} />
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
           </div>
 
           {/* Quick Links and Contact Info */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 items-center text-center lg:text-left">
             {/* Quick Links */}
-            <div className='ml-10'>
+            <div>
               <h2 className="text-xl font-semibold mb-3" style={{ fontFamily: 'MaxOT' }}>Quick Links</h2>
               <ul className="space-y-2">
-                {['Home', 'About', 'Contact Us', 'CatalystCue', 'Blog', 'News&Events'].map((item, idx) => (
+                {['Home', 'Our Story','Verticals', 'Contact Us', 'CatalystCue', 'Blog', 'News & Events','Careers'].map((item, idx) => (
                   <li key={idx} style={{ fontFamily: 'roboto' }}>
                     <a href="#" className="hover:underline">
                       {item}
@@ -96,31 +96,28 @@ const Footer = () => {
             <div className='mb-3'>
               <h2 className="text-xl font-semibold mb-3" style={{ fontFamily: 'MaxOT' }}>Catch Us</h2>
               <ul className="space-y-2 text-sm">
-                <li className="flex items-start gap-2" style={{ fontFamily: 'roboto' }}>
+                <li className="flex items-start justify-center lg:justify-start gap-2" style={{ fontFamily: 'roboto' }}>
                   <MapPin size={18} className="min-w-[18px] mt-1" />
                   <span>
                     Inkarp Instruments Pvt Ltd, Plot No - 5A/10-11, 3rd Floor, IDA Nacharam Road No. 1,
                     Nacharam - Chilka Nagar Road, Hyderabad – 500076
                   </span>
                 </li>
-                <li className="flex items-center gap-2">
+                <li className="flex items-center justify-center lg:justify-start gap-2">
                   <Phone size={18} className="min-w-[18px]" />
                   <a href="tel:+919966634008" className="hover:underline">+91 99666 34008</a>
                 </li>
-                <li className="flex items-center gap-2">
+                <li className="flex items-center justify-center lg:justify-start gap-2">
                   <PhoneCall size={18} className="min-w-[18px]" />
                   <a href="tel:+914027172293" className="hover:underline">+91 40 2717 2293</a>
                 </li>
-                <li className="flex items-center gap-2">
+                <li className="flex items-center justify-center lg:justify-start gap-2">
                   <Mail size={18} className="min-w-[18px]" />
                   <a href="mailto:info@inkarp.co.in" className="hover:underline">info@inkarp.co.in</a>
                 </li>
               </ul>
             </div>
           </div>
-
-          {/* Social Icons */}
-          
         </div>
       </div>
 

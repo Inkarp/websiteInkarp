@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { MotionDiv, MotionFigure } from '../../../utils/MotionWrapper';
 
 const AboutSupport = () => {
   return (
@@ -8,13 +9,13 @@ const AboutSupport = () => {
           {/* Image Column */}
           <div className="relative">
             {/* Shape Decorations */}
-            <motion.div
+            <MotionDiv
               className="absolute bottom-20 left-0 w-32 h-32 bg-no-repeat bg-contain rotate-[15deg] z-0"
               style={{ backgroundImage: "url(https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1050&q=80)" }}
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
             />
-            <motion.div
+            <MotionDiv
               className="absolute top-24 right-0 w-32 h-32 bg-no-repeat bg-contain rotate-[15deg] z-0"
               style={{ backgroundImage: "url(https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1050&q=80)" }}
               animate={{ rotate: -360 }}
@@ -22,10 +23,11 @@ const AboutSupport = () => {
             />
 
             {/* Main Image (Smaller Width) */}
-            <motion.figure
+            <MotionFigure
               className="relative z-10 w-3/4"
               initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
               <img
@@ -33,13 +35,14 @@ const AboutSupport = () => {
                 alt="about-13"
                 className="rounded-lg shadow-lg"
               />
-            </motion.figure>
+            </MotionFigure>
 
             {/* Overlay Image (Larger Width) */}
-            <motion.figure
+            <MotionFigure
               className="absolute right-0 bottom-0 z-20 w-3/4"
               initial={{ y: -30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 1.1 }}
             >
               <img
@@ -47,15 +50,16 @@ const AboutSupport = () => {
                 alt="about-14"
                 className="rounded-lg shadow-xl"
               />
-            </motion.figure>
+            </MotionFigure>
           </div>
 
           {/* Content Column */}
-          <motion.div
+          <MotionDiv
             className="relative z-10"
             initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 5 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
             <div className="mb-6">
               <h5 className="text-sm font-semibold uppercase text-red-600 ">Inkarp</h5>
@@ -76,7 +80,7 @@ const AboutSupport = () => {
                 customers.
               </p>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </div>
     </section>
