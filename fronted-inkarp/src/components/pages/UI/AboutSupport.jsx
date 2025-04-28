@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { MotionDiv, MotionFigure } from '../../../utils/MotionWrapper';
 
 const AboutSupport = () => {

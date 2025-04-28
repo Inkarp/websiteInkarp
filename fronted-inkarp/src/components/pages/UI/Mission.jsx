@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Eye, Target } from 'lucide-react';
 import { MotionDiv } from '../../../utils/MotionWrapper';
 
@@ -36,7 +35,7 @@ const Mission = () => {
           whileInView={{ opacity: 1, y: 0 }}
           whileHover={{ scale: 1.05, y: -5 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.2, type: 'spring', stiffness: 120 }}
+          transition={{ duration: 1.0, type: 'spring', stiffness: 120 }}
         >
           <MotionDiv
             className="flex items-center justify-center w-20 h-20 mx-auto mb-6 rounded-full text-white"

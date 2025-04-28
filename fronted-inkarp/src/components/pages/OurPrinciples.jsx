@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { MotionDiv } from "../../utils/MotionWrapper";
 
 function OurPrinciples() {
   const images = [
@@ -16,32 +16,32 @@ function OurPrinciples() {
           Global Partnerships with Leading Brands
         </h2>
 
-        <motion.div
+        <MotionDiv
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 justify-center items-center"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {Array.from({ length: 46 }).map((_, index) => (
-            <>
-              <motion.img
-                key={index}
-                src={images[index % images.length]}
-                // alt={`Brand ${index + 1}`}
+            <div key={index}>
+              <MotionDiv
                 className="w-40 h-auto mx-auto rounded-lg shadow-md bg-white p-2"
                 initial={{ rotate: 0 }}
                 animate={{ rotate: 0 }}
                 whileHover={{
                   scale: 1.15,
-                  rotate: [0, 5, -5, 0],
-                  transition: { duration: 0.5 },
                 }}
-                whileTap={{ scale: 0.95 }}
-              />
-              {/* <motion.img src="bandelin.png"/> */}
-            </>
+                transition={{ duration: 0.5 }}
+              >
+                <img
+                  src={images[index % images.length]}
+                  alt={`Brand ${index + 1}`}
+                  className="w-full h-auto"
+                />
+              </MotionDiv>
+            </div>
           ))}
-        </motion.div>
+        </MotionDiv>
 
       </div>
     </section>

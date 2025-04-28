@@ -1,141 +1,214 @@
-import { Linkedin, Mail, Youtube, MessageCircle } from "lucide-react";
-import Branches from "./UI/Branches";
+import { Linkedin, Mail, Youtube, MessageCircle, Phone } from "lucide-react";
 
 function ContactUs() {
+  const branches = [
+    {
+      name: "Bengaluru",
+      address: "Bengaluru, Karnataka",
+      phone: "+91 9000000000",
+      email: "bengaluru@inkarp.co.in",
+      top: "75%", left: "35%",
+    },
+    {
+      name: "Chennai",
+      address: "Chennai, Tamil Nadu",
+      phone: "+91 9000000001",
+      email: "chennai@inkarp.co.in",
+      top: "82%", left: "45%",
+    },
+    {
+      name: "Kolkata",
+      address: "Kolkata, West Bengal",
+      phone: "+91 9000000002",
+      email: "kolkata@inkarp.co.in",
+      top: "50%", left: "60%",
+    },
+    {
+      name: "Thiruvananthapuram",
+      address: "Thiruvananthapuram, Kerala",
+      phone: "+91 9000000003",
+      email: "trivandrum@inkarp.co.in",
+      top: "93%", left: "36%",
+    },
+    {
+      name: "Ahmedabad",
+      address: "Ahmedabad, Gujarat",
+      phone: "+91 9000000004",
+      email: "ahmedabad@inkarp.co.in",
+      top: "45%", left: "30%",
+    },
+    {
+      name: "Mumbai",
+      address: "Mumbai, Maharashtra",
+      phone: "+91 9000000005",
+      email: "mumbai@inkarp.co.in",
+      top: "60%", left: "28%",
+    },
+    {
+      name: "Delhi",
+      address: "Delhi, New Delhi",
+      phone: "+91 9000000006",
+      email: "delhi@inkarp.co.in",
+      top: "30%", left: "40%",
+    },
+    {
+      name: "Visakhapatnam",
+      address: "Visakhapatnam, Andhra Pradesh",
+      phone: "+91 9000000007",
+      email: "vizag@inkarp.co.in",
+      top: "65%", left: "55%",
+    },
+    {
+      name: "Pune",
+      address: "Pune, Maharashtra",
+      phone: "+91 9000000008",
+      email: "pune@inkarp.co.in",
+      top: "70%", left: "30%",
+    },
+    {
+      name: "Chandigarh",
+      address: "Chandigarh",
+      phone: "+91 9000000009",
+      email: "chandigarh@inkarp.co.in",
+      top: "25%", left: "38%",
+    },
+    {
+      name: "Vadodara",
+      address: "Vadodara, Gujarat",
+      phone: "+91 9000000010",
+      email: "vadodara@inkarp.co.in",
+      top: "50%", left: "32%",
+    },
+  ];
+
   return (
     <>
-      <section
-        className="min-h-screen bg-cover mt-5"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')",
-        }}
-      >
-        <div className="flex flex-col min-h-screen bg-black/60">
-          <div className="container flex flex-col flex-1 px-6 py-12 mx-auto">
-            <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
-              {/* Left Side Content */}
-              <div className="text-white lg:w-1/2 lg:mx-6">
-                <h1 className="text-2xl font-semibold capitalize lg:text-3xl">
-                  Ultimate design solution
-                </h1>
-                <p className="max-w-xl mt-6">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Voluptatem quo aliquid molestiae hic incidunt beatae placeat
-                  accusantium! Alias ex quisquam ab tempora. Ratione autem
-                  doloremque ducimus numquam doloribus, error sed.
-                </p>
-                <button className="px-8 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
-                  Get in touch
-                </button>
+      <style jsx>{`
+        @keyframes ping {
+          0% {
+            transform: scale(1);
+            opacity: 0.75;
+          }
+          75%, 100% {
+            transform: scale(2);
+            opacity: 0;
+          }
+        }
+        .location-ping {
+          animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+        .location-marker {
+          transition: all 0.3s ease;
+        }
+        .location-card {
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(10px);
+          transition: all 0.3s ease;
+        }
+        .location-wrapper:hover .location-card {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+        .social-icon {
+          transition: transform 0.3s ease;
+        }
+        .social-icon:hover {
+          transform: scale(1.2);
+        }
+      `}</style>
+      <section className="min-h-screen mt-5">
+        <div className="container mx-auto flex flex-col items-center justify-center">
+          {/* INDIA MAP WITH ICONS */}
+          <div className="relative w-full max-w-5xl h-[800px] bg-white rounded-xl overflow-hidden shadow-2xl">
+            <img
+              src="/india.jpg" 
+              alt="India Map"
+              className="object-contain w-full h-full"
+            />
 
-                {/* Socials */}
-                <div className="mt-6 md:mt-8">
-                  <h3 className="text-gray-300 text-lg font-semibold">Follow us</h3>
-                  <div className="flex gap-4 mt-4">
-                    {/* LinkedIn */}
-                    <a
-                      href="https://www.linkedin.com/company/inkarp-instruments/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-500 hover:text-blue-700 transition transform hover:scale-110"
-                    >
-                      <div className="rounded-lg bg-blue-200 p-4 hover:bg-gray-300 transition duration-300">
-                        <Linkedin size={20} />
-                      </div>
-                    </a>
+            {/* Location Pins with City Names and Hover Card */}
+            {branches.map((branch, index) => (
+              <div
+                key={index}
+                className="absolute flex flex-col items-center location-wrapper"
+                style={{
+                  top: branch.top,
+                  left: branch.left,
+                  transform: "translate(-50%, -50%)",
+                }}
+              >
+                {/* Animated Icon */}
+                <div className="relative location-marker">
+                  <div className="w-4 h-4 bg-red-500 rounded-full location-ping" />
+                  <div className="w-3 h-3 bg-red-700 rounded-full absolute top-[2px] left-[2px]" />
+                </div>
+                {/* City Name */}
+                <span className="mt-1 text-xs font-semibold text-black bg-white px-2 py-0.5 rounded-md shadow-sm">
+                  {branch.name}
+                </span>
 
-                    {/* WhatsApp */}
-                    <a
-                      href="https://wa.me/919000000000"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-green-500 hover:text-green-600 transition transform hover:scale-110"
-                    >
-                      <div className="rounded-lg bg-green-800 hover:bg-gray-300 transition duration-300 p-4">
-                        <MessageCircle size={20} color="white" />         
-                      </div>
-                    </a>
-
-                    {/* Email */}
-                    <a
-                      href="mailto:info@inkarp.co.in"
-                      className="text-red-500 hover:text-red-600 transition transform hover:scale-110"
-                    >
-                      <div className="rounded-lg bg-red-200 p-4 hover:bg-gray-300 transition duration-300">
-                        <Mail size={20} color="black" />
-                      </div>
-                    </a>
-
-                    {/* YouTube */}
-                    <a
-                      href="https://www.youtube.com/channel/UCxxxx" // Replace with actual link
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-red-600 hover:text-red-700 transition transform hover:scale-110"
-                    >
-                      <div className="rounded-lg bg-red-200 p-4 hover:bg-gray-300 transition duration-300">
-                        <Youtube size={20} />
-                      </div>
-                    </a>
+                {/* Hover Card */}
+                <div className="location-card absolute top-10 left-1/2 -translate-x-1/2 w-64 bg-white text-black p-4 rounded-lg shadow-2xl z-50">
+                  <h2 className="text-lg font-bold">{branch.name}</h2>
+                  <p className="text-sm mt-2">{branch.address}</p>
+                  <div className="flex items-center gap-2 mt-2">
+                    <Phone size={16} />
+                    <span className="text-sm">{branch.phone}</span>
+                  </div>
+                  <div className="flex items-center gap-2 mt-1">
+                    <Mail size={16} />
+                    <span className="text-sm">{branch.email}</span>
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
 
-              {/* Right Side Form */}
-              <div className="mt-8 lg:w-1/2 lg:mx-6">
-                <div className="w-full px-8 py-10 mx-auto overflow-hidden bg-white shadow-2xl rounded-xl dark:bg-gray-900 lg:max-w-xl">
-                  <h1 className="text-xl font-medium text-gray-700 dark:text-gray-200">
-                    Contact form
-                  </h1>
-                  <p className="mt-2 text-gray-500 dark:text-gray-400">
-                    Ask us everything and we would love to hear from you
-                  </p>
-
-                  <form className="mt-6">
-                    <div className="flex-1">
-                      <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                        Full Name
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="John Doe"
-                        className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none"
-                      />
-                    </div>
-
-                    <div className="flex-1 mt-6">
-                      <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                        Email address
-                      </label>
-                      <input
-                        type="email"
-                        placeholder="johndoe@example.com"
-                        className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none"
-                      />
-                    </div>
-
-                    <div className="w-full mt-6">
-                      <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                        Message
-                      </label>
-                      <textarea
-                        className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none"
-                        placeholder="Message"
-                      ></textarea>
-                    </div>
-
-                    <button className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
-                      Get in touch
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
+          {/* SOCIAL MEDIA LINKS */}
+          <div className="flex justify-center gap-6 mt-10">
+            <a
+              href="https://www.linkedin.com/company/inkarp-instruments/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800"
+            >
+              <span className="social-icon inline-block">
+                <Linkedin size={28} />
+              </span>
+            </a>
+            <a
+              href="mailto:info@inkarp.co.in"
+              className="text-red-500 hover:text-red-700"
+            >
+              <span className="social-icon inline-block">
+                <Mail size={28} />
+              </span>
+            </a>
+            <a
+              href="https://wa.me/919000000000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-600 hover:text-green-800"
+            >
+              <span className="social-icon inline-block">
+                <MessageCircle size={28} />
+              </span>
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCxxxx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-red-600 hover:text-red-800"
+            >
+              <span className="social-icon inline-block">
+                <Youtube size={28} />
+              </span>
+            </a>
           </div>
         </div>
       </section>
-      <Branches />
     </>
   );
 }

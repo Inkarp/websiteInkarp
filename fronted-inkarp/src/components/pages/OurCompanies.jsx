@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { MotionDiv } from "../../utils/MotionWrapper";
 
 function OurCompanies() {
   return (
@@ -10,7 +10,7 @@ function OurCompanies() {
 
         <div className="max-w-screen-xl mx-auto mt-10 flex flex-col lg:flex-row justify-center items-center gap-10">
           {/* Left Side - 3 Images with animation from left */}
-          <motion.div
+          <MotionDiv
             className="flex flex-col items-center gap-3"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -25,13 +25,13 @@ function OurCompanies() {
             <div className="font-semibold text-xl text-red-800 mt-3 text-center">
               100% Owned Subsidiaries
             </div>
-          </motion.div>
+          </MotionDiv>
 
           {/* Divider */}
           <div className="hidden lg:block w-px h-36 bg-red-500" />
 
           {/* Right Side - 2 Images with animation from right */}
-          <motion.div
+          <MotionDiv
             className="flex flex-col items-center gap-3"
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -45,7 +45,7 @@ function OurCompanies() {
             <div className="font-semibold text-xl text-red-800 mt-3 text-center">
               Our Joint Ventures
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       </div>
     </section>

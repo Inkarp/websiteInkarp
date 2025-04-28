@@ -1,4 +1,5 @@
-import Team from "../Team/Team";
+
+import Team from "./Team";
 import AboutSupport from "./UI/AboutSupport";
 import Clients from "./UI/Clients";
 import Mission from "./UI/Mission";

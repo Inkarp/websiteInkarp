@@ -27,44 +27,68 @@ const Careers = () => {
             setFilteredJobs(jobs);
         } else {
             setFilteredJobs(
-                jobs.filter(job => job.location.toLowerCase().includes(locationFilter.toLowerCase()))
+                jobs.filter(job =>
+                    job.location.toLowerCase().includes(locationFilter.toLowerCase())
+                )
             );
         }
     }, [locationFilter, jobs]);
 
     return (
-        <div className="flex min-h-screen p-6 gap-6 bg-gray-50">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6 flex gap-6">
             {/* Sidebar Filter */}
-            <aside className="w-64 p-4 bg-white rounded-2xl shadow">
-                <h2 className="text-xl font-semibold mb-4">Filter by Location</h2>
-                <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-1">Location</label>
-                <input
-                    type="text"
-                    id="location"
-                    placeholder="Enter location..."
-                    value={locationFilter}
-                    onChange={(e) => setLocationFilter(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+            <aside className="w-72 bg-white shadow-xl rounded-2xl p-6 space-y-4">
+                <h2 className="text-2xl font-bold text-gray-800">Filter Jobs</h2>
+                <div className="space-y-2">
+                    <label htmlFor="location" className="text-sm font-medium text-gray-600">
+                        Location
+                    </label>
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="e.g. New York"
+                        value={locationFilter}
+                        onChange={(e) => setLocationFilter(e.target.value)}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+                    />
+                </div>
             </aside>
 
-            {/* Job Cards */}
-            <div className="flex-1 p-4 bg-white rounded-2xl shadow space-y-4 overflow-y-auto">
-                <h1 className="text-2xl font-bold mb-4">Open Positions</h1>
+            {/* Job Listings */}
+            <div className="flex-1 bg-white shadow-xl rounded-2xl p-8 overflow-y-auto custom-scrollbar">
+                <h1 className="text-3xl font-extrabold text-gray-800 mb-6">Open Positions</h1>
                 {loading ? (
-                    <p className="text-gray-500">Loading jobs...</p>
+                    <div className="text-center text-gray-500 text-lg">Loading jobs...</div>
                 ) : filteredJobs.length > 0 ? (
-                    filteredJobs.map((job, index) => (
-                        <div key={index} className="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
-                            <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
-                            <p className="text-sm text-gray-500 mb-1">Location: {job.location}</p>
-                            <p className="text-gray-700">{job.description}</p>
-                        </div>
-                    ))
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {filteredJobs.map((job, index) => (
+                            <div
+                                key={index}
+                                className="p-6 bg-gradient-to-br from-white to-indigo-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300"
+                            >
+                                <h3 className="text-xl font-semibold text-indigo-700 mb-1">{job.title}</h3>
+                                <p className="text-sm text-gray-500 mb-2">📍 {job.location}</p>
+                                <p className="text-gray-700 text-sm">{job.description}</p>
+                            </div>
+                        ))}
+                    </div>
                 ) : (
-                    <p className="text-gray-500">No jobs found for this location.</p>
+                    <div className="text-center text-gray-500 text-lg">No jobs found for this location.</div>
                 )}
             </div>
+
+            {/* Optional: Custom Scrollbar Styling */}
+            <style>
+                {`
+                .custom-scrollbar::-webkit-scrollbar {
+                    width: 8px;
+                }
+                .custom-scrollbar::-webkit-scrollbar-thumb {
+                    background-color: rgba(99, 102, 241, 0.5);
+                    border-radius: 10px;
+                }
+                `}
+            </style>
         </div>
     );
 };

@@ -12,7 +12,6 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
     "aos": "^2.3.4",
-    "framer-motion": "^12.7.3",
     "lucide-react": "^0.488.0",
     "react": "^19.0.0",
     "react-animated-numbers": "^1.0.1",

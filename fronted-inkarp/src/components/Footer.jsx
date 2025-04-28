@@ -23,7 +23,7 @@ const Footer = () => {
   });
   
   return (
-    <footer className="text-white bg-black w-[98%] mx-auto mt-5 rounded-xl shadow-lg ">
+    <footer className="text-white bg-black w-[98%] mx-auto mt-5 rounded-xl shadow-lg  ">
 
       {/* Top Section - Newsletter */}
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 px-4 py-10 rounded-t-xl">
