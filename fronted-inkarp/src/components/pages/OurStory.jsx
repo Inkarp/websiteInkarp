@@ -2,7 +2,9 @@
 import Team from "./Team";
 import AboutSupport from "./UI/AboutSupport";
 import Clients from "./UI/Clients";
+import Images from "./UI/Images";
 import Mission from "./UI/Mission";
+import NewTeam from "./UI/NewTeam";
 import SubBlog from "./UI/SubBlog";
 
 const OurStory = () => {
@@ -40,6 +42,11 @@ const OurStory = () => {
             <Mission />
             <AboutSupport />
             <Clients />
+            {/* <Team /> */}
+            <div className="flex justify-center items-center">
+            <NewTeam />
+            </div>
+            <Images />
             <Team />
 
             <div className="container px-6 py-10 mx-auto flex flex-col items-center text-center space-y-6">

@@ -9,16 +9,22 @@ import Offerings from './Offerings';
 import Reviews from './UI/Reviews';
 import SubBlog from './UI/SubBlog';
 import NewsEvents from './UI/NewsEvents';
+import AboutSection from './UI/AboutSection';
+import NewTeam from './UI/NewTeam';
+import Images from './UI/Images';
 
 const Home = () => {
     return (
         <>
             <HeroSection />
             <Principles />
-            <About />
+            {/* <About /> */}
+            <Images />
+            {/* <NewTeam /> */}
+            <AboutSection/>
             <Slider />
             <OurCompanies />
-            <OurPrinciples />
+            {/* <OurPrinciples /> */}
             <Offerings />
             <Reviews />
             <SubBlog />

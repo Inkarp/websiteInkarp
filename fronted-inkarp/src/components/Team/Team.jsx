@@ -1,5 +1,3 @@
-// TeamFloatingReveal.jsx
-
 import React, { useState } from "react";
 
 const teamMembers = [
@@ -53,8 +51,6 @@ const teamMembers = [
   },
 ];
 
-// TeamMagneticBlob.jsx
-
 function Team() {
   const [expandedMember, setExpandedMember] = useState(null);
 
@@ -76,31 +72,32 @@ function Team() {
             key={idx}
             onMouseEnter={() => setExpandedMember(idx)}
             onMouseLeave={() => setExpandedMember(null)}
-            className="relative cursor-pointer p-4 bg-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 animate-fadeIn"
+            className="relative cursor-pointer p-4 bg-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 animate-fadeIn"
             style={{ animationDelay: `${idx * 0.2}s` }}
           >
-            <h3 className="text-center text-md font-semibold text-gray-600">{member.title}</h3>
+            {/* Normal View */}
+            <div className="flex flex-col items-center space-y-3">
+              <h3 className="text-center text-md font-semibold text-gray-600">{member.title}</h3>
+            </div>
 
+            {/* Hover Expanded View */}
             {expandedMember === idx && (
-              <div 
-                className="absolute inset-0 flex flex-col items-center justify-center bg-white/90 backdrop-blur-md rounded-full p-6 shadow-2xl animate-scaleIn"
-              >
-                <div className="inline-block">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-24 h-24 rounded-full object-cover mb-3 border-4 border-red-200"
-                  />
-                </div>
+              <div className="absolute inset-0 flex flex-col items-center justify-start bg-white/90 backdrop-blur-md rounded-xl p-6 shadow-2xl animate-scaleIn text-center">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-24 h-24 rounded-full object-cover border-4 border-red-300 mb-4"
+                />
                 <h2 className="text-xl font-bold text-red-600">{member.name}</h2>
-                <p className="text-sm text-gray-700 mb-2">{member.title}</p>
-                <p className="text-xs text-center text-gray-500">{member.description}</p>
+                <p className="text-sm font-semibold text-gray-700 mb-2">{member.title}</p>
+                <p className="text-xs text-gray-500">{member.description}</p>
               </div>
             )}
           </div>
         ))}
       </div>
 
+      {/* Internal Styles */}
       <style jsx>{`
         @keyframes fadeIn {
           from {
@@ -137,4 +134,3 @@ function Team() {
 }
 
 export default Team;
-

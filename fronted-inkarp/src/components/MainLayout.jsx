@@ -7,7 +7,7 @@ export default function MainLayout() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1000); // 2.5 seconds
+    const timer = setTimeout(() => setIsLoading(false), 1000); // 1 second
     return () => clearTimeout(timer);
   }, []);
 
@@ -16,13 +16,12 @@ export default function MainLayout() {
       <div className="flex flex-col items-center justify-center min-h-screen bg-white space-y-6">
         <div className="flex flex-col items-center">
           <img
-            src="inkarp old.svg" // replace with your logo link
+            src="inkarp old.svg" // Replace with your logo path
             alt="Loading Logo"
-            className="w-50 h-50 animate-zoomInOut"
+            className="w-32 h-32 animate-zoomInOut" // Adjusted size
           />
-  
-          {/* Animated Text under Logo */}
-          <div className="mt-1 text-animation flex flex-wrap justify-center gap-1 text-purple-600 text-lg font-semibold">
+          {/* Animated Text */}
+          <div className="mt-2 text-animation flex flex-wrap justify-center gap-1 text-purple-600 text-lg font-semibold">
             {"Your Knowledge Our Solution".split("").map((char, index) => (
               <span key={index} style={{ animationDelay: `${index * 0.05}s` }}>
                 {char === " " ? "\u00A0" : char}
@@ -30,8 +29,8 @@ export default function MainLayout() {
             ))}
           </div>
         </div>
-  
-        {/* Scoped Animations */}
+
+        {/* Loading Animations */}
         <style>{`
           @keyframes zoomInOut {
             0%, 100% { transform: scale(1); }
@@ -53,39 +52,40 @@ export default function MainLayout() {
       </div>
     );
   }
-  
-  
 
-  // Normal page rendering
+  // After loading, show full layout
   return (
-    <div className="relative min-h-screen min-w-screen overflow-hidden">
-      {/* Background Section */}
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Background Video */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        <img
-          src="https://www.inkarp.co.in/assets/images/inkarp-building.png"
-          alt="Animated Background"
-          className="w-screen h-screen object-cover"
+        <video
+          className="w-full h-full object-cover"
+          src="/bg-video.mov" // Put your bg-video inside public folder
+          autoPlay
+          muted
+          loop
+          playsInline
           style={{
-            animation: "zoomPanSlow 120s ease-in-out infinite alternate",
+            animation: "zoomPanSlow 60s ease-in-out infinite alternate",
           }}
         />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-red/50" />
+        {/* Optional Dark Gradient Overlay */}
+        <div className="absolute pointer-events-none" />
       </div>
 
-      {/* Keyframes inside style tag */}
+      {/* Keyframes for video */}
       <style>{`
         @keyframes zoomPanSlow {
           0% {
-            transform: scale(1) translateX(0) translateY(0);
+            transform: scale(1) translate(0, 0);
           }
           100% {
-            transform: scale(1.05) translateX(-2%) translateY(-2%);
+            transform: scale(1.1) translate(-2%, -2%);
           }
         }
       `}</style>
 
-      {/* Scrollable Page Content */}
+      {/* Foreground Scrollable Content */}
       <div className="relative flex flex-col min-h-screen z-10">
         <Header />
         <main className="flex-grow">

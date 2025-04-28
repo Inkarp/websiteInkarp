@@ -1,71 +1,53 @@
 import React from 'react';
-import AnimatedNumbers from 'react-animated-numbers';
 
-const counters = [
-  { label: 'Principals', value: 50, suffix: '+', color: 'from-red-500 to-red-300' },
-  { label: 'Customers', value: 50000, suffix: '+', color: 'from-green-500 to-green-300' },
-  { label: 'Branches', value: 12, suffix: '', color: 'from-purple-500 to-purple-300' },
-  { label: 'Awards', value: 10, suffix: '', color: 'from-pink-500 to-pink-300' },
+const contentCards = [
+  { count: 50, suffix: '+', label: 'Principals', description: 'Trusted Principal Companies' , color: 'from-red-400 to-pink-300' },
+  { count: 50000, suffix: '+', label: 'Customers', description: 'Satisfied Customers Across India', color: 'from-green-400 to-green-200' },
+  { count: 12, suffix: '', label: 'Branches', description: 'Operational Branches', color: 'from-purple-400 to-purple-200' },
+  { count: 10, suffix: '', label: 'Awards', description: 'Recognitions and Achievements', color: 'from-yellow-400 to-yellow-200' },
 ];
 
 const Principles = () => {
   return (
-    <section className="py-10 mx-auto bg-white w-[96%] text-gray-800 rounded-full shadow-xl">
-      {/* Place keyframes in a <style> tag in the HTML header or a separate CSS file */}
-      <style>
-        {`
-          @keyframes fadeUp {
-            from {
-              opacity: 0;
-              transform: translateY(20px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-        `}
-      </style>
-
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20 flex flex-wrap justify-center gap-y-10 text-center">
-        {counters.map((counter, index) => (
-          <div
-            key={index}
-            className="w-full sm:w-1/2 md:w-1/4"
-            style={{
-              animation: `fadeUp 0.5s ease-out`,
-              animationDelay: `${index * 0.8}s`,
-              animationFillMode: 'both',
-            }}
-          >
-            <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold flex items-center justify-center">
-              <AnimatedNumbers
-                animateToNumber={counter.value}
-                transitions={(i) => ({
-                  type: 'spring',
-                  duration: 1.2 + i * 0.1,
-                })}
-                style={{
-                  fontWeight: 'bold',
-                  background: 'linear-gradient(90deg, black, red)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}
-                includeComma
-              />
-              <span
-                className="ml-1 text-xl sm:text-2xl md:text-3xl text-transparent bg-clip-text"
-                style={{
-                  backgroundImage: 'linear-gradient(90deg, black, red, white)',
-                }}
+    <section className="py-10">
+      <div className="flex flex-wrap justify-center gap-10">
+        {contentCards.map((card, index) => (
+          <div key={index} className="group perspective w-48 h-48">
+            <div className="relative preserve-3d w-full h-full duration-700 group-hover:rotate-y-180">
+              {/* Front */}
+              <div
+                className={`absolute backface-hidden w-full h-full bg-gradient-to-br ${card.color} rounded-2xl flex flex-col justify-center items-center shadow-lg p-4`}
               >
-                {counter.suffix}
-              </span>
+                <div className="text-4xl font-bold text-white">{card.count}{card.suffix}</div>
+                <div className="mt-2 text-lg font-semibold text-white">{card.label}</div>
+              </div>
+
+              {/* Back */}
+              <div className="absolute rotate-y-180 backface-hidden w-full h-full bg-white rounded-2xl flex flex-col justify-center items-center shadow-lg p-4 text-center">
+                <p className="text-gray-700 text-lg">{card.description}</p>
+              </div>
             </div>
-            <p className="mt-2 text-sm sm:text-base md:text-lg text-gray-700 font-semibold">{counter.label}</p>
           </div>
         ))}
       </div>
+
+      {/* Add perspective and rotation utility */}
+      <style>
+        {`
+          .perspective {
+            perspective: 1000px;
+          }
+          .preserve-3d {
+            transform-style: preserve-3d;
+          }
+          .rotate-y-180 {
+            transform: rotateY(180deg);
+          }
+          .backface-hidden {
+            backface-visibility: hidden;
+          }
+        `}
+      </style>
     </section>
   );
 };

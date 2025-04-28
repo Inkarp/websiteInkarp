@@ -1,5 +1,3 @@
-// TeamFloatingReveal.jsx
-
 import React, { useState } from "react";
 
 const teamMembers = [
@@ -53,14 +51,12 @@ const teamMembers = [
   },
 ];
 
-// TeamMagneticBlob.jsx
-
 function Team() {
   const [expandedMember, setExpandedMember] = useState(null);
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-100 py-24">
-      {/* Animated House Background */}
+      {/* Animated Background */}
       <div className="absolute inset-0 opacity-10 flex items-center justify-center z-0 animate-pulse">
         <img
           src="/images/house-animated.svg"
@@ -69,67 +65,76 @@ function Team() {
         />
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-3 gap-10">
+      {/* Team Members */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
         {teamMembers.map((member, idx) => (
           <div
             key={idx}
             onMouseEnter={() => setExpandedMember(idx)}
             onMouseLeave={() => setExpandedMember(null)}
-            className="relative cursor-pointer p-4 bg-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 animate-fadeIn"
+            className="relative group cursor-pointer p-6 bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 animate-fadeIn flex flex-col justify-between"
             style={{ animationDelay: `${idx * 0.2}s` }}
           >
-            <h3 className="text-center text-md font-semibold text-gray-600">{member.title}</h3>
+            {/* Normal View */}
+            <div className="flex flex-col items-center text-center space-y-3">
+              <h3 className="text-lg font-semibold text-gray-800">{member.title}</h3>
+            </div>
 
+            {/* Hover Expanded View */}
             {expandedMember === idx && (
-              <div 
-                className="absolute inset-0 flex flex-col items-center justify-center bg-white/90 backdrop-blur-md rounded-full p-6 shadow-2xl animate-scaleIn"
-              >
-                <div className="inline-block">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-24 h-24 rounded-full object-cover mb-3 border-4 border-red-200"
-                  />
-                </div>
+              <div className="absolute inset-0 bg-white rounded-xl shadow-2xl p-6 flex flex-col items-center justify-start text-center animate-scaleIn">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-24 h-24 rounded-full object-cover border-4 border-red-300 mb-4"
+                />
                 <h2 className="text-xl font-bold text-red-600">{member.name}</h2>
-                <p className="text-sm text-gray-700 mb-2">{member.title}</p>
-                <p className="text-xs text-center text-gray-500">{member.description}</p>
+                <p className="text-sm font-semibold text-gray-700 mb-2">{member.title}</p>
+                <p className="text-xs text-gray-500">{member.description}</p>
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block text-blue-600 text-sm font-medium hover:underline"
+                >
+                  View LinkedIn
+                </a>
               </div>
             )}
           </div>
         ))}
       </div>
 
+      {/* Internal CSS for animations */}
       <style jsx>{`
         @keyframes fadeIn {
           from {
             opacity: 0;
-            transform: translateY(-100px);
+            transform: translateY(-50px);
           }
           to {
             opacity: 1;
             transform: translateY(0);
           }
         }
-        
+
         @keyframes scaleIn {
           from {
             opacity: 0;
-            transform: scale(0.9);
+            transform: scale(0.95);
           }
           to {
             opacity: 1;
             transform: scale(1);
           }
         }
-        
+
         .animate-fadeIn {
-          animation: fadeIn 0.5s forwards;
+          animation: fadeIn 0.6s forwards;
         }
-        
+
         .animate-scaleIn {
-          animation: scaleIn 0.3s forwards;
+          animation: scaleIn 0.4s forwards;
         }
       `}</style>
     </section>
@@ -137,4 +142,3 @@ function Team() {
 }
 
 export default Team;
-
