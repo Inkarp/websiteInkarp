@@ -4,9 +4,31 @@ function OurCompanies() {
   return (
     <section className="bg-white dark:bg-gray-900 shadow-xl rounded-lg w-[96%] mx-auto mt-10">
       <div className="container px-4 py-10 mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-10">
-          Our Group Companies
-        </h2>
+        <div className="flex justify-center items-center">
+          <h2 className="flex flex-wrap text-4xl sm:text-5xl font-bold text-gray-800 dark:text-white mb-10 text-center font-[MaxOT]">
+            {"Our Group Companies".split("").map((letter, index) => (
+              <span
+                key={index}
+                className="inline-block animate-wave"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {letter === " " ? "\u00A0" : letter}
+              </span>
+            ))}
+          </h2>
+
+          {/* Tailwind custom animation inside style tag */}
+          <style>{`
+    @keyframes wave {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    .animate-wave {
+      animation: wave 2s ease-in-out infinite;
+    }
+  `}</style>
+        </div>
+
 
         <div className="max-w-screen-xl mx-auto mt-10 flex flex-col lg:flex-row justify-center items-center gap-10">
           {/* Left Side - 3 Images with animation from left */}

@@ -2,7 +2,7 @@ function Slider() {
     return (
       <div className="overflow-hidden w-full h-25 flex items-center">
         <div
-          className="flex animate-slide gap-16 text-6xl font-extrabold whitespace-nowrap h-full" // Centered text and full height
+          className="uppercase flex animate-slide gap-16 text-6xl font-extrabold whitespace-nowrap h-full" // Centered text and full height
           style={{
             background: "linear-gradient(180deg, red,black)", // Added linear gradient background
             WebkitBackgroundClip: "text", // Clips the background to the text (useful for gradient text)

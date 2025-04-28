@@ -21,10 +21,10 @@ const  AboutSection = () => {
       {/* Main Heading */}
       <header className="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 md:px-10 py-24 relative">
         <article className="bg-white/30 backdrop-blur-md p-10 rounded-md w-full md:w-1/2 z-10 animate-slideInRight">
-          <p className="uppercase tracking-widest text-gray-500 font-semibold mb-4">About Inkarp</p>
-          <h2 className="text-4xl md:text-5xl font-light uppercase tracking-wider text-gray-600 mb-6">One Stop Solution
+          <p className="uppercase tracking-widest text-red-500 font-semibold mb-4 font-[MaxOT]">About Inkarp</p>
+          <h2 className="text-4xl md:text-5xl font-light uppercase tracking-wider text-gray-600 mb-6 font-[MaxOT]">One Stop Solution
           for all research needs</h2>
-          <p className="text-base md:text-lg leading-relaxed mb-8">
+          <p className="text-base md:text-lg leading-relaxed mb-8 font-[Roboto]">
           Our mission is to become a one stop solution for all research solutions, we are developing a holistic platform that integrates the supply of high-quality products, installation support, and reliable after-sales support. We are currently focusing on providing technologically advanced after-sales support with the best-in-class trained engineers to guarantee that your research requirements are dealt on time. As Inkarp, we are doing all we can to analyse the evolution of science and enable our customers in simplifying their application requirements.
           </p>
           <button className="px-8 py-4 border border-gray-400 uppercase tracking-wider font-bold hover:shadow-inner hover:bg-gray-100 transition">Know More</button>
