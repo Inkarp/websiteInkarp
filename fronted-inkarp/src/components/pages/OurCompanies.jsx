@@ -1,4 +1,4 @@
-import { MotionDiv } from "../../utils/MotionWrapper";
+import React from "react";
 
 function OurCompanies() {
   return (
@@ -10,13 +10,7 @@ function OurCompanies() {
 
         <div className="max-w-screen-xl mx-auto mt-10 flex flex-col lg:flex-row justify-center items-center gap-10">
           {/* Left Side - 3 Images with animation from left */}
-          <MotionDiv
-            className="flex flex-col items-center gap-3"
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-          >
+          <div className="flex flex-col items-center gap-3 animate-slideInLeft">
             <div className="flex flex-wrap justify-center gap-6">
               <img src="https://www.inkarp.co.in/assets/images/sparksci.png" alt="Subsidiary 1" className="w-32 sm:w-36 md:w-40 h-auto" />
               <img src="https://www.inkarp.co.in/assets/images/inkarp-instrumental-services.png" alt="Subsidiary 2" className="w-32 sm:w-36 md:w-40 h-auto" />
@@ -25,19 +19,13 @@ function OurCompanies() {
             <div className="font-semibold text-xl text-red-800 mt-3 text-center">
               100% Owned Subsidiaries
             </div>
-          </MotionDiv>
+          </div>
 
           {/* Divider */}
           <div className="hidden lg:block w-px h-36 bg-red-500" />
 
           {/* Right Side - 2 Images with animation from right */}
-          <MotionDiv
-            className="flex flex-col items-center gap-3"
-            initial={{ x: 100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-          >
+          <div className="flex flex-col items-center gap-3 animate-slideInRight">
             <div className="flex flex-wrap justify-center gap-6">
               <img src="inkarp old.svg" alt="Joint Venture 1" className="w-32 sm:w-36 md:w-40 h-auto" />
               <img src="inkarp old.svg" alt="Joint Venture 2" className="w-32 sm:w-36 md:w-40 h-auto" />
@@ -45,9 +33,41 @@ function OurCompanies() {
             <div className="font-semibold text-xl text-red-800 mt-3 text-center">
               Our Joint Ventures
             </div>
-          </MotionDiv>
+          </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes slideInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-100px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateX(100px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        .animate-slideInLeft {
+          animation: slideInLeft 1s ease-out forwards;
+        }
+
+        .animate-slideInRight {
+          animation: slideInRight 1s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 }

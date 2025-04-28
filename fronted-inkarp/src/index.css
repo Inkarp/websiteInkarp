@@ -1,11 +1,2 @@
 @import "tailwindcss";
 
-@layer utilities {
-    .writing-vertical-lr {
-      writing-mode: vertical-lr;
-    }
-  
-    .border-end-end-50 {
-      border-end-end-radius: 50%;
-    }
-  }

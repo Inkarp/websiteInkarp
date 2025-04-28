@@ -1,4 +1,4 @@
-import { MotionDiv, MotionFigure } from '../../../utils/MotionWrapper';
+import React from 'react';
 
 const AboutSupport = () => {
   return (
@@ -8,58 +8,36 @@ const AboutSupport = () => {
           {/* Image Column */}
           <div className="relative">
             {/* Shape Decorations */}
-            <MotionDiv
-              className="absolute bottom-20 left-0 w-32 h-32 bg-no-repeat bg-contain rotate-[15deg] z-0"
+            <div
+              className="absolute bottom-20 left-0 w-32 h-32 bg-no-repeat bg-contain rotate-[15deg] z-0 animate-rotateSlow"
               style={{ backgroundImage: "url(https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1050&q=80)" }}
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
             />
-            <MotionDiv
-              className="absolute top-24 right-0 w-32 h-32 bg-no-repeat bg-contain rotate-[15deg] z-0"
+            <div
+              className="absolute top-24 right-0 w-32 h-32 bg-no-repeat bg-contain rotate-[15deg] z-0 animate-rotateReverse"
               style={{ backgroundImage: "url(https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1050&q=80)" }}
-              animate={{ rotate: -360 }}
-              transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
             />
 
             {/* Main Image (Smaller Width) */}
-            <MotionFigure
-              className="relative z-10 w-3/4"
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
+            <figure className="relative z-10 w-3/4 animate-slideUp">
               <img
                 src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1050&q=80"
                 alt="about-13"
                 className="rounded-lg shadow-lg"
               />
-            </MotionFigure>
+            </figure>
 
             {/* Overlay Image (Larger Width) */}
-            <MotionFigure
-              className="absolute right-0 bottom-0 z-20 w-3/4"
-              initial={{ y: -30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.1 }}
-            >
+            <figure className="absolute right-0 bottom-0 z-20 w-3/4 animate-slideDown">
               <img
                 src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1050&q=80"
                 alt="about-14"
                 className="rounded-lg shadow-xl"
               />
-            </MotionFigure>
+            </figure>
           </div>
 
           {/* Content Column */}
-          <MotionDiv
-            className="relative z-10"
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+          <div className="relative z-10 animate-slideInRight">
             <div className="mb-6">
               <h5 className="text-sm font-semibold uppercase text-red-600 ">Inkarp</h5>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
@@ -79,9 +57,82 @@ const AboutSupport = () => {
                 customers.
               </p>
             </div>
-          </MotionDiv>
+          </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes rotateSlow {
+          from {
+            transform: rotate(15deg);
+          }
+          to {
+            transform: rotate(375deg);
+          }
+        }
+
+        @keyframes rotateReverse {
+          from {
+            transform: rotate(15deg);
+          }
+          to {
+            transform: rotate(-345deg);
+          }
+        }
+
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        .animate-rotateSlow {
+          animation: rotateSlow 20s linear infinite;
+        }
+
+        .animate-rotateReverse {
+          animation: rotateReverse 25s linear infinite;
+        }
+
+        .animate-slideUp {
+          animation: slideUp 0.8s ease-out forwards;
+        }
+
+        .animate-slideDown {
+          animation: slideDown 1.1s ease-out forwards;
+        }
+
+        .animate-slideInRight {
+          animation: slideInRight 0.8s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 };
