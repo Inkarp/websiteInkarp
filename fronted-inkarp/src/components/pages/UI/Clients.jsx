@@ -41,7 +41,9 @@ function Clients() {
           animation: slideInLeft 1s ease-out forwards;
         }
       `}</style>
-    </section>
+
+      
+    </section>     
   );
 }
 
