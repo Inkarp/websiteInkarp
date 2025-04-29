@@ -23,7 +23,7 @@ export default function NewAbout() {
   return (
     <div className="flex flex-col items-center justify-center w-[96%] bg-red-100 space-y-6 mx-auto py-10">
       {/* 🧱 3D Cube Split Animation Heading */}
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center ">
         {/* <div className="flex">
           <div
             className="relative w-[300px] h-[80px] leading-[80px] text-3xl font-extrabold font-sans bg-red-300 overflow-hidden"
@@ -53,7 +53,7 @@ export default function NewAbout() {
             className="relative w-[300px] h-[80px] leading-[80px] text-3xl font-extrabold font-sans bg-red-300 overflow-hidden"
             style={{ transform: "perspective(100px) rotateY(-15deg)", transformOrigin: "right" }}
           >
-            <div className="absolute whitespace-nowrap animate-marquee text-red-900">
+            <div className="absolute whitespace-nowrap animate-marquee text-red-900 font-[MaxOT]">
               Who Are We
             </div>
           </div>
@@ -61,14 +61,14 @@ export default function NewAbout() {
             className="relative w-[300px] h-[80px] leading-[80px] text-3xl font-extrabold font-sans bg-red-500 overflow-hidden"
             style={{ transform: "perspective(100px) rotateY(15deg)", transformOrigin: "left" }}
           >
-            <div className="absolute whitespace-nowrap animate-marquee text-red-50">
+            <div className="absolute whitespace-nowrap animate-marquee text-red-50 font-[MaxOT]">
               About Inkarp
             </div>
           </div>
         </div>
          
           <div>   
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed font-[Roboto]">
             Our mission is to become a one stop solution for all research solutions, we are developing a holistic platform that integrates the supply of high-quality products, installation support, and reliable after-sales support. We are currently focusing on providing technologically advanced after-sales support with the best-in-class trained engineers to guarantee that your research requirements are dealt on time. As Inkarp, we are doing all we can to analyse the evolution of science and enable our customers in simplifying their application requirements.
             </p>
           </div>
@@ -82,8 +82,8 @@ export default function NewAbout() {
                 key={i}
                 className={`card card-${i + 1} flex flex-col items-center justify-center text-center text-white bg-red-500 rounded-xl p-6 transition-all duration-500`}
               >
-                <h3 className="text-xl font-bold mb-2">{card.title}</h3>
-                <p className="text-sm">{card.description}</p>
+                <h3 className="text-xl font-bold mb-2 font-[MaxOT]">{card.title}</h3>
+                <p className="text-sm font-[Roboto]">{card.description}</p>
               </div>
             ))}
           </div>

@@ -5,11 +5,11 @@ export default function NavbarNew() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50  py-4 px-4 ">
+    <div className="fixed top-0 left-0 w-full z-50  py-2 px-4 ">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Left - Logo */}
-        <div className="bg-red-100 rounded-full px-4 py-2 shadow flex items-center gap-2">
-          <img src="/inkarp old.svg" alt="Inkarp Logo" className="w-20 h-10 object-contain" />
+        <div className=" rounded-full px-4 py-2 flex items-center gap-2">
+          <img src="/inkarp old.svg" alt="Inkarp Logo" className="h-15 object-contain" />
         </div>
 
         {/* Hamburger Menu - Mobile */}
@@ -23,10 +23,10 @@ export default function NavbarNew() {
         </div>
 
         {/* Center Navigation - Desktop */}
-        <div className="hidden lg:flex bg-red-100 rounded-full px-4 py-2 shadow flex-wrap justify-center items-center gap-4 font-semibold text-sm">
-          <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-[17px]">
+        <div className="hidden lg:flex bg-red-100 rounded-full px-8 py-4 shadow flex-wrap justify-center items-center gap-4 font-semibold text-sm">
+          {/* <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-[17px]">
             <span className="text-white">⚛️</span>
-          </div>
+          </div> */}
           {["Home", "Our Story", "Verticals", "Careers", "Insights & Updates", "Contact Us", "CatalystCue"].map(link => (
             <a key={link} href="#" className="hover:underline whitespace-nowrap">
               {link}
