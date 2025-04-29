@@ -6,6 +6,7 @@ import Images from "./UI/Images";
 import Mission from "./UI/Mission";
 import NewTeam from "./UI/NewTeam";
 import SubBlog from "./UI/SubBlog";
+import TeamMembers from "./UI/TeamMembers";
 
 const OurStory = () => {
     return (
@@ -47,7 +48,8 @@ const OurStory = () => {
             <NewTeam />
             </div>
             <Images />
-            <Team />
+            {/* <Team /> */}
+            <TeamMembers />
 
             <div className="container px-6 py-10 mx-auto flex flex-col items-center text-center space-y-6">
                 <h2 className="text-3xl lg:text-4xl font-bold text-red-800 dark:text-red-400">

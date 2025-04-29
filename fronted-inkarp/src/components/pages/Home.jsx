@@ -12,25 +12,31 @@ import NewsEvents from './UI/NewsEvents';
 import AboutSection from './UI/AboutSection';
 import NewTeam from './UI/NewTeam';
 import Images from './UI/Images';
-import PrinciplesNew from './UI/PrinciplesNew';
+import WhyChooseInkarp from './UI/WhyChooseInkarp';
+import BlogCardList from './UI/BlogCardList';
+import NewAbout from './UI/NewAbout';
 
 const Home = () => {
     return (
         <>
+    
             <HeroSection />
-            <Principles />
-            {/* <PrinciplesNew /> */}
+            {/* <WhyChooseInkarp/>
+            <BlogCardList /> */}
+            <NewAbout/>
+            {/* <Offerings /> */}
+            {/* <Principles /> */}
             {/* <About /> */}
             {/* <Images /> */}
             {/* <NewTeam /> */}
-            <AboutSection/>
-            <Slider />
-            <OurCompanies />
+            {/* <AboutSection/>
+            <Slider /> */}
+            {/* <OurCompanies /> */}
             {/* <OurPrinciples /> */}
-            <Offerings />
-            <Reviews />
+            
+            {/* <Reviews />
             <SubBlog />
-            <NewsEvents />
+            <NewsEvents /> */}
         </>
     );
 };

@@ -1,35 +1,36 @@
 import React, { useEffect } from "react";
 
-const characters = "Principles".split("");
+const words = [
+  { text: "Principles", color: "#f67d7e", number: 50 },
+  { text: "Awards", color: "#6ee7b7", number: 10 },
+  { text: "Customers", color: "#93c5fd", number: 50000 },
+  { text: "Branches", color: "#facc15", number: 12 },
+];
 
 const PrinciplesNew = () => {
   useEffect(() => {
     const style = document.createElement("style");
     let keyframes = "";
 
-    for (let i = 1; i <= characters.length; i++) {
-      keyframes += `
-        @keyframes spin${i} {
-          0% {
-            transform: rotate(${i * 17}deg);
-            font-variation-settings: "wdth" 50;
+    words.forEach((word, wordIdx) => {
+      for (let i = 0; i < word.text.length; i++) {
+        const idx = wordIdx * 20 + i;
+        keyframes += `
+          @keyframes spin${idx} {
+            0% {
+              transform: rotate(${i * (360 / word.text.length)}deg) translate(80px) rotate(-${i * (360 / word.text.length)}deg);
+            }
+            100% {
+              transform: rotate(${i * (360 / word.text.length) + 360}deg) translate(80px) rotate(-${i * (360 / word.text.length) + 360}deg);
+            }
           }
-          20% { font-variation-settings: "wdth" 145; }
-          30% { font-variation-settings: "wdth" 155; }
-          50% { font-variation-settings: "wdth" 250; }
-          70% { font-variation-settings: "wdth" 155; }
-          80% { font-variation-settings: "wdth" 145; }
-          100% {
-            transform: rotate(${i * 17 + 360}deg);
-            font-variation-settings: "wdth" 50;
-          }
-        }
 
-        .spin${i} {
-          animation: spin${i} 10s linear infinite;
-        }
-      `;
-    }
+          .spin${idx} {
+            animation: spin${idx} 10s linear infinite;
+          }
+        `;
+      }
+    });
 
     style.innerHTML = keyframes;
     document.head.appendChild(style);
@@ -40,26 +41,32 @@ const PrinciplesNew = () => {
   }, []);
 
   return (
-    <div className="w-full h-[600px] bg-[#004e58] flex justify-center items-center overflow-hidden">
-      <div className="relative">
-        {characters.map((char, idx) => (
-          <span
-            key={idx}
-            className={`absolute text-[28px] text-[#f67d7e] text-center spin${idx + 1}`}
-            style={{
-              fontFamily: "Dusseldot",
-              top: "20px",
-              width: "40px",
-              height: "120px",
-              transformOrigin: "bottom center",
-              textShadow: "-3px 3px 6px rgba(150, 150, 150, 1)",
-              transform: `rotate(${(idx + 1) * 17}deg)`
-            }}
-          >
-            {char === " " ? "\u00A0" : char}
-          </span>
-        ))}
-      </div>
+    <div className="w-full bg-[#004e58] flex justify-center items-center py-10 space-x-6">
+      {words.map((word, wordIdx) => (
+        <div key={wordIdx} className="relative w-48 h-48 rounded-full flex items-center justify-center">
+          <div className="absolute w-full h-full">
+            {word.text.split("").map((char, cidx) => (
+              <span
+                key={cidx}
+                className={`absolute text-[18px] font-extrabold text-center uppercase spin${wordIdx * 20 + cidx}`}
+                style={{
+                  fontFamily: "Dusseldot",
+                  top: "50%",
+                  left: "50%",
+                  transformOrigin: "0 -80px",
+                  color: word.color,
+                  textShadow: "-2px 2px 5px rgba(150, 150, 150, 1)",
+                }}
+              >
+                {char}
+              </span>
+            ))}
+          </div>
+          <div className="relative z-10 text-center">
+            <div className="text-3xl font-extrabold text-white">{word.number}</div>
+          </div>
+        </div>
+      ))}
 
       {/* Font Face Only */}
       <style>

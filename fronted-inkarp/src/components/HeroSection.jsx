@@ -4,7 +4,7 @@ import { Play, Circle, ChevronLeft, ChevronRight } from "lucide-react";
 function HeroSection() {
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1555181126-cf46a03827c0?auto=format&fit=crop&w=1050&q=80",
+      image: "https://images.unsplash.com/photo-1520856707909-75c4048cc858?ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80",
       title: "Innovative Designs",
       subtitle: "Explore our newest collection of modern innovations.",
     },
@@ -19,7 +19,7 @@ function HeroSection() {
       subtitle: "Engineered for exact results every time.",
     },
     {
-      image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1050&q=80",
+      image: "https://images.unsplash.com/photo-1520856707909-75c4048cc858?ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80",
       title: "Premium Materials",
       subtitle: "Only the finest go into our products.",
     },
@@ -34,8 +34,8 @@ function HeroSection() {
   const [transitioning, setTransitioning] = useState(true);
   const autoSlideRef = useRef(null);
   const slideContainerRef = useRef(null);
+  const videoRef = useRef(null);
 
-  // Auto-slide logic
   useEffect(() => {
     startAutoSlide();
     return () => stopAutoSlide();
@@ -53,7 +53,6 @@ function HeroSection() {
 
   const goToSlide = (index) => {
     if (index >= slides.length) {
-      // Loop back to the first slide
       setCurrentIndex(0);
     } else {
       setCurrentIndex(index);
@@ -64,7 +63,7 @@ function HeroSection() {
   const handleTransitionEnd = () => {
     if (currentIndex === slides.length) {
       setTransitioning(false);
-      setCurrentIndex(0); // Loop back to the first slide after the last one
+      setCurrentIndex(0);
     }
   };
 
@@ -79,7 +78,7 @@ function HeroSection() {
   };
 
   return (
-    <section className="w-full py-10 px-4 lg:px-8">
+    <section className="w-full py-5 px-4 lg:px-8">
       <style>{`
         .slide-transition {
           transition: transform 0.8s ease-in-out;
@@ -89,11 +88,16 @@ function HeroSection() {
       <div className="w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-6 ">
         {/* Left static image with button */}
         <div className="relative lg:w-1/2 mx-auto h-[400px] md:h-[500px]">
-          <img
+          <video
+            ref={videoRef}
             className="rounded-2xl w-full h-full object-cover"
-            src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1050&q=80"
-            alt="Static"
-          />
+            src="bg-video.mov"
+            muted
+            loop
+            playsInline
+            onMouseEnter={() => videoRef.current.play()}
+            onMouseLeave={() => videoRef.current.pause()}
+          ></video>
           <a
             href="https://www.youtube.com/@InkarpInstrument/videos"
             className="absolute bottom-5 right-5 md:bottom-10 md:right-10 bg-white px-4 py-2 rounded-full flex items-center gap-2 z-10 shadow-lg hover:shadow-xl transition duration-300 hover:bg-red-800 hover:text-white"
@@ -108,7 +112,6 @@ function HeroSection() {
 
         {/* Slider Right */}
         <div className="relative w-full lg:w-1/2 h-[400px] md:h-[500px] overflow-hidden rounded-2xl">
-          {/* Image slides */}
           <div
             ref={slideContainerRef}
             onTransitionEnd={handleTransitionEnd}
@@ -125,25 +128,25 @@ function HeroSection() {
                   alt={slide.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute bottom-10 left-0 right-0  text-red-500 p-4">
-                  <h2 className="text-lg md:text-2xl text-white font-bold" style={{ fontFamily: 'MaxOT' }} >{slide.title}</h2>
-                  <p className="text-sm md:text-base text-white" style={{ fontFamily: 'roboto' }} >{slide.subtitle}</p>
+                <div className="absolute bottom-10 left-0 right-0 text-red-500 p-4">
+                  <h2 className="text-lg md:text-2xl text-white font-bold" style={{ fontFamily: 'MaxOT' }}>{slide.title}</h2>
+                  <p className="text-sm md:text-base text-white" style={{ fontFamily: 'Roboto' }}>{slide.subtitle}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Arrows on right center */}
+          {/* Arrows */}
           <div className="absolute right-0 px-2 py-2 bg-white rounded-l-xl top-1/2 transform -translate-y-1/2 z-10 flex flex-col gap-3">
             <button
               onClick={() => handleManual("prev")}
-              className=" p-2 rounded-full  hover:bg-red-100"
+              className="p-2 rounded-full hover:bg-red-100"
             >
               <ChevronLeft />
             </button>
             <button
               onClick={() => handleManual("next")}
-              className=" p-2 rounded-full  hover:bg-red-100"
+              className="p-2 rounded-full hover:bg-red-100"
             >
               <ChevronRight />
             </button>
@@ -154,9 +157,7 @@ function HeroSection() {
             {slides.map((_, index) => (
               <div
                 key={index}
-                className={`w-3 h-3 rounded-full ${
-                  currentIndex === index ? "bg-white" : "bg-white/50"
-                }`}
+                className={`w-3 h-3 rounded-full ${currentIndex === index ? "bg-white" : "bg-white/50"}`}
               ></div>
             ))}
           </div>

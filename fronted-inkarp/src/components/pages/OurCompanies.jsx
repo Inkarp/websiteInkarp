@@ -5,7 +5,7 @@ function OurCompanies() {
     <section className="bg-white dark:bg-gray-900 shadow-xl rounded-lg w-[96%] mx-auto mt-10">
       <div className="container px-4 py-10 mx-auto text-center">
         <div className="flex justify-center items-center">
-          <h2 className="flex flex-wrap text-4xl sm:text-5xl font-bold text-gray-800 dark:text-white mb-10 text-center font-[MaxOT]">
+          <h2 className="flex flex-wrap text-4xl sm:text-5xl font-bold text-gray-800 dark:text-white mb-10 text-center font-[MaxOT] bg-red-200 px-5 py-4 rounded-xl">
             {"Our Group Companies".split("").map((letter, index) => (
               <span
                 key={index}

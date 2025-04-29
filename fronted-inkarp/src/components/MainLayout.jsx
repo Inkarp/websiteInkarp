@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 import Navbar from "./Navbar";
+import NavbarNew from "./NavbarNew";
 
 export default function MainLayout() {
   const [isLoading, setIsLoading] = useState(true);
@@ -89,7 +90,8 @@ export default function MainLayout() {
       {/* Foreground Scrollable Content */}
       <div className="relative flex flex-col min-h-screen z-10">
         {/* <Header /> */}
-        <Navbar/>
+        {/* <Navbar/> */}
+        <NavbarNew/>
         <main className="flex-grow">
           <Outlet />
         </main>

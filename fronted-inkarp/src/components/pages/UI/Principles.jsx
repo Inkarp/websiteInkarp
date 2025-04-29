@@ -1,15 +1,15 @@
 import React from 'react';
 
 const contentCards = [
-  { count: 50, suffix: '+', label: 'Principals', description: 'Trusted Principal Companies' , color: 'from-red-400 to-pink-300' },
-  { count: 50000, suffix: '+', label: 'Customers', description: 'Satisfied Customers Across India', color: 'from-green-400 to-green-200' },
-  { count: 12, suffix: '', label: 'Branches', description: 'Operational Branches', color: 'from-purple-400 to-purple-200' },
-  { count: 10, suffix: '', label: 'Awards', description: 'Recognitions and Achievements', color: 'from-yellow-400 to-yellow-200' },
+  { count: 50, suffix: '+', label: 'Principals', description: 'Trusted Principal Companies' , color: 'from-red-600 to-red-300' },
+  { count: 50000, suffix: '+', label: 'Customers', description: 'Satisfied Customers Across India', color: 'from-red-400 to-red-800' },
+  { count: 12, suffix: '', label: 'Branches', description: 'Operational Branches', color: 'from-red-800 to-red-200' },
+  { count: 10, suffix: '', label: 'Awards', description: 'Recognitions and Achievements', color: 'from-red-500 to-white' },
 ];
 
 const Principles = () => {
   return (
-    <section className="py-10">
+    <section className="py-5">
       <div className="flex flex-wrap justify-center gap-10">
         {contentCards.map((card, index) => (
           <div key={index} className="group perspective w-48 h-48">
@@ -24,7 +24,7 @@ const Principles = () => {
 
               {/* Back */}
               <div className="absolute rotate-y-180 backface-hidden w-full h-full bg-white rounded-2xl flex flex-col justify-center items-center shadow-lg p-4 text-center">
-                <p className="text-gray-700 text-lg">{card.description}</p>
+                <p className="text-gray-700 text-lg font-[MaxOT]">{card.description}</p>
               </div>
             </div>
           </div>
