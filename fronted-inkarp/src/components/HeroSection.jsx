@@ -86,7 +86,7 @@ function HeroSection() {
         }
       `}</style>
 
-      <div className="w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-6 mt-20">
+      <div className="w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-6 ">
         {/* Left static image with button */}
         <div className="relative lg:w-1/2 mx-auto h-[400px] md:h-[500px]">
           <img

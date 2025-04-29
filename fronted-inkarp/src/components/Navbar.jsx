@@ -17,20 +17,22 @@ const Navbar = () => {
   }, []);
 
   const navLinkClasses =
-    "block text-black dark:text-gray-200 lg:mx-1 transition transform hover:-translate-y-1 hover:text-gray-900 dark:hover:text-gray-400 hover:bg-red-300 duration-300 rounded-full px-3 py-3 text-[16px] font-bold lg-text-sm lg:font-semibold lg:rounded-full lg:p-2 lg:transition lg:duration-300 lg:hover:bg-red-300 lg:hover:text-gray-900 dark:lg:hover:text-gray-400";
+    "block text-black dark:text-gray-200 lg:mx-1 transition transform hover:-translate-y-1 hover:text-gray-900 dark:hover:text-gray-400 hover:bg-red-300 duration-300 rounded-full px-3 py-3 text-[17px] font-bold lg-text-sm lg:font-semibold lg:rounded-full lg:p-2 lg:transition lg:duration-300 lg:hover:bg-red-300 lg:hover:text-gray-900 dark:lg:hover:text-gray-400 font-[MaxOT]";
 
   return (
     <>
       <nav className={`rounded-full transition-all duration-300 shadow-xl w-[96%] sticky top-3 z-50 bg-white mx-auto ${scrolled ? 'py-2 scale-95' : 'py-2 scale-100'}`}>
         <div className="container px-2 mx-auto lg:flex lg:justify-between lg:items-center">
           <div className="flex items-center justify-between">
+
             <Link to="/">
               <img
-                className="w-32 h-auto lg:ml-10 md:ml-2 sm:ml-2 transition-transform duration-300 sm:w-32 sm:h-24"
+                className="w-36 sm:ml-5 h-auto animate-logoPulse"
                 src="/inkarp old.svg"
                 alt="Logo"
               />
             </Link>
+
             <button className="flex items-center justify-center px-3 py-2 mx-5 text-sm font-medium tracking-wide text-white bg-red-700 rounded-lg hover:bg-gray-600 transition duration-300">
               Product Profile <ArrowDownToLine className="ml-2" />
             </button>
@@ -79,6 +81,7 @@ const Navbar = () => {
                 { label: 'Verticals', to: '/verticals' },
                 { label: 'Careers', to: '/careers' },
                 { label: 'Contact Us', to: '/contact' },
+                // { label: 'Product Profile', to: '/' },
               ].map(link => (
                 <Link key={link.to} to={link.to} className={navLinkClasses}>
                   {link.label}
@@ -142,13 +145,30 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Start Typing ...."
-            
+
             className="w-full max-w-xl px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-red-400 focus:ring-opacity-100 focus:ring-offset-2 transition duration-300 placeholder:text-lg placeholder:text-black placeholder:font-bold"
             autoFocus
           />
-         
+
         </div>
       )}
+      <style>
+        {`
+    @keyframes logoPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.08);
+      }
+    }
+
+    .animate-logoPulse {
+      animation: logoPulse 2.5s ease-in-out infinite;
+    }
+  `}
+      </style>
+
     </>
   );
 };

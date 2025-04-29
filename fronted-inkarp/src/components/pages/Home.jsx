@@ -12,12 +12,14 @@ import NewsEvents from './UI/NewsEvents';
 import AboutSection from './UI/AboutSection';
 import NewTeam from './UI/NewTeam';
 import Images from './UI/Images';
+import PrinciplesNew from './UI/PrinciplesNew';
 
 const Home = () => {
     return (
         <>
             <HeroSection />
             <Principles />
+            {/* <PrinciplesNew /> */}
             {/* <About /> */}
             {/* <Images /> */}
             {/* <NewTeam /> */}
