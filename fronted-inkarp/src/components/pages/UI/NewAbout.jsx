@@ -70,9 +70,9 @@ export default function BubbleScrollAbout() {
               key={i}
               className="min-w-full snap-start flex items-center justify-center"
             >
-              <div className="bg-white max-w-[900px] w-full rounded-2xl shadow-xl flex flex-col p-6 gap-6 h-auto items-center justify-start">
-                {/* 🧊 3D Cube Heading Inside Each Slide */}
-                <div className="flex flex-col sm:flex-row justify-center items-center  mb-4">
+              <div className="bg-white max-w-[1100px] w-full rounded-2xl shadow-xl flex flex-col p-6 gap-6 h-auto items-center justify-start">
+                {/* Cube Header */}
+                <div className="flex flex-col sm:flex-row justify-center items-center mb-4">
                   <div
                     className="relative w-[220px] sm:w-[250px] h-[60px] sm:h-[80px] leading-[60px] sm:leading-[80px] text-lg sm:text-2xl font-extrabold bg-red-300 overflow-hidden"
                     style={{
@@ -113,15 +113,15 @@ export default function BubbleScrollAbout() {
                     </div>
                   </div>
                 ) : (
-                  <div className={`flex flex-col lg:flex-row items-center justify-between gap-6 w-full ${zigzag ? "" : "lg:flex-row-reverse"}`}>
+                  <div className={`flex flex-row items-center justify-between gap-8 w-full ${zigzag ? "" : "flex-row-reverse"}`}>
                     {/* Bubble */}
-                    <div className="min-w-[140px] min-h-[140px] bg-red-500 text-white rounded-full flex items-center justify-center flex-col text-center shadow-lg animate-float">
-                      <h2 className="text-base sm:text-lg font-bold font-[MaxOT]">{slide.label}</h2>
+                    <div className="w-[220px] h-[220px] bg-red-500 text-white rounded-full flex items-center justify-center flex-col text-center shadow-lg animate-float">
+                      <h2 className="text-xl sm:text-2xl font-bold font-[MaxOT]">{slide.label}</h2>
                     </div>
-                    {/* Text */}
-                    <div className="w-full text-left space-y-3 max-h-[300px] overflow-y-auto">
-                      <h3 className="text-lg font-bold text-red-700 font-[MaxOT]">{slide.title}</h3>
-                      <p className="text-sm sm:text-base text-gray-700 font-[Roboto] leading-relaxed">
+                    {/* Right-aligned text with limited width */}
+                    <div className={`lg:w-[60%] text-gray-700 font-[Roboto] ${zigzag ? "text-right" : "text-left"}`}>
+                      <h3 className="text-xl font-bold text-red-700 font-[MaxOT] mb-2">{slide.title}</h3>
+                      <p className="text-base leading-relaxed max-w-[95%]">
                         {slide.description}
                       </p>
                     </div>
@@ -133,7 +133,7 @@ export default function BubbleScrollAbout() {
         })}
       </div>
 
-      {/* Indicator Dots */}
+      {/* Dots */}
       <div className="flex justify-center items-center gap-3 mt-6">
         {slides.map((_, index) => (
           <div
