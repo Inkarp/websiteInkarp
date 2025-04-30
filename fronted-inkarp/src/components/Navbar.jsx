@@ -22,7 +22,7 @@ const Navbar = () => {
     <>
       <nav className={`rounded-full transition-all duration-300 shadow-xl w-[96%] sticky top-3 z-50 bg-white mx-auto ${scrolled ? 'py-2 scale-95' : 'py-2 scale-100'}`}>
         <div className="container px-2 mx-auto lg:flex lg:justify-between lg:items-center">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between w-full lg:w-auto">
             <Link to="/">
               <img
                 className="w-36 sm:ml-5 h-auto animate-logoPulse"
@@ -45,26 +45,37 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Mobile menu button */}
-            <div className="flex lg:hidden md:ml-2 sm:ml-2">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-500 dark:text-gray-200 hover:text-gray-600 focus:outline-none"
-              >
-                {!isOpen ? (
+            {/* Mobile Menu Toggle */}
+            {!isOpen && (
+              <div className="flex lg:hidden md:ml-2 sm:ml-2">
+                <button
+                  onClick={() => setIsOpen(true)}
+                  className="text-gray-500 dark:text-gray-200 hover:text-gray-600 focus:outline-none"
+                  aria-label="open menu"
+                >
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
                   </svg>
-                ) : (
+                </button>
+              </div>
+            )}
+
+            {isOpen && (
+              <div className="flex lg:hidden md:ml-2 sm:ml-2">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-500 dark:text-gray-200 hover:text-gray-600 focus:outline-none"
+                  aria-label="close menu"
+                >
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
-                )}
-              </button>
-            </div>
+                </button>
+              </div>
+            )}
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile / Desktop Nav Links */}
           <div
             className={`${isOpen
               ? "translate-x-0 opacity-100"
@@ -84,6 +95,7 @@ const Navbar = () => {
                 </Link>
               ))}
 
+              {/* Dropdown */}
               <div className="relative group">
                 <button className={`${navLinkClasses} flex items-center gap-1`}>
                   Insights & Updates
@@ -105,11 +117,12 @@ const Navbar = () => {
                 </div>
               </div>
 
+              {/* CatalystCue Logo - Bigger */}
               <Link to="/catalyst">
                 <img
                   src="catalystcue.svg"
                   alt="CatalystCue"
-                  className="w-32 h-auto lg:mr-2 transition-transform duration-300 hover:bg-red-300 rounded-full px-3 py-3"
+                  className="w-44 h-16 lg:mr-2 transition-transform duration-300 hover:bg-red-300 rounded-full px-3 py-3"
                 />
               </Link>
 
@@ -146,7 +159,7 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* Custom Style for Logo Animation and Scrollbar */}
+      {/* Custom CSS */}
       <style>
         {`
           @keyframes logoPulse {
