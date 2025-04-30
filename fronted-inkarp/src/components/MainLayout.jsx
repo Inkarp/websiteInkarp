@@ -20,7 +20,7 @@ export default function MainLayout() {
           <img
             src="inkarp old.svg" // Replace with your logo path
             alt="Loading Logo"
-            className="w-32 h-32 animate-zoomInOut" // Adjusted size
+            className="w-60 h-32 animate-zoomInOut" // Adjusted size
           />
           {/* Animated Text */}
           <div className="mt-2 text-animation flex flex-wrap justify-center gap-1 text-purple-600 text-lg font-semibold">
@@ -90,8 +90,8 @@ export default function MainLayout() {
       {/* Foreground Scrollable Content */}
       <div className="relative flex flex-col min-h-screen z-10">
         {/* <Header /> */}
-        {/* <Navbar/> */}
-        <NavbarNew/>
+        <Navbar/>
+        {/* <NavbarNew/> */}
         <main className="flex-grow">
           <Outlet />
         </main>

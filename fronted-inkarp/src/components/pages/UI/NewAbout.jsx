@@ -2,15 +2,15 @@ import React from "react";
 
 const cardData = [
   {
-    title: "40+ Years",
+    title: "40 + Years",
     description: "Experience in scientific solutions across India."
   },
   {
-    title: "50+ Principals",
+    title: "50 + Principals",
     description: "Trusted global brands in partnership."
   },
   {
-    title: "50000+ Clients",
+    title: "50000 + Clients",
     description: "Institutions, hospitals, and labs served nationwide."
   },
   {
