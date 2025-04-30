@@ -78,7 +78,7 @@ function HeroSection() {
   };
 
   return (
-    <section className="w-full mt-3 py-5 px-4 lg:px-8">
+    <section className="w-full mt-3 py-5 px-4 lg:px-8 mt-30">
       <style>{`
         .slide-transition {
           transition: transform 0.8s ease-in-out;

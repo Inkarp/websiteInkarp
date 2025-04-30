@@ -15,12 +15,12 @@ export default function MainLayout() {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-white space-y-6">
-        <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-black space-y-6">
+        <div className="flex flex-col items-center justify-center bg-white rounded-full h-100 w-100 mt-20">
           <img
             src="inkarp old.svg" // Replace with your logo path
             alt="Loading Logo"
-            className="w-60 h-32 animate-zoomInOut" // Adjusted size
+            className="w-85 h-32 animate-zoomInOut" // Adjusted size
           />
           {/* Animated Text */}
           <div className="mt-2 text-animation flex flex-wrap justify-center gap-1 text-purple-600 text-lg font-semibold">

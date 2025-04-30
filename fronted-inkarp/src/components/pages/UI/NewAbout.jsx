@@ -1,143 +1,177 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
-const cardData = [
+const slides = [
   {
-    title: "40 + Years",
-    description: "Experience in scientific solutions across India."
+    type: "hero",
+    title: "About Inkarp",
+    description:
+      "Inkarp Instruments Pvt Ltd, established in 1985, is a pioneer in delivering end-to-end scientific solutions across India. We have carved our niche as a reliable partner in life sciences, diagnostics, and research domains. With our unwavering commitment to quality, we empower institutions with innovative products, personalized service, and technical expertise.",
+    image: "inkarp.png"
   },
   {
-    title: "50 + Principals",
-    description: "Trusted global brands in partnership."
+    title: "50+ Principals",
+    label: "50+ Principals",
+    description:
+      "We partner with over 50 global scientific pioneers, offering state-of-the-art technologies and equipment in India. Our principals are market leaders in diagnostics, molecular biology, genomics, proteomics, and medical research."
   },
   {
-    title: "50000 + Clients",
-    description: "Institutions, hospitals, and labs served nationwide."
+    title: "50000+ Customers",
+    label: "50000+ Customers",
+    description:
+      "Over 50,000 clients — including government labs, hospitals, research centers, and educational institutions — rely on Inkarp. We support every research journey with trust, service reliability, and scientific insight."
   },
   {
     title: "10 Awards",
-    description: "Recognized for excellence in innovation and service."
+    label: "10 Awards",
+    description:
+      "Our pursuit of excellence has earned us 10 prestigious national and international awards for service, innovation, and sustainability. These accolades drive us to keep innovating."
+  },
+  {
+    title: "25+ Branches",
+    label: "25+ Branches",
+    description:
+      "Inkarp is present in over 25 cities across India. Our pan-India presence enables localized support, fast delivery, and demo labs that offer hands-on experience for customers."
+  },
+  {
+    title: "Customer Success",
+    label: "Customer Success",
+    description:
+      "We measure our success by the success of our clients. From installation to after-sales support, we deliver experiences that simplify science and accelerate outcomes."
   }
 ];
 
-export default function NewAbout() {
+export default function BubbleScrollAbout() {
+  const containerRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = () => {
+    const container = containerRef.current;
+    if (!container) return;
+    const scrollLeft = container.scrollLeft;
+    const slideWidth = container.offsetWidth;
+    const newIndex = Math.round(scrollLeft / slideWidth);
+    setActiveIndex(newIndex);
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center w-[96%] bg-red-100 space-y-6 mx-auto py-10">
-      {/* 3D Cube Split Animation Heading */}
-      <div className="flex justify-center items-center">
-        {/* 3D Heading */}
-        <div className="flex flex-col sm:flex-row">
-          <div
-            className="relative w-[250px] sm:w-[280px] h-[60px] sm:h-[80px] leading-[60px] sm:leading-[80px] text-xl sm:text-3xl font-extrabold font-sans bg-red-300 overflow-hidden"
-            style={{
-              transform: "perspective(100px) rotateY(-15deg)",
-              transformOrigin: "right"
-            }}
-          >
-            <div className="absolute whitespace-nowrap animate-marquee text-red-900 font-[MaxOT]">
-              Who Are We
-            </div>
-          </div>
-          <div
-            className="relative w-[250px] sm:w-[280px] h-[60px] sm:h-[80px] leading-[60px] sm:leading-[80px] text-xl sm:text-3xl font-extrabold font-sans bg-red-500 overflow-hidden"
-            style={{
-              transform: "perspective(100px) rotateY(15deg)",
-              transformOrigin: "left"
-            }}
-          >
-            <div className="absolute whitespace-nowrap animate-marquee text-red-50 font-[MaxOT]">
-              About Inkarp
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="w-screen overflow-hidden">
+      {/* Scroll Section */}
+      <div
+        ref={containerRef}
+        onScroll={handleScroll}
+        className="overflow-x-auto snap-x snap-mandatory flex flex-nowrap w-screen h-[450px] scrollbar-hide scroll-smooth"
+      >
+        {slides.map((slide, i) => {
+          const isHero = slide.type === "hero";
+          const zigzag = i % 2 === 0;
 
-      {/* Main Grid Section */}
-      <div className="flex flex-wrap lg:flex-nowrap items-center justify-center w-full max-w-7xl gap-10">
-        {/* Left Section */}
-        <div className="w-full lg:w-1/2 px-4 text-center lg:text-left">
-          <div>
-            <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-[Roboto]">
-              Our mission is to become a one stop solution for all research
-              solutions, we are developing a holistic platform that integrates
-              the supply of high-quality products, installation support, and
-              reliable after-sales support. We are currently focusing on
-              providing technologically advanced after-sales support with the
-              best-in-class trained engineers to guarantee that your research
-              requirements are dealt on time. As Inkarp, we are doing all we can
-              to analyse the evolution of science and enable our customers in
-              simplifying their application requirements.
-            </p>
-          </div>
-        </div>
+          return (
+            <div
+              key={i}
+              className="min-w-full snap-start flex items-center justify-center"
+            >
+              <div className="bg-white max-w-[900px] w-full rounded-2xl shadow-xl flex flex-col p-6 gap-6 h-auto items-center justify-start">
+                {/* 🧊 3D Cube Heading Inside Each Slide */}
+                <div className="flex flex-col sm:flex-row justify-center items-center  mb-4">
+                  <div
+                    className="relative w-[220px] sm:w-[250px] h-[60px] sm:h-[80px] leading-[60px] sm:leading-[80px] text-lg sm:text-2xl font-extrabold bg-red-300 overflow-hidden"
+                    style={{
+                      transform: "perspective(100px) rotateY(-15deg)",
+                      transformOrigin: "right"
+                    }}
+                  >
+                    <div className="absolute whitespace-nowrap animate-marquee text-red-900 font-[MaxOT]">
+                      Who Are We
+                    </div>
+                  </div>
+                  <div
+                    className="relative w-[220px] sm:w-[250px] h-[60px] sm:h-[80px] leading-[60px] sm:leading-[80px] text-lg sm:text-2xl font-extrabold bg-red-500 overflow-hidden"
+                    style={{
+                      transform: "perspective(100px) rotateY(15deg)",
+                      transformOrigin: "left"
+                    }}
+                  >
+                    <div className="absolute whitespace-nowrap animate-marquee text-red-50 font-[MaxOT]">
+                      About Inkarp
+                    </div>
+                  </div>
+                </div>
 
-        {/* Right Section */}
-        <div className="w-full lg:w-1/2 group relative px-4">
-          <div className="grid grid-cols-2 gap-4 relative max-w-[460px] mx-auto transition-all duration-500">
-            {cardData.map((card, i) => (
-              <div
-                key={i}
-                className={`card card-${i + 1} flex flex-col items-center justify-center text-center text-white bg-red-500 rounded-xl p-4 sm:p-6 transition-all duration-500`}
-              >
-                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2 font-[MaxOT]">
-                  {card.title}
-                </h3>
-                <p className="text-sm sm:text-base font-[Roboto]">
-                  {card.description}
-                </p>
+                {/* Content Area */}
+                {isHero ? (
+                  <div className="flex flex-col lg:flex-row gap-6 items-center justify-between w-full">
+                    <div className="w-full lg:w-1/2 text-center lg:text-left space-y-4">
+                      <h2 className="text-3xl font-bold text-red-700 font-[MaxOT]">{slide.title}</h2>
+                      <p className="text-gray-700 text-base font-[Roboto]">{slide.description}</p>
+                    </div>
+                    <div className="w-full lg:w-1/2 flex items-center justify-center">
+                      <img
+                        src={slide.image}
+                        alt="Inkarp Hero"
+                        className="rounded-lg bg-red-100 shadow-md max-h-[280px] w-auto object-contain"
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <div className={`flex flex-col lg:flex-row items-center justify-between gap-6 w-full ${zigzag ? "" : "lg:flex-row-reverse"}`}>
+                    {/* Bubble */}
+                    <div className="min-w-[140px] min-h-[140px] bg-red-500 text-white rounded-full flex items-center justify-center flex-col text-center shadow-lg animate-float">
+                      <h2 className="text-base sm:text-lg font-bold font-[MaxOT]">{slide.label}</h2>
+                    </div>
+                    {/* Text */}
+                    <div className="w-full text-left space-y-3 max-h-[300px] overflow-y-auto">
+                      <h3 className="text-lg font-bold text-red-700 font-[MaxOT]">{slide.title}</h3>
+                      <p className="text-sm sm:text-base text-gray-700 font-[Roboto] leading-relaxed">
+                        {slide.description}
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
-            ))}
-          </div>
-
-          {/* Hover Styles and Animations */}
-          <style>{`
-            .card {
-              height: 160px;
-              width: 160px;
-            }
-
-            @media (min-width: 640px) {
-              .card {
-                height: 200px;
-                width: 200px;
-              }
-            }
-
-            .group:hover .card-1 {
-              transform: translate(20px, 20px);
-            }
-            .group:hover .card-2 {
-              transform: translate(-20px, 20px);
-            }
-            .group:hover .card-3 {
-              transform: translate(20px, -20px);
-            }
-            .group:hover .card-4 {
-              transform: translate(-20px, -20px);
-            }
-
-            .group:hover .card {
-              width: 180px;
-              height: 180px;
-            }
-
-            @media (min-width: 640px) {
-              .group:hover .card {
-                width: 220px;
-                height: 220px;
-              }
-            }
-
-            @keyframes marquee {
-              0% { transform: translateX(100%); }
-              100% { transform: translateX(-100%); }
-            }
-
-            .animate-marquee {
-              animation: marquee 10s linear infinite;
-            }
-          `}</style>
-        </div>
+            </div>
+          );
+        })}
       </div>
+
+      {/* Indicator Dots */}
+      <div className="flex justify-center items-center gap-3 mt-6">
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            className="w-4 h-4 rounded-full border-2 border-red-500 relative"
+          >
+            <div
+              className={`absolute top-0 left-0 h-full rounded-full bg-red-500 transition-all duration-500 ${index === activeIndex ? "w-full" : "w-0"}`}
+            ></div>
+          </div>
+        ))}
+      </div>
+
+      {/* Styles */}
+      <style>{`
+        .animate-marquee {
+          animation: marquee 10s linear infinite;
+        }
+        @keyframes marquee {
+          0% { transform: translateX(100%); }
+          100% { transform: translateX(-100%); }
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-12px); }
+          100% { transform: translateY(0); }
+        }
+      `}</style>
     </div>
   );
 }
