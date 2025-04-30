@@ -11,20 +11,18 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinkClasses =
-    "block text-black dark:text-gray-200 lg:mx-1 transition transform hover:-translate-y-1 hover:text-gray-900 dark:hover:text-gray-400 hover:bg-red-300 duration-300 rounded-full px-3 py-3 text-[17px] font-bold lg-text-sm lg:font-semibold lg:rounded-full lg:p-2 lg:transition lg:duration-300 lg:hover:bg-red-300 lg:hover:text-gray-900 dark:lg:hover:text-gray-400 font-[MaxOT]";
+    "whitespace-nowrap min-w-fit block text-black dark:text-gray-200 lg:mx-1 transition transform hover:-translate-y-1 hover:text-gray-900 dark:hover:text-gray-400 hover:bg-red-300 duration-300 rounded-full px-3 py-3 text-[17px] font-bold lg-text-sm lg:font-semibold lg:rounded-full lg:p-2 lg:transition lg:duration-300 lg:hover:bg-red-300 lg:hover:text-gray-900 dark:lg:hover:text-gray-400 font-[MaxOT]";
 
   return (
     <>
       <nav className={`rounded-full transition-all duration-300 shadow-xl w-[96%] sticky top-3 z-50 bg-white mx-auto ${scrolled ? 'py-2 scale-95' : 'py-2 scale-100'}`}>
         <div className="container px-2 mx-auto lg:flex lg:justify-between lg:items-center">
           <div className="flex items-center justify-between">
-
             <Link to="/">
               <img
                 className="w-36 sm:ml-5 h-auto animate-logoPulse"
@@ -51,8 +49,7 @@ const Navbar = () => {
             <div className="flex lg:hidden md:ml-2 sm:ml-2">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-500 dark:text-gray-200 hover:text-gray-600 sm:ml-2 md:ml-2 focus:outline-none"
-                aria-label="toggle menu"
+                className="text-gray-500 dark:text-gray-200 hover:text-gray-600 focus:outline-none"
               >
                 {!isOpen ? (
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -74,14 +71,13 @@ const Navbar = () => {
               : "opacity-0 -translate-x-full"
               } absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white shadow-md lg:bg-transparent dark:bg-gray-900 lg:shadow-none lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center`}
           >
-            <div className="flex flex-col lg:flex-row lg:items-center lg:space-y-0">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:space-y-0 overflow-x-auto no-scrollbar sm:gap-2">
               {[
                 { label: 'Home', to: '/' },
                 { label: 'Our Story', to: '/about' },
                 { label: 'Verticals', to: '/verticals' },
                 { label: 'Careers', to: '/careers' },
                 { label: 'Contact Us', to: '/contact' },
-                // { label: 'Product Profile', to: '/' },
               ].map(link => (
                 <Link key={link.to} to={link.to} className={navLinkClasses}>
                   {link.label}
@@ -93,7 +89,6 @@ const Navbar = () => {
                   Insights & Updates
                   <ChevronDown className="w-4 h-4 mt-1" />
                 </button>
-                {/* Dropdown Items */}
                 <div className="absolute left-0 top-full hidden group-hover:flex flex-col bg-white dark:bg-gray-900 shadow-lg rounded-lg mt-1 z-50 min-w-[180px]">
                   <Link
                     to="/insights&updates/blogs"
@@ -114,7 +109,7 @@ const Navbar = () => {
                 <img
                   src="catalystcue.svg"
                   alt="CatalystCue"
-                  className="w-32 h-auto lg:mr-2 transition-transform duration-300 hover:bg-red-300 duration-300 rounded-full px-3 py-3"
+                  className="w-32 h-auto lg:mr-2 transition-transform duration-300 hover:bg-red-300 rounded-full px-3 py-3"
                 />
               </Link>
 
@@ -122,7 +117,7 @@ const Navbar = () => {
               <div className="hidden lg:flex md:ml-2 lg:ml-4">
                 <button
                   onClick={() => setShowSearchModal(true)}
-                  className="flex items-center mr-3 px-4 py-2  text-white bg-red-700 rounded-lg hover:bg-gray-600 transition duration-300"
+                  className="flex items-center mr-3 px-4 py-2 text-white bg-red-700 rounded-lg hover:bg-gray-600 transition duration-300"
                 >
                   <Search className="h-5 w-5" />
                 </button>
@@ -145,30 +140,38 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Start Typing ...."
-
             className="w-full max-w-xl px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-red-400 focus:ring-opacity-100 focus:ring-offset-2 transition duration-300 placeholder:text-lg placeholder:text-black placeholder:font-bold"
             autoFocus
           />
-
         </div>
       )}
+
+      {/* Custom Style for Logo Animation and Scrollbar */}
       <style>
         {`
-    @keyframes logoPulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.08);
-      }
-    }
+          @keyframes logoPulse {
+            0%, 100% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.08);
+            }
+          }
 
-    .animate-logoPulse {
-      animation: logoPulse 2.5s ease-in-out infinite;
-    }
-  `}
+          .animate-logoPulse {
+            animation: logoPulse 2.5s ease-in-out infinite;
+          }
+
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+
+          .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}
       </style>
-
     </>
   );
 };
