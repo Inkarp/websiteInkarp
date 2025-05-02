@@ -89,8 +89,8 @@ export default function MainLayout() {
 
       {/* Foreground Scrollable Content */}
       <div className="relative flex flex-col min-h-screen z-10">
-        {/* <Header /> */}
-        <Navbar/>
+        <Header />
+        {/* <Navbar/> */}
         {/* <NavbarNew/> */}
         <main className="flex-grow">
           <Outlet />

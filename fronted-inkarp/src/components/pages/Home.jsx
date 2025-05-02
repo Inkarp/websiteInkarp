@@ -16,6 +16,7 @@ import WhyChooseInkarp from './UI/WhyChooseInkarp';
 import BlogCardList from './UI/BlogCardList';
 import NewAbout from './UI/NewAbout';
 import MagicImage from './UI/MagicImage';
+import Comments from './Home/Comments';
 
 const Home = () => {
     return (
@@ -25,6 +26,7 @@ const Home = () => {
             {/* <WhyChooseInkarp/>
             <BlogCardList /> */}
             <NewAbout/>
+            <Comments />
             {/* <MagicImage /> */}
             {/* <Offerings /> */}
             {/* <Principles /> */}
