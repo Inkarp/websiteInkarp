@@ -40,7 +40,7 @@ const slides = [
   }
 ];
 
-export default function BubbleScrollAbout() {
+export default function NewAbout() {
   const containerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 

@@ -17,6 +17,8 @@ import BlogCardList from './UI/BlogCardList';
 import NewAbout from './UI/NewAbout';
 import MagicImage from './UI/MagicImage';
 import Comments from './Home/Comments';
+import Carousel from './Home/Carousel';
+import LogoBurst from './Home/LogoBurst';
 
 const Home = () => {
     return (
@@ -25,9 +27,12 @@ const Home = () => {
             <HeroSection />
             {/* <WhyChooseInkarp/>
             <BlogCardList /> */}
-            <NewAbout/>
+            <LogoBurst />
+            {/* <NewAbout/> */}
+            <Carousel />
             <Comments />
-            {/* <MagicImage /> */}
+
+            <MagicImage />
             {/* <Offerings /> */}
             {/* <Principles /> */}
             {/* <About /> */}

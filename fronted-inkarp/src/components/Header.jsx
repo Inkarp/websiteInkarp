@@ -18,7 +18,7 @@ export default function Header() {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="bg-white shadow-lg fixed top-0 left-0 z-20 w-full">
+    <header className="bg-white shadow-lg fixed top-0 left-0 z-50 w-full">
       <div className="flex justify-between items-center h-20 px-4 sm:px-6 md:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center">
