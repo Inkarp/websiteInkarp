@@ -23,16 +23,14 @@ import LogoBurst from './Home/LogoBurst';
 const Home = () => {
     return (
         <>
-    
             <HeroSection />
-            {/* <WhyChooseInkarp/>
-            <BlogCardList /> */}
             <LogoBurst />
-            {/* <NewAbout/> */}
             <Carousel />
             <Comments />
-
-            <MagicImage />
+            {/* <WhyChooseInkarp/>
+            <BlogCardList /> */}
+            {/* <NewAbout/> */}
+            {/* <MagicImage /> */}
             {/* <Offerings /> */}
             {/* <Principles /> */}
             {/* <About /> */}
@@ -42,7 +40,7 @@ const Home = () => {
             <Slider /> */}
             {/* <OurCompanies /> */}
             {/* <OurPrinciples /> */}
-            
+
             {/* <Reviews />
             <SubBlog />
             <NewsEvents /> */}

@@ -49,7 +49,7 @@ export default function AboutInkarpSection() {
   };
 
   return (
-    <div className="w-full bg-gray-100 flex flex-col items-center py-10 overflow-hidden">
+    <div className="w-full flex flex-col items-center py-10 overflow-hidden">
       {/* 🔴 TOP HEADER */}
       {/* <div className="flex flex-col sm:flex-row justify-center items-center mb-10 scale-110">
         <div
@@ -71,14 +71,14 @@ export default function AboutInkarpSection() {
       </div> */}
 
       {/* 🔴 TWO COLUMN LAYOUT */}
-      <div className="flex flex-col md:flex-row items-start justify-center gap-8 w-full max-w-screen-xl px-6">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-screen-xl px-6">
         {/* LEFT: CUBE BURST CENTERED TO RIGHT SIDE */}
         <div className="md:w-1/3 w-full flex justify-center md:items-center">
           <div className="relative w-[300px] sm:w-[360px] h-[300px] sm:h-[360px] flex items-center justify-center z-[20]">
             {/* Blurred Circle */}
             <div
               className={`absolute w-full h-full rounded-full transition-all duration-500 ${
-                hovered ? "backdrop-blur-sm bg-white/20 scale-125" : "scale-100"
+                hovered ? "backdrop-blur-sm bg-red-500/20 scale-125" : "scale-100"
               }`}
             ></div>
             {/* Words */}
