@@ -21,11 +21,7 @@ export default function Timeline() {
           </li>
         ))}
       </ul>
-      <div className="credits">
-        <a href="https://www.freepik.com/free-vector/infographic-template-with-yearly-info_1252895.htm" target="_blank" rel="noreferrer">
-          inspired by
-        </a>
-      </div>
+      
 
       <style>{`
         .timeline-wrapper {

@@ -1,5 +1,5 @@
 
-import AboutUs from "./OurStory/ABoutUs";
+import AboutUs from "./OurStory/AboutUs";
 import TeamMembers from "./OurStory/TeamMembers";
 import Timeline from "./OurStory/Timeline";
 import Team from "./Team";

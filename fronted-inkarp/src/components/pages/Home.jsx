@@ -27,13 +27,14 @@ const Home = () => {
             <HeroSection />
             <LogoBurst />
             {/* <Carousel /> */}
-            <Comments />
+            
             <NewCompanies />
             {/* <WhyChooseInkarp/>
             <BlogCardList /> */}
             {/* <NewAbout/> */}
             {/* <MagicImage /> */}
             <Offerings />
+            <Comments />
             {/* <Principles /> */}
             {/* <About /> */}
             {/* <Images /> */}
@@ -43,9 +44,9 @@ const Home = () => {
             {/* <OurCompanies /> */}
             {/* <OurPrinciples /> */}
 
-            {/* <Reviews />
+            <Reviews />
             <SubBlog />
-            <NewsEvents /> */}
+            <NewsEvents />
         </>
     );
 };
