@@ -19,19 +19,21 @@ import MagicImage from './UI/MagicImage';
 import Comments from './Home/Comments';
 import Carousel from './Home/Carousel';
 import LogoBurst from './Home/LogoBurst';
+import NewCompanies from './Home/NewCompanies';
 
 const Home = () => {
     return (
         <>
             <HeroSection />
             <LogoBurst />
-            <Carousel />
+            {/* <Carousel /> */}
             <Comments />
+            <NewCompanies />
             {/* <WhyChooseInkarp/>
             <BlogCardList /> */}
             {/* <NewAbout/> */}
             {/* <MagicImage /> */}
-            {/* <Offerings /> */}
+            <Offerings />
             {/* <Principles /> */}
             {/* <About /> */}
             {/* <Images /> */}
