@@ -118,9 +118,9 @@ export default function AboutInkarpSection() {
         </div>
 
         {/* RIGHT: About Cube + Cards stacked vertically */}
-        <div className="md:w-2/3 w-full flex flex-col items-center gap-6">
+        <div className="md:w-2/3 w-full flex flex-col items-center gap-6 ">
           {/* ✅ MARQUEE CUBE (NOW INSIDE RIGHT) */}
-          <div className="flex flex-col sm:flex-row justify-center items-center scale-95">
+          <div className="flex flex-col sm:flex-row justify-center items-center scale-95 ">
             <div
               className="relative w-68 sm:w-60 h-14 sm:h-20 text-xl sm:text-2xl font-extrabold bg-red-300 overflow-hidden"
               style={{ transform: "perspective(100px) rotateY(-15deg)", transformOrigin: "right" }}

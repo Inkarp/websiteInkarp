@@ -69,6 +69,7 @@ export default function MainLayout() {
           playsInline
           style={{
             animation: "zoomPanSlow 60s ease-in-out infinite alternate",
+             filter: 'blur(5px)'
           }}
         />
         {/* Optional Dark Gradient Overlay */}

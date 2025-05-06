@@ -23,6 +23,7 @@ import NewCompanies from './Home/NewCompanies';
 import Principles from './Home/Principles';
 import Testimonial from './Home/Testimonial';
 import AboutUs from './OurStory/AboutUs';
+import BusinessOrbitMap from './Home/BussinessOrbitMap';
 
 
 const Home = () => {
@@ -31,6 +32,7 @@ const Home = () => {
             <HeroSection />
             <LogoBurst />
             <Principles />
+            <BusinessOrbitMap />
             {/* <AboutUs /> */}
 
             {/* <Carousel /> */}
