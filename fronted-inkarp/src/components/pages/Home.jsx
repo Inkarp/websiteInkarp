@@ -22,6 +22,8 @@ import LogoBurst from './Home/LogoBurst';
 import NewCompanies from './Home/NewCompanies';
 import Principles from './Home/Principles';
 import Testimonial from './Home/Testimonial';
+import AboutUs from './OurStory/AboutUs';
+
 
 const Home = () => {
     return (
@@ -29,6 +31,8 @@ const Home = () => {
             <HeroSection />
             <LogoBurst />
             <Principles />
+            {/* <AboutUs /> */}
+
             {/* <Carousel /> */}
             
             {/* <NewCompanies /> */}

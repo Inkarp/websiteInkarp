@@ -47,7 +47,7 @@ const OurStory = () => {
             <Timeline />
             {/* <TeamMembers /> */}
             <TeamInfo />
-            <AboutUs/>
+            {/* <AboutUs/> */}
             
             {/* <Mission /> */}
             {/* <AboutSupport /> */}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import NewCareers from './Careers/NewCareers';
 
 const Careers = () => {
     const [jobs, setJobs] = useState([]);
@@ -35,8 +36,9 @@ const Careers = () => {
     }, [locationFilter, jobs]);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6 flex gap-6">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6 flex gap-6 mt-20">
             {/* Sidebar Filter */}
+            {/* <NewCareers /> */}
             <aside className="w-72 bg-white shadow-xl rounded-2xl p-6 space-y-4">
                 <h2 className="text-2xl font-bold text-gray-800">Filter Jobs</h2>
                 <div className="space-y-2">

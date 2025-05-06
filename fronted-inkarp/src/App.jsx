@@ -10,6 +10,7 @@ import Careers from "./components/pages/Careers";
 import HeroSection from "./components/HeroSection";
 import MainLayout from "./components/MainLayout";
 import Principles from "./components/pages/UI/Principles";
+import NewCareers from "./components/pages/Careers/NewCareers";
 // import Blogs from "./components/pages/insights/Blogs";
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
           <Route path="/about" element={<OurStory />} />
           <Route path="/verticals" element={<Verticals />} />
           {/* <Route path="/insights&updates/blogs" element={<Blogs />} /> */}
-          <Route path="/careers" element={<Careers />} />
+          <Route path="/careers" element={<NewCareers />} />
+          <Route path="/careers/positions" element={<Careers />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/home" element={<HeroSection />} />
           <Route path="*" element={<NotFound />} />

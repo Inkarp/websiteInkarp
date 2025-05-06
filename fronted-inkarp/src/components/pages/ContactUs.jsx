@@ -1,4 +1,5 @@
 import { Linkedin, Mail, Youtube, MessageCircle, Phone } from "lucide-react";
+import ContactForm from "./Contact/ContactForm";
 
 function ContactUs() {
   const branches = [
@@ -118,7 +119,7 @@ function ContactUs() {
           transform: scale(1.2);
         }
       `}</style>
-      <section className="min-h-screen mt-5">
+      <section className="min-h-screen mt-22">
         <div className="container mx-auto flex flex-col items-center justify-center">
           {/* INDIA MAP WITH ICONS */}
           <div className="relative w-full max-w-5xl h-[800px] bg-white rounded-xl overflow-hidden shadow-2xl">
@@ -167,7 +168,7 @@ function ContactUs() {
           </div>
 
           {/* SOCIAL MEDIA LINKS */}
-          <div className="flex justify-center gap-6 mt-10">
+          {/* <div className="flex justify-center gap-6 mt-10">
             <a
               href="https://www.linkedin.com/company/inkarp-instruments/"
               target="_blank"
@@ -206,8 +207,10 @@ function ContactUs() {
                 <Youtube size={28} />
               </span>
             </a>
-          </div>
+          </div> */}
+          
         </div>
+        <ContactForm />
       </section>
     </>
   );

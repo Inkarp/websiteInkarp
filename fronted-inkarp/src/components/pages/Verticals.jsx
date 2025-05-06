@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import { ArrowUpRight } from "lucide-react";
 
 const verticalsList = [
   "Synthesis and Flow Chemistry",
@@ -13,34 +14,92 @@ const verticalsList = [
 ];
 
 const Verticals = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [verticalData, setVerticalData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const fetchData = async (index) => {
+    setLoading(true);
+    try {
+      const res = await fetch(
+        `https://jsonplaceholder.typicode.com/posts?_limit=5&_start=${index * 5}`
+      );
+      const data = await res.json();
+      setVerticalData(data);
+    } catch (err) {
+      setVerticalData([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData(activeIndex);
+  }, [activeIndex]);
+
   return (
     <>
-    <div className="flex bg-black text-white justify-center items-center h-80 w-[90%] shadow-full mt-8 mx-auto rounded-lg lining-2">
-    <img src='inkarp old.svg' className='h-75 '/>
-    </div>
-    <div className="flex min-h-screen bg-gray-100 mt-3 w-[95%] mx-auto rounded-lg shadow-lg">
-      {/* Sidebar */}
-      <aside className="w-64 bg-white shadow-md">
-        <div className="p-4 border-b text-xl font-semibold">
-          Verticals
-        </div>
-        <ul className="p-4 space-y-2">
-          {verticalsList.map((item, index) => (
-            <li
-              key={index}
-              className="px-3 py-2 rounded-md hover:bg-red-100 cursor-pointer transition"
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
-      </aside>
+      {/* Top Banner */}
+      <div className="flex bg-white text-white justify-center items-center h-80 mt-22 w-[98%] shadow-full mt-8 mx-auto rounded-lg">
+        <img src="inkarp old.svg" className="h-64" alt="Inkarp Logo" />
+      </div>
 
-      {/* Placeholder for main content */}
-      <main className="flex-1 p-6">
-        <h1 className="text-2xl font-bold">Select a vertical from the sidebar</h1>
-      </main>
-    </div>
+      {/* Content Area */}
+      <div className="flex min-h-screen bg-gray-100 mt-2 w-[98%] mx-auto rounded-lg shadow-lg">
+        {/* Sidebar */}
+        <aside className="w-[340px] bg-[#e8f0fe] p-6 flex flex-col items-start space-y-5">
+          {verticalsList.map((item, index) => {
+            const isActive = index === activeIndex;
+
+            return (
+              <div
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                className={`w-full flex items-center justify-between px-5 py-3 rounded-full shadow-sm cursor-pointer transition-all duration-300
+                ${
+                  isActive
+                    ? "bg-white text-black"
+                    : "bg-[#e8f0fe] border border-[#c7d3e3] text-[#0a2540]"
+                }`}
+              >
+                <span className="text-base font-medium">{item}</span>
+                <span
+                  className={`w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300
+                    ${
+                      isActive
+                        ? "bg-[#4f7df9] text-white shadow-lg"
+                        : "bg-[#0a2540] text-white"
+                    }`}
+                >
+                  <ArrowUpRight size={18} />
+                </span>
+              </div>
+            );
+          })}
+        </aside>
+
+        {/* Main Content */}
+        <main className="flex-1 p-10">
+          <h1 className="text-2xl font-bold text-gray-800 mb-4">
+            {verticalsList[activeIndex]}
+          </h1>
+          {loading ? (
+            <p className="text-gray-500">Loading data...</p>
+          ) : (
+            <div className="space-y-4">
+              {verticalData.map((item) => (
+                <div
+                  key={item.id}
+                  className="bg-white p-5 rounded-lg shadow border"
+                >
+                  <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                  <p className="text-gray-600">{item.body}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </main>
+      </div>
     </>
   );
 };

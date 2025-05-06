@@ -5,8 +5,8 @@ export default function AboutUs() {
     <>
       <div className="grid-container">
         <div speech-bubble="true" pbottom="true" aright="true" style={{ "--bbColor": "#af2d58" }}>
-          <div className="title">Bottom Right</div>
-          <code>[pbottom]</code><code>[aright]</code>
+          <div className="title">50+ Principles</div>
+          <code></code>
         </div>
 
         <div speech-bubble="true" pbottom="true" acenter="true" style={{ "--bbColor": "#a9528d" }}>
@@ -15,23 +15,26 @@ export default function AboutUs() {
         </div>
 
         <div speech-bubble="true" pbottom="true" aleft="true" style={{ "--bbColor": "#744b9f" }}>
-          <div className="title">Bottom Left</div>
+          <div className="title">5000+ Customers</div>
           <code>[pbottom]</code><code>[aleft]</code>
         </div>
 
         <div speech-bubble="true" pleft="true" abottom="true" style={{ "--bbColor": "#484a9b" }}>
-          <div className="title">Left Bottom</div>
-          <code>[pleft]</code><code>[abottom]</code>
+          {/* <div className="title">Left Bottom</div>
+          <code>[pleft]</code><code>[abottom]</code> */}
+          <img src="inkarp old.svg" />
         </div>
 
         <div speech-bubble="true" pleft="true" acenter="true" style={{ "--bbColor": "#086899" }}>
-          <div className="title">Left Center</div>
-          <code>[pleft]</code><code>[acenter]</code>
+          {/* <div className="title">Left Center</div>
+          <code>[pleft]</code><code>[acenter]</code> */}
+          <img src="inkarp old.svg" />
         </div>
 
         <div speech-bubble="true" pleft="true" atop="true" style={{ "--bbColor": "#45c5e0" }}>
-          <div className="title">Left Top</div>
-          <code>[pleft]</code><code>[atop]</code>
+          {/* <div className="title">Left Top</div>
+          <code>[pleft]</code><code>[atop]</code> */}
+          <img src="inkarp old.svg" />
         </div>
 
         <div speech-bubble="true" ptop="true" aleft="true" flip="true" style={{ "--bbColor": "#51bfae" }}>
@@ -50,30 +53,44 @@ export default function AboutUs() {
         </div>
 
         <div speech-bubble="true" pright="true" atop="true" style={{ "--bbColor": "#fdbb3c" }}>
-          <div className="title">Right Top</div>
-          <code>[pright]</code><code>[atop]</code>
+          {/* <div className="title">Right Top</div>
+          <code>[pright]</code><code>[atop]</code> */}
+          <img src="inkarp old.svg" />
         </div>
 
         <div speech-bubble="true" pright="true" acenter="true" style={{ "--bbColor": "#f5882f" }}>
-          <div className="title">Right Center</div>
-          <code>[pright]</code><code>[acenter]</code>
+          {/* <div className="title">Right Center</div>
+          <code>[pright]</code><code>[acenter]</code> */}
+          <img src="inkarp old.svg" />
         </div>
 
         <div speech-bubble="true" pright="true" abottom="true" style={{ "--bbColor": "#f05142" }}>
-          <div className="title">Right Bottom</div>
-          <code>[pright]</code><code>[abottom]</code>
+          {/* <div className="title">Right Bottom</div>
+          <code>[pright]</code><code>[abottom]</code> */}
+          <img src="inkarp old.svg" />
         </div>
 
         <div className="middle">
-          <h1>Speech<br />Bubbles</h1>
-          <code>&lt;div speech-bubble&gt;</code>
+          <div className="flex justify-between items-center space-x-8">
+            <div className="bg-red-100 h-[500px] w-[30px] ">
+              <div className="rotate-90 origin-right ">Our Own Companies</div></div>
+
+            <img
+              src="inkarp old.svg"
+              className="bg-red-100 w-[200px] h-[200px] rounded-full object-contain"
+              alt="Inkarp Logo"
+            />
+
+            <div className="bg-red-100 h-[500px] w-[30px]">
+              <div className="rotate-90 origin-left flex-wrap-none">Our Own Subsidaries</div>
+            </div>
+          </div>
         </div>
+
       </div>
 
       {/* Inline CSS */}
       <style>{`
-       
-
         .grid-container {
           max-width: 60rem;
           margin: auto;
@@ -87,7 +104,7 @@ export default function AboutUs() {
             'tr tc tl';
           padding: 2rem;
           gap: 2rem;
-          background: #141518;
+          background: ;
         }
 
         [speech-bubble], [speech-bubble] * {
@@ -140,7 +157,7 @@ export default function AboutUs() {
           align-self: center;
           justify-self: center;
           text-align: center;
-          color: white;
+          color: red;
         }
 
         .middle code {

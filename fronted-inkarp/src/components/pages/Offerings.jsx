@@ -79,8 +79,8 @@ function ProfileCard({ profile }) {
           {/* Social Icons */}
           <div
             className={`absolute right-14 flex flex-row-reverse items-center space-x-reverse space-x-2 transition-all duration-300 ${showDropdown
-                ? "opacity-100 translate-x-0 pointer-events-auto"
-                : "opacity-0 -translate-x-5 pointer-events-none"
+              ? "opacity-100 translate-x-0 pointer-events-auto"
+              : "opacity-0 -translate-x-5 pointer-events-none"
               }`}
           >
             {[Linkedin, Facebook, Instagram, Mail, MessageCircle].map((Icon, i) => (
@@ -101,9 +101,9 @@ function ProfileCard({ profile }) {
             className="bg-black rounded-full p-1 shadow hover:bg-gray-300 hover:scale-110 transition-transform duration-300"
             onMouseEnter={() => setShowDropdown(true)}
           > */}
-            <button className="flex items-center justify-center w-12 h-12 rounded-2xl bg-red-100" onMouseLeave={() => setShowDropdown(false)} onMouseEnter={() => setShowDropdown(true)} >
-              <Share2 size={20} color="black" />
-            </button>
+          <button className="flex items-center justify-center w-12 h-12 rounded-2xl bg-red-100" onMouseLeave={() => setShowDropdown(false)} onMouseEnter={() => setShowDropdown(true)} >
+            <Share2 size={20} color="black" />
+          </button>
           {/* </div> */}
         </div>
       </div>
@@ -113,10 +113,61 @@ function ProfileCard({ profile }) {
 
 function Offerings() {
   return (
-    <>
-      <h1 className="mt-10 px-4 sm:px-6 md:px-10 py-3 mx-auto max-w-3xl rounded-full bg-white shadow-lg text-red-500 text-3xl/3 sm:text-4xl md:text-5xl font-bold text-center mb-6" style={{ fontFamily: 'MaxOT' }}>
-        Our Offerings
-      </h1>
+   
+     <>
+      <h1 className="offering-ribbon-heading">Our Offerings</h1>
+
+      <style>{`
+        .offering-ribbon-heading {
+          position: relative;
+          margin: 2.5rem auto 2rem;
+          padding: 1rem 2.5rem;
+          max-width: max-content;
+          font-family: 'MaxOT';
+          font-size: 2.5rem;
+          font-weight: 700;
+          text-align: center;
+          color:white;
+          background-color:rgb(158, 13, 25) ;
+          // border-radius: 9999px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          
+        }
+
+        .offering-ribbon-heading::before,
+        .offering-ribbon-heading::after {
+          content: '';
+          position: absolute;
+          top: 20px;
+          width: 80px;
+          height: 100%;
+          background-color: #e63946;
+          z-index: -1;
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 25% 50%);
+          background-image: linear-gradient(45deg, transparent 50%, #b91c1c 50%);
+          background-size: 20px 20px;
+          background-repeat: no-repeat;
+          background-position: bottom right;
+        }
+
+        .offering-ribbon-heading::before {
+          left: -60px;
+        }
+
+        .offering-ribbon-heading::after {
+          right: -60px;
+          transform: scaleX(-1);
+        }
+
+        @media (max-width: 400px) {
+          .offering-ribbon-heading {
+            font-size: 1.75rem;
+          }
+        }
+      `}</style>
+  
+
+
       <div className="w-full py-5 flex justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-4">
           {profiles.map((profile, index) => (
