@@ -1,115 +1,104 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const testimonials = [
-  {
-    name: "Williamson",
-    role: "Web Developer",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet eum excepturi incidunt laudantium nesciunt omnis, provident repudiandae rerum sed! Amet blanditiis eaque eu!",
-  },
-  {
-    name: "Kristina",
-    role: "Web Designer",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet eum excepturi incidunt laudantium nesciunt omnis, provident repudiandae rerum sed! Amet blanditiis eaque eu!",
-  },
-  {
-    name: "Steve Thomas",
-    role: "Web Developer",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet eum excepturi incidunt laudantium nesciunt omnis, provident repudiandae rerum sed! Amet blanditiis eaque eu!",
-  },
-  {
-    name: "Amanda Lee",
-    role: "Project Manager",
-    description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis.",
-  },
-  {
-    name: "John Doe",
-    role: "Marketing Head",
-    description:
-      "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam nisi ut aliquid ex ea commodi consequatur?",
-  },
-  {
-    name: "Sarah Paul",
-    role: "UX Designer",
-    description:
-      "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-  },
-  {
-    name: "Michael Scott",
-    role: "Sales Manager",
-    description:
-      "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
-  },
-  {
-    name: "Dwight Schrute",
-    role: "Assistant to the Regional Manager",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget commodo orci. Integer varius nibh eu mattis porta.",
-  },
-  {
-    name: "Jim Halpert",
-    role: "Account Executive",
-    description:
-      "Mauris vel magna at dui ultrices tincidunt. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-  },
-  {
-    name: "Pam Beesly",
-    role: "Receptionist",
-    description:
-      "Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla.",
-  },
-  {
-    name: "Stanley Hudson",
-    role: "Salesman",
-    description:
-      "Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper.",
-  },
-  {
-    name: "Kevin Malone",
-    role: "Accountant",
-    description:
-      "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor.",
-  },
+  { name: "Williamson", role: "Web Developer", description: "Lorem ipsum dolor sit amet..." },
+  { name: "Kristina", role: "Web Designer", description: "Lorem ipsum dolor sit amet..." },
+  { name: "Steve Thomas", role: "Web Developer", description: "Lorem ipsum dolor sit amet..." },
+  { name: "Amanda Lee", role: "Project Manager", description: "Sed ut perspiciatis unde omnis..." },
+  { name: "John Doe", role: "Marketing Head", description: "Ut enim ad minima veniam..." },
+  { name: "Sarah Paul", role: "UX Designer", description: "Neque porro quisquam est..." },
+  { name: "Michael Scott", role: "Sales Manager", description: "Quis autem vel eum iure..." },
+  { name: "Dwight Schrute", role: "Assistant to the Regional Manager", description: "Lorem ipsum dolor sit amet..." },
+  { name: "Jim Halpert", role: "Account Executive", description: "Mauris vel magna at dui..." },
+  { name: "Pam Beesly", role: "Receptionist", description: "Nulla vitae elit libero..." },
+  { name: "Stanley Hudson", role: "Salesman", description: "Aenean lacinia bibendum..." },
+  { name: "Kevin Malone", role: "Accountant", description: "Cras justo odio, dapibus ac..." },
 ];
 
 const Comments = () => {
   const [startIndex, setStartIndex] = useState(0);
+  const itemsToShow = 3;
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setStartIndex((prev) => (prev + 3) % testimonials.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  const handleNext = () => {
+    setStartIndex((prev) => (prev + itemsToShow) % testimonials.length);
+  };
 
-  const visibleTestimonials = testimonials.slice(startIndex, startIndex + 3);
+  const handlePrev = () => {
+    setStartIndex((prev) =>
+      (prev - itemsToShow + testimonials.length) % testimonials.length
+    );
+  };
+
+  const visibleTestimonials = [];
+  for (let i = 0; i < itemsToShow; i++) {
+    visibleTestimonials.push(testimonials[(startIndex + i) % testimonials.length]);
+  }
 
   return (
-    <div className="testimonial-container" style={{ padding: '2rem' }}>
-      <h2 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: 'bold', marginBottom: '2rem' }}>
-        What people say about us
-      </h2>
+    <div className="testimonial-wrapper">
+      <h2 className="testimonial-heading">What people say about us</h2>
+
+      <div className="testimonial-carousel">
+        <div className="blur-left" />
+        <div className="blur-right" />
+
+        <button className="nav-button left" onClick={handlePrev}>
+          ‹
+        </button>
+        <div className="testimonial-slider">
+          {visibleTestimonials.map((t, index) => (
+            <div className="testimonial" key={index}>
+              <h3 className="title">
+                {t.name}
+                <span className="post"> - {t.role}</span>
+              </h3>
+              <p className="description">{t.description}</p>
+            </div>
+          ))}
+        </div>
+        <button className="nav-button right" onClick={handleNext}>
+          ›
+        </button>
+      </div>
+
       <style>{`
+        .testimonial-wrapper {
+          position: relative;
+          padding: 2rem;
+          background: #f9f9f9;
+          overflow: hidden;
+        }
+        .testimonial-heading {
+          text-align: center;
+          font-size: 2rem;
+          font-weight: bold;
+          margin-bottom: 2rem;
+        }
+        .testimonial-carousel {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          max-width: 1200px;
+          margin: auto;
+        }
         .testimonial-slider {
           display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
+          gap: 30px;
+          overflow: hidden;
           transition: all 0.5s ease-in-out;
+          z-index: 10;
         }
         .testimonial {
+          flex: 0 0 300px;
           border: 10px solid #662a66;
           padding: 40px 0 25px;
-          margin: 30px;
           text-align: center;
-          position: relative;
-          max-width: 400px;
           background: #fff;
+          position: relative;
         }
         .testimonial::before {
-          content: "\f10d";
+          content: "\\f10d";
           font-family: "Font Awesome 5 Free";
           font-weight: 900;
           width: 100px;
@@ -169,18 +158,57 @@ const Comments = () => {
           letter-spacing: 1px;
           line-height: 30px;
         }
+        .nav-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: #e8326f;
+          color: white;
+          font-size: 2rem;
+          border: none;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+          z-index: 20;
+        }
+        .nav-button.left {
+          left: 0;
+        }
+        .nav-button.right {
+          right: 0;
+        }
+
+        .blur-left,
+        .blur-right {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 60px;
+          z-index: 15;
+          pointer-events: none;
+        }
+
+        .blur-left {
+          left: 0;
+          background: linear-gradient(to right, #f9f9f9 0%, transparent 100%);
+        }
+        .blur-right {
+          right: 0;
+          background: linear-gradient(to left, #f9f9f9 0%, transparent 100%);
+        }
+
+        @media (max-width: 1000px) {
+          .testimonial {
+            flex: 0 0 90%;
+          }
+          .testimonial-slider {
+            flex-direction: column;
+            align-items: center;
+          }
+          .nav-button {
+            display: none;
+          }
+        }
       `}</style>
-      <div className="testimonial-slider">
-        {visibleTestimonials.map((t, index) => (
-          <div className="testimonial" key={index}>
-            <h3 className="title">
-              {t.name}
-              <span className="post"> - {t.role}</span>
-            </h3>
-            <p className="description">{t.description}</p>
-          </div>
-        ))}
-      </div>
     </div>
   );
 };

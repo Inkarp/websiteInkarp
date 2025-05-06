@@ -1,5 +1,6 @@
 
 import AboutUs from "./OurStory/AboutUs";
+import TeamInfo from "./OurStory/TeamInfo";
 import TeamMembers from "./OurStory/TeamMembers";
 import Timeline from "./OurStory/Timeline";
 import Team from "./Team";
@@ -45,6 +46,7 @@ const OurStory = () => {
             {/* <SubBlog /> */}
             <Timeline />
             <TeamMembers />
+            <TeamInfo />
             <AboutUs/>
             
             {/* <Mission /> */}

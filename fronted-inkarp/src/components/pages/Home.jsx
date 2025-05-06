@@ -1,6 +1,6 @@
 import React from 'react';
 import HeroSection from '../HeroSection';
-import Principles from './UI/Principles';
+// import Principles from './UI/Principles';
 import About from './About';
 import Slider from './UI/Slider';
 import OurCompanies from './OurCompanies';
@@ -20,21 +20,25 @@ import Comments from './Home/Comments';
 import Carousel from './Home/Carousel';
 import LogoBurst from './Home/LogoBurst';
 import NewCompanies from './Home/NewCompanies';
+import Principles from './Home/Principles';
+import Testimonial from './Home/Testimonial';
 
 const Home = () => {
     return (
         <>
             <HeroSection />
             <LogoBurst />
+            <Principles />
             {/* <Carousel /> */}
             
-            <NewCompanies />
+            {/* <NewCompanies /> */}
             {/* <WhyChooseInkarp/>
             <BlogCardList /> */}
             {/* <NewAbout/> */}
             {/* <MagicImage /> */}
             <Offerings />
-            <Comments />
+            {/* <Testimonial /> */}
+            {/* <Comments /> */}
             {/* <Principles /> */}
             {/* <About /> */}
             {/* <Images /> */}
@@ -44,7 +48,7 @@ const Home = () => {
             {/* <OurCompanies /> */}
             {/* <OurPrinciples /> */}
 
-            <Reviews />
+            {/* <Reviews /> */}
             <SubBlog />
             <NewsEvents />
         </>
