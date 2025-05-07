@@ -1,5 +1,7 @@
 
 import AboutUs from "./OurStory/AboutUs";
+import SmallTeams from "./OurStory/SmallTeams";
+import TeamButton from "./OurStory/TeamButton";
 import TeamInfo from "./OurStory/TeamInfo";
 import TeamMembers from "./OurStory/TeamMembers";
 import Timeline from "./OurStory/Timeline";
@@ -44,9 +46,11 @@ const OurStory = () => {
                 </div>
             </div> */}
             {/* <SubBlog /> */}
-            <Timeline />
+            {/* <Timeline /> */}
             {/* <TeamMembers /> */}
+            {/* <TeamButton /> */}
             <TeamInfo />
+            <SmallTeams />
             {/* <AboutUs/> */}
             
             {/* <Mission /> */}

@@ -23,16 +23,18 @@ import NewCompanies from './Home/NewCompanies';
 import Principles from './Home/Principles';
 import Testimonial from './Home/Testimonial';
 import AboutUs from './OurStory/AboutUs';
-import BusinessOrbitMap from './Home/BussinessOrbitMap';
+import AnimatedIcons from './Home/AnimatedIcons';
+// import Testimonials from './Home/Testimonials';
 
 
 const Home = () => {
     return (
         <>
             <HeroSection />
+            {/* <Testimonials /> */}
             <LogoBurst />
             <Principles />
-            <BusinessOrbitMap />
+            {/* <AnimatedIcons/> */}
             {/* <AboutUs /> */}
 
             {/* <Carousel /> */}

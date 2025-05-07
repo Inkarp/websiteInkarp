@@ -9,27 +9,27 @@ export default function MainLayout() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1000); // 1 second
+    const timer = setTimeout(() => setIsLoading(false), 2000); // 1 second
     return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-black space-y-6">
-        <div className="flex flex-col items-center justify-center bg-white rounded-full h-100 w-100 mt-20">
+      <div className="flex flex-col items-center justify-center min-h-screen shadow-xl  space-y-6">
+        <div className="flex flex-col  items-center justify-center bg-red-200 rounded-full h-100 w-100 mt-20">
           <img
-            src="inkarp old.svg" // Replace with your logo path
+            src="inkarp.png" // Replace with your logo path
             alt="Loading Logo"
-            className="w-85 h-32 animate-zoomInOut" // Adjusted size
+            className="w-full h-full animate-zoomInOut" // Adjusted size
           />
           {/* Animated Text */}
-          <div className="mt-2 text-animation flex flex-wrap justify-center gap-1 text-purple-600 text-lg font-semibold">
+          {/* <div className="mt-2 text-animation h-12 w-100 bg-red-500 flex flex-wrap justify-center gap-1 text-black text-lg font-semibold font-[MaxOT]">
             {"Your Knowledge Our Solution".split("").map((char, index) => (
               <span key={index} style={{ animationDelay: `${index * 0.05}s` }}>
                 {char === " " ? "\u00A0" : char}
               </span>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Loading Animations */}

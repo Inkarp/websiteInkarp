@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 const verticalsList = [
   "Synthesis and Flow Chemistry",
@@ -45,9 +45,9 @@ const Verticals = () => {
       </div>
 
       {/* Content Area */}
-      <div className="flex min-h-screen bg-gray-100 mt-2 w-[98%] mx-auto rounded-lg shadow-lg">
+      <div className="flex min-h-screen bg-white mt-2 w-[98%] mx-auto rounded-lg shadow-lg">
         {/* Sidebar */}
-        <aside className="w-[340px] bg-[#e8f0fe] p-6 flex flex-col items-start space-y-5">
+        <aside className="w-[340px] bg-white p-6 flex flex-col items-start space-y-5">
           {verticalsList.map((item, index) => {
             const isActive = index === activeIndex;
 
@@ -55,11 +55,11 @@ const Verticals = () => {
               <div
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`w-full flex items-center justify-between px-5 py-3 rounded-full shadow-sm cursor-pointer transition-all duration-300
+                className={`w-full flex items-center justify-between px-5 py-3 rounded-full shadow-xl cursor-pointer transition-all duration-300
                 ${
                   isActive
-                    ? "bg-white text-black"
-                    : "bg-[#e8f0fe] border border-[#c7d3e3] text-[#0a2540]"
+                    ? "bg-white text-red-500 border border-black font-[MaxOT] font-lg"
+                    : "bg-red-100 text-black border border-[#c7d3e3] text-[#0a2540] font-[Roboto]"
                 }`}
               >
                 <span className="text-base font-medium">{item}</span>
@@ -67,11 +67,11 @@ const Verticals = () => {
                   className={`w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300
                     ${
                       isActive
-                        ? "bg-[#4f7df9] text-white shadow-lg"
+                        ? "bg-red-500 text-white shadow-lg"
                         : "bg-[#0a2540] text-white"
                     }`}
                 >
-                  <ArrowUpRight size={18} />
+                  <ArrowRight size={18} />
                 </span>
               </div>
             );

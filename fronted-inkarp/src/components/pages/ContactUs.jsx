@@ -98,9 +98,6 @@ function ContactUs() {
         .location-ping {
           animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
         }
-        .location-marker {
-          transition: all 0.3s ease;
-        }
         .location-card {
           opacity: 0;
           visibility: hidden;
@@ -112,46 +109,46 @@ function ContactUs() {
           visibility: visible;
           transform: translateY(0);
         }
-        .social-icon {
-          transition: transform 0.3s ease;
-        }
-        .social-icon:hover {
-          transform: scale(1.2);
-        }
       `}</style>
-      <section className="min-h-screen mt-22">
-        <div className="container mx-auto flex flex-col items-center justify-center">
-          {/* INDIA MAP WITH ICONS */}
-          <div className="relative w-full max-w-5xl h-[800px] bg-white rounded-xl overflow-hidden shadow-2xl">
+
+      <section className="min-h-screen mt-20 px-4 md:px-12 bg-white">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-8">
+
+          {/* Left Text */}
+          <div className="w-full lg:w-1/4 text-center lg:text-right space-y-4">
+            <h2 className="text-3xl font-bold text-red-600">11 Branches Across India</h2>
+            <p className="text-gray-700 text-lg">Wherever you are, we’re nearby—ready to support, serve and simplify your scientific journey.</p>
+          </div>
+
+          {/* India Map */}
+          <div className="relative w-full max-w-4xl h-[800px] bg-white rounded-xl overflow-hidden shadow-2xl z-10">
             <img
-              src="/india.jpg" 
+              src="/india.jpg"
               alt="India Map"
               className="object-contain w-full h-full"
             />
 
-            {/* Location Pins with City Names and Hover Card */}
             {branches.map((branch, index) => (
               <div
                 key={index}
-                className="absolute flex flex-col items-center location-wrapper"
+                className="absolute flex flex-col items-center z-20 location-wrapper"
                 style={{
                   top: branch.top,
                   left: branch.left,
                   transform: "translate(-50%, -50%)",
                 }}
               >
-                {/* Animated Icon */}
-                <div className="relative location-marker">
-                  <div className="w-4 h-4 bg-red-500 rounded-full location-ping" />
-                  <div className="w-3 h-3 bg-red-700 rounded-full absolute top-[2px] left-[2px]" />
+                {/* Ping Animation */}
+                <div className="relative">
+                  <div className="w-4 h-4 bg-red-500 rounded-full location-ping absolute top-0 left-0" />
+                  <div className="w-3 h-3 bg-red-700 rounded-full relative " />
                 </div>
-                {/* City Name */}
-                <span className="mt-1 text-xs font-semibold text-black bg-white px-2 py-0.5 rounded-md shadow-sm">
+                <span className="mt-1 text-xs font-semibold text-black bg-white px-2 py-0.5 rounded-md shadow">
                   {branch.name}
                 </span>
 
                 {/* Hover Card */}
-                <div className="location-card absolute top-10 left-1/2 -translate-x-1/2 w-64 bg-white text-black p-4 rounded-lg shadow-2xl z-50">
+                <div className="location-card absolute top-10 left-1/2 -translate-x-1/2 w-64 bg-white text-black p-4 rounded-lg shadow-2xl z-100">
                   <h2 className="text-lg font-bold">{branch.name}</h2>
                   <p className="text-sm mt-2">{branch.address}</p>
                   <div className="flex items-center gap-2 mt-2">
@@ -167,50 +164,17 @@ function ContactUs() {
             ))}
           </div>
 
-          {/* SOCIAL MEDIA LINKS */}
-          {/* <div className="flex justify-center gap-6 mt-10">
-            <a
-              href="https://www.linkedin.com/company/inkarp-instruments/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800"
-            >
-              <span className="social-icon inline-block">
-                <Linkedin size={28} />
-              </span>
-            </a>
-            <a
-              href="mailto:info@inkarp.co.in"
-              className="text-red-500 hover:text-red-700"
-            >
-              <span className="social-icon inline-block">
-                <Mail size={28} />
-              </span>
-            </a>
-            <a
-              href="https://wa.me/919000000000"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-600 hover:text-green-800"
-            >
-              <span className="social-icon inline-block">
-                <MessageCircle size={28} />
-              </span>
-            </a>
-            <a
-              href="https://www.youtube.com/channel/UCxxxx"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-red-600 hover:text-red-800"
-            >
-              <span className="social-icon inline-block">
-                <Youtube size={28} />
-              </span>
-            </a>
-          </div> */}
-          
+          {/* Right Text */}
+          <div className="w-full lg:w-1/4 text-center lg:text-left space-y-4">
+            <h2 className="text-3xl font-bold text-red-600">Inkarp Is Closer Than You Think</h2>
+            <p className="text-gray-700 text-lg">Tap into our local teams for expert consultation, service requests, and scientific solutions tailored to your region.</p>
+          </div>
         </div>
-        <ContactForm />
+
+        {/* Contact Form */}
+        <div className="mt-16">
+          <ContactForm />
+        </div>
       </section>
     </>
   );
