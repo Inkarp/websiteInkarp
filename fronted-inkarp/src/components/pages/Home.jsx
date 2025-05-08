@@ -24,6 +24,7 @@ import Principles from './Home/Principles';
 import Testimonial from './Home/Testimonial';
 import AboutUs from './OurStory/AboutUs';
 import AnimatedIcons from './Home/AnimatedIcons';
+import NewSection from './Home/NewSection';
 // import Testimonials from './Home/Testimonials';
 
 
@@ -31,6 +32,7 @@ const Home = () => {
     return (
         <>
             <HeroSection />
+            <NewSection />
             {/* <Testimonials /> */}
             <LogoBurst />
             <Principles />

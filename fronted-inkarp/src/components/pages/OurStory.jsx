@@ -1,4 +1,5 @@
 
+import NewLayout from "./Home/NewLayout";
 import AboutUs from "./OurStory/AboutUs";
 import SmallTeams from "./OurStory/SmallTeams";
 import TeamButton from "./OurStory/TeamButton";
@@ -49,6 +50,7 @@ const OurStory = () => {
             {/* <Timeline /> */}
             {/* <TeamMembers /> */}
             {/* <TeamButton /> */}
+            <NewLayout />
             <TeamInfo />
             <SmallTeams />
             {/* <AboutUs/> */}
