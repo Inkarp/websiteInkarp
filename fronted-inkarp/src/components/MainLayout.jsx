@@ -59,8 +59,9 @@ export default function MainLayout() {
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background Video */}
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <video
+      <div className="fixed inset-0 -z-10 overflow-hidden bg-black">
+        <img src="black.jpg" />
+        {/* <video
           className="w-full h-full object-cover"
           src="/bg-video.mov" // Put your bg-video inside public folder
           autoPlay
@@ -71,7 +72,7 @@ export default function MainLayout() {
             animation: "zoomPanSlow 60s ease-in-out infinite alternate",
              filter: 'blur(5px)'
           }}
-        />
+        /> */}
         {/* Optional Dark Gradient Overlay */}
         <div className="absolute pointer-events-none" />
       </div>

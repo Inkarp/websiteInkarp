@@ -6,20 +6,17 @@ const logos = Array.from({ length: 46 }).map((_, i) => ({
 }));
 
 export default function Principles() {
-  const rows = 5;
+  const rows = 7;
 
   return (
-    <div className="relative bg-red-100 py-10 overflow-hidden">
+    <div className="relative bg-[#f6ebf0] py-10 overflow-hidden">
       <h1 className="text-center text-xl sm:text-2xl font-semibold text-gray-800 mb-6 font-[MaxOT]">
         Global Partnership with Leading Brands{" "}
-        <span className="text-red-600">46+ top principals</span>
+        <span className="text-[#af2d58]">46+ top principals</span>
       </h1>
 
       {[...Array(rows)].map((_, rowIndex) => (
-        <div
-          key={rowIndex}
-          className="relative overflow-hidden group my-4"
-        >
+        <div key={rowIndex} className="relative overflow-hidden group my-4">
           <div
             className={`scroll-row ${
               rowIndex % 2 === 0 ? "scroll-left" : "scroll-right"
@@ -32,7 +29,6 @@ export default function Principles() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative group/logo block"
-                style={{ width: "auto", height: "auto" }}
               >
                 <img
                   src={logo.src}
@@ -44,9 +40,9 @@ export default function Principles() {
             ))}
           </div>
 
-          {/* Left and Right fade shadows */}
-          <div className="absolute top-0 left-0 w-20 h-full z-20 bg-gradient-to-r from-red-100 via-red-100 to-transparent pointer-events-none" />
-          <div className="absolute top-0 right-0 w-20 h-full z-20 bg-gradient-to-l from-red-100 via-red-100 to-transparent pointer-events-none" />
+          {/* Darker Gradient Shadows */}
+          <div className="absolute top-0 left-0 w-24 h-full z-20 bg-gradient-to-r from-[#f6ebf0] via-[#f6ebf0] to-[#8a1f41]/80 pointer-events-none" />
+          <div className="absolute top-0 right-0 w-24 h-full z-20 bg-gradient-to-l from-[#f6ebf0] via-[#f6ebf0] to-[#8a1f41]/80 pointer-events-none" />
         </div>
       ))}
 
@@ -85,7 +81,7 @@ export default function Principles() {
           left: 0;
           width: 100%;
           height: 100%;
-          background-color: rgba(255, 0, 0, 0.3);
+          background-color: rgba(175, 45, 88, 0.25);
           z-index: 5;
           transition: top 0.4s ease;
         }

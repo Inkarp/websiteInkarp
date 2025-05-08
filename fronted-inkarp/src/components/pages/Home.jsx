@@ -14,17 +14,19 @@ import NewTeam from './UI/NewTeam';
 import Images from './UI/Images';
 import WhyChooseInkarp from './UI/WhyChooseInkarp';
 import BlogCardList from './UI/BlogCardList';
-import NewAbout from './UI/NewAbout';
+
 import MagicImage from './UI/MagicImage';
 import Comments from './Home/Comments';
 import Carousel from './Home/Carousel';
-import LogoBurst from './Home/LogoBurst';
 import NewCompanies from './Home/NewCompanies';
 import Principles from './Home/Principles';
 import Testimonial from './Home/Testimonial';
 import AboutUs from './OurStory/AboutUs';
 import AnimatedIcons from './Home/AnimatedIcons';
-import NewSection from './Home/NewSection';
+import AboutInkarp from './Home/AboutInkarp';
+import PickProduct from './Home/PickProduct';
+import NewAbout from './Home/NewAbout';
+import ExperienceSection from './Home/ExperienceSection';
 // import Testimonials from './Home/Testimonials';
 
 
@@ -32,21 +34,23 @@ const Home = () => {
     return (
         <>
             <HeroSection />
-            <NewSection />
-            {/* <Testimonials /> */}
-            <LogoBurst />
+            <PickProduct />
+            <NewAbout />
+            <ExperienceSection />
             <Principles />
+            <Offerings />
+            <BlogCardList />
+            <NewsEvents />
+            {/* <NewSection /> */}
+            {/* <Testimonials /> */}
+            {/* <AboutInkarp /> */}           
             {/* <AnimatedIcons/> */}
             {/* <AboutUs /> */}
-
-            {/* <Carousel /> */}
-            
+            {/* <Carousel /> */}           
             {/* <NewCompanies /> */}
-            {/* <WhyChooseInkarp/>
-            <BlogCardList /> */}
+            {/* /* <WhyChooseInkarp/> */}
             {/* <NewAbout/> */}
-            {/* <MagicImage /> */}
-            <Offerings />
+            {/* <MagicImage /> */}           
             {/* <Testimonial /> */}
             {/* <Comments /> */}
             {/* <Principles /> */}
@@ -57,10 +61,8 @@ const Home = () => {
             <Slider /> */}
             {/* <OurCompanies /> */}
             {/* <OurPrinciples /> */}
-
             {/* <Reviews /> */}
-            <SubBlog />
-            <NewsEvents />
+            {/* <SubBlog /> */}       
         </>
     );
 };
