@@ -127,11 +127,10 @@ function Offerings() {
           font-size: 2.5rem;
           font-weight: 700;
           text-align: center;
-          color:white;
-          background-color:rgb(158, 13, 25) ;
+          color:black;
+          background-color:white ;
           // border-radius: 9999px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
         }
 
         .offering-ribbon-heading::before,
@@ -141,10 +140,10 @@ function Offerings() {
           top: 20px;
           width: 80px;
           height: 100%;
-          background-color: #e63946;
+          background-color: white;
           z-index: -1;
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 25% 50%);
-          background-image: linear-gradient(45deg, transparent 50%, #b91c1c 50%);
+          background-image: linear-gradient(45deg, transparent 50%,black 50%);
           background-size: 20px 20px;
           background-repeat: no-repeat;
           background-position: bottom right;

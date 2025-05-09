@@ -141,14 +141,14 @@ export default function PickProduct() {
     const selectedProduct = productData[selectedIndex];
 
     return (
-        <div className="bg-white w-[96%] mx-auto py-6 flex flex-col items-center space-y-5">
+        <div className=" w-[96%] mx-auto py-6 flex flex-col items-center space-y-5">
             <div className="flex flex-col items-center">
-            <h1 className="font-bold text-black text-3xl font-[MaxOT]">Pick a Product to Start</h1>
-            <p className="font-[Roboto] text-gray-600">Our professional and well-trained staff is ready to assist.</p>
+            <h1 className="font-bold text-white text-3xl font-[MaxOT]">Pick a Product to Start</h1>
+            <p className="font-[Roboto] text-red-600">Our professional and well-trained staff is ready to assist.</p>
             </div>
 
             {/* Product Selector Row */}
-            <div className="w-[60%] bg-gray-800 text-white h-[50px] rounded-full flex items-center justify-between px-4 shadow relative">
+            <div className="w-[60%] bg-gray-200 text-white h-[50px] rounded-full flex items-center justify-between px-4 shadow relative">
                 {/* Custom Left Arrow */}
                 <div
                     onClick={handlePrev}
@@ -166,7 +166,7 @@ export default function PickProduct() {
                             <button
                                 key={actualIndex}
                                 onClick={() => setSelectedIndex(actualIndex)}
-                                className={`px-4 py-2 rounded-full text-sm font-[Roboto] transition ${isSelected ? "text-red-500 font-bold" : "text-white font-bold"
+                                className={`px-4 py-2 rounded-full text-sm font-[Roboto] transition ${isSelected ? "text-red-500 font-bold" : "text-black font-bold"
                                     }`}
                             >
                                 {item.name}
@@ -195,11 +195,11 @@ export default function PickProduct() {
             {/* Two-column layout */}
             <div className="w-[70%] mx-auto flex flex-col md:flex-row bg-gray-100 border border-red-500 p-6 space-y-6 md:space-y-0 md:space-x-6">
                 {/* Left - Image */}
-                <div className="flex-shrink-0 w-full md:w-1/2 flex justify-center  rounded-xl">
+                <div className="flex-shrink-0 w-full md:w-1/2 flex justify-center ">
                     <img
                         src={selectedProduct.image}
                         alt={selectedProduct.name}
-                        className="rounded-xl max-w-xs object-fit bg-gray-500"
+                        className=" max-w-xs object-fit bg-red-50"
                     />
                 </div>
 

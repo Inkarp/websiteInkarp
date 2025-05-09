@@ -36,7 +36,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-2 left-1/2 transform -translate-x-1/2 z-[50] w-[96%] rounded-xl transition-all duration-300 shadow-xl bg-white ${
+        className={`fixed top-2 mx-auto z-[50] w-[96%] rounded-xl transition-all duration-300 shadow-xl bg-white transform-gpu ${
           scrolled ? "py-1 scale-95" : "py-0 scale-100"
         }`}
       >
@@ -52,7 +52,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex font-medium text-sm lg:text-base">
-            <ul className="flex items-center space-x-2 lg:space-x-6 whitespace-nowrap">
+            <ul className="flex items-center space-x-2 lg:space-x-4 whitespace-nowrap">
               {navLinks.map(({ name, path }) => (
                 <li key={name}>
                   <Link
@@ -61,9 +61,9 @@ export default function Header() {
                       isActive(path) ? "text-[red]" : "text-black"
                     }`}
                   >
-                    <span className="relative z-0">
+                    <span className="relative z-10">
                       {name}
-                      <span className="absolute inset-x-0 bottom-0 h-[2px] scale-x-0 group-hover:scale-x-100 bg-[#fcae04] origin-left transition-transform duration-300"></span>
+                      <span className="absolute inset-x-0 bottom-0 h-[2px] bg-[#fcae04] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 z-0"></span>
                     </span>
                   </Link>
                 </li>
@@ -74,9 +74,9 @@ export default function Header() {
                   onClick={() => setInsightsOpen(!insightsOpen)}
                   className="flex items-center px-2 lg:px-3 py-2 text-black relative group"
                 >
-                  <span className="relative z-0">
+                  <span className="relative z-10">
                     Insights & Updates
-                    <span className="absolute inset-x-0 bottom-0 h-[2px] scale-x-0 group-hover:scale-x-100 bg-[#fcae04] origin-left transition-transform duration-300"></span>
+                    <span className="absolute inset-x-0 bottom-0 h-[2px] bg-[#fcae04] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 z-0"></span>
                   </span>
                   <ChevronDown className="h-4 w-4 ml-1 opacity-60" />
                 </button>
@@ -88,7 +88,7 @@ export default function Header() {
                         className="group block px-4 py-2 hover:bg-gray-100 font-medium relative text-black"
                       >
                         Blogs
-                        <span className="absolute inset-x-0 bottom-0 h-[2px] scale-x-0 group-hover:scale-x-100 bg-[#fcae04] origin-left transition-transform duration-300"></span>
+                        <span className="absolute inset-x-0 bottom-0 h-[2px] bg-[#fcae04] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 z-0"></span>
                       </Link>
                     </li>
                     <li>
@@ -97,7 +97,7 @@ export default function Header() {
                         className="group block px-4 py-2 hover:bg-gray-100 font-medium relative text-black"
                       >
                         News & Events
-                        <span className="absolute inset-x-0 bottom-0 h-[2px] scale-x-0 group-hover:scale-x-100 bg-[#fcae04] origin-left transition-transform duration-300"></span>
+                        <span className="absolute inset-x-0 bottom-0 h-[2px] bg-[#fcae04] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 z-0"></span>
                       </Link>
                     </li>
                   </ul>

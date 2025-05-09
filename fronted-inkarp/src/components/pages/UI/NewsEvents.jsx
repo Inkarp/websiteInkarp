@@ -23,7 +23,7 @@ const newsEvents = [
 
 const NewsEvents = () => {
   return (
-    <aside className="relative">
+    <aside className="relative w-[90%] mx-auto">
       <div className="absolute -top-10 right-6 hidden md:block z-10">
         <img
           className="ml-auto max-w-none"
@@ -35,7 +35,7 @@ const NewsEvents = () => {
         />
       </div>
 
-      <div className="relative bg-gray-900 rounded-3xl overflow-hidden p-8 md:px-12 md:py-14 md:pr-80">
+      <div className="relative bg-white rounded-3xl overflow-hidden p-8 md:px-12 md:py-14 md:pr-80">
         <div className="absolute inset-0" aria-hidden="true">
           <img
             className="w-full h-full object-cover"
@@ -48,21 +48,21 @@ const NewsEvents = () => {
         </div>
 
         <div className="relative text-center md:text-left">
-          <h3 className="text-xl font-medium bg-clip-text text-transparent bg-gradient-to-r from-gray-100/70 to-gray-100 pb-6">
-            Community News & Events
+          <h3 className="text-xl font-xl bg-clip-text text-transparent bg-gradient-to-r from-red-800/70 to-black pb-6">
+            News & Events
           </h3>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {newsEvents.map((item) => (
               <div
                 key={item.id}
-                className="bg-white/5 backdrop-blur-md rounded-2xl p-6 text-white shadow-md"
+                className="bg-red-500/5 backdrop-blur-md rounded-2xl p-6 text-black shadow-md"
               >
-                <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
-                <p className="text-sm text-gray-300 mb-2">{item.date}</p>
-                <p className="text-gray-200 mb-4">{item.description}</p>
+                <h4 className="text-lg text-black font-semibold mb-2">{item.title}</h4>
+                <p className="text-sm text-black  mb-2">{item.date}</p>
+                <p className="text-black  mb-4">{item.description}</p>
                 <a
                   href="#"
-                  className="inline-flex items-center text-indigo-300 hover:text-indigo-100 font-medium transition"
+                  className="inline-flex items-center text-red-500 hover:red-300 font-medium transition"
                 >
                   Read more
                   <svg

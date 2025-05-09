@@ -1,5 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Play, Circle, ChevronLeft, ChevronRight } from "lucide-react";
+import { keyframes } from "@emotion/react";
+import { Reveal } from "react-awesome-reveal";
+
+// FIXED: Fall from bottom & rotate X from 180 to 0
+const fallFromBottom = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(60px) rotateX(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) rotateX(0deg);
+  }
+`;
 
 function HeroSection() {
   const slides = [
@@ -31,9 +45,7 @@ function HeroSection() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [transitioning, setTransitioning] = useState(true);
   const autoSlideRef = useRef(null);
-  const slideContainerRef = useRef(null);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -43,54 +55,34 @@ function HeroSection() {
 
   const startAutoSlide = () => {
     autoSlideRef.current = setInterval(() => {
-      goToSlide(currentIndex + 1);
-    }, 3000);
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
+    }, 5000);
   };
 
   const stopAutoSlide = () => {
     clearInterval(autoSlideRef.current);
   };
 
-  const goToSlide = (index) => {
-    if (index >= slides.length) {
-      setCurrentIndex(0);
-    } else {
-      setCurrentIndex(index);
-    }
-    setTransitioning(true);
-  };
-
-  const handleTransitionEnd = () => {
-    if (currentIndex === slides.length) {
-      setTransitioning(false);
-      setCurrentIndex(0);
-    }
-  };
-
   const handleManual = (direction) => {
     stopAutoSlide();
     if (direction === "next") {
-      goToSlide((currentIndex + 1) % slides.length);
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
     } else {
-      goToSlide(currentIndex === 0 ? slides.length - 1 : currentIndex - 1);
+      setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
     }
     startAutoSlide();
   };
 
+  const currentSlide = slides[currentIndex];
+
   return (
     <section className="w-full mt-3 py-5 px-4 lg:px-8 mt-20">
-      <style>{`
-        .slide-transition {
-          transition: transform 0.8s ease-in-out;
-        }
-      `}</style>
-
-      <div className="w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-6 ">
-        {/* Left static image with button */}
+      <div className="w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-6">
+        {/* Left Video */}
         <div className="relative lg:w-1/2 mx-auto h-[400px] md:h-[500px]">
           <video
             ref={videoRef}
-            className="rounded-2xl w-full h-full object-cover"
+            className="rounded-[3rem] w-full h-full object-cover"
             src="bg-video.mov"
             muted
             loop
@@ -110,30 +102,53 @@ function HeroSection() {
           </a>
         </div>
 
-        {/* Slider Right */}
+        {/* Right Slider */}
         <div className="relative w-full lg:w-1/2 h-[400px] md:h-[500px] overflow-hidden rounded-2xl">
-          <div
-            ref={slideContainerRef}
-            onTransitionEnd={handleTransitionEnd}
-            className={`flex h-full ${transitioning ? "slide-transition" : ""}`}
-            style={{
-              width: `${slides.length * 100}%`,
-              transform: `translateX(-${(currentIndex / slides.length) * 100}%)`,
-            }}
-          >
-            {slides.map((slide, index) => (
-              <div key={index} className="w-full h-full relative">
-                <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-10 left-0 right-0 text-red-500 p-4">
-                  <h2 className="text-lg md:text-2xl text-white font-bold" style={{ fontFamily: 'MaxOT' }}>{slide.title}</h2>
-                  <p className="text-sm md:text-base text-white" style={{ fontFamily: 'Roboto' }}>{slide.subtitle}</p>
-                </div>
-              </div>
-            ))}
+          <div className="w-full h-full relative">
+            <img
+              src={currentSlide.image}
+              alt={currentSlide.title}
+              className="w-full h-full object-cover"
+            />
+            <div
+              className="absolute bottom-10 left-0 right-0 text-red-500 p-4"
+              style={{ perspective: "1000px" }}
+            >
+              <Reveal
+                key={`title-${currentIndex}`}
+                keyframes={fallFromBottom}
+                duration={1200}
+                triggerOnce={false}
+              >
+                <h2
+                  className="text-lg md:text-2xl text-white font-bold"
+                  style={{
+                    fontFamily: "MaxOT",
+                    transformStyle: "preserve-3d",
+                  }}
+                >
+                  {currentSlide.title}
+                </h2>
+              </Reveal>
+
+              <Reveal
+                key={`subtitle-${currentIndex}`}
+                keyframes={fallFromBottom}
+                duration={1200}
+                delay={200}
+                triggerOnce={false}
+              >
+                <p
+                  className="text-sm md:text-base text-white mt-1"
+                  style={{
+                    fontFamily: "Roboto",
+                    transformStyle: "preserve-3d",
+                  }}
+                >
+                  {currentSlide.subtitle}
+                </p>
+              </Reveal>
+            </div>
           </div>
 
           {/* Arrows */}
@@ -157,7 +172,9 @@ function HeroSection() {
             {slides.map((_, index) => (
               <div
                 key={index}
-                className={`w-3 h-3 rounded-full ${currentIndex === index ? "bg-white" : "bg-white/50"}`}
+                className={`w-3 h-3 rounded-full ${
+                  currentIndex === index ? "bg-white" : "bg-white/50"
+                }`}
               ></div>
             ))}
           </div>
