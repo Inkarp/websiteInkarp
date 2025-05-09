@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaLinkedin } from 'react-icons/fa';
 
 const teamMembers = [
   {
@@ -8,7 +9,7 @@ const teamMembers = [
     location: 'Hyderabad',
     img: 'https://www.inkarp.co.in/assets/images/our_team/S.Balu.jpeg',
     message:
-      'When I first started Inkarp in 1985, I had one guiding principle: to provide unmatched after-sale service and unwavering support to our customers. This commitment has been the cornerstone of our journey, and it remains at the heart of everything we do today.',
+      'When I first started Inkarp in 1985, I had one guiding principle: to provide unmatched after-sale service and unwavering support to our customers. This commitment has been the cornerstone of our journey, and it remains at the heart of everything we do today.Our success is built on the trust and dedication of everyone we work with, from the passionate scientists who use our products to the incredible team that strives to meet and exceed expectations every day. We are not just a company; we are a family that believes in fostering strong relationships and making a real difference in the scientific community.I am deeply grateful for your continued support and trust. It is your belief in our mission that drives us to push boundaries, explore new markets, and continually enhance our offerings. Together, we are building a future where science thrives, and innovation knows no bounds.Thank you for being an integral part of Inkarps journey.Let us continue to grow, innovate, and make a lasting impact together.',
     links: ['https://linkedin.com/in/s-balu', 'https://twitter.com/s_balu', 'https://github.com/sbalu']
   },
   {
@@ -68,158 +69,181 @@ export default function TeamInfo() {
   const [hovered, setHovered] = useState(null);
 
   const renderCard = (member, index) => (
-    <div>
-      <h1>Meet the Team </h1>
-      <h2>The talented Team Behind the scenes of organisation</h2>
-    <div
-      key={index}
-      onMouseEnter={() => setHovered(index)}
-      onMouseLeave={() => setHovered(null)}
-      style={{
-        display: 'flex',
-        height: 'auto',
-        width: hovered === index ? '600px' : '240px',
-        borderRadius: '20px',
-        border: hovered === index ? '4px solid red' : '0px solid #ccc',
-        transition: 'all 0.6s ease',
-        backgroundColor: '#fff',
-        overflow: 'hidden',
-        boxShadow: hovered === index ? '0 0 20px rgba(0,0,0,0.2)' : '0 0 5px rgba(0,0,0,0.1)'
-      }}
-    >
-      {/* Left side: Image & Info */}
-      <div style={{ width: '220px', position: 'relative' }}>
-        <div style={{
-          width: '100%',
-          height: '220px',
-          perspective: '1000px',
-          margin: '10px auto',
-        }}>
-          <div style={{
-            width: '100%',
-            height: '100%',
-            position: 'relative',
-            transformStyle: 'preserve-3d',
-            transition: 'transform 0.8s',
-            transform: hovered === index ? 'rotateY(180deg)' : 'rotateY(0deg)',
-          }}>
-            <img
-              src={member.img}
-              alt={member.name}
+    <div className='' key={index}>
+      <div
+        onMouseEnter={() => setHovered(index)}
+        onMouseLeave={() => setHovered(null)}
+        style={{
+          display: 'flex',
+          height: hovered === index ? '380px' : '360px',
+          width: hovered === index ? '600px' : '240px',
+          borderRadius: '20px',
+          border: hovered === index ? '4px solid red' : '0px solid #ccc',
+          transition: 'all 0.6s ease',
+          overflow: 'hidden',
+          backgroundColor: '#fff',
+          // boxShadow: hovered === index ? '0 0 20px rgba(0,0,0,0.2)' : '0 0 5px rgba(0,0,0,0.1)'
+        }}
+      >
+        {/* Left side: Image & Info */}
+        <div style={{ width: '220px', position: 'relative' }}>
+          <div
+            style={{
+              width: '100%',
+              height: '220px',
+              perspective: '1000px',
+              margin: '10px auto',
+            }}
+          >
+            <div
               style={{
-                position: 'absolute',
                 width: '100%',
                 height: '100%',
-                objectFit: 'contain',
-                borderRadius: '150px',
-                backfaceVisibility: 'hidden',
-                border: '4px solid gray'
+                position: 'relative',
+                transformStyle: 'preserve-3d',
+                transition: 'transform 0.8s',
+                transform: hovered === index ? 'rotateY(180deg)' : 'rotateY(0deg)',
               }}
-            />
-            <img
-              src={member.img}
-              alt="Back"
-              style={{
-                position: 'absolute',
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                borderRadius: '15px',
-                backfaceVisibility: 'hidden',
-                transform: 'rotateY(180deg)',
-                border: '4px solid gray'
-              }}
-            />
+            >
+              <img
+                src={member.img}
+                alt={member.name}
+                style={{
+                  position: 'absolute',
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain',
+                  borderRadius: '150px',
+                  backfaceVisibility: 'hidden',
+                  border: '4px solid red'
+                }}
+              />
+              <img
+                src={member.img}
+                alt="Back"
+                style={{
+                  position: 'absolute',
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '15px',
+                  backfaceVisibility: 'hidden',
+                  transform: 'rotateY(180deg)',
+                  border: '4px solid red'
+                }}
+              />
+            </div>
           </div>
-        </div>
-
-        {/* Always visible name + title */}
-        <div style={{
-          padding: '8px 10px 5px',
-          textAlign: 'center',
-        }}>
-          <h3 style={{ fontSize: '1rem', margin: '5px 0 0', fontWeight: 600 }}>{member.name}</h3>
-          <p style={{ fontSize: '0.85rem', color: '#888', margin: 0 }}>{member.title}</p>
-        </div>
-
-        {/* Details on hover */}
-        {hovered === index && (
-          <div style={{ padding: '10px 12px', textAlign: 'left' }}>
-            <a href={`mailto:${member.email}`} style={{ color: 'red', fontSize: '0.9rem' }}>
-              {member.email}
-            </a>
-            <div style={{ marginTop: '8px', fontSize: '0.85rem', color: '#ff4d4d' }}>
-              Connect with {member.name.split(' ')[0]}
+  
+          {/* Name + Title */}
+          <div
+            style={{
+              padding: '8px 10px 5px',
+              textAlign: 'center',
+            }}
+          >
+            <h3 style={{ fontSize: '1rem', margin: '5px 0 0', fontWeight: 600 }}>
+              {member.name}
+            </h3>
+            <p style={{ fontSize: '0.85rem', color: '#888', margin: 0 }}>
+              {member.title}
+            </p>
+          </div>
+  
+          {/* Only LinkedIn Icon on Hover */}
+          {hovered === index && member.links[0] && (
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
+              <a
+                href={member.links[0]}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  width: '30px',
+                  height: '30px',
+                  borderRadius: '50%',
+                  backgroundColor: '#0077b5',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                <FaLinkedin className="text-sm" />
+              </a>
             </div>
-            <div style={{ display: 'flex', gap: '10px', marginTop: '6px' }}>
-              {member.links.map((link, i) => (
-                <a
-                  key={i}
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    backgroundColor: 'white',
-                    maxWidth: '30px',
-                    borderRadius: '25px',
-                    padding: '4px',
-                  }}
-                >
-                  <img
-                    src="https://blog.codepen.io/wp-content/uploads/2012/06/Button-Fill-Black-Small.png"
-                    alt="icon"
-                    style={{ width: '100%', borderRadius: '25px' }}
-                  />
-                </a>
-              ))}
-            </div>
+          )}
+        </div>
+  
+        {/* Message on Hover */}
+        {hovered === index && member.message && (
+          <div
+            style={{
+              padding: '20px',
+              width: '100%',
+              color: '#333',
+              fontSize: '16px',
+              fontStyle: 'italic',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'flex-end',
+              borderLeft: '1px solid #ddd',
+              textAlign: 'right'
+            }}
+          >
+            “{member.message}”
           </div>
         )}
       </div>
-
-      {/* Right-side message on hover */}
-      {hovered === index && member.message && (
-        <div style={{
-          padding: '20px',
-          width: '100%',
-          color: '#333',
-          fontSize: '16px',
-          fontStyle: 'italic',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderLeft: '1px solid #ddd',
-        }}>
-          “{member.message}”
-        </div>
-      )}
-    </div>
     </div>
   );
+  
 
   return (
     <div
       style={{
-        background: `repeating-linear-gradient(
-          135deg,
-          #f7f7f7,
-          #f7f7f7 40px,
-          #eaeaea 40px,
-          #eaeaea 80px
-        )`,
-        padding: '50px 0'
+        padding: '50px 0',
+        fontFamily: 'MaxOT',
       }}
-      className="mt-20"
+      className="mt-2 bg-white w-[96%] mx-auto"
     >
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
-        {renderCard(teamMembers[0], 0)} {/* Chairman */}
+      <h1 className="text-center text-4xl text-white font-bold mb-10">House of Inkarp</h1>
+  
+      {/* Chairman + ED + Building Section */}
+      <div className="flex flex-wrap justify-center items-center gap-8 px-4 mb-8">
+        {/* Left - Chairman & ED */}
+        <div className="flex flex-col gap-8 w-full md:w-[50%]">
+          {renderCard(teamMembers[0], 0)}
+          {renderCard(teamMembers[1], 1)}
+        </div>
+  
+        {/* Right - Image with Animation */}
+        <div className="w-full md:w-[40%] flex justify-center">
+          <img
+            src="https://www.inkarp.co.in/assets/images/inkarp-building.png"
+            alt="Inkarp Building"
+            className="rounded-xl shadow-lg animate-fade-in opacity-0"
+            style={{
+              width: '100%',
+              maxWidth: '400px',
+              animation: 'fadeIn ease-in 2.5s forwards',
+            }}
+          />
+        </div>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
-        {renderCard(teamMembers[1], 1)} {/* Executive Director */}
-      </div>
+  
+      {/* Directors Row */}
+      <h2 className="text-center text-2xl font-semibold mb-8">Regional Leadership</h2>
       <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
         {teamMembers.slice(2).map((member, idx) => renderCard(member, idx + 2))}
       </div>
+  
+      {/* Keyframes for fade-in animation */}
+      <style>{`
+        @keyframes fadeIn {
+          0% { opacity: 0.2; transform: translateY(30px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </div>
   );
+  
 }

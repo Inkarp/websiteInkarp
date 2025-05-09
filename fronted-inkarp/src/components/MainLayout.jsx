@@ -2,14 +2,13 @@ import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
-import Navbar from "./Navbar";
 import NavbarNew from "./NavbarNew";
 
 export default function MainLayout() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000); // 1 second
+    const timer = setTimeout(() => setIsLoading(false), 500); // 1 second
     return () => clearTimeout(timer);
   }, []);
 
@@ -92,7 +91,6 @@ export default function MainLayout() {
       {/* Foreground Scrollable Content */}
       <div className="relative flex flex-col min-h-screen z-10">
         <Header />
-        {/* <Navbar/> */}
         {/* <NavbarNew/> */}
         <main className="flex-grow">
           <Outlet />
