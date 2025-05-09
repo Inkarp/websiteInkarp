@@ -27,19 +27,23 @@ import AboutInkarp from './Home/AboutInkarp';
 import PickProduct from './Home/PickProduct';
 import NewAbout from './Home/NewAbout';
 import ExperienceSection from './Home/ExperienceSection';
+import InsightGrid from './Home/InsightGrid';
+import Hero from './Home/Hero';
 // import Testimonials from './Home/Testimonials';
 
 
 const Home = () => {
     return (
         <>
+        {/* <Hero/> */}
             <HeroSection />
             <PickProduct />
             <NewAbout />
             <ExperienceSection />
             <Principles />
             <Offerings />
-            <BlogCardList />
+            <InsightGrid />
+            {/* <BlogCardList /> */}
             <NewsEvents />
             {/* <NewSection /> */}
             {/* <Testimonials /> */}

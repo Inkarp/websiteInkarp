@@ -36,7 +36,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-2 mx-auto z-[50] w-[96%] rounded-xl transition-all duration-300 shadow-xl bg-white transform-gpu ${
+        className={`fixed top-2 md:left-5 lg:left-8 mx-auto z-[50] w-[96%] rounded-xl transition-all duration-300 shadow-xl bg-white transform-gpu ${
           scrolled ? "py-1 scale-95" : "py-0 scale-100"
         }`}
       >
