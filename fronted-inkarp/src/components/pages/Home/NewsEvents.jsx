@@ -23,7 +23,7 @@ const newsEvents = [
 
 const NewsEvents = () => {
   return (
-    <aside className="relative w-[90%] mx-auto mt-3">
+    <aside className="relative w-[96%] mx-auto mt-3">
       <div className="absolute -top-10 right-6 hidden md:block z-10">
         <img
           className="ml-auto max-w-none"

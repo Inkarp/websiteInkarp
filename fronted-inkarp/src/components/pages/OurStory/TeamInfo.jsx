@@ -192,7 +192,7 @@ export default function TeamInfo() {
       {/* Chairman + ED + Building Section */}
       <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-16 px-4">
         {/* Chairman & Executive Director */}
-        <div className="flex flex-col gap-8 w-full md:w-[50%] max-w-[750px] items-center">
+        <div className="flex flex-col gap-8 w-full md:w-[50%] max-w-[750px] items-center bg-red-100">
           {renderCard(teamMembers[0], 0)}
           {renderCard(teamMembers[1], 1)}
         </div>

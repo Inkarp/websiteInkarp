@@ -148,6 +148,9 @@ function ProfileCard({ profile }) {
       <div className="bg-white text-black h-[160px] p-5 flex flex-col justify-center items-center ">
         <h3 className="text-lg font-bold font-[MaxOT] p-2">{profile.name}</h3>
         <p className="text-sm leading-relaxed font-[Roboto] ">{profile.description}</p>
+        {/* <div className="flex gap-2 mt-2 bg-red-500 w-40 h-60 rounded-[50%] p-2">
+
+        </div> */}
       </div>
 
       {/* Image with share button inside */}
@@ -200,6 +203,61 @@ export default function Offerings() {
   return (
     <>
       <h1 className="offering-ribbon-heading">Our Offerings</h1>
+      {/* Theme-Based Highlight Section */}
+{/* <div className="w-full py-8 flex justify-center bg-[#f0f5ff]">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 max-w-6xl w-full">
+    {[
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/3003/3003984.png", // microscope icon
+        title: "Data Technology",
+        text: "Our clinical pathologists are available seven days a week to render diagnoses."
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/4320/4320337.png", // lab analysis icon
+        title: "Materials Analysis",
+        text: "24/7 access to real-time, study-wide data for your project teams, our labs,"
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/3458/3458573.png", // flow cytometry icon
+        title: "Flow Cytometry",
+        text: "Visibility of the sample and the whole chain of custody beginning at collection"
+      }
+    ].map((item, idx) => (
+      <div
+        key={idx}
+        className="bg-white rounded-[32px] shadow-md p-6 text-center flex flex-col justify-between h-full"
+      >
+        <div className="flex justify-center items-center mb-4">
+          <div className="w-16 h-16 rounded-full bg-[#e8f0fe] flex items-center justify-center">
+            <img src={item.icon} alt={item.title} className="w-8 h-8" />
+          </div>
+        </div>
+        <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
+        <hr className="border-gray-300 mb-3" />
+        <p className="text-sm text-gray-600">{item.text}</p>
+        <div className="mt-6 flex justify-center">
+          <div className="w-8 h-8 rounded-full border-2 border-[#dbe6fd] flex items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 text-blue-700"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div> */}
+
 
       {/* Ribbon Style */}
       <style>{`

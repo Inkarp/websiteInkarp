@@ -22,17 +22,17 @@ const Footer = () => {
   };
 
   return (
-    <footer className="text-white bg-black w-[98%] mx-auto mt-5 rounded-xl shadow-lg">
+    <footer className="text-white bg-white w-[98%] mx-auto mt-5 rounded-xl shadow-lg">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 px-4 py-10 rounded-t-xl">
         <img
-          className="h-20 sm:h-24 w-auto bg-white rounded-md p-2"
+          className="h-20 sm:h-24 w-auto bg-red-100 rounded-md p-2"
           src="inkarp old.svg"
           alt="Inkarp Logo"
           title="Inkarp"
         />
 
         <div className="w-full lg:w-3/4 text-center">
-          <h3 className="text-xl sm:text-2xl font-bold mb-4" style={{ fontFamily: 'MaxOT' }}>Subscribe to Our Newsletter</h3>
+          <h3 className="text-xl text-black sm:text-2xl font-bold mb-4" style={{ fontFamily: 'MaxOT' }}>Subscribe to Our Newsletter</h3>
           <div className="relative max-w-xl mx-auto">
             <form
               ref={formRef}
@@ -41,13 +41,13 @@ const Footer = () => {
             >
               <input
                 type="email"
-                className="add-email absolute top-0 left-0 w-full h-full px-5 text-sm bg-white text-black outline-none"
+                className="add-email absolute top-0 left-0 w-full h-full px-5 text-sm bg-red-100 text-black border border-red-200 placeholder:font-semibold placeholder-black"
                 placeholder="Enter Your Email Address"
                 required
               />
               <button
                 type="submit"
-                className="submit-email absolute top-0 right-0 h-[calc(100%-2px)] w-24 bg-[#fcae04] text-black font-semibold rounded-full m-[1px] px-5 transition-all duration-300"
+                className="submit-email absolute top-0 right-0 h-[calc(100%-2px)] w-24 bg-[red] text-white font-semibold rounded-full m-[1px] px-5 transition-all duration-300"
               >
                 <span className="before-submit absolute inset-0 flex items-center justify-center transition-all duration-300">Subscribe</span>
                 <span className="after-submit absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 delay-300">Thank you for subscribing!</span>
@@ -80,11 +80,11 @@ const Footer = () => {
       </div>
 
       {/* Bottom sections remain unchanged */}
-      <div className="lg:py-8 px-4 lg:ml-20 lg:mr-20">
+      <div className="lg:py-2 px-4 lg:ml-20 lg:mr-20 text-black">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="text-center lg:text-left">
-            <h2 className="text-2xl font-semibold mb-3 text-white" style={{ fontFamily: 'MaxOT' }}>About Inkarp</h2>
-            <p style={{ fontFamily: 'roboto' }} className='text-white font-roboto'>
+            <h2 className="text-2xl font-semibold mb-3 text-black" style={{ fontFamily: 'MaxOT' }}>About Inkarp</h2>
+            <p style={{ fontFamily: 'roboto' }} className='text-black font-roboto'>
               Established in 1985, Inkarp is a trusted name in the scientific instrument industry,
               offering comprehensive research solutions and exceptional after-sales support.
               With a robust presence in India, we're a go-to choice for a diverse range of sectors.
@@ -117,7 +117,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className='mb-3'>
+            <div className=' lg:mb-20'>
               <h2 className="text-xl font-semibold mb-3" style={{ fontFamily: 'MaxOT' }}>Catch Us</h2>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start justify-center lg:justify-start gap-2" style={{ fontFamily: 'roboto' }}>
@@ -145,7 +145,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-white py-3 text-sm w-[96%] mx-auto rounded-t-full shadow-inner text-black font-semibold" style={{ fontFamily: 'roboto' }}>
+      <div className="bg-black text-white  border-t-4 border-t-red-800 border-x-red-800  py-3 text-sm w-[96%] mx-auto rounded-t-full shadow-inner text-black font-semibold" style={{ fontFamily: 'roboto' }}>
         <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-center items-center gap-5 text-center sm:text-left">
           <p>
             © {new Date().getFullYear()} <a href="#" className="hover:underline">Inkarp</a>. All Rights Reserved.

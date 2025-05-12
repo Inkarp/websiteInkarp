@@ -9,6 +9,7 @@ import ExperienceSection from './Home/ExperienceSection';
 import InsightGrid from './Home/InsightGrid';
 import Reviews from './Home/Reviews';
 import Card from './Home/Card';
+import Blogs from './Home/Blogs';
 
 
 
@@ -18,11 +19,14 @@ const Home = () => {
             <HeroSection />
             {/* <Card /> */}
             <PickProduct />
-            <NewAbout />
             <ExperienceSection />
+            <NewAbout />
+            
             <Principles />
             <Offerings />
-            <InsightGrid /> 
+            {/* <InsightGrid />  */}
+            <Blogs />
+            {/* <NewsEvents /> */}
             <NewsEvents />
             <Reviews />
         </>

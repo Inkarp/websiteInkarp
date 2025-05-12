@@ -104,9 +104,9 @@ export default function PickProduct() {
   const selectedProduct = productData[selectedIndex];
 
   return (
-    <div className="w-[96%] mx-auto py-6 flex flex-col items-center space-y-5 bg-gray-100">
+    <div className="w-[96%] mx-auto py-6 flex flex-col items-center space-y-5 ">
       <div className="text-center">
-        <h1 className="font-bold text-3xl text-black font-[MaxOT]">Pick a Product to Start</h1>
+        <h1 className="font-bold text-3xl text-white font-[MaxOT]">Pick a Product to Start</h1>
         <p className="font-[Roboto] text-red-600 mt-1">Our professional and well-trained staff is ready to assist.</p>
       </div>
 

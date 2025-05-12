@@ -1,95 +1,96 @@
-import React from "react";
+import React from 'react';
 
-const cards = [
+const newsEvents = [
   {
-    title: "What Zombies Can Teach You About Food",
-    category: "Reliable Schemas",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla delectus corporis commodi aperiam, amet cupiditate?",
-    image: "https://images.unsplash.com/photo-1542156822-6924d1a71ace?auto=format&fit=crop&w=500&q=60",
+    id: 1,
+    title: 'Community Cleanup Drive',
+    date: 'April 20, 2025',
+    description: 'Join us for a neighborhood cleanup to make our community sparkle!',
+    image: "https://www.inkarp.co.in/assets/images/Analytical-Validation.jpeg"
   },
   {
-    title: "Old School Art",
-    category: "Client-based Adoption",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla delectus.",
-    image: "https://images.unsplash.com/photo-1542156822-6924d1a71ace?auto=format&fit=crop&w=500&q=60",
+    id: 2,
+    title: 'Annual Science Fair',
+    date: 'April 25, 2025',
+    description: 'Explore innovative projects and support young scientists.',
+    image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png"
+
   },
   {
-    title: "5 Things To Do About Rain",
-    category: "Intellectual Capital",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, neque. Eius, ea possimus.",
-    image: "https://images.unsplash.com/photo-1542156822-6924d1a71ace?auto=format&fit=crop&w=500&q=60",
+    id: 3,
+    title: 'Charity Fun Run',
+    date: 'May 5, 2025',
+    description: 'Run for a cause and enjoy a fun-filled morning with family and friends.',
+    image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png"
   },
 ];
 
-export default function InsightGrid() {
+const InsightGrid = () => {
   return (
-    <section className="flex flex-col bg-white justify-center max-w-6xl  px-4 py-10 mx-auto sm:px-6">
-      <div className="flex flex-wrap items-center justify-between mb-8">
-        <h2 className="mr-10 text-4xl font-bold leading-none md:text-5xl font-[MaxOT]">
-          Catch Us at Blogs
-        </h2>
-        <a
-          href="#"
-          className="block pb-1 mt-2 text-base font-black text-red-600 uppercase border-b border-transparent hover:border-blue-600"
-        >
-          Go to Blogs -&gt;
-        </a>
-      </div>
+    <aside className="relative w-[96%] mx-auto mt-3">
+      {/* <div className="absolute -top-10 right-6 hidden md:block z-10">
+        <img
+          className="ml-auto max-w-none"
+          src="https://cruip.com/wp-content/themes/cruip-2/dist/images/stacked-templates-3.png"
+          width="272"
+          height="289"
+          role="presentation"
+          alt=""
+        />
+      </div> */}
 
-      <div className="flex flex-wrap -mx-4">
-        {cards.map((card, idx) => (
-          <div
-            key={idx}
-            className="w-full max-w-full mb-8 sm:w-1/2 px-4 lg:w-1/3 flex flex-col"
-          >
-            <img
-              src={card.image}
-              alt="Card img"
-              className="object-cover object-center w-full h-48"
-            />
-            <div className="flex flex-grow">
+      <div className="relative bg-gray-200 rounded-3xl overflow-hidden p-8 md:px-12 md:py-14 md:pr-80">
+        <div className="absolute inset-0" aria-hidden="true">
+          <img
+            className="w-full h-full object-cover"
+            src="https://cruip.com/wp-content/themes/cruip-2/dist/images/cta-bg-02.svg"
+            width="1104"
+            height="214"
+            role="presentation"
+            alt=""
+          />
+        </div>
+
+        <div className="relative text-center md:text-left">
+          <h3 className="text-xl font-xl bg-clip-text text-transparent bg-white pb-6">
+            Blogs
+          </h3>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {newsEvents.map((item) => (
               <div
-                className="triangle"
-                style={{
-                  width: 0,
-                  height: 0,
-                  borderStyle: "solid",
-                  borderWidth: "0 20px 20px 0",
-                  borderColor: "transparent black transparent transparent",
-                }}
-              ></div>
-              <div className="flex flex-col justify-between px-4 py-6 bg-white border border-gray-400">
-                <div>
-                  <a
-                    href="#"
-                    className="inline-block mb-4 text-xs font-bold capitalize border-b-2 border-blue-600 hover:text-blue-600"
+                key={item.id}
+                className="bg-red-500/5 backdrop-blur-md rounded-2xl p-6 text-black shadow-md"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-40 object-contain mb-4 bg-white rounded-xl"
+                />
+                <h4 className="text-lg text-black font-semibold mb-2">{item.title}</h4>
+                <p className="text-sm text-black mb-2">{item.date}</p>
+                <p className="text-black mb-4">{item.description}</p>
+                <a
+                  href="#"
+                  className="inline-flex items-center text-red-500 hover:text-red-300 font-medium transition"
+                >
+                  Read more
+                  <svg
+                    className="ml-2 w-4 h-4 fill-current text-indigo-300"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 11 11"
                   >
-                    {card.category}
-                  </a>
-                  <a
-                    href="#"
-                    className="block mb-4 text-2xl font-black leading-tight hover:underline hover:text-blue-600"
-                  >
-                    {card.title}
-                  </a>
-                  <p className="mb-4">{card.description}</p>
-                </div>
-                <div>
-                  <a
-                    href="#"
-                    className="inline-block pb-1 mt-2 text-base font-black text-red-600 uppercase border-b border-transparent hover:border-blue-600"
-                  >
-                    Read More -&gt;
-                  </a>
-                </div>
+                    <path d="M5.977 10.368 4.953 9.354 8.02 6.286H.568V4.805H8.02L4.953 1.742 5.977.723 10.8 5.546z" />
+                  </svg>
+                </a>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
+
+
+        </div>
       </div>
-    </section>
+    </aside>
   );
-}
+};
+
+export default InsightGrid;
