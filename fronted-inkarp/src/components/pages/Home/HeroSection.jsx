@@ -18,27 +18,27 @@ const fallFromBottom = keyframes`
 function HeroSection() {
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1520856707909-75c4048cc858?ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80",
+      image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
       title: "Innovative Designs",
       subtitle: "Explore our newest collection of modern innovations.",
     },
     {
-      image: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=1050&q=80",
+      image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1050&q=80",
       title: "Reliable Tools",
       subtitle: "Crafted for durability and peak performance.",
     },
     {
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1050&q=80",
+      image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
       title: "Precision Instruments",
       subtitle: "Engineered for exact results every time.",
     },
     {
-      image: "https://images.unsplash.com/photo-1520856707909-75c4048cc858?ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80",
+      image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1050&q=80",
       title: "Premium Materials",
       subtitle: "Only the finest go into our products.",
     },
     {
-      image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1050&q=80",
+      image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
       title: "Tested by Experts",
       subtitle: "Validated and trusted by industry leaders.",
     },
@@ -82,7 +82,7 @@ function HeroSection() {
         <div className="relative lg:w-1/2 mx-auto h-[400px] md:h-[500px]">
           <video
             ref={videoRef}
-            className="rounded-[3rem] w-full h-full object-cover"
+            className="rounded-xl w-full h-full object-cover"
             src="bg-video.mov"
             muted
             loop

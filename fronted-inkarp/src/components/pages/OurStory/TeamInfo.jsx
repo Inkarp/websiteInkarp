@@ -65,11 +65,13 @@ const teamMembers = [
 ];
 
 
+
+
 export default function TeamInfo() {
   const [hovered, setHovered] = useState(null);
 
   const renderCard = (member, index) => (
-    <div className='' key={index}>
+    <div key={index}>
       <div
         onMouseEnter={() => setHovered(index)}
         onMouseLeave={() => setHovered(null)}
@@ -82,19 +84,12 @@ export default function TeamInfo() {
           transition: 'all 0.6s ease',
           overflow: 'hidden',
           backgroundColor: '#fff',
-          // boxShadow: hovered === index ? '0 0 20px rgba(0,0,0,0.2)' : '0 0 5px rgba(0,0,0,0.1)'
+          boxShadow: hovered === index ? '0 0 20px rgba(213, 20, 20, 0.2)' : '0 0 5px rgba(184, 18, 18, 0.1)'
         }}
       >
-        {/* Left side: Image & Info */}
+        {/* Left section - image and text */}
         <div style={{ width: '220px', position: 'relative' }}>
-          <div
-            style={{
-              width: '100%',
-              height: '220px',
-              perspective: '1000px',
-              margin: '10px auto',
-            }}
-          >
+          <div style={{ width: '100%', height: '220px', perspective: '1000px', margin: '10px auto' }}>
             <div
               style={{
                 width: '100%',
@@ -134,23 +129,12 @@ export default function TeamInfo() {
               />
             </div>
           </div>
-  
-          {/* Name + Title */}
-          <div
-            style={{
-              padding: '8px 10px 5px',
-              textAlign: 'center',
-            }}
-          >
-            <h3 style={{ fontSize: '1rem', margin: '5px 0 0', fontWeight: 600 }}>
-              {member.name}
-            </h3>
-            <p style={{ fontSize: '0.85rem', color: '#888', margin: 0 }}>
-              {member.title}
-            </p>
+
+          <div style={{ padding: '8px 10px 5px', textAlign: 'center' }}>
+            <h3 style={{ fontSize: '1rem', margin: '5px 0 0', fontWeight: 600 }}>{member.name}</h3>
+            <p style={{ fontSize: '0.85rem', color: '#888', margin: 0 }}>{member.title}</p>
           </div>
-  
-          {/* Only LinkedIn Icon on Hover */}
+
           {hovered === index && member.links[0] && (
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
               <a
@@ -167,13 +151,12 @@ export default function TeamInfo() {
                   justifyContent: 'center'
                 }}
               >
-                <FaLinkedin className="text-sm" />
+                <FaLinkedin className="text-sm text-white" />
               </a>
             </div>
           )}
         </div>
-  
-        {/* Message on Hover */}
+
         {hovered === index && member.message && (
           <div
             style={{
@@ -195,27 +178,26 @@ export default function TeamInfo() {
       </div>
     </div>
   );
-  
 
   return (
-    <div
-      style={{
-        padding: '50px 0',
-        fontFamily: 'MaxOT',
-      }}
-      className="mt-2 bg-white w-[96%] mx-auto"
-    >
-      <h1 className="text-center text-4xl text-white font-bold mb-10">House of Inkarp</h1>
-  
+    <div style={{ fontFamily: 'MaxOT' }} className="bg-white w-[96%] mt-23 mx-auto py-14">
+      {/* Section Heading */}
+      <div className="text-center max-w-4xl mx-auto mb-12 px-4">
+        <h1 className="text-5xl font-extrabold text-red-600 mb-4">House of Inkarp</h1>
+        <p className="text-gray-700 text-lg font-medium">
+          Meet the leadership team that powers Inkarp's vision across India. United by innovation and driven by service, they embody the spirit of excellence and commitment.
+        </p>
+      </div>
+
       {/* Chairman + ED + Building Section */}
-      <div className="flex flex-wrap justify-center items-center gap-8 px-4 mb-8">
-        {/* Left - Chairman & ED */}
-        <div className="flex flex-col gap-8 w-full md:w-[50%]">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-16 px-4">
+        {/* Chairman & Executive Director */}
+        <div className="flex flex-col gap-8 w-full md:w-[50%] max-w-[750px] items-center">
           {renderCard(teamMembers[0], 0)}
           {renderCard(teamMembers[1], 1)}
         </div>
-  
-        {/* Right - Image with Animation */}
+
+        {/* Building Image */}
         <div className="w-full md:w-[40%] flex justify-center">
           <img
             src="https://www.inkarp.co.in/assets/images/inkarp-building.png"
@@ -229,14 +211,14 @@ export default function TeamInfo() {
           />
         </div>
       </div>
-  
+
       {/* Directors Row */}
       <h2 className="text-center text-2xl font-semibold mb-8">Regional Leadership</h2>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+      <div className="flex flex-wrap justify-center gap-10 px-2">
         {teamMembers.slice(2).map((member, idx) => renderCard(member, idx + 2))}
       </div>
-  
-      {/* Keyframes for fade-in animation */}
+
+      {/* Fade animation keyframes */}
       <style>{`
         @keyframes fadeIn {
           0% { opacity: 0.2; transform: translateY(30px); }
@@ -245,5 +227,4 @@ export default function TeamInfo() {
       `}</style>
     </div>
   );
-  
 }

@@ -52,7 +52,7 @@ function Reviews() {
   return (
     <>
       <style>{waveAnimation}</style>
-      <h1 className="text-4xl font-bold text-center mb-2 mt-10  tracking-tight">
+      <h1 className="text-4xl font-bold text-center mb-2 mt-10 text-white  tracking-tight">
         What People Are Saying
       </h1>
       <div className="overflow-hidden relative w-full max-w-6xl mx-auto p-6  rounded-3xl">

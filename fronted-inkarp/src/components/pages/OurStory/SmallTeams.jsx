@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const marketingTeam = [
   {
@@ -35,68 +35,73 @@ const salesTeam = [
 ];
 
 export default function SmallTeams() {
+  const [activeTeam, setActiveTeam] = useState("Marketing");
+
+  const teams = {
+    Marketing: marketingTeam,
+    Sales: salesTeam,
+  };
+
   return (
     <>
-      <section className="team bg-white">
+      <section className="team bg-white py-30">
         <h2 className="section-heading">Dividing By Team United by Work</h2>
 
-        <div className="team-group">
-          <h3 className="team-title">Marketing Team</h3>
-          <div className="container">
-            {marketingTeam.map((member, idx) => (
-              <div className="profile" key={idx}>
-                <img src={member.img} alt={member.name} />
-                <span className="name">{member.name}</span>
-              </div>
-            ))}
-          </div>
+        <div className="tab-switch bg-white">
+          {Object.keys(teams).map((team) => (
+            <button
+              key={team}
+              className={`tab ${activeTeam === team ? "active" : ""}`}
+              onClick={() => setActiveTeam(team)}
+            >
+              {team}
+            </button>
+          ))}
         </div>
 
-        <div className="team-group">
-          <h3 className="team-title">Sales Team</h3>
-          <div className="container">
-            {salesTeam.map((member, idx) => (
-              <div className="profile" key={idx}>
-                <img src={member.img} alt={member.name} />
-                <span className="name">{member.name}</span>
-              </div>
-            ))}
-          </div>
+        <div className="container">
+          {teams[activeTeam].map((member, idx) => (
+            <div className="profile" key={idx}>
+              <img src={member.img} alt={member.name} />
+              <span className="name">{member.name}</span>
+            </div>
+          ))}
         </div>
       </section>
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@700&display=swap');
 
-        // body {
-        //   margin: 0;
-        //   background-color: #f7f7f7;
-        // }
-
-        // .team {
-        //   padding: 60px 20px;
-        // }
-
         .section-heading {
           font-family: "Dancing Script", cursive;
           text-align: center;
           font-size: 64px;
           color: red;
-          margin-bottom: 60px;
-          
+          margin-bottom: 40px;
         }
 
-        .team-title {
-          text-align: center;
-          font-size: 28px;
-          color: #444;
+        .tab-switch {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 40px;
+          gap: 1rem;
+        }
+
+        .tab {
+          padding: 10px 20px;
+          border: 2px solid #900;
+          background: white;
           font-family: 'Bebas Neue', cursive;
-          margin-bottom: 20px;
-          letter-spacing: 1px;
+          color: #900;
+          font-size: 20px;
+          cursor: pointer;
+          border-radius: 50px;
+          transition: all 0.3s ease;
         }
 
-        .team-group {
-          margin-bottom: 60px;
+        .tab.active {
+          background-color: #900;
+          color: white;
         }
 
         .container {
@@ -133,7 +138,7 @@ export default function SmallTeams() {
 
         .profile .name {
           position: absolute;
-          background-color:rgb(153, 16, 27);
+          background-color: rgb(153, 16, 27);
           color: #fff;
           font-family: "Bebas Neue", cursive;
           padding: 15px 30px;
@@ -153,7 +158,7 @@ export default function SmallTeams() {
           position: absolute;
           width: 15px;
           height: 15px;
-          background-color:rgb(153, 16, 34);
+          background-color: rgb(153, 16, 34);
           top: 0;
           left: 50%;
           transform: translate(-50%, -50%) rotate(45deg);
@@ -174,8 +179,9 @@ export default function SmallTeams() {
             font-size: 48px;
           }
 
-          .team-title {
-            font-size: 22px;
+          .tab {
+            font-size: 16px;
+            padding: 8px 16px;
           }
 
           .profile .name {
