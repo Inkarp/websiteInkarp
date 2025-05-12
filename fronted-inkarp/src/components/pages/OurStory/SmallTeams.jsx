@@ -40,14 +40,15 @@ export default function SmallTeams() {
   const teams = {
     Marketing: marketingTeam,
     Sales: salesTeam,
+    Sale: marketingTeam,
   };
 
   return (
     <>
-      <section className="team bg-white py-30">
+      <section className="team w-[96%] mx-auto bg-white pb-30">
         <h2 className="section-heading">Dividing By Team United by Work</h2>
 
-        <div className="tab-switch bg-white">
+        <div className="tab-switch w-[30%] p-2 rounded-full mx-auto bg-red-100">
           {Object.keys(teams).map((team) => (
             <button
               key={team}
