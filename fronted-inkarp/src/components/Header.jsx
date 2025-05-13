@@ -15,7 +15,7 @@ export default function Header() {
     { name: "Verticals", path: "/verticals" },
     { name: "Careers", path: "/careers" },
     { name: "Contact Us", path: "/contact" },
-    { name: "CatalystCue", path: "/catalystcue" },
+    { name: "CatalystCue", path: "/catalyst-cue" },
   ];
 
   const isActive = (path) => location.pathname === path;

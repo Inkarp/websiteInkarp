@@ -1,15 +1,16 @@
 import React from "react";
+import DroppingText from "./DroppingText";
 
 function NewAbout() {
   return (
     <div className="w-[95%] mx-auto h-auto  flex flex-col md:flex-row gap-8 p-6 rounded-2xl shadow-md">
       {/* Left Section - Company Info */}
       <div className="w-full md:w-3/5  rounded-xl bg-white p-4 flex flex-col items-center justify-center shadow-md">
-        {/* <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center font-[MaxOT]">About Inkarp</h2> */}
+        <h2 className="  font-[MaxOT]"><DroppingText /></h2>
         <img
           src="inkarp.png"
           alt="Company"
-          className="w-[90%] h-[300px]  rounded-full object-cover"
+          className="w-2/3 h-auto rounded-full object-cover"
         />
         {/* <p className="text-center text-gray-700 text-lg leading-relaxed font-[Roboto]">
           Inkarp is a pioneer in providing scientific solutions across India for over 40 years. Our commitment to excellence and partnerships with global leaders fuel our innovation and service delivery.
@@ -19,7 +20,7 @@ function NewAbout() {
       {/* Right Section - Subsidiaries & Joint Ventures */}
       <div className="w-full md:w-2/3 flex flex-col gap-6">
         {/* Heading for Right Side */}
-        <h2 className="text-2xl/10 font-bold text-white text-center font-[MaxOT]">Group Companies</h2>
+        <h2 className="text-4xl/10 font-bold text-white text-center font-[MaxOT]">Group Companies</h2>
 
         {/* Subsidiaries */}
         <div className="bg-white p-4 rounded-xl shadow-md">

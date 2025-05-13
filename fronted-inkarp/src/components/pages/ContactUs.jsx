@@ -111,7 +111,7 @@ function ContactUs() {
         }
       `}</style>
 
-      <section className="min-h-screen mt-20 px-4 md:px-12 bg-white">
+      <section className="min-h-screen mt-22 px-4 md:px-12 bg-white w-[96%] mx-auto">
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8">
 
           {/* Left Text */}
@@ -121,7 +121,7 @@ function ContactUs() {
           </div>
 
           {/* India Map */}
-          <div className="relative w-full max-w-4xl h-[800px] bg-white rounded-xl overflow-hidden shadow-2xl z-10">
+          <div className="relative w-full max-w-4xl h-[800px]  rounded-xl overflow-hidden  z-10">
             <img
               src="/india.jpg"
               alt="India Map"

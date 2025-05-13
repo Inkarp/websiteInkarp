@@ -72,7 +72,7 @@ export default function TeamInfo() {
 
   const renderCard = (member, index) => {
     const isBalu = member.name.includes('S. Balu');
-    const hoveredHeight = hovered === index ? (isBalu ? '320px' : '250px') : '250px';
+    const hoveredHeight = hovered === index ? (isBalu ? '320px' : '260px') : '250px';
     const hoveredWidth = hovered === index ? (isBalu ? '800px' : '500px') : '200px';
 
     return (
@@ -88,6 +88,7 @@ export default function TeamInfo() {
             border: hovered === index ? '2px solid red' : '0px solid #ccc',
             transition: 'all 0.6s ease',
             overflow: 'hidden',
+            objectPosition: 'top center',
             // backgroundColor: '#fff',
             boxShadow: hovered === index ? '0 0 20px rgba(213, 20, 20, 0.2)' : '0 0 5px rgba(184, 18, 18, 0.1)'
           }}
@@ -112,9 +113,10 @@ export default function TeamInfo() {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    borderRadius: '150px',
+                    borderRadius: '180px',
                     backfaceVisibility: 'hidden',
                     border: '4px solid red',
+                    // padding: '10px',
                   }}
                 />
                 <img
@@ -124,7 +126,7 @@ export default function TeamInfo() {
                     position: 'absolute',
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover',
+                    objectFit: 'center',
                     borderRadius: '15px',
                     backfaceVisibility: 'hidden',
                     transform: 'rotateY(180deg)',
@@ -167,7 +169,8 @@ export default function TeamInfo() {
               style={{
                 padding: '20px',
                 width: '100%',
-                color: 'white',
+                color: 'black',
+                backgroundColor:"white",
                 fontSize: '16px',
                 fontStyle: 'italic',
                 display: 'flex',
@@ -188,39 +191,38 @@ export default function TeamInfo() {
   };
 
   return (
-    <div style={{ fontFamily: 'MaxOT' }} className="w-full mt-10 mx-auto py-14 relative">
+    <div style={{ fontFamily: 'MaxOT' }} className="w-[96%] mt-10 mx-auto py-14 relative">
       {/* Background Image Section */}
-      <div className="relative w-full h-[900px] flex items-start justify-between px-10">
+      <div className="relative w-full h-[1000px] flex items-start justify-between px-10">
         <img
           src="inkarpBuilding-2.jpg"
           alt="Inkarp Building"
-          className="absolute top-0 left-0 w-full h-full object-cover rounded-xl shadow-lg"
+          className="absolute top-0 left-0 w-full h-auto object-contain rounded-xl shadow-lg"
           style={{ animation: 'fadeIn ease-in 2.5s forwards', zIndex: 0 }}
         />
 
         {/* Heading + Chairman & ED Overlay */}
         <div className="relative z-10 mt-5 w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between px-4">
           {/* Left: Chairman & ED Cards */}
-          <div className="flex flex-col gap-6 items-start">
+          <div className="flex flex-col gap-2 items-start">
             {renderCard(teamMembers[0], 0)}
 
             {/* Down Arrow from Balu to Natesh */}
-            {/* <div className="text-white text-4xl self-center">↓</div> */}
+            <div className="text-white text-4xl self-left ml-20">↓</div>
 
             {renderCard(teamMembers[1], 1)}
 
             {/* Down Arrow from Natesh to Directors */}
-            {/* <div className="text-white text-4xl self-center mt-4">↓</div> */}
+            <div className="text-white text-4xl self-center mt-4">↓</div>
 
             {/* Regional Leadership below Natesh */}
-            {/* <h2 className="text-left text-2xl font-bold text-white mt-4">Regional Leadership</h2> */}
-            <div className="flex  gap-6 justify-start">
+            <div className="flex  gap-12 justify-start">
               {teamMembers.slice(2).map((member, idx) => renderCard(member, idx + 2))}
             </div>
           </div>
 
           {/* Right: Heading and Paragraph */}
-          <div className="text-right md:w-[50%] mt-6 md:mt-0">
+          <div className="text-center md:w-[50%] mt-6 md:mt-0">
             <h1 className="text-5xl font-extrabold text-white mb-4">House of Inkarp</h1>
             <p className="text-white text-lg font-medium leading-relaxed">
               Meet the leadership team that powers Inkarp's vision across India. United by innovation and driven by service, they embody the spirit of excellence and commitment.

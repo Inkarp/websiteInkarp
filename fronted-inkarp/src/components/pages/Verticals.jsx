@@ -84,7 +84,7 @@ const Verticals = () => {
             {verticalsList[activeIndex]}
           </h1>
           {loading ? (
-            <p className="text-gray-500">Loading data...</p>
+            <p className="text-gray-500"><img  src="loadingImage.svg" className="w-100 h-100 bg-red-100"/></p>
           ) : (
             <div className="space-y-4">
               {verticalData.map((item) => (

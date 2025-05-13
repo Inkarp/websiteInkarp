@@ -48,10 +48,10 @@ const Careers = () => {
                     <input
                         type="text"
                         id="location"
-                        placeholder="e.g. New York"
+                        placeholder="e.g. Hyderabad"
                         value={locationFilter}
                         onChange={(e) => setLocationFilter(e.target.value)}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 transition"
                     />
                 </div>
             </aside>
@@ -66,9 +66,9 @@ const Careers = () => {
                         {filteredJobs.map((job, index) => (
                             <div
                                 key={index}
-                                className="p-6 bg-gradient-to-br from-white to-indigo-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300"
+                                className="p-6 bg-gradient-to-br from-white to-red-100 border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300"
                             >
-                                <h3 className="text-xl font-semibold text-indigo-700 mb-1">{job.title}</h3>
+                                <h3 className="text-xl font-semibold text-red-700 mb-1">{job.title}</h3>
                                 <p className="text-sm text-gray-500 mb-2">📍 {job.location}</p>
                                 <p className="text-gray-700 text-sm">{job.description}</p>
                             </div>
@@ -86,7 +86,7 @@ const Careers = () => {
                     width: 8px;
                 }
                 .custom-scrollbar::-webkit-scrollbar-thumb {
-                    background-color: rgba(99, 102, 241, 0.5);
+                    background-color: rgba(199, 32, 32, 0.5);
                     border-radius: 10px;
                 }
                 `}

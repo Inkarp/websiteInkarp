@@ -9,8 +9,8 @@ export default function Principles() {
   const rows = 7;
 
   return (
-    <div className="relative bg-[#f6ebf0] py-10 overflow-hidden">
-      <h1 className="text-center text-xl sm:text-2xl font-semibold text-gray-800 mb-6 font-[MaxOT]">
+    <div className="relative bg-[#f6ebf0] py-10 overflow-hidden w-[96%] mx-auto">
+      <h1 className="text-center text-2xl sm:text-2xl font-semibold text-gray-800 mb-6 font-[MaxOT]">
         Global Partnership with Leading Brands{" "}
         <span className="text-[#af2d58]">46+ top principals</span>
       </h1>

@@ -27,7 +27,7 @@ export default function NewCareers() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="bg-gray-50 text-gray-800 mt-20">
+    <div className="bg-gray-50 w-[96%] text-gray-800 mt-20 mx-auto">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-red-100 via-white to-blue-100 py-20 px-6 text-center">
         <div className="max-w-4xl mx-auto space-y-6">

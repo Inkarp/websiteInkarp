@@ -76,7 +76,7 @@ function HeroSection() {
   const currentSlide = slides[currentIndex];
 
   return (
-    <section className="w-full mt-3 py-5 px-4 lg:px-8 mt-20">
+    <section className="w-full mt-3 py-5 px-4 lg:px-8 mt-20 ">
       <div className="w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-6">
         {/* Left Video */}
         <div className="relative lg:w-1/2 mx-auto h-[400px] md:h-[500px]">
@@ -104,7 +104,7 @@ function HeroSection() {
 
         {/* Right Slider */}
         <div className="relative w-full lg:w-1/2 h-[400px] md:h-[500px] overflow-hidden rounded-2xl">
-          <div className="w-full h-full relative">
+          <div className="w-full h-full relative swing-top-fwd">
             <img
               src={currentSlide.image}
               alt={currentSlide.title}
