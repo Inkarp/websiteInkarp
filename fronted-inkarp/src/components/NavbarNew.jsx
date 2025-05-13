@@ -1,160 +1,163 @@
 import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Search, ChevronDown, ArrowDownToLine, X } from "lucide-react";
 
 export default function NavbarNew() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [insightsOpen, setInsightsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [showSearchModal, setShowSearchModal] = useState(false);
+  const location = useLocation();
+
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Our Story", path: "/about" },
+    { name: "Verticals", path: "/verticals" },
+    { name: "Careers", path: "/careers" },
+    { name: "Contact Us", path: "/contact" },
+    { name: "CatalystCue", path: "/catalyst-cue" },
+  ];
+
+  const isActive = (path) => location.pathname === path;
 
   useEffect(() => {
-    const handleResize = () => centerLogo();
-    const centerLogo = () => {
-      const logo = document.getElementById("logo");
-      if (logo && window.innerWidth >= 768) {
-        const container = document.querySelector(".container");
-        const containerWidth = container ? container.offsetWidth : 0;
-        const logoWidth = logo.offsetWidth;
-        logo.style.position = "absolute";
-        logo.style.left = "50%";
-        logo.style.marginLeft = `-${logoWidth / 2}px`;
-        logo.style.top = "10px";
-        logo.style.background = "black";
-        logo.style.borderRadius = "0 0 100% 100%";
-        logo.style.padding = "12px";
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    centerLogo();
-    return () => window.removeEventListener("resize", handleResize);
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    setMenuOpen(false);
+    setInsightsOpen(false);
+  }, [location.pathname]);
 
   return (
     <>
-      <style>{`
-        .navbar {
-          background: rgba(33, 45, 57, 0.8);
-          margin-bottom: 0;
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          z-index: 999;
-          padding: 10px 0;
-        }
+      <header
+        className={`fixed top-2 md:left-5 lg:left-8 mx-auto z-[50] w-[96%] rounded-xl transition-all duration-300 shadow-xl bg-white transform-gpu ${
+          scrolled ? "py-1 scale-95" : "py-0 scale-100"
+        }`}
+      >
+        <div className="flex justify-between items-center h-[72px] px-4 sm:px-6 lg:px-8">
+          {/* Logo */}
+          <Link to="/" className="flex items-center">
+            <img src="inkarp old.svg" alt="Logo" className="h-12 w-24 sm:h-14 sm:w-28 object-contain" />
+          </Link>
 
-        .navbar-brand h2 {
-          margin-top: 0;
-          font-weight: bold;
-          color: white;
-        }
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex font-medium text-sm lg:text-base">
+            <ul className="flex items-center space-x-4">
+              {navLinks.map(({ name, path }) => (
+                <li key={name}>
+                  <Link
+                    to={path}
+                    className={`relative group w-[120px] h-[40px] flex items-center justify-center overflow-hidden rounded-md shadow-md ${
+                      isActive(path) ? "ring-2 ring-[#fcae04]" : ""
+                    }`}
+                  >
+                    <span className="absolute inset-0 bg-gradient-to-br from-purple-700 to-red-600 text-white font-bold text-sm flex items-center justify-center z-20 opacity-90">
+                      {name}
+                    </span>
+                    <span className="absolute inset-0 bg-gray-900 text-white font-semibold text-xs flex items-center justify-center z-10 uppercase">
+                      Go!
+                    </span>
+                    <span className="absolute inset-0 z-30" />
+                  </Link>
+                </li>
+              ))}
 
-        .navbar-toggle {
-          border: none;
-          background: transparent;
-        }
-
-        .icon-bar {
-          display: block;
-          width: 22px;
-          height: 2px;
-          background-color: white;
-          margin: 4px 0;
-        }
-
-        .navbar-collapse {
-          display: none;
-        }
-
-        .navbar-collapse.open {
-          display: block;
-        }
-
-        .navbar-nav {
-          list-style: none;
-          padding-left: 0;
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-        }
-
-        .navbar-nav li {
-          padding: 10px;
-        }
-
-        .navbar-nav li a {
-          color: white;
-          font-weight: bold;
-          text-decoration: none;
-          transition: background 0.4s;
-        }
-
-        .navbar-nav li a:hover,
-        .navbar-nav li.active a {
-          background: #ed0121;
-          color: white;
-        }
-
-        @media (min-width: 768px) {
-          .navbar-header {
-            display: none;
-          }
-
-          .navbar-collapse {
-            display: block !important;
-          }
-
-          .navbar-nav {
-            flex-direction: row;
-            justify-content: flex-end;
-          }
-
-          .navbar-nav li {
-            padding: 0 15px;
-          }
-        }
-      `}</style>
-
-      <div className="navbar" role="navigation">
-        <div className="container" style={{ position: "relative" }}>
-          <div className="navbar-header visible-xs">
-            <button
-              type="button"
-              className="navbar-toggle"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              <span className="sr-only">Toggle navigation</span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-            </button>
-            <a className="navbar-brand" href="#">
-              <h2>TastyBox</h2>
-            </a>
-          </div>
-
-          <div
-            id="navbar"
-            className={`navbar-collapse ${isOpen ? "open" : ""}`}
-          >
-            <div className="hidden-xs" id="logo">
-              <a href="#header">
-                <img
-                  src="https://41.media.tumblr.com/3172b0af03ae569209fe2b15c2757d78/tumblr_ntjox0Wmuv1ud7rr3o1_100.png"
-                  alt=""
-                />
-              </a>
-            </div>
-
-            <ul className="navbar-nav navbar-right">
-              <li><a href="#story">Story</a></li>
-              <li><a href="#reservation">Reservation</a></li>
-              <li><a href="#chefs">Our Chefs</a></li>
-              <li><a href="#facts">Facts</a></li>
-              <li><a href="#food-menu">Food Menu</a></li>
-              <li><a href="#special-offser">Special Offers</a></li>
-              <li style={{ display: "none" }}><a href="#header"></a></li>
+              {/* Dropdown */}
+              <li className="relative">
+                <button
+                  onClick={() => setInsightsOpen(!insightsOpen)}
+                  className="flex items-center px-2 lg:px-3 py-2 text-black relative group"
+                >
+                  <span className="relative z-10">
+                    Insights & Updates
+                    <span className="absolute inset-x-0 bottom-0 h-[2px] bg-[#fcae04] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 z-0"></span>
+                  </span>
+                  <ChevronDown className="h-4 w-4 ml-1 opacity-60" />
+                </button>
+                {insightsOpen && (
+                  <ul className="absolute top-full left-0 bg-white border mt-2 w-48 rounded-md shadow-md text-sm z-50">
+                    <li>
+                      <Link to="/insights/blogs" className="block px-4 py-2 hover:bg-gray-100 font-medium">
+                        Blogs
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/insights/news&events" className="block px-4 py-2 hover:bg-gray-100 font-medium">
+                        News & Events
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+              </li>
             </ul>
+          </nav>
+
+          {/* CTA + Mobile Menu Toggle */}
+          <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-4">
+            <button onClick={() => setShowSearchModal(true)}>
+              <Search className="h-5 sm:h-5 lg:h-6 text-gray-700" />
+            </button>
+
+            <button className="bg-red-500 hover:bg-gray-700 text-white text-xs sm:text-sm font-bold px-3 py-2 rounded flex items-center gap-1">
+              <span>Product Profile</span>
+              <ArrowDownToLine className="h-4 w-4" />
+            </button>
+
+            <button
+              className="lg:hidden text-gray-700"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              {menuOpen ? <X className="w-5 h-5" /> : (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
           </div>
         </div>
-      </div>
+
+        {/* Mobile Dropdown Menu */}
+        {menuOpen && (
+          <div className="lg:hidden px-4 pb-4 space-y-2 animate-slide-down">
+            {navLinks.map(({ name, path }) => (
+              <Link
+                to={path}
+                key={name}
+                className={`block py-2 px-3 rounded hover:bg-gray-100 font-medium ${
+                  isActive(path) ? "text-[#fcae04]" : ""
+                }`}
+              >
+                {name}
+              </Link>
+            ))}
+            <Link to="/insights/blogs" className="block py-2 px-3 hover:bg-gray-100 font-medium">Blogs</Link>
+            <Link to="/insights/news" className="block py-2 px-3 hover:bg-gray-100 font-medium">News & Events</Link>
+          </div>
+        )}
+      </header>
+
+      {/* Search Modal */}
+      {showSearchModal && (
+        <div className="fixed inset-0 z-50 bg-white/90 flex flex-col items-center justify-center p-6">
+          <button
+            onClick={() => setShowSearchModal(false)}
+            className="absolute top-5 right-5 text-gray-600 hover:text-black"
+          >
+            <X size={28} />
+          </button>
+          <h2 className="text-3xl font-bold mb-4 text-black">Start Searching</h2>
+          <input
+            type="text"
+            placeholder="Start Typing..."
+            className="w-full max-w-xs sm:max-w-md lg:max-w-xl px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-red-400 placeholder:text-black placeholder:font-medium"
+            autoFocus
+          />
+        </div>
+      )}
     </>
   );
 }

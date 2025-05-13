@@ -6,12 +6,9 @@ import Principles from './Home/Principles';
 import PickProduct from './Home/PickProduct';
 import NewAbout from './Home/NewAbout';
 import ExperienceSection from './Home/ExperienceSection';
-import InsightGrid from './Home/InsightGrid';
 import Reviews from './Home/Reviews';
 import Card from './Home/Card';
 import Blogs from './Home/Blogs';
-
-
 
 
 const Home = () => {
@@ -22,12 +19,9 @@ const Home = () => {
             <PickProduct />
             <ExperienceSection />
             <NewAbout />
-            
             <Principles />
-            <Offerings />
-            {/* <InsightGrid />  */}
-            <Blogs />
-            {/* <NewsEvents /> */}
+            <Offerings />          
+            <Blogs />           
             <NewsEvents />
             <Reviews />
         </>

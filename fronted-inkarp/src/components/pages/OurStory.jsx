@@ -1,6 +1,5 @@
-
-import FlowerGallery from "./OurStory/FlowerGallery";
 import SmallTeams from "./OurStory/SmallTeams";
+import TeamButton from "./OurStory/TeamButton";
 import TeamInfo from "./OurStory/TeamInfo";
 
 
@@ -8,7 +7,7 @@ const OurStory = () => {
     return (
         <>
             <TeamInfo />
-            {/* <FlowerGallery /> */}
+            {/* <TeamButton /> */}
             <SmallTeams />
         </>
     );

@@ -93,7 +93,7 @@ export default function Header() {
                     </li>
                     <li>
                       <Link
-                        to="/insights/news"
+                        to="/insights/news&events"
                         className="group block px-4 py-2 hover:bg-gray-100 font-medium relative text-black"
                       >
                         News & Events

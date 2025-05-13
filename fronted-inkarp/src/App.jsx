@@ -12,6 +12,9 @@ import NewCareers from "./components/pages/Careers/NewCareers";
 import HeroSection from "./components/pages/Home/HeroSection";
 import ScrollToTop from "./ScrollToTop";
 import Catalyst from "./components/pages/Catalyst";
+import Blogs from "./components/pages/Home/Blogs";
+import NewsEvents from "./components/pages/Home/NewsEvents";
+import EventsPage from "./components/pages/NewsAndEvents/EventsPage";
 // import Blogs from "./components/pages/insights/Blogs";
 
 function App() {
@@ -30,6 +33,8 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/home" element={<HeroSection />} />
           <Route path="/catalyst-cue" element={<Catalyst />} />
+          <Route path="/insights/blogs" element={<Blogs />} />
+          <Route path="/insights/news&events" element={<EventsPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

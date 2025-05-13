@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TeamButtons() {
+export default function TeamButton() {
   const teamMembers = [
     { name: "John Doe", image: "https://randomuser.me/api/portraits/men/32.jpg" },
     { name: "Jane Smith", image: "https://randomuser.me/api/portraits/women/44.jpg" },
