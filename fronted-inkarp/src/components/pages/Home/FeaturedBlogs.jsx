@@ -20,6 +20,7 @@ const articles = [
     author: "XLEPBPM",
     image:
       "https://img.freepik.com/free-photo/front-view-scientist-holding-test-tube_23-2148773774.jpg",
+      
   },
   {
     id: 3,
