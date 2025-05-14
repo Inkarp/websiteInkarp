@@ -8,7 +8,7 @@ const articles = [
     date: "May 10, 2025",
     author: "Inkarp Editorial",
     category: "Life Sciences",
-    image: "https://img.freepik.com/free-photo/black-woman-doctor-working-laboratory_23-2148743605.jpg",
+    image: "https://xleb-demo.pbminfotech.com/demo1/wp-content/themes/xleb/images/tab.jpg",
     content:
       "Explore how cutting-edge lab instruments are transforming patient-centric diagnostics in hospital environments.",
   },
@@ -18,7 +18,7 @@ const articles = [
     date: "May 9, 2025",
     author: "Inkarp Team",
     category: "Medical Research",
-    image: "https://img.freepik.com/free-photo/front-view-scientist-holding-test-tube_23-2148773774.jpg",
+    image: "https://xleb-demo.pbminfotech.com/demo1/wp-content/themes/xleb/images/tab.jpg",
     content:
       "Discover efficient imaging and tissue analysis workflows using Inkarp’s advanced microscopy solutions.",
   },
@@ -28,7 +28,7 @@ const articles = [
     date: "May 8, 2025",
     author: "Inkarp Team",
     category: "Clinical Labs",
-    image: "https://img.freepik.com/free-photo/close-up-hands-holding-test-tube_23-2148773817.jpg",
+    image: "https://xleb-demo.pbminfotech.com/demo1/wp-content/themes/xleb/images/tab.jpg",
     content:
       "Download a free lab manual to streamline contemporary specimen testing protocols using Inkarp systems.",
   },
@@ -38,7 +38,7 @@ const articles = [
     date: "May 7, 2025",
     author: "Inkarp Insights",
     category: "Pharmaceutical",
-    image: "https://img.freepik.com/free-photo/close-up-hands-holding-test-tube_23-2148773817.jpg",
+    image: "https://xleb-demo.pbminfotech.com/demo1/wp-content/themes/xleb/images/tab.jpg",
     content:
       "See how pharma teams are integrating automation tools like Mya 4 and Hei-VAP for regulatory-ready testing.",
   },
