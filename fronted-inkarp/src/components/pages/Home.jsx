@@ -9,6 +9,8 @@ import ExperienceSection from './Home/ExperienceSection';
 import Reviews from './Home/Reviews';
 import Card from './Home/Card';
 import Blogs from './Home/Blogs';
+import WhyHome from './Home/WhyHome';
+import FeaturedBlogs from './Home/FeaturedBlogs';
 
 
 const Home = () => {
@@ -17,11 +19,13 @@ const Home = () => {
             <HeroSection />
             {/* <Card /> */}
             <PickProduct />
+            <WhyHome />
             <ExperienceSection />
             <NewAbout />
             <Principles />
-            <Offerings />          
-            <Blogs />           
+            <Offerings />  
+            <FeaturedBlogs />        
+            {/* <Blogs />            */}
             <NewsEvents />
             <Reviews />
         </>

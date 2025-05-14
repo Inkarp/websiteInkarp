@@ -11,9 +11,9 @@ import {
 const profiles = [
   {
     name: "Synthesis and Flow Chemistry",
-    description:
-      "Developing innovative therapies to address unmet medical needs and improve patient outcomes.",
+    description: "Innovating scalable synthesis pathways and continuous flow technologies for precise, efficient chemical development.",
     image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
+    icon: "https://cdn-icons-png.flaticon.com/512/4320/4320337.png",
     socials: {
       linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
       facebook: "https://www.facebook.com/InkarpInstruments/",
@@ -23,10 +23,10 @@ const profiles = [
     },
   },
   {
-    name: "Analytical Chemistry and Chromotography Solutions",
-    description:
-      "Developing innovative therapies to address unmet medical needs and improve patient outcomes.",
+    name: "Analytical Chemistry and Chromatography",
+    description: "Delivering precise analytical instrumentation to ensure peak resolution and unmatched data reproducibility.",
     image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
+    icon: "https://cdn-icons-png.flaticon.com/512/3458/3458573.png",
     socials: {
       linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
       facebook: "https://www.facebook.com/InkarpInstruments/",
@@ -36,10 +36,10 @@ const profiles = [
     },
   },
   {
-    name: "Analytical Chemistry and Weighing",
-    description:
-      "Developing innovative therapies to address unmet medical needs and improve patient outcomes.",
+    name: "Material Science and Battery Research",
+    description: "Advanced material characterization and thermal analysis tools for energy storage, semiconductors, and polymers.",
     image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
+    icon: "https://cdn-icons-png.flaticon.com/512/3003/3003984.png",
     socials: {
       linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
       facebook: "https://www.facebook.com/InkarpInstruments/",
@@ -49,10 +49,10 @@ const profiles = [
     },
   },
   {
-    name: "Material Science and Battery",
-    description:
-      "Developing innovative therapies to address unmet medical needs and improve patient outcomes.",
+    name: "Pilot Plants and Automation",
+    description: "Designing and implementing pilot-scale automation for chemical and pharmaceutical scale-ups.",
     image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
+    icon: "https://cdn-icons-png.flaticon.com/512/2622/2622904.png",
     socials: {
       linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
       facebook: "https://www.facebook.com/InkarpInstruments/",
@@ -62,23 +62,10 @@ const profiles = [
     },
   },
   {
-    name: "Pilot Plants and Automation ",
-    description:
-      "Developing innovative therapies to address unmet medical needs and improve patient outcomes.",
+    name: "Life Sciences",
+    description: "Empowering biological breakthroughs with cutting-edge cell analysis, imaging, and molecular biology platforms.",
     image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
-    socials: {
-      linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
-      facebook: "https://www.facebook.com/InkarpInstruments/",
-      instagram: "https://www.instagram.com/inkarp.instruments/",
-      mail: "mailto:support@inkarp.com",
-      whatsapp: "https://wa.me/918019828999",
-    },
-  },
-  {
-    name: "Lifesciences",
-    description:
-      "Developing innovative therapies to address unmet medical needs and improve patient outcomes.",
-    image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
+    icon: "https://cdn-icons-png.flaticon.com/512/2702/2702602.png",
     socials: {
       linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
       facebook: "https://www.facebook.com/InkarpInstruments/",
@@ -89,9 +76,9 @@ const profiles = [
   },
   {
     name: "Extrusion and Homogenization",
-    description:
-      "Developing innovative therapies to address unmet medical needs and improve patient outcomes.",
+    description: "Delivering high-pressure homogenization and extrusion equipment for nanoemulsions, dispersions, and formulations.",
     image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
+    icon: "https://cdn-icons-png.flaticon.com/512/4290/4290854.png",
     socials: {
       linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
       facebook: "https://www.facebook.com/InkarpInstruments/",
@@ -102,9 +89,9 @@ const profiles = [
   },
   {
     name: "Rheology and Thermal Analysis",
-    description:
-      "Developing innovative therapies to address unmet medical needs and improve patient outcomes.",
+    description: "Measuring material behavior and thermal properties with precision rheometers and calorimeters.",
     image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
+    icon: "https://cdn-icons-png.flaticon.com/512/3469/3469182.png",
     socials: {
       linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
       facebook: "https://www.facebook.com/InkarpInstruments/",
@@ -115,9 +102,9 @@ const profiles = [
   },
   {
     name: "General Laboratory Instruments",
-    description:
-      "Developing innovative therapies to address unmet medical needs and improve patient outcomes.",
+    description: "From pH meters to water purification – your everyday research essentials under one roof.",
     image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
+    icon: "https://cdn-icons-png.flaticon.com/512/3050/3050034.png",
     socials: {
       linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
       facebook: "https://www.facebook.com/InkarpInstruments/",
@@ -128,8 +115,6 @@ const profiles = [
   },
 ];
 
-
-// ✅ Card Component
 function ProfileCard({ profile }) {
   const [showIcons, setShowIcons] = useState(false);
   const { linkedin, facebook, instagram, mail, whatsapp } = profile.socials || {};
@@ -140,28 +125,28 @@ function ProfileCard({ profile }) {
     { icon: Instagram, url: instagram },
     { icon: Mail, url: mail },
     { icon: MessageCircle, url: whatsapp },
-  ].filter(link => link.url); // Only valid links
+  ].filter(link => link.url);
 
   return (
     <div className="w-full max-w-xs rounded-3xl shadow-xl overflow-hidden bg-white hover:shadow-2xl transition-transform duration-300 hover:scale-105">
-      {/* Top black section */}
-      <div className="bg-white text-black h-[160px] p-5 flex flex-col justify-center items-center ">
-        <h3 className="text-lg font-bold font-[MaxOT] p-2">{profile.name}</h3>
-        <p className="text-sm leading-relaxed font-[Roboto] ">{profile.description}</p>
-        {/* <div className="flex gap-2 mt-2 bg-red-500 w-40 h-60 rounded-[50%] p-2">
+      <div className="bg-white text-black h-[200px] p-5 flex flex-col justify-center items-start relative group">
+  <div className="flex items-center mb-3">
+    <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center shadow-md">
+      <img src={profile.icon} alt="icon" className="w-7 h-7 object-contain" />
+    </div>
+    <h3 className="text-lg font-bold font-[MaxOT] pl-3">{profile.name}</h3>
+  </div>
+  <hr className="w-full border-t-[1.5px] border-gray-300 group-hover:border-red-500 transition-all duration-300 mb-2" />
+  <p className="text-sm leading-relaxed font-[Roboto]">{profile.description}</p>
+</div>
 
-        </div> */}
-      </div>
 
-      {/* Image with share button inside */}
       <div className="relative w-full h-[220px]">
         <img
           src={profile.image}
           alt={profile.name}
           className="w-full h-full object-cover"
         />
-
-        {/* Share Button and Icons */}
         {socialLinks.length > 0 && (
           <div className="absolute bottom-3 right-3">
             <div className="relative">
@@ -198,68 +183,18 @@ function ProfileCard({ profile }) {
   );
 }
 
-// ✅ Main Export Component
 export default function Offerings() {
   return (
     <>
       <h1 className="offering-ribbon-heading">Our Offerings</h1>
-      {/* Theme-Based Highlight Section */}
-{/* <div className="w-full py-8 flex justify-center bg-[#f0f5ff]">
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 max-w-6xl w-full">
-    {[
-      {
-        icon: "https://cdn-icons-png.flaticon.com/512/3003/3003984.png", // microscope icon
-        title: "Data Technology",
-        text: "Our clinical pathologists are available seven days a week to render diagnoses."
-      },
-      {
-        icon: "https://cdn-icons-png.flaticon.com/512/4320/4320337.png", // lab analysis icon
-        title: "Materials Analysis",
-        text: "24/7 access to real-time, study-wide data for your project teams, our labs,"
-      },
-      {
-        icon: "https://cdn-icons-png.flaticon.com/512/3458/3458573.png", // flow cytometry icon
-        title: "Flow Cytometry",
-        text: "Visibility of the sample and the whole chain of custody beginning at collection"
-      }
-    ].map((item, idx) => (
-      <div
-        key={idx}
-        className="bg-white rounded-[32px] shadow-md p-6 text-center flex flex-col justify-between h-full"
-      >
-        <div className="flex justify-center items-center mb-4">
-          <div className="w-16 h-16 rounded-full bg-[#e8f0fe] flex items-center justify-center">
-            <img src={item.icon} alt={item.title} className="w-8 h-8" />
-          </div>
-        </div>
-        <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-        <hr className="border-gray-300 mb-3" />
-        <p className="text-sm text-gray-600">{item.text}</p>
-        <div className="mt-6 flex justify-center">
-          <div className="w-8 h-8 rounded-full border-2 border-[#dbe6fd] flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 text-blue-700"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </div>
+      <div className="w-full py-5 flex justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-4">
+          {profiles.map((profile, index) => (
+            <ProfileCard key={index} profile={profile} />
+          ))}
         </div>
       </div>
-    ))}
-  </div>
-</div> */}
 
-
-      {/* Ribbon Style */}
       <style>{`
         .offering-ribbon-heading {
           position: relative;
@@ -272,7 +207,7 @@ export default function Offerings() {
           text-align: center;
           color: black;
           background-color: white;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .offering-ribbon-heading::before,
         .offering-ribbon-heading::after {
@@ -302,16 +237,6 @@ export default function Offerings() {
           }
         }
       `}</style>
-
-      {/* Grid Layout */}
-      <div className="w-full py-5 flex justify-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-4">
-          {profiles.map((profile, index) => (
-            <ProfileCard key={index} profile={profile} />
-          ))}
-        </div>
-      </div>
     </>
   );
 }
-
