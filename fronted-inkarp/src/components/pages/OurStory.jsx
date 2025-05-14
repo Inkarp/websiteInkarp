@@ -4,7 +4,9 @@ import Quotes from "./OurStory/Quotes";
 import SmallTeams from "./OurStory/SmallTeams";
 import TeamButton from "./OurStory/TeamButton";
 import TeamInfo from "./OurStory/TeamInfo";
+import TeamIntro from "./OurStory/TeamIntro";
 import WhyChooseUsSection from "./OurStory/WhyChooseUsSection";
+import NewCard from "./UI/NewCard";
 
 
 const OurStory = () => {
@@ -12,6 +14,8 @@ const OurStory = () => {
         <>
             <Mission />
             <WhyChooseUsSection />
+            {/* <NewCard /> */}
+            <TeamIntro />
             <TeamInfo />
             <SmallTeams />
             <Quotes />
