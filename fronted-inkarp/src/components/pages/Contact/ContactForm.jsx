@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ContactForm() {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gray-50 font-[Quicksand] gap-12 p-8">
+    <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gray-50 font-[Quicksand] gap-12">
       {/* SVG Envelope */}
       <svg
         className="w-80 md:w-[320px] animate-float"

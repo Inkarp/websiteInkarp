@@ -113,6 +113,20 @@ const profiles = [
       whatsapp: "https://wa.me/918019828999",
     },
   },
+  {
+    name: "General Laboratory Instruments",
+    description: "From pH meters to water purification – your everyday research essentials under one roof.",
+    image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
+    icon: "https://cdn-icons-png.flaticon.com/512/3050/3050034.png",
+    socials: {
+      linkedin: "https://www.linkedin.com/company/inkarp-instruments-pvt-ltd",
+      facebook: "https://www.facebook.com/InkarpInstruments/",
+      instagram: "https://www.instagram.com/inkarp.instruments/",
+      mail: "mailto:support@inkarp.com",
+      whatsapp: "https://wa.me/918019828999",
+    },
+  },
+  
 ];
 
 function ProfileCard({ profile }) {

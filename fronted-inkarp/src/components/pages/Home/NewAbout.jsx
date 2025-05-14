@@ -18,10 +18,10 @@ function NewAbout() {
         />
         
         {/* ✅ Quotes Component Added Below Image */}
-        <div className="">
+        {/* <div className="">
           <Quotes />
           
-        </div>
+        </div> */}
       </div>
 
       {/* Right Section - Subsidiaries & Joint Ventures */}

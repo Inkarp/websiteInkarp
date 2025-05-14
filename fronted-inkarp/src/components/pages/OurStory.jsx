@@ -11,11 +11,12 @@ const OurStory = () => {
     return (
         <>
             <Mission />
-            <TeamInfo />
             <WhyChooseUsSection />
+            <TeamInfo />
+            <SmallTeams />
             <Quotes />
             {/* <TeamButton /> */}
-            <SmallTeams />
+            
             <ClientReviews />
         </>
     );

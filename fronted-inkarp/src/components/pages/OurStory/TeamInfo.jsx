@@ -155,7 +155,7 @@ export default function TeamInfo() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    
+
                   }}
                 >
                   <FaLinkedin className="text-sm text-white" />
@@ -170,7 +170,7 @@ export default function TeamInfo() {
                 padding: '20px',
                 width: '100%',
                 color: 'black',
-                backgroundColor:"white",
+                backgroundColor: "white",
                 fontSize: '16px',
                 fontStyle: 'italic',
                 display: 'flex',
@@ -191,9 +191,9 @@ export default function TeamInfo() {
   };
 
   return (
-    <div style={{ fontFamily: 'MaxOT' }} className="w-[96%] mt-10 mx-auto py-14 relative">
+    <div style={{ fontFamily: 'MaxOT' }} className="w-full relative">
       {/* Background Image Section */}
-      <div className="relative w-full h-[1000px] flex items-start justify-between px-10">
+      <div className="relative w-full h-[1080px] flex items-start justify-between">
         <img
           src="inkarpBuilding-2.jpg"
           alt="Inkarp Building"
@@ -222,17 +222,18 @@ export default function TeamInfo() {
           </div>
 
           {/* Right: Heading and Paragraph */}
-          <div className="text-center md:w-[50%] mt-6 md:mt-0">
+          <div className="text-left w-full lg:w-[70%] mt-6 md:mt-0">
             <h1 className="text-5xl font-extrabold text-white mb-4">House of Inkarp</h1>
-            <p className="text-white text-lg font-medium leading-relaxed">
-              Meet the leadership team that powers Inkarp's vision across India. United by innovation and driven by service, they embody the spirit of excellence and commitment.
+            <p className="text-white text-lg font-medium leading-relaxed max-w-4xl">
+              Meet the leadership team that powers Inkarp's vision across India. United by innovation and
+              driven by service, they embody the spirit of excellence and commitment.
             </p>
           </div>
+
         </div>
 
       </div>
 
-      {/* Regional Leadership */}
 
 
       {/* Fade-in animation */}

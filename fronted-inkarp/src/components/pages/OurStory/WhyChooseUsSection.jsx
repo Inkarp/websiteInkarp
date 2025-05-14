@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
- 
   Dna,
   FlaskConical,
   Microscope,
@@ -10,7 +9,7 @@ import {
 } from 'lucide-react';
 
 const options = [
-  { label: 'Pharmaceuticals', icon: <PillBottle  className="w-5 h-5 text-white" /> },
+  { label: 'Pharmaceuticals', icon: <PillBottle className="w-5 h-5 text-white" /> },
   { label: 'Biotechnology', icon: <Dna className="w-5 h-5 text-white" /> },
   { label: 'Chemical and Petrochemical', icon: <FlaskConical className="w-5 h-5 text-white" /> },
   { label: 'Diagnostics', icon: <Microscope className="w-5 h-5 text-white" /> },
@@ -28,15 +27,15 @@ export default function WhyChooseUsSection() {
   const [active, setActive] = useState(0);
 
   return (
-    <div className="w-full bg-white py-12 px-4 md:px-10 lg:px-20">
+    <div className="w-[96%] mx-auto bg-white py-12 px-4 md:px-10 lg:px-20">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-6">
-          <button className="px-4 py-1 text-sm font-semibold border border-black rounded-full mb-4">
+          <button className="px-4 py-1 text-sm font-semibold border border-[#be0010] text-[#be0010] rounded-full mb-4">
             WHY CHOOSE US?
           </button>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1b254b] leading-tight">
-            We Advice to Choose a <br /> Right Decision
+            We Advise You to Make <br /> the Right Decision
           </h2>
         </div>
 
@@ -54,13 +53,13 @@ export default function WhyChooseUsSection() {
                   className={`flex items-center justify-between px-6 py-4 rounded-full border text-left text-base font-medium transition-all duration-300 ${
                     active === index
                       ? 'bg-white text-[#1b254b] shadow-md'
-                      : 'bg-[#e6edff] text-[#1b254b] border-gray-300'
+                      : 'bg-[#ffe6e9] text-[#1b254b] border-gray-300'
                   }`}
                 >
                   {opt.label}
                   <span
                     className={`w-8 h-8 flex items-center justify-center rounded-full ${
-                      active === index ? 'bg-blue-500' : 'bg-[#0a1437]'
+                      active === index ? 'bg-[#be0010]' : 'bg-[#1b254b]'
                     }`}
                   >
                     {opt.icon}
@@ -73,7 +72,7 @@ export default function WhyChooseUsSection() {
           {/* MIDDLE - Image */}
           <div className="w-full lg:w-[30%] rounded-3xl overflow-hidden">
             <img
-              src="https://img.freepik.com/free-photo/portrait-female-scientist-using-microscope-laboratory_23-2150897833.jpg"
+              src="https://xleb-demo.pbminfotech.com/demo1/wp-content/themes/xleb/images/tab.jpg"
               alt="lab"
               className="w-full h-full object-cover"
             />
@@ -82,16 +81,16 @@ export default function WhyChooseUsSection() {
           {/* RIGHT - Description */}
           <div className="w-full lg:w-1/3 text-[#1b254b]">
             <h3 className="text-2xl sm:text-3xl font-semibold leading-snug mb-4">
-              We'll Ensure You Always Make the Right Decision.
+              We’ll Ensure You Always Make the Right Decision.
             </h3>
             <p className="text-gray-500 mb-5">
-              We help ambitious businesses like yours generate more impact by enabling access to
-              expert consultation, reliable instruments, and tailored scientific solutions.
+              We help innovative businesses like yours grow with access to
+              expert consultation, reliable instruments, and tailored scientific solutions across industries.
             </p>
             <ul className="space-y-3">
               {features.map((feat, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <CheckCircle className="text-blue-500 w-5 h-5" />
+                  <CheckCircle className="text-[#be0010] w-5 h-5" />
                   <span className="font-medium text-[16px]">{feat}</span>
                 </li>
               ))}

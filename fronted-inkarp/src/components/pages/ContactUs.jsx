@@ -116,7 +116,7 @@ function ContactUs() {
 
           {/* Left Text */}
           <div className="w-full lg:w-1/4 text-center lg:text-right space-y-4">
-            <h2 className="text-3xl font-bold text-red-600">11 Branches Across India</h2>
+            <h2 className="text-3xl font-bold text-red-600">13+ Branches Across India</h2>
             <p className="text-gray-700 text-lg">Wherever you are, we’re nearby—ready to support, serve and simplify your scientific journey.</p>
           </div>
 

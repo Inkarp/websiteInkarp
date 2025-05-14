@@ -1,14 +1,13 @@
 import React from "react";
-import { FlaskConical, Microscope } from "lucide-react"; // Icons
-
+import { FlaskConical, Microscope, Target, Eye } from "lucide-react";
 
 export default function Mission() {
   return (
-    <section className="w-full mt-25 bg-[#eef2f9] px-6 md:px-16 py-14 flex flex-col md:flex-row items-center justify-between gap-10">
+    <section className="w-[96%] mx-auto mt-24 bg-[#eef2f9] px-6 md:px-16 py-14 flex flex-col md:flex-row items-center justify-between gap-10">
       {/* LEFT - Illustration */}
       <div className="w-full md:w-1/2 flex justify-center">
         <img
-          src='https://xleb-demo.pbminfotech.com/demo1/wp-content/uploads/sites/2/2024/10/laboratoty-tools.png'
+          src="https://xleb-demo.pbminfotech.com/demo1/wp-content/uploads/sites/2/2024/10/laboratoty-tools.png"
           alt="Microscope and Labware"
           className="w-[90%] md:w-full object-contain"
         />
@@ -25,23 +24,22 @@ export default function Mission() {
 
         {/* Title */}
         <h1 className="text-4xl md:text-5xl font-bold text-[#1a1a1a] leading-tight mb-4">
-          We'll Ensure You Always <br /> get the Best Results
+          We'll Ensure You Always <br /> Get the Best Results
         </h1>
 
         {/* Description */}
         <p className="text-gray-600 text-base md:text-lg mb-6">
-          Chemistry Research Documentation Center, a hub of exploration &
-          discovery in the realm of uncommon & extraordinary chemical phenomena.
-          Our clinical pathologists are able seven days a week to render
-          diagnoses.
+          Inkarp is a hub of scientific innovation and service excellence. With over four decades of
+          experience, we partner with global leaders to empower research, diagnostics, and industry
+          through reliable, precise instrumentation and personalized technical support.
         </p>
 
         {/* Feature Cards */}
-        <div className="flex flex-wrap gap-6 mb-8">
+        <div className="flex flex-wrap gap-6 mb-10">
           {/* Medical Research */}
           <div className="flex items-start gap-3">
             <div className="bg-white p-3 rounded-full shadow-md">
-              <FlaskConical className="text-red-600 w-5 h-5" />
+              <FlaskConical className="text-[#be0010] w-5 h-5" />
             </div>
             <div>
               <h3 className="text-gray-800 font-semibold text-base">Medical Research</h3>
@@ -54,7 +52,7 @@ export default function Mission() {
           {/* Accurate Analysis */}
           <div className="flex items-start gap-3">
             <div className="bg-white p-3 rounded-full shadow-md">
-              <Microscope className="text-red-600 w-5 h-5" />
+              <Microscope className="text-[#be0010] w-5 h-5" />
             </div>
             <div>
               <h3 className="text-gray-800 font-semibold text-base">Accurate Analysis</h3>
@@ -65,10 +63,36 @@ export default function Mission() {
           </div>
         </div>
 
-        {/* CTA Button */}
-        <button className="px-6 py-3 bg-white text-gray-800 font-semibold border border-gray-400 rounded-full hover:bg-gray-200 transition-all text-sm flex items-center gap-2">
-          Know More <span className="text-lg">→</span>
-        </button>
+        {/* Mission & Vision Cards */}
+        <div className="grid gap-6 md:grid-cols-2">
+          {/* Our Mission */}
+          <div className="bg-white p-6 rounded-xl shadow-md flex items-start gap-4">
+            <div className="bg-[#be0010] p-3 rounded-full">
+              <Target className="text-white w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-[#1b254b] mb-2">Our Mission</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                To empower scientific progress across India by delivering cutting-edge instruments,
+                responsive support, and trusted expertise in every partnership.
+              </p>
+            </div>
+          </div>
+
+          {/* Our Vision */}
+          <div className="bg-white p-6 rounded-xl shadow-md flex items-start gap-4">
+            <div className="bg-[#be0010] p-3 rounded-full">
+              <Eye className="text-white w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-[#1b254b] mb-2">Our Vision</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                To be India’s most trusted and innovative scientific solutions partner, enabling
+                discovery, development, and diagnostics with excellence and integrity.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
