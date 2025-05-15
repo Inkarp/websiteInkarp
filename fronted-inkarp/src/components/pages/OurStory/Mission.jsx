@@ -3,13 +3,13 @@ import { FlaskConical, Microscope, Target, Eye } from "lucide-react";
 
 export default function Mission() {
   return (
-    <section className="w-[96%] mx-auto mt-24 bg-[#eef2f9] px-6 md:px-16 py-14 flex flex-col md:flex-row items-center justify-between gap-10">
+    <section className="w-full mx-auto bg-[#eef2f9] px-6 md:px-16 py-14 flex flex-col md:flex-row items-center justify-between gap-10">
       {/* LEFT - Illustration */}
       <div className="w-full md:w-1/2 flex justify-center">
         <img
           src="https://xleb-demo.pbminfotech.com/demo1/wp-content/uploads/sites/2/2024/10/laboratoty-tools.png"
           alt="Microscope and Labware"
-          className="w-[90%] md:w-full object-contain"
+          className="w-[80%] md:w-full object-contain"
         />
       </div>
 
@@ -35,8 +35,7 @@ export default function Mission() {
         </p>
 
         {/* Feature Cards */}
-        <div className="flex flex-wrap gap-6 mb-10">
-          {/* Medical Research */}
+        {/* <div className="flex flex-wrap gap-6 mb-10">        
           <div className="flex items-start gap-3">
             <div className="bg-white p-3 rounded-full shadow-md">
               <FlaskConical className="text-[#be0010] w-5 h-5" />
@@ -48,8 +47,6 @@ export default function Mission() {
               </p>
             </div>
           </div>
-
-          {/* Accurate Analysis */}
           <div className="flex items-start gap-3">
             <div className="bg-white p-3 rounded-full shadow-md">
               <Microscope className="text-[#be0010] w-5 h-5" />
@@ -61,7 +58,7 @@ export default function Mission() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Mission & Vision Cards */}
         <div className="grid gap-6 md:grid-cols-2">
@@ -71,7 +68,7 @@ export default function Mission() {
               <Target className="text-white w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-[#1b254b] mb-2">Our Mission</h3>
+              <h3 className="text-xl flex flex-col font-bold text-[#1b254b] mb-2">Our Mission</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
                 To empower scientific progress across India by delivering cutting-edge instruments,
                 responsive support, and trusted expertise in every partnership.

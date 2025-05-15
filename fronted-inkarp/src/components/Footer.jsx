@@ -22,7 +22,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="text-white bg-white w-[98%] mx-auto mt-5 rounded-xl shadow-lg">
+    <footer className="text-white bg-white ">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 px-4 py-10 rounded-t-xl">
         <img
           className="h-20 sm:h-24 w-auto bg-red-100 rounded-md p-2"

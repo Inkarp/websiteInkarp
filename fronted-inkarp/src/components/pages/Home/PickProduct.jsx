@@ -105,7 +105,7 @@ export default function PickProduct() {
   const selectedProduct = productData[selectedIndex];
 
   return (
-    <div className="w-[96%] mx-auto py-6 flex flex-col items-center space-y-5">
+    <div className="w-full pt-5 flex flex-col items-center space-y-5">
       <div className="text-center">
         <h1 className="font-bold text-3xl text-white font-[MaxOT]">Pick a Product to Start</h1>
         <p className="font-[Roboto] text-red-600 mt-1">
@@ -150,7 +150,7 @@ export default function PickProduct() {
       </div>
 
       {/* Details Section */}
-      <div className="w-[70%] mx-auto flex flex-col md:flex-row bg-white border border-red-500 p-6 space-y-6 md:space-y-0 md:space-x-6 items-center">
+      <div className="w-[75%] mx-auto flex flex-col md:flex-row bg-white border border-red-500 p-6 space-y-6 md:space-y-0 md:space-x-6 items-center">
         {/* Left - Circular Image */}
         <div className="w-full md:w-1/2 flex justify-center items-center">
           <div className="relative grid aspect-square w-[280px] p-[14px] overflow-hidden">

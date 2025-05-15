@@ -43,7 +43,7 @@ export default function Quotes() {
   const { text, author } = quotes[currentIndex];
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-6 py-10">
+    <div className="w-full mx-auto max-w-4xl py-10">
       {/* Card UI 1: Slide-in Text */}
       {/* <div className="bg-white rounded-2xl p-6 md:p-10 shadow-xl border border-gray-200 text-center relative overflow-hidden">
         <p

@@ -11,6 +11,7 @@ import Card from './Home/Card';
 import Blogs from './Home/Blogs';
 import WhyHome from './Home/WhyHome';
 import FeaturedBlogs from './Home/FeaturedBlogs';
+import WhyChooseUsSection from './Home/WhyChooseUsSection';
 
 
 const Home = () => {
@@ -19,7 +20,8 @@ const Home = () => {
             <HeroSection />
             {/* <Card /> */}
             <PickProduct />
-            <WhyHome />
+            <WhyChooseUsSection />
+            {/* <WhyHome /> */}
             <ExperienceSection />
             <NewAbout />
             <Principles />

@@ -36,7 +36,7 @@ const Careers = () => {
     }, [locationFilter, jobs]);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6 flex gap-6 mt-20">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6 flex gap-6">
             {/* Sidebar Filter */}
             {/* <NewCareers /> */}
             <aside className="w-72 bg-white shadow-xl rounded-2xl p-6 space-y-4">

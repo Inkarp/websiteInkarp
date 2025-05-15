@@ -5,7 +5,7 @@ import Quotes from "../OurStory/Quotes";
 
 function NewAbout() {
   return (
-    <div className="w-[95%] mx-auto h-auto flex flex-col md:flex-row gap-8 p-6 rounded-2xl shadow-md">
+    <div className=" h-auto flex flex-col md:flex-row gap-8 p-6 rounded-2xl shadow-md">
       {/* Left Section - Company Info */}
       <div className="w-full md:w-3/5 rounded-xl bg-white p-4 flex flex-col items-center justify-center shadow-md">
         <h2 className="font-[MaxOT]">

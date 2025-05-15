@@ -191,9 +191,9 @@ export default function TeamInfo() {
   };
 
   return (
-    <div style={{ fontFamily: 'MaxOT' }} className="w-full relative">
+    <div  className="w-full relative py-16 font-[Max-OT]">
       {/* Background Image Section */}
-      <div className="relative w-full h-[1080px] flex items-start justify-between">
+      <div className="relative w-full h-auto flex items-start justify-between">
         <img
           src="inkarpBuilding-2.jpg"
           alt="Inkarp Building"

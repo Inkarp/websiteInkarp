@@ -40,7 +40,7 @@ const Verticals = () => {
   return (
     <>
       {/* Top Banner */}
-      <div className="flex bg-white text-white justify-center items-center h-80 mt-22 w-[98%] shadow-full mt-8 mx-auto rounded-lg">
+      <div className="flex bg-white text-white justify-center items-center h-80 shadow-full mt-2 mx-auto rounded-lg">
         <img src="inkarp old.svg" className="h-64" alt="Inkarp Logo" />
       </div>
 

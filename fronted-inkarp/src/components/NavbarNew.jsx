@@ -3,9 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Search, ChevronDown, ArrowDownToLine, X } from "lucide-react";
 
 export default function NavbarNew() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [insightsOpen, setInsightsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [showSearchModal, setShowSearchModal] = useState(false);
   const location = useLocation();
 
@@ -21,124 +19,82 @@ export default function NavbarNew() {
   const isActive = (path) => location.pathname === path;
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    setMenuOpen(false);
     setInsightsOpen(false);
   }, [location.pathname]);
 
   return (
     <>
-      <header
-        className={`fixed top-2 md:left-5 lg:left-8 mx-auto z-[50] w-[96%] rounded-xl transition-all duration-300 shadow-xl bg-white transform-gpu ${
-          scrolled ? "py-1 scale-95" : "py-0 scale-100"
-        }`}
-      >
-        <div className="flex justify-between items-center h-[72px] px-4 sm:px-6 lg:px-8">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img src="inkarp old.svg" alt="Logo" className="h-12 w-24 sm:h-14 sm:w-28 object-contain" />
+      <div className="flex flex-col h-full bg-white p-4 space-y-4 overflow-y-auto">
+        {/* Logo */}
+        <div className="flex justify-center">
+          <Link to="/">
+            <img
+              src="inkarp old.svg"
+              alt="Logo"
+              className="h-20 w-auto object-contain"
+            />
           </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex font-medium text-sm lg:text-base">
-            <ul className="flex items-center space-x-4">
-              {navLinks.map(({ name, path }) => (
-                <li key={name}>
-                  <Link
-                    to={path}
-                    className={`relative group w-[120px] h-[40px] flex items-center justify-center overflow-hidden rounded-md shadow-md ${
-                      isActive(path) ? "ring-2 ring-[#fcae04]" : ""
-                    }`}
-                  >
-                    <span className="absolute inset-0 bg-gradient-to-br from-purple-700 to-red-600 text-white font-bold text-sm flex items-center justify-center z-20 opacity-90">
-                      {name}
-                    </span>
-                    <span className="absolute inset-0 bg-gray-900 text-white font-semibold text-xs flex items-center justify-center z-10 uppercase">
-                      Go!
-                    </span>
-                    <span className="absolute inset-0 z-30" />
-                  </Link>
-                </li>
-              ))}
-
-              {/* Dropdown */}
-              <li className="relative">
-                <button
-                  onClick={() => setInsightsOpen(!insightsOpen)}
-                  className="flex items-center px-2 lg:px-3 py-2 text-black relative group"
-                >
-                  <span className="relative z-10">
-                    Insights & Updates
-                    <span className="absolute inset-x-0 bottom-0 h-[2px] bg-[#fcae04] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 z-0"></span>
-                  </span>
-                  <ChevronDown className="h-4 w-4 ml-1 opacity-60" />
-                </button>
-                {insightsOpen && (
-                  <ul className="absolute top-full left-0 bg-white border mt-2 w-48 rounded-md shadow-md text-sm z-50">
-                    <li>
-                      <Link to="/insights/blogs" className="block px-4 py-2 hover:bg-gray-100 font-medium">
-                        Blogs
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/insights/news&events" className="block px-4 py-2 hover:bg-gray-100 font-medium">
-                        News & Events
-                      </Link>
-                    </li>
-                  </ul>
-                )}
-              </li>
-            </ul>
-          </nav>
-
-          {/* CTA + Mobile Menu Toggle */}
-          <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-4">
-            <button onClick={() => setShowSearchModal(true)}>
-              <Search className="h-5 sm:h-5 lg:h-6 text-gray-700" />
-            </button>
-
-            <button className="bg-red-500 hover:bg-gray-700 text-white text-xs sm:text-sm font-bold px-3 py-2 rounded flex items-center gap-1">
-              <span>Product Profile</span>
-              <ArrowDownToLine className="h-4 w-4" />
-            </button>
-
-            <button
-              className="lg:hidden text-gray-700"
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              {menuOpen ? <X className="w-5 h-5" /> : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
-          </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
-        {menuOpen && (
-          <div className="lg:hidden px-4 pb-4 space-y-2 animate-slide-down">
-            {navLinks.map(({ name, path }) => (
-              <Link
-                to={path}
-                key={name}
-                className={`block py-2 px-3 rounded hover:bg-gray-100 font-medium ${
-                  isActive(path) ? "text-[#fcae04]" : ""
-                }`}
-              >
-                {name}
-              </Link>
-            ))}
-            <Link to="/insights/blogs" className="block py-2 px-3 hover:bg-gray-100 font-medium">Blogs</Link>
-            <Link to="/insights/news" className="block py-2 px-3 hover:bg-gray-100 font-medium">News & Events</Link>
+        {/* Nav Links */}
+        <nav className="flex-1 space-y-2 text-sm font-semibold pt-4">
+          {navLinks.map(({ name, path }) => (
+            <Link
+              key={name}
+              to={path}
+              className={`block px-4 py-2 rounded-md transition-all duration-200 ${
+                isActive(path)
+                  ? "bg-red-500 text-white shadow"
+                  : "text-gray-700 hover:bg-gray-100"
+              }`}
+            >
+              {name}
+            </Link>
+          ))}
+
+          {/* Dropdown */}
+          <div>
+            <button
+              onClick={() => setInsightsOpen(!insightsOpen)}
+              className="flex items-center justify-between w-full px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100 transition-all"
+            >
+              <span>Insights & Updates</span>
+              <ChevronDown className="h-4 w-4" />
+            </button>
+            {insightsOpen && (
+              <div className="ml-4 space-y-1 mt-1">
+                <Link
+                  to="/insights/blogs"
+                  className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-md"
+                >
+                  Blogs
+                </Link>
+                <Link
+                  to="/insights/news&events"
+                  className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-md"
+                >
+                  News & Events
+                </Link>
+              </div>
+            )}
           </div>
-        )}
-      </header>
+        </nav>
+
+        {/* Bottom Actions */}
+        <div className="space-y-2 pt-6 border-t border-gray-200">
+          <button
+            onClick={() => setShowSearchModal(true)}
+            className="flex items-center gap-2 px-4 py-2 w-full text-gray-700 hover:bg-gray-100 rounded-md"
+          >
+            <Search className="w-4 h-4" />
+            <span>Search</span>
+          </button>
+          <button className="flex items-center justify-center gap-2 px-4 py-2 bg-red-500 text-white text-sm font-semibold rounded-md w-full hover:bg-red-600">
+            Product Profile
+            <ArrowDownToLine className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
 
       {/* Search Modal */}
       {showSearchModal && (
@@ -153,7 +109,7 @@ export default function NavbarNew() {
           <input
             type="text"
             placeholder="Start Typing..."
-            className="w-full max-w-xs sm:max-w-md lg:max-w-xl px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-red-400 placeholder:text-black placeholder:font-medium"
+            className="w-full max-w-xl px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 ring-red-400 placeholder:text-black placeholder:font-medium"
             autoFocus
           />
         </div>

@@ -80,6 +80,13 @@ function ContactUs() {
       email: "vadodara@inkarp.co.in",
       top: "50%", left: "32%",
     },
+    {
+      name: "Hyderabad",
+      address: "Hyderabad, Telangana",
+      phone: "+91 9000000010",
+      email: "hyderabad@inkarp.co.in",
+      top: "65%", left: "40%",
+    },
   ];
 
   return (
@@ -111,7 +118,7 @@ function ContactUs() {
         }
       `}</style>
 
-      <section className="min-h-screen mt-22 px-4 md:px-12 bg-white w-[96%] mx-auto">
+      <section className="min-h-screen  px-4 md:px-12 bg-white mx-auto">
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8">
 
           {/* Left Text */}

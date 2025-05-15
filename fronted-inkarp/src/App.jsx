@@ -16,6 +16,7 @@ import Blogs from "./components/pages/Home/Blogs";
 import NewsEvents from "./components/pages/Home/NewsEvents";
 import EventsPage from "./components/pages/NewsAndEvents/EventsPage";
 import BlogsPage from "./components/pages/NewsAndEvents/BlogsPage";
+import ProductProfile from "./components/pages/ProductProfile";
 // import Blogs from "./components/pages/insights/Blogs";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/catalyst-cue" element={<Catalyst />} />
           <Route path="/insights/blogs" element={<BlogsPage />} />
           <Route path="/insights/news&events" element={<EventsPage />} />
+          <Route path="/productProfile" element={<ProductProfile />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

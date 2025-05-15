@@ -48,7 +48,7 @@ export default function FeaturedBlogs() {
   const [featured, setFeatured] = useState(articles[0]);
 
   return (
-    <section className="bg-white py-16 w-[96%] mx-auto">
+    <section className="bg-white py-12  mx-auto">
       <div className="max-w-7xl mx-auto">
         <p className="text-xs font-semibold border px-4 py-1 rounded-full inline-block mb-3 text-[#be0010] border-[#be0010]">
           WHAT WE DO
@@ -59,7 +59,7 @@ export default function FeaturedBlogs() {
 
         <div className="grid lg:grid-cols-3 gap-10">
           {/* Left Featured */}
-          <div className="bg-white p-6 rounded-3xl flex flex-col lg:col-span-2 shadow">
+          <div className="bg-red-100 p-6 rounded-3xl flex flex-col lg:col-span-2 shadow">
             <div className="flex flex-col md:flex-row gap-6">
               <img
                 src={featured.image}
