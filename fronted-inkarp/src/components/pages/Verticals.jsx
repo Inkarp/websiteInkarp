@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 
 const verticalsList = [
   "Synthesis and Flow Chemistry",
@@ -17,17 +17,21 @@ const Verticals = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [verticalData, setVerticalData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [bannerImage, setBannerImage] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState(null); // For popup card
 
   const fetchData = async (index) => {
     setLoading(true);
     try {
       const res = await fetch(
-        `https://jsonplaceholder.typicode.com/posts?_limit=5&_start=${index * 5}`
+        `https://dummyjson.com/products?limit=5&skip=${index * 5}`
       );
       const data = await res.json();
-      setVerticalData(data);
+      setVerticalData(data.products);
+      setBannerImage(data.products?.[0]?.thumbnail || "");
     } catch (err) {
       setVerticalData([]);
+      setBannerImage("");
     } finally {
       setLoading(false);
     }
@@ -40,8 +44,16 @@ const Verticals = () => {
   return (
     <>
       {/* Top Banner */}
-      <div className="flex bg-white text-white justify-center items-center h-80 shadow-full mt-2 mx-auto rounded-lg">
-        <img src="inkarp old.svg" className="h-64" alt="Inkarp Logo" />
+      <div className="flex bg-white justify-center items-center h-80 shadow-full mt-2 mx-auto rounded-lg overflow-hidden">
+        {bannerImage ? (
+          <img
+            src={bannerImage}
+            className="h-full w-full object-contain transition-all duration-500"
+            alt="Banner"
+          />
+        ) : (
+          <p className="text-center text-gray-400">No Image Available</p>
+        )}
       </div>
 
       {/* Content Area */}
@@ -56,11 +68,11 @@ const Verticals = () => {
                 key={index}
                 onClick={() => setActiveIndex(index)}
                 className={`w-full flex items-center justify-between px-5 py-3 rounded-full shadow-xl cursor-pointer transition-all duration-300
-                ${
-                  isActive
-                    ? "bg-white text-red-500 border border-black font-[MaxOT] font-lg"
-                    : "bg-red-100 text-black border border-[#c7d3e3] text-[#0a2540] font-[Roboto]"
-                }`}
+                  ${
+                    isActive
+                      ? "bg-white text-red-500 border border-black font-[MaxOT]"
+                      : "bg-red-100 text-black border border-[#c7d3e3] text-[#0a2540] font-[Roboto]"
+                  }`}
               >
                 <span className="text-base font-medium">{item}</span>
                 <span
@@ -84,22 +96,71 @@ const Verticals = () => {
             {verticalsList[activeIndex]}
           </h1>
           {loading ? (
-            <p className="text-gray-500"><img  src="loadingImage.svg" className="w-100 h-100 bg-red-100"/></p>
+            <div className="text-gray-500 flex items-center justify-center">
+              <img
+                src="loadingImage.svg"
+                className="w-20 h-20 bg-red-100"
+                alt="loading"
+              />
+            </div>
           ) : (
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {verticalData.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-white p-5 rounded-lg shadow border"
+                  onClick={() => {
+                    setSelectedProduct(item);
+                    setBannerImage(item.thumbnail);
+                  }}
+                  className="cursor-pointer border rounded-lg shadow-sm p-4 hover:shadow-lg transition bg-white"
                 >
-                  <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.body}</p>
+                  <img
+                    src={item.thumbnail}
+                    alt={item.title}
+                    className="w-full h-40 object-cover rounded-md mb-3"
+                  />
+                  <h2 className="text-lg font-bold text-red-600">{item.title}</h2>
+                  <p className="text-sm text-gray-700 mt-1 line-clamp-2">
+                    {item.description}
+                  </p>
+                  <p className="text-sm text-gray-500 mt-2">
+                    Brand: {item.brand} | Category: {item.category}
+                  </p>
                 </div>
               ))}
             </div>
           )}
         </main>
       </div>
+
+      {/* Popup Card Modal */}
+      {selectedProduct && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
+          <div className="bg-white max-w-xl w-[95%] rounded-lg p-6 relative shadow-2xl">
+            <button
+              onClick={() => setSelectedProduct(null)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-black"
+            >
+              <X size={28} />
+            </button>
+            <img
+              src={selectedProduct.thumbnail}
+              alt={selectedProduct.title}
+              className="w-full h-64 object-cover rounded-lg mb-4"
+            />
+            <h2 className="text-2xl font-bold text-red-600">{selectedProduct.title}</h2>
+            <p className="text-gray-700 mt-2">{selectedProduct.description}</p>
+            <ul className="mt-4 space-y-1 text-sm text-gray-600">
+              <li><strong>Brand:</strong> {selectedProduct.brand}</li>
+              <li><strong>Category:</strong> {selectedProduct.category}</li>
+              <li><strong>Price:</strong> ${selectedProduct.price}</li>
+              <li><strong>Discount:</strong> {selectedProduct.discountPercentage}%</li>
+              <li><strong>Rating:</strong> ⭐ {selectedProduct.rating}</li>
+              <li><strong>Stock:</strong> {selectedProduct.stock} units</li>
+            </ul>
+          </div>
+        </div>
+      )}
     </>
   );
 };

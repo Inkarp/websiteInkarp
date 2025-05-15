@@ -5,7 +5,7 @@ const TeamIntro = () => {
     <section className="w-[96%] mx-auto py-12 text-center">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-extrabold text-[#be0010] font-[MaxOT] mb-4">
-          Meet Our Leadership
+          House of Inkarp
         </h2>
         <p className="text-white text-lg md:text-xl font-[Roboto] mb-6">
           At Inkarp, our leadership team isn’t just made up of titles — it’s built on decades of

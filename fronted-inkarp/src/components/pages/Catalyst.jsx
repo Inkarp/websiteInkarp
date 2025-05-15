@@ -35,7 +35,7 @@ const Catalyst = () => {
   ];
 
   return (
-    <div className="w-[90%] mx-auto mt-30 text-white">
+    <div className="w-[90%] mx-auto mt-3 text-white">
       {/* Header Image */}
       <div className="mb-10  overflow-hidden ">
         <img

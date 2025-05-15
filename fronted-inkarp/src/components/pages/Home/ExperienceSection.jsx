@@ -55,7 +55,7 @@ export default function ExperienceSection() {
         }
       `}</style>
 
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-10  py-6 rounded-2xl">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-10 bg-black/40 p-6 rounded-2xl">
         {/* Left Column */}
         <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
           <div>

@@ -85,12 +85,12 @@ export default function TeamInfo() {
             height: hoveredHeight,
             width: hoveredWidth,
             borderRadius: '20px',
-            border: hovered === index ? '2px solid red' : '0px solid #ccc',
+            border: hovered === index ? '0px solid red' : '0px solid #ccc',
             transition: 'all 0.6s ease',
             overflow: 'hidden',
             objectPosition: 'top center',
             // backgroundColor: '#fff',
-            boxShadow: hovered === index ? '0 0 20px rgba(213, 20, 20, 0.2)' : '0 0 5px rgba(184, 18, 18, 0.1)'
+            boxShadow: hovered === index ? '0 0 20px rgba(30, 32, 28, 0.2)' : '0 0 5px rgba(184, 18, 18, 0.1)'
           }}
         >
           <div style={{ width: '200px', position: 'relative', }}>
@@ -191,7 +191,7 @@ export default function TeamInfo() {
   };
 
   return (
-    <div  className="w-full relative py-16 font-[Max-OT]">
+    <div  className="w-full relative py-16">
       {/* Background Image Section */}
       <div className="relative w-full h-auto flex items-start justify-between">
         <img
@@ -222,13 +222,13 @@ export default function TeamInfo() {
           </div>
 
           {/* Right: Heading and Paragraph */}
-          <div className="text-left w-full lg:w-[70%] mt-6 md:mt-0">
+          {/* <div className="text-left w-full lg:w-[70%] mt-6 md:mt-0">
             <h1 className="text-5xl font-extrabold text-white mb-4">House of Inkarp</h1>
             <p className="text-white text-lg font-medium leading-relaxed max-w-4xl">
               Meet the leadership team that powers Inkarp's vision across India. United by innovation and
               driven by service, they embody the spirit of excellence and commitment.
             </p>
-          </div>
+          </div> */}
 
         </div>
 

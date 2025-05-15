@@ -42,7 +42,7 @@ export default function MainLayout() {
 
       <div className="w-[85%] ml-[15%]">
         <div className="fixed inset-0 -z-10 overflow-hidden">
-          <img src="black.jpg" className="w-full h-full object-cover opacity-40" alt="background" />
+          <img src="black.jpg" className="w-full h-full object-cover opacity-100" alt="background" />
         </div>
         <div className="relative flex flex-col min-h-screen z-10">
           <main className="flex-grow">

@@ -92,13 +92,13 @@ function HeroSection() {
           ></video>
           <a
             href="https://www.youtube.com/@InkarpInstrument/videos"
-            className="absolute bottom-5 right-5 md:bottom-10 md:right-10 bg-white px-4 py-2 rounded-full flex items-center gap-2 z-10 shadow-lg hover:shadow-xl transition duration-300 hover:bg-red-800 hover:text-white"
+            className="absolute bottom-5 bg-red-100 right-5 md:bottom-10 md:right-10 bg-white px-4 py-2 rounded-full flex items-center gap-2 z-10 shadow-lg hover:shadow-xl transition duration-300 hover:bg-red-800 hover:text-white"
           >
-            <div className="relative w-10 h-10 flex items-center justify-center">
+            <div className="relative w-10 h-10  flex items-center justify-center">
               <Circle className="absolute w-full h-full" />
               <Play className="relative z-10" />
             </div>
-            <span className="text-sm md:text-base">Watch Video</span>
+            <span className="text-sm md:text-base font-[MaxOT]">Watch Video</span>
           </a>
         </div>
 

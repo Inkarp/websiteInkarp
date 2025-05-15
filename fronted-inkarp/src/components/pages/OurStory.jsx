@@ -12,7 +12,7 @@ const OurStory = () => {
     return (
         <>
             <Mission />           
-            {/* <NewCard /> */}
+            <NewCard />
             <TeamIntro />
             <TeamInfo />
             <SmallTeams />
