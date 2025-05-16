@@ -89,10 +89,12 @@ export default function NavbarNew() {
             <Search className="w-4 h-4" />
             <span>Search</span>
           </button>
+          <Link to="/productProfile">
           <button className="flex items-center justify-center gap-2 px-4 py-2 bg-red-500 text-white text-sm font-semibold rounded-md w-full hover:bg-red-600">
             Product Profile
             <ArrowDownToLine className="w-4 h-4" />
           </button>
+          </Link>
         </div>
       </div>
 

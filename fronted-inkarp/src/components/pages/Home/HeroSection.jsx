@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { Play, Circle, ChevronLeft, ChevronRight } from "lucide-react";
 import { keyframes } from "@emotion/react";
 import { Reveal } from "react-awesome-reveal";
+import { motion, AnimatePresence } from "framer-motion";
 
-// FIXED: Fall from bottom & rotate X from 180 to 0
+// Fixed fallFromBottom animation for title/subtitle (kept for Reveal)
 const fallFromBottom = keyframes`
   0% {
     opacity: 0;
@@ -45,6 +46,7 @@ function HeroSection() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const autoSlideRef = useRef(null);
   const videoRef = useRef(null);
 
@@ -65,6 +67,7 @@ function HeroSection() {
 
   const handleManual = (direction) => {
     stopAutoSlide();
+    setIsImageLoaded(false); // reset loader
     if (direction === "next") {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
     } else {
@@ -74,6 +77,13 @@ function HeroSection() {
   };
 
   const currentSlide = slides[currentIndex];
+
+  // Framer motion variants for fade and slide animation
+  const slideVariants = {
+    initial: { opacity: 0, y: 50, rotateX: 20 },
+    animate: { opacity: 1, y: 0, rotateX: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    exit: { opacity: 0, y: -50, rotateX: -20, transition: { duration: 0.5, ease: "easeIn" } },
+  };
 
   return (
     <section className="w-full lg:px-5 mt-5 ">
@@ -103,53 +113,92 @@ function HeroSection() {
         </div>
 
         {/* Right Slider */}
-        <div className="relative w-full lg:w-1/2 h-[400px] md:h-[500px] overflow-hidden rounded-2xl">
-          <div className="w-full h-full relative swing-top-fwd">
-            <img
-              src={currentSlide.image}
-              alt={currentSlide.title}
-              className="w-full h-full object-cover"
-            />
-            <div
-              className="absolute bottom-10 left-0 right-0 text-red-500 p-4"
+        <div className="relative w-full lg:w-1/2 h-[400px] md:h-[500px] overflow-hidden rounded-2xl bg-gray-800">
+          {/* Loader */}
+          {!isImageLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-70 z-20 rounded-2xl">
+              <svg
+                className="animate-spin h-10 w-10 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v8H4z"
+                ></path>
+              </svg>
+            </div>
+          )}
+
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={currentIndex}
+              className="w-full h-full relative"
+              variants={slideVariants}
+              initial="initial"
+              animate={isImageLoaded ? "animate" : "initial"}
+              exit="exit"
               style={{ perspective: "1000px" }}
             >
-              <Reveal
-                key={`title-${currentIndex}`}
-                keyframes={fallFromBottom}
-                duration={1200}
-                triggerOnce={false}
+              <img
+                src={currentSlide.image}
+                alt={currentSlide.title}
+                className="w-full h-full object-cover rounded-2xl"
+                onLoad={() => setIsImageLoaded(true)}
+                style={{ display: isImageLoaded ? "block" : "none" }}
+              />
+              {/* Text Overlay */}
+              <div
+                className="absolute bottom-10 left-0 right-0 text-red-500 p-4"
+                style={{ pointerEvents: "none" }}
               >
-                <h2
-                  className="text-lg md:text-2xl text-white font-bold"
-                  style={{
-                    fontFamily: "MaxOT",
-                    transformStyle: "preserve-3d",
-                  }}
+                <Reveal
+                  key={`title-${currentIndex}`}
+                  keyframes={fallFromBottom}
+                  duration={1200}
+                  triggerOnce={false}
                 >
-                  {currentSlide.title}
-                </h2>
-              </Reveal>
+                  <h2
+                    className="text-lg md:text-2xl text-white font-bold"
+                    style={{
+                      fontFamily: "MaxOT",
+                      transformStyle: "preserve-3d",
+                    }}
+                  >
+                    {currentSlide.title}
+                  </h2>
+                </Reveal>
 
-              <Reveal
-                key={`subtitle-${currentIndex}`}
-                keyframes={fallFromBottom}
-                duration={1200}
-                delay={200}
-                triggerOnce={false}
-              >
-                <p
-                  className="text-sm md:text-base text-white mt-1"
-                  style={{
-                    fontFamily: "Roboto",
-                    transformStyle: "preserve-3d",
-                  }}
+                <Reveal
+                  key={`subtitle-${currentIndex}`}
+                  keyframes={fallFromBottom}
+                  duration={1200}
+                  delay={200}
+                  triggerOnce={false}
                 >
-                  {currentSlide.subtitle}
-                </p>
-              </Reveal>
-            </div>
-          </div>
+                  <p
+                    className="text-sm md:text-base text-white mt-1"
+                    style={{
+                      fontFamily: "Roboto",
+                      transformStyle: "preserve-3d",
+                    }}
+                  >
+                    {currentSlide.subtitle}
+                  </p>
+                </Reveal>
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
           {/* Arrows */}
           <div className="absolute right-0 px-2 py-2 bg-white rounded-l-xl top-1/2 transform -translate-y-1/2 z-10 flex flex-col gap-3">
