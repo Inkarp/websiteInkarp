@@ -9,6 +9,9 @@ export default defineConfig({
   build: {
     sourcemap: true, // ✅ Add this
   },
+  optimizeDeps: {
+  include: ['framer-motion'],
+}
 })
 
 

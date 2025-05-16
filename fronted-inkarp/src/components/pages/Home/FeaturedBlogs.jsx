@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { CalendarDays, User2, ArrowRight } from "lucide-react";
-
+import { motion, AnimatePresence, useInView } from "framer-motion";
 const articles = [
   {
     id: 1,
@@ -44,74 +44,68 @@ const articles = [
   },
 ];
 
+
 export default function FeaturedBlogs() {
   const [featured, setFeatured] = useState(articles[0]);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, threshold: 0.2 });
+
+  const fadeInUp = {
+    initial: { opacity: 0, y: 40 },
+    animate: { opacity: 1, y: 0, transition: { duration: 1.0 } },
+  };
 
   return (
-    <section className="bg-white py-12  mx-auto">
-      <div className="max-w-7xl mx-auto">
-        <p className="text-xs font-semibold border px-4 py-1 rounded-full inline-block mb-3 text-[#be0010] border-[#be0010]">
-          WHAT WE DO
-        </p>
-        <h2 className="text-4xl font-bold text-slate-900 mb-10">
-          Latest insights from our lab partners <br /> and scientific specialists
-        </h2>
+    <section className="bg-white py-12 mx-auto">
+      <div className="max-w-7xl mx-auto" ref={ref}>
+        <motion.h2
+          variants={fadeInUp}
+          initial="initial"
+          animate={inView ? "animate" : "initial"}
+          className="text-4xl font-bold text-slate-900 mb-10"
+        >
+          Latest insights from our lab partners
+          <br /> and scientific specialists
+        </motion.h2>
 
-        <div className="grid lg:grid-cols-3 gap-10">
-          {/* Left Featured */}
-          <div className="bg-red-100 p-6 rounded-3xl flex flex-col lg:col-span-2 shadow">
-            <div className="flex flex-col md:flex-row gap-6">
-              <img
-                src={featured.image}
-                alt="featured"
-                className="rounded-3xl w-full md:w-[40%] object-cover h-[320px]"
-              />
-              <div className="flex flex-col justify-between">
-                <p className="text-sm text-slate-500 uppercase tracking-wider mb-2">
-                  {featured.date} /{" "}
-                  <span className="text-[#be0010] font-medium">{featured.category}</span>
-                </p>
-                <h3 className="text-2xl font-semibold text-slate-900 mb-4">{featured.title}</h3>
-                <p className="text-sm text-gray-600 mb-6">{featured.content}</p>
-                <button className="px-6 py-3 bg-[#be0010] text-white text-sm font-bold rounded-full w-fit flex items-center gap-2 hover:bg-red-700 transition">
-                  Read More <ArrowRight size={16} />
-                </button>
-              </div>
-            </div>
+        <motion.div
+          variants={fadeInUp}
+          initial="initial"
+          animate={inView ? "animate" : "initial"}
+          className="grid lg:grid-cols-3 gap-10"
+        >
+          {/* Left Feature */}
+          <div className="bg-red-100 p-6 rounded-3xl lg:col-span-2">
+            <img
+              src={featured.image}
+              alt={featured.title}
+              className="rounded-3xl mb-4 object-cover w-full h-[300px]"
+            />
+            <h3 className="text-xl font-semibold">{featured.title}</h3>
+            <p className="text-sm mt-2">{featured.content}</p>
           </div>
 
           {/* Right List */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4">
             {articles.map((item) => (
               <div
                 key={item.id}
                 onClick={() => setFeatured(item)}
-                className="flex items-center gap-4 border-b pb-4 cursor-pointer hover:opacity-90 transition"
+                className="flex items-start gap-4 border-b pb-4 cursor-pointer"
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-20 h-20 rounded-xl object-cover"
+                  className="w-20 h-20 object-cover rounded-xl"
                 />
                 <div>
-                  <div className="flex items-center gap-3 text-xs text-slate-500 mb-1">
-                    <span className="flex items-center gap-1">
-                      <CalendarDays size={14} />
-                      {item.date}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <User2 size={14} />
-                      BY {item.author}
-                    </span>
-                  </div>
-                  <h4 className="text-sm font-semibold text-slate-800 line-clamp-2">
-                    {item.title}
-                  </h4>
+                  <h4 className="font-semibold text-sm">{item.title}</h4>
+                  <p className="text-xs text-gray-500">{item.date}</p>
                 </div>
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
