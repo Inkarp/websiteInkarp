@@ -85,7 +85,7 @@ export default function TeamInfo() {
             height: hoveredHeight,
             width: hoveredWidth,
             borderRadius: '20px',
-            border: hovered === index ? '0px solid red' : '0px solid #ccc',
+            border: hovered === index ? '2px solid red' : '0px solid #ccc',
             transition: 'all 0.6s ease',
             overflow: 'hidden',
             objectPosition: 'top center',
@@ -115,7 +115,7 @@ export default function TeamInfo() {
                     objectFit: 'cover',
                     borderRadius: '180px',
                     backfaceVisibility: 'hidden',
-                    border: '4px solid red',
+                    // border: '4px solid red',
                     // padding: '10px',
                   }}
                 />
