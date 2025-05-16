@@ -86,13 +86,13 @@ function HeroSection() {
   };
 
   return (
-    <section className="w-full lg:px-5 mt-5 ">
+    <section className="w-full lg:px-5 py-5 mt-5 ">
       <div className="w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-6">
         {/* Left Video */}
-        <div className="relative lg:w-1/2 mx-auto h-[400px] md:h-[500px]">
+        <div className="relative lg:w-1/2 mx-auto h-[400px] md:h-[500px] ">
           <video
             ref={videoRef}
-            className="rounded-xl w-full h-full object-cover"
+            className="rounded-xl w-full h-full object-cover shadow-2xl"
             src="bg-video.mov"
             muted
             loop
@@ -113,7 +113,7 @@ function HeroSection() {
         </div>
 
         {/* Right Slider */}
-        <div className="relative w-full lg:w-1/2 h-[400px] md:h-[500px] overflow-hidden rounded-2xl bg-gray-800">
+        <div className="relative w-full lg:w-1/2 h-[400px] md:h-[500px] overflow-hidden rounded-2xl bg-gray-800 shawdow-2xl">
           {/* Loader */}
           {!isImageLoaded && (
             <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-70 z-20 rounded-2xl">
@@ -153,7 +153,7 @@ function HeroSection() {
               <img
                 src={currentSlide.image}
                 alt={currentSlide.title}
-                className="w-full h-full object-cover rounded-2xl"
+                className="w-full h-full object-cover rounded-2xl shadow-2xl"
                 onLoad={() => setIsImageLoaded(true)}
                 style={{ display: isImageLoaded ? "block" : "none" }}
               />

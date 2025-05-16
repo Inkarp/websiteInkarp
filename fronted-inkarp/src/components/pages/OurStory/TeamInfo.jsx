@@ -115,7 +115,7 @@ export default function TeamInfo() {
                     objectFit: 'cover',
                     borderRadius: '180px',
                     backfaceVisibility: 'hidden',
-                    // border: '4px solid red',
+                    border: '4px solid red',
                     // padding: '10px',
                   }}
                 />

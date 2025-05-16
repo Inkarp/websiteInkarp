@@ -98,7 +98,7 @@ export default function FeaturedBlogs() {
   };
 
   return (
-    <section className="bg-white py-12 mx-auto">
+    <section className="py-12 mx-auto">
       <div className="max-w-7xl mx-auto" ref={ref}>
         <motion.p
           variants={fadeUp}

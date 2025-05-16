@@ -78,11 +78,11 @@ export default function ClientReviews() {
                   <h4 className="font-semibold text-black text-md">{review.name}</h4>
                   <p className="text-sm text-gray-500">{review.title}</p>
                 </div>
-                <img
+                {/* <img
                   src={review.avatar}
                   alt={review.name}
                   className="w-12 h-12 object-cover rounded-full border-2 border-white shadow"
-                />
+                /> */}
               </div>
             </div>
           ))}

@@ -13,7 +13,7 @@ export default function NavbarNew() {
     { name: "Verticals", path: "/verticals" },
     { name: "Careers", path: "/careers" },
     { name: "Contact Us", path: "/contact" },
-    { name: "CatalystCue", path: "/catalyst-cue" },
+    // { name: "CatalystCue", path: "/catalyst-cue" },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -24,8 +24,11 @@ export default function NavbarNew() {
 
   return (
     <>
-      <div className="flex flex-col h-full bg-white p-4 space-y-4 overflow-y-auto">
+      <div className="flex flex-col h-full bg-gray-200 p-4 space-y-4 overflow-y-auto">
         {/* Logo */}
+        {/* <div className="fixed inset-0 -z-10 overflow-hidden">
+          <img src="black.jpg" className="w-full h-full object-cover opacity-100" alt="background" />
+        </div> */}
         <div className="flex justify-center">
           <Link to="/">
             <img
@@ -45,7 +48,7 @@ export default function NavbarNew() {
               className={`block px-4 py-2 rounded-md transition-all duration-200 ${
                 isActive(path)
                   ? "bg-red-500 text-white shadow"
-                  : "text-gray-700 hover:bg-gray-100"
+                  : "text-black hover:bg-gray-100"
               }`}
             >
               {name}
@@ -78,6 +81,9 @@ export default function NavbarNew() {
               </div>
             )}
           </div>
+          <Link to="catalyst-cue" className="mx-auto" >
+          <img src="catalystcue.svg" className="w-24 h-15" />
+          </Link>
         </nav>
 
         {/* Bottom Actions */}

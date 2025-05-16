@@ -118,7 +118,7 @@ function ContactUs() {
         }
       `}</style>
 
-      <section className="min-h-screen  px-4 md:px-12 bg-white mx-auto">
+      <section className="min-h-screen px-4 md:px-12 mx-auto">
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8">
 
           {/* Left Text */}
@@ -128,9 +128,9 @@ function ContactUs() {
           </div>
 
           {/* India Map */}
-          <div className="relative w-full max-w-4xl h-[800px]  rounded-xl overflow-hidden  z-10">
+          <div className="relative w-full mt-2 max-w-4xl  h-[800px]  rounded-xl overflow-hidden  z-10">
             <img
-              src="/india.jpg"
+              src="IndiaMap.png"
               alt="India Map"
               className="object-contain w-full h-full"
             />
@@ -138,7 +138,7 @@ function ContactUs() {
             {branches.map((branch, index) => (
               <div
                 key={index}
-                className="absolute flex flex-col items-center z-20 location-wrapper"
+                className="absolute flex flex-col items-center  location-wrapper"
                 style={{
                   top: branch.top,
                   left: branch.left,
@@ -146,7 +146,7 @@ function ContactUs() {
                 }}
               >
                 {/* Ping Animation */}
-                <div className="relative">
+                <div className="relative z-50">
                   <div className="w-4 h-4 bg-red-500 rounded-full location-ping absolute top-0 left-0" />
                   <div className="w-3 h-3 bg-red-700 rounded-full relative " />
                 </div>

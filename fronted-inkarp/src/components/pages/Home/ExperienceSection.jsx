@@ -33,7 +33,7 @@ export default function ExperienceSection() {
   return (
     <section
       ref={sectionRef}
-      className={`relative bg-cover bg-center text-white px-4 sm:px-6 md:px-10 lg:px-20 transition-opacity duration-1000 ${
+      className={`relative  bg-center text-white px-4 sm:px-6 md:px-10 lg:px-20 transition-opacity duration-1000 ${
         visible ? "opacity-100" : "opacity-50"
       }`}
     >
@@ -55,7 +55,7 @@ export default function ExperienceSection() {
         }
       `}</style>
 
-      <div className="flex flex-col px-5 lg:flex-row items-center justify-between gap-10 bg-black/40 p-6 rounded-2xl">
+      <div className="flex flex-col  lg:flex-row items-center justify-between gap-10 bg-black/60 p-6 rounded-2xl ">
         {/* Left Column */}
         <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
           <div>
@@ -93,7 +93,7 @@ export default function ExperienceSection() {
 // Reusable card component
 function StatCard({ icon, title, subtitle }) {
   return (
-    <div className="bg-white/10 backdrop-blur-md p-4 sm:p-5 rounded-xl flex flex-col items-center text-center shadow-md transition">
+    <div className="bg-black/30 backdrop-blur-md p-4 sm:p-5 rounded-xl flex flex-col items-center text-center shadow-md transition">
       <div className="text-3xl sm:text-4xl mb-2">{icon}</div>
       <h3 className="text-xl sm:text-2xl font-bold">{title}</h3>
       <p className="text-sm sm:text-base mt-1">{subtitle}</p>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BiSolidLeftArrowSquare, BiSolidRightArrowSquare } from "react-icons/bi";
+import { motion } from "framer-motion";
 
 const productData = [
   {
@@ -88,6 +89,36 @@ const productData = [
   }
 ];
 
+const containerVariant = {
+  // hidden: { opacity: 0, y: 40 },
+  // visible: {
+  //   opacity: 1,
+  //   y: 0,
+  //   transition: { type: "spring", stiffness: 50, delay: 0.2 }
+  // }
+};
+
+const imageVariant = {
+  initial: { opacity: 0, x: 80, scale: 0.9 },
+  animate: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: "easeOut" }
+  },
+  exit: { opacity: 0, x: -80, scale: 0.8 }
+};
+
+const infoVariant = {
+  initial: { opacity: 0, y: 30 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: 0.2 }
+  },
+  exit: { opacity: 0, y: 30 }
+};
+
 export default function PickProduct() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [startIndex, setStartIndex] = useState(0);
@@ -105,9 +136,14 @@ export default function PickProduct() {
   const selectedProduct = productData[selectedIndex];
 
   return (
-    <div className="w-full pt-5 flex flex-col items-center space-y-5">
+    <motion.div
+      className="w-full pt-5 flex flex-col items-center space-y-5"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariant}
+    >
       <div className="text-center">
-        <h1 className="font-bold text-3xl text-white font-[MaxOT]">Pick a Product to Start</h1>
+        <h1 className="font-bold text-3xl text-black font-[MaxOT]">Pick a Product to Start</h1>
         <p className="font-[Roboto] text-red-600 mt-1">
           Our professional and well-trained staff is ready to assist.
         </p>
@@ -143,52 +179,62 @@ export default function PickProduct() {
           className={`text-black text-2xl font-bold cursor-pointer ${startIndex + maxVisible >= productData.length ? "opacity-30 pointer-events-none" : ""
             }`}
         >
-      <BiSolidRightArrowSquare />
-
-
+          <BiSolidRightArrowSquare />
         </div>
       </div>
 
       {/* Details Section */}
-      <div className="w-[75%] mx-auto flex flex-col md:flex-row bg-white border border-red-500 p-6 space-y-6 md:space-y-0 md:space-x-6 items-center">
-        {/* Left - Circular Image */}
-        <div className="w-full md:w-1/2 flex justify-center items-center">
-          <div className="relative grid aspect-square w-[280px] p-[14px] overflow-hidden">
+      <div className="w-[75%] mx-auto flex flex-col md:flex-row rounded-2xl shadow-2xl bg-gray-300 p-6 space-y-6 md:space-y-0 md:space-x-6 items-center">
+        {/* Left - Animated Image */}
+        <motion.div
+          className="w-full md:w-1/2 flex justify-center items-center"
+          key={selectedProduct.image}
+          variants={imageVariant}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
+          <div className="relative grid aspect-square border-r border-red-800 w-[280px] p-[14px] overflow-hidden">
             <img
-              key={selectedProduct.image}
               src={selectedProduct.image}
               alt={selectedProduct.name}
-              className="w-full h-full object-contain animate-slide-in"
+              className="w-full h-full object-contain"
             />
-            <div className="absolute inset-0 p-[14px] rounded-full pointer-events-none z-[-1] gallery-mask"></div>
+            {/* <div className="absolute inset-0 p-[14px] rounded-full pointer-events-none z-[-1] gallery-mask"></div> */}
           </div>
-        </div>
+        </motion.div>
 
-        {/* Right - Product Info */}
-        <div className="w-full md:w-1/2 space-y-4">
+        {/* Right - Animated Info */}
+        <motion.div
+          className="w-full md:w-1/2 space-y-4"
+          key={selectedProduct.name + "-info"}
+          variants={infoVariant}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
           <h2 className="text-2xl font-bold text-gray-800 font-[MaxOT]">{selectedProduct.heading}</h2>
           <p className="font-[Roboto] text-md text-gray-700">{selectedProduct.description}</p>
-          <table className="table-auto w-full text-sm text-left border border-red-500 rounded-lg">
+          <table className="table-auto w-full text-sm text-left border border-red-800 rounded-lg">
             <tbody>
               {Object.entries(selectedProduct.details).map(([key, value]) => (
-                <tr key={key} className="border-t border-red-200">
+                <tr key={key} className="border border-red-800">
                   <td className="px-4 py-2 font-medium font-[Roboto]">{key}</td>
                   <td className="px-4 py-2 font-[Roboto]">{value}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-          {/* <a
-            href={selectedProduct.link}
-            className="inline-block mt-4 px-5 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 font-[Roboto] bounce-top"
-          >
-            Know More
 
-          </a> */}
-          <a href={selectedProduct.link}>
+          {/* Animated Explore Button */}
+          <motion.a
+            href={selectedProduct.link}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <button
               type="button"
-              className="flex justify-center gap-2 items-center mx-auto shadow-xl text-lg text-[#be0010] bg-red-100 backdrop-blur-md font-semibold border-2 border-[#be0010] rounded-full px-4 py-2 overflow-hidden relative z-10 group before:absolute before:w-0 before:h-full before:bg-red-700 before:top-0 before:left-0 before:z-[-1] before:transition-all before:duration-700 before:hover:w-full before:hover:left-0 before:rounded-full hover:text-black before:bg-emerald-500 hover:bg-white"
+              className="flex justify-center gap-2 items-center mx-auto shadow-xl text-lg text-[#be0010] bg-red-100 backdrop-blur-md font-semibold border border-red-800 rounded-full px-4 py-2 overflow-hidden relative z-10 group before:absolute before:w-0 before:h-full before:bg-red-700 before:top-0 before:left-0 before:z-[-1] before:transition-all before:duration-700 before:hover:w-full before:hover:left-0 before:rounded-full hover:text-black before:bg-emerald-500 hover:bg-white hover:border"
             >
               Explore
               <svg
@@ -202,28 +248,12 @@ export default function PickProduct() {
                 />
               </svg>
             </button>
-          </a>
-
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
 
-      {/* Custom CSS */}
+      {/* Existing Mask CSS */}
       <style>{`
-        @keyframes slideIn {
-          0% {
-            transform: translateX(100%) scale(0.9);
-            opacity: 0;
-          }
-          100% {
-            transform: translateX(0) scale(1);
-            opacity: 1;
-          }
-        }
-
-        .animate-slide-in {
-          animation: slideIn 0.8s ease forwards;
-        }
-
         .gallery-mask {
           background: conic-gradient(red, black, white, red);
           -webkit-mask: 
@@ -233,6 +263,7 @@ export default function PickProduct() {
           mask-composite: exclude;
         }
       `}</style>
-    </div>
+    </motion.div>
   );
 }
+

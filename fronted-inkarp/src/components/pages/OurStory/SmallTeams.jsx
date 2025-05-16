@@ -45,7 +45,7 @@ export default function SmallTeams() {
 
   return (
     <>
-      <section className="team w-[96%] mx-auto bg-white pb-30">
+      <section className="team w-[96%] mx-auto  pb-30">
         <h2 className="section-heading">Dividing By Team United by Work</h2>
 
         <div className="tab-switch w-[30%] p-2 rounded-full mx-auto bg-red-100">

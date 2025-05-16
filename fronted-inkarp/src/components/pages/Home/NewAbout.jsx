@@ -5,9 +5,9 @@ import Quotes from "../OurStory/Quotes";
 
 function NewAbout() {
   return (
-    <div className=" h-auto flex flex-col md:flex-row gap-8 p-6 rounded-2xl shadow-md">
+    <div className=" h-auto flex flex-col md:flex-row gap-8 p-6 ">
       {/* Left Section - Company Info */}
-      <div className="w-full md:w-3/5 rounded-xl bg-white p-4 flex flex-col items-center justify-center shadow-md">
+      <div className="w-full md:w-3/5 rounded-xl bg-white p-4 flex flex-col items-center justify-center shadow-xl">
         <h2 className="font-[MaxOT]">
           <DroppingText />
         </h2>
@@ -27,12 +27,14 @@ function NewAbout() {
       {/* Right Section - Subsidiaries & Joint Ventures */}
       <div className="w-full md:w-2/3 flex flex-col gap-6">
         {/* Heading for Right Side */}
-        <h2 className="text-4xl/10 font-bold text-white text-center font-[MaxOT]">
+        <div className="bg-white border border-red-500 p-4 rounded-xl shadow-2xl">
+        <h2 className="text-4xl/10 font-bold text-black text-center font-[MaxOT]">
           Group Companies
         </h2>
+        </div>
 
         {/* Subsidiaries */}
-        <div className="bg-white p-4 rounded-xl shadow-md">
+        <div className="bg-white p-4 rounded-xl shadow-xl">
           <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
             100% Owned Subsidiaries
           </h3>
@@ -47,7 +49,7 @@ function NewAbout() {
         </div>
 
         {/* Joint Ventures */}
-        <div className="bg-white p-4 rounded-xl shadow-md">
+        <div className="bg-white p-4 rounded-xl shadow-xl">
           <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
             Our Joint Ventures
           </h3>

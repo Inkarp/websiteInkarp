@@ -3,7 +3,7 @@ import { FlaskConical, Microscope, Target, Eye } from "lucide-react";
 
 export default function Mission() {
   return (
-    <section className="w-full mx-auto bg-[#eef2f9] px-6 md:px-16 py-14 flex flex-col md:flex-row items-center justify-between gap-10">
+    <section className="w-full mx-auto  px-6 md:px-16 py-14 flex flex-col md:flex-row items-center justify-between gap-10">
       {/* LEFT - Illustration */}
       <div className="w-full md:w-1/2 flex justify-center">
         <img

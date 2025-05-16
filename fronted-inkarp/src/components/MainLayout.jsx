@@ -7,7 +7,7 @@ export default function MainLayout() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 500);
+    const timer = setTimeout(() => setIsLoading(false), 5000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -40,10 +40,10 @@ export default function MainLayout() {
         <NavbarNew />
       </aside>
 
-      <div className="w-[85%] ml-[15%]">
-        <div className="fixed inset-0 -z-10 overflow-hidden">
+      <div className="w-[85%] ml-[15%] bg-[#e9f0ff]">
+        {/* <div className="fixed inset-0 -z-10 overflow-hidden">
           <img src="black.jpg" className="w-full h-full object-cover opacity-100" alt="background" />
-        </div>
+        </div> */}
         <div className="relative flex flex-col min-h-screen z-10">
           <main className="flex-grow">
             <Outlet />
