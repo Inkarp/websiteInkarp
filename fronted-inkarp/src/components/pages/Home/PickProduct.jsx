@@ -137,7 +137,7 @@ export default function PickProduct() {
 
   return (
     <motion.div
-      className="w-full pt-5 flex flex-col items-center space-y-5"
+      className="w-full  pt-5 flex flex-col items-center space-y-5"
       initial="hidden"
       animate="visible"
       variants={containerVariant}
@@ -150,7 +150,7 @@ export default function PickProduct() {
       </div>
 
       {/* Product Selector Tabs */}
-      <div className="w-[60%] bg-gray-200 h-[50px] rounded-full flex items-center justify-between px-4 shadow">
+      <div className="w-[60%] bg-white h-[50px] rounded-full flex items-center justify-between px-4 shadow">
         <div
           onClick={handlePrev}
           className={`text-black text-2xl font-bold cursor-pointer ${startIndex === 0 ? "opacity-30 pointer-events-none" : ""
@@ -184,7 +184,7 @@ export default function PickProduct() {
       </div>
 
       {/* Details Section */}
-      <div className="w-[75%] mx-auto flex flex-col md:flex-row rounded-2xl shadow-2xl bg-gray-300 p-6 space-y-6 md:space-y-0 md:space-x-6 items-center">
+      <div className="w-[75%] mx-auto flex flex-col md:flex-row rounded-2xl shadow-2xl bg-white p-6 space-y-6 md:space-y-0 md:space-x-6 items-center">
         {/* Left - Animated Image */}
         <motion.div
           className="w-full md:w-1/2 flex justify-center items-center"

@@ -12,22 +12,25 @@ import Blogs from './Home/Blogs';
 import WhyHome from './Home/WhyHome';
 import FeaturedBlogs from './Home/FeaturedBlogs';
 import WhyChooseUsSection from './Home/WhyChooseUsSection';
+import Hero from './Home/Hero';
+import ServiceCarousal from './Home/ServiceCarousal';
+import HeroTextAnimation from './Home/HeroTextAnimation';
 
 
 const Home = () => {
     return (
         <>
-            <HeroSection />
-            {/* <Card /> */}
+            {/* <HeroSection /> */}
+             {/* <HeroTextAnimation /> */}
+            <Hero />          
             <PickProduct />
             <WhyChooseUsSection />
-            {/* <WhyHome /> */}
             <ExperienceSection />
             <NewAbout />
             <Principles />
             <Offerings />  
+            {/* <ServiceCarousal /> */}
             <FeaturedBlogs />        
-            {/* <Blogs />            */}
             <NewsEvents />
             <Reviews />
         </>

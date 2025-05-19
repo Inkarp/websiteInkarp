@@ -13,6 +13,261 @@ const verticalsList = [
   "Pilot Plants and Automation",
 ];
 
+const productData = [
+  {
+    vertical: "Laboratory Equipment",
+    principal: "Buchi",
+    category: "Freeze Dryers",
+    products: [
+      {
+        name: "Lyovapor™ L-250",
+        image: "lyovapor-l250.jpg",
+        description: "Advanced freeze dryer with infinite-scale sublimation control and continuous drying capabilities.",
+        features: [
+          "Infinite-Control™ for real-time monitoring",
+          "Continuous sublimation with automatic switch between condensers",
+          "Touchscreen interface with data logging",
+          "Condensation capacity: 12 kg",
+          "Ice condenser temperature: -105 °C"
+        ],
+        specifications: {
+          capacity: "12 kg",
+          condenserTemperature: "-105°C",
+          controlSystem: "Infinite-Control™",
+          power: "230V / 50Hz",
+          dimensions: "60 x 70 x 90 cm"
+        }
+      }
+    ]
+  },
+  {
+    vertical: "Analytical Instruments",
+    principal: "Bruker",
+    category: "FT-IR Microscopes",
+    products: [
+      {
+        name: "LUMOS II - FT-IR Microscope",
+        image: "lumos-ii.jpg",
+        description: "Fully automated FT-IR microscope for quality control and failure analysis.",
+        features: [
+          "Integrated motorized ATR crystal",
+          "Automated stage and focus",
+          "High spatial resolution",
+          "Suitable for QA/QC and research"
+        ],
+        specifications: {
+          detector: "TE-MCT",
+          resolution: "≤ 4 cm⁻¹",
+          spectralRange: "4000–600 cm⁻¹",
+          stageTravel: "75 x 50 mm",
+          software: "OPUS"
+        }
+      }
+    ]
+  },
+  {
+    vertical: "Lab Water Purification",
+    principal: "Sartorius",
+    category: "Ultrapure Water Systems",
+    products: [
+      {
+        name: "Arium® Mini",
+        image: "arium-mini.jpg",
+        description: "Compact ultrapure water system for labs with low daily requirements.",
+        features: [
+          "Produces Type 1 water directly",
+          "0.5 – 2 L/min flow rate",
+          "Touch-activated screen",
+          "Flexible dispensing"
+        ],
+        specifications: {
+          output: "Type 1 ultrapure water",
+          flowRate: "0.5 – 2 L/min",
+          resistivity: "18.2 MΩ·cm",
+          TOC: "<5 ppb",
+          footprint: "28 x 33 x 49 cm"
+        }
+      }
+    ]
+  },
+  {
+    vertical: "Pharmaceutical Testing",
+    principal: "Sotax",
+    category: "Dissolution Testing",
+    products: [
+      {
+        name: "AT Xtend Dissolution Tester",
+        image: "at-xtend.jpg",
+        description: "Modular dissolution testing system for USP and ASTM compliance.",
+        features: [
+          "Modular design",
+          "Vessel heating and stirring",
+          "Automated sampling and cleaning",
+          "USP 1, 2, 5, 6 methods supported"
+        ],
+        specifications: {
+          vessels: "6 to 8 positions",
+          temperatureControl: "Integrated",
+          compliance: "21 CFR Part 11",
+          touchscreen: "10” display",
+          dimension: "90 x 50 x 45 cm"
+        }
+      }
+    ]
+  },
+  {
+    vertical: "Analytical Instruments",
+    principal: "Bruker",
+    category: "FT-IR Spectrometers",
+    products: [
+      {
+        name: "VERTEX 80v",
+        image: "vertex-80v.jpg",
+        description: "High-end vacuum FT-IR spectrometer for ultimate performance.",
+        features: [
+          "Vacuum optics bench",
+          "Ultra-high resolution <0.06 cm⁻¹",
+          "Flexible detector and source upgrade options",
+          "Step-scan functionality"
+        ],
+        specifications: {
+          resolution: "< 0.06 cm⁻¹",
+          optics: "Vacuum-sealed",
+          spectralRange: "Far IR to UV",
+          accessories: "Multiple beam splitters, ATR, DRIFTS",
+          control: "OPUS software"
+        }
+      }
+    ]
+  },
+  {
+    vertical: "General Lab Instruments",
+    principal: "IKA",
+    category: "Magnetic Stirrers",
+    products: [
+      {
+        name: "IKA RCT Digital",
+        image: "ika-rct.jpg",
+        description: "Digital magnetic stirrer with precise temperature and speed control.",
+        features: [
+          "Speed range: 50–1500 rpm",
+          "Heating up to 310 °C",
+          "LED display for speed & temperature",
+          "PT100 temperature sensor support"
+        ],
+        specifications: {
+          stirringCapacity: "20 L (H2O)",
+          speed: "50–1500 rpm",
+          heatingPower: "600 W",
+          plateMaterial: "Aluminum alloy",
+          weight: "2.5 kg"
+        }
+      }
+    ]
+  },
+  {
+    vertical: "Biotechnology",
+    principal: "Eppendorf",
+    category: "Centrifuges",
+    products: [
+      {
+        name: "Centrifuge 5425",
+        image: "centrifuge-5425.jpg",
+        description: "Compact 24-place centrifuge for molecular biology applications.",
+        features: [
+          "Max speed: 21,300 × g",
+          "Quiet operation",
+          "Fast temp ramp-up",
+          "User-friendly interface"
+        ],
+        specifications: {
+          capacity: "24 x 1.5/2.0 mL",
+          maxRCF: "21,300 × g",
+          dimensions: "24 x 35 x 23 cm",
+          weight: "13.4 kg",
+          power: "230V"
+        }
+      }
+    ]
+  },
+  {
+    vertical: "Environmental Testing",
+    principal: "Lovibond",
+    category: "Water Analyzers",
+    products: [
+      {
+        name: "MD 600 Photometer",
+        image: "md-600.jpg",
+        description: "Multi-parameter photometer for water analysis in field & lab.",
+        features: [
+          "Over 120 methods pre-programmed",
+          "Bluetooth connectivity",
+          "Waterproof IP68",
+          "Data logging"
+        ],
+        specifications: {
+          wavelengthRange: "430 – 660 nm",
+          power: "Batteries or adapter",
+          dimensions: "225 x 100 x 65 mm",
+          weight: "500 g",
+          interface: "Bluetooth + USB"
+        }
+      }
+    ]
+  },
+  {
+    vertical: "Food & Beverage",
+    principal: "Mettler Toledo",
+    category: "Refractometers",
+    products: [
+      {
+        name: "Refracto 30PX",
+        image: "refracto-30px.jpg",
+        description: "Handheld refractometer for quick Brix and RI measurements.",
+        features: [
+          "Brix & refractive index",
+          "Automatic temperature compensation",
+          "Compact, battery-operated",
+          "Waterproof (IP65)"
+        ],
+        specifications: {
+          range: "0–85 Brix",
+          accuracy: "±0.2 Brix",
+          power: "2x AAA batteries",
+          weight: "250 g",
+          display: "LCD"
+        }
+      }
+    ]
+  },
+  {
+    vertical: "Pharmaceutical",
+    principal: "Distek",
+    category: "Dissolution Media Preparation",
+    products: [
+      {
+        name: "MediaPrep 820",
+        image: "mediaprep-820.jpg",
+        description: "Automated media preparation system for dissolution testing.",
+        features: [
+          "Heats, degasses, and dispenses media",
+          "Fast cycle time (less than 15 min)",
+          "Touchscreen interface",
+          "Pre-programmable methods"
+        ],
+        specifications: {
+          volumeRange: "1–8 L",
+          degassing: "Built-in vacuum degassing",
+          temperatureControl: "Heated up to 50°C",
+          pumpType: "Peristaltic",
+          footprint: "65 x 50 x 40 cm"
+        }
+      }
+    ]
+  }
+];
+
+
 const Verticals = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [verticalData, setVerticalData] = useState([]);
@@ -44,7 +299,7 @@ const Verticals = () => {
   return (
     <>
       {/* Top Banner */}
-      <div className="flex bg-white justify-center items-center h-80 shadow-full mt-2 mx-auto rounded-lg overflow-hidden">
+      <div className="flex bg-white justify-center w-[96%] items-center h-80 shadow-full mt-2 mx-auto rounded-lg overflow-hidden">
         {bannerImage ? (
           <img
             src={bannerImage}

@@ -33,7 +33,7 @@ export default function ExperienceSection() {
   return (
     <section
       ref={sectionRef}
-      className={`relative  bg-center text-white px-4 sm:px-6 md:px-10 lg:px-20 transition-opacity duration-1000 ${
+      className={`relative bg-center text-white px-4 sm:px-6 md:px-10  transition-opacity duration-1000 ${
         visible ? "opacity-100" : "opacity-50"
       }`}
     >

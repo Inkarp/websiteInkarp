@@ -98,7 +98,9 @@ export default function FeaturedBlogs() {
   };
 
   return (
-    <section className="py-12 mx-auto">
+    <section className="py-12 px-12 mx-auto">
+     
+        <div className="text-center mb-6">
       <div className="max-w-7xl mx-auto" ref={ref}>
         <motion.p
           variants={fadeUp}
@@ -117,13 +119,14 @@ export default function FeaturedBlogs() {
         >
           Latest insights from our lab partners <br /> and scientific specialists
         </motion.h2>
+        </div>
 
         <div className="grid lg:grid-cols-3 gap-10">
           {/* Left Featured */}
           <AnimatePresence mode="wait">
             <motion.div
               key={featured.id}
-              className="bg-red-100 p-6 rounded-3xl flex flex-col lg:col-span-2 shadow"
+              className="bg-white p-6 rounded-3xl flex flex-col lg:col-span-2 shadow"
               variants={fadeOpacity}
               initial="initial"
               animate="animate"

@@ -50,11 +50,16 @@ function Reviews() {
   ].slice(index, index + chunkSize);
 
   return (
-    <>
+    <div className="w-full  p-6 ">
       <style>{waveAnimation}</style>
-      <h1 className="text-4xl font-bold text-center mb-2 mt-10 text-white  tracking-tight">
-        What People Are Saying
-      </h1>
+      <div className="text-center mb-6">
+          <button className="px-4 py-1 text-sm font-semibold border border-[#be0010] text-black rounded-full mb-4">
+            About Us
+          </button>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black leading-tight">
+            What people are saying
+          </h2>
+        </div>
       <div className="overflow-hidden relative w-full max-w-6xl mx-auto p-6  rounded-3xl">
         <div
           className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center transition-all duration-500 ease-in-out transform ${
@@ -64,13 +69,13 @@ function Reviews() {
           {visibleReviews.map(({ name, text }, i) => (
             <div
               key={i}
-              className="w-full p-4 bg-gray-50 rounded-xl text-center shadow-md flex flex-col items-center bg-red-50"
+              className="w-full p-4 bg-gray-50 rounded-xl text-center shadow-md flex flex-col items-center bg-white"
               style={{
                 animation: "waveFloat 3s ease-in-out infinite",
                 animationDelay: `${i * 0.3}s`,
               }}
             >
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-500 text-white text-xl font-bold">
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-500 text-white text-xl font-bold">
                 {name.charAt(0)}
               </div>
               <p className="text-lg text-gray-700 italic mt-3">{text}</p>
@@ -79,7 +84,7 @@ function Reviews() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

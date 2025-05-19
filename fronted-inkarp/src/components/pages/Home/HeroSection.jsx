@@ -86,10 +86,10 @@ function HeroSection() {
   };
 
   return (
-    <section className="w-full lg:px-5 py-5 mt-5 ">
+    <section className="w-full lg:px-5 py-5 mt-2">
       <div className="w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-6">
         {/* Left Video */}
-        <div className="relative lg:w-1/2 mx-auto h-[400px] md:h-[500px] ">
+        {/* <div className="relative lg:w-1/2 mx-auto h-[400px] md:h-[500px] ">
           <video
             ref={videoRef}
             className="rounded-xl w-full h-full object-cover shadow-2xl"
@@ -110,10 +110,10 @@ function HeroSection() {
             </div>
             <span className="text-sm md:text-base font-[MaxOT]">Watch Video</span>
           </a>
-        </div>
+        </div> */}
 
         {/* Right Slider */}
-        <div className="relative w-full lg:w-1/2 h-[400px] md:h-[500px] overflow-hidden rounded-2xl bg-gray-800 shawdow-2xl">
+        <div className="relative w-full  h-[400px] md:h-[500px] overflow-hidden rounded-2xl bg-gray-800 shawdow-2xl">
           {/* Loader */}
           {!isImageLoaded && (
             <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-70 z-20 rounded-2xl">

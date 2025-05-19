@@ -5,6 +5,7 @@ import SmallTeams from "./OurStory/SmallTeams";
 import TeamButton from "./OurStory/TeamButton";
 import TeamInfo from "./OurStory/TeamInfo";
 import TeamIntro from "./OurStory/TeamIntro";
+import TrustedClients from "./OurStory/TrustedClients";
 import NewCard from "./UI/NewCard";
 
 
@@ -13,6 +14,7 @@ const OurStory = () => {
         <>
             <Mission />           
             {/* <NewCard /> */}
+            <TrustedClients />
             <TeamIntro />
             <TeamInfo />
             <SmallTeams />

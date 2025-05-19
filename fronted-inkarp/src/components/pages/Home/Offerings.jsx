@@ -199,58 +199,22 @@ function ProfileCard({ profile }) {
 
 export default function Offerings() {
   return (
-    <>
-      <h1 className="offering-ribbon-heading">Our Offerings</h1>
+    <div className="w-full flex flex-col items-center justify-center">
+      <div className="text-center mb-6">
+          <button className="px-4 py-1 text-sm font-semibold border border-[#be0010] text-black rounded-full mb-4">
+            What are our Offerings
+          </button>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black leading-tight">
+            We Advise You to Make <br /> the Right Decision
+          </h2>
+        </div>
       <div className="w-full py-5 flex justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-4">
           {profiles.map((profile, index) => (
             <ProfileCard key={index} profile={profile} />
           ))}
         </div>
-      </div>
-
-      <style>{`
-        .offering-ribbon-heading {
-          position: relative;
-          margin: 2.5rem auto 2rem;
-          padding: 1rem 2.5rem;
-          max-width: max-content;
-          font-family: 'MaxOT';
-          font-size: 2.5rem;
-          font-weight: 700;
-          text-align: center;
-          color: black;
-          background-color: white;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        .offering-ribbon-heading::before,
-        .offering-ribbon-heading::after {
-          content: '';
-          position: absolute;
-          top: 20px;
-          width: 80px;
-          height: 100%;
-          background-color: white;
-          z-index: -1;
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 25% 50%);
-          background-image: linear-gradient(45deg, transparent 50%, black 50%);
-          background-size: 20px 20px;
-          background-repeat: no-repeat;
-          background-position: bottom right;
-        }
-        .offering-ribbon-heading::before {
-          left: -60px;
-        }
-        .offering-ribbon-heading::after {
-          right: -60px;
-          transform: scaleX(-1);
-        }
-        @media (max-width: 400px) {
-          .offering-ribbon-heading {
-            font-size: 1.75rem;
-          }
-        }
-      `}</style>
-    </>
+      </div>    
+    </div>
   );
 }
