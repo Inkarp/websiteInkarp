@@ -247,3 +247,22 @@
     }
   }
 }
+
+@layer utilities {
+  .swing-top-bwd {
+    animation: swing-top-bwd 2.5s ease-out both;
+  }
+
+  @keyframes swing-top-bwd {
+    0% {
+      transform: rotateX(100deg);
+      transform-origin: top;
+      opacity: 0;
+    }
+    100% {
+      transform: rotateX(0deg);
+      transform-origin: top;
+      opacity: 1;
+    }
+  }
+}

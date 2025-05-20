@@ -2,166 +2,213 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Card = () => {
+  // Array of content for the bottom section items
+  const contentData = [
+    { bigText: '2626', regularText: 'UI elements' },
+    { bigText: '100%', regularText: 'Free for use' },
+    { bigText: '38,631', regularText: 'Contributers' },
+  ];
+
   return (
     <StyledWrapper>
       <div className="card">
-        <ul>
-          <li className="iso-pro">
-            <span />
-            <span />
-            <span />
-            <a href>
-              <svg className="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" /></svg></a>
-            <div className="text">Facebook</div>
-          </li>
-          <li className="iso-pro">
-            <span />
-            <span />
-            <span />
-            <a href>
-              <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="svg">
+        <div className="top-section">
+          <div className="border" />
+          <div className="icons">
+            <div className="logo">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 94 94"
+                className="svg"
+              >
+                <path
+                  fill="white"
+                  d="M38.0481 4.82927C38.0481 2.16214 40.018 0 42.4481 0H51.2391C53.6692 0 55.6391 2.16214 55.6391 4.82927V40.1401C55.6391 48.8912 53.2343 55.6657 48.4248 60.4636C43.6153 65.2277 36.7304 67.6098 27.7701 67.6098C18.8099 67.6098 11.925 65.2953 7.11548 60.6663C2.37183 56.0036 0 49.2967 0 40.5456V4.82927C0 2.16213 1.96995 0 4.4 0H13.2405C15.6705 0 17.6405 2.16214 17.6405 4.82927V39.1265C17.6405 43.7892 18.4805 47.2018 20.1605 49.3642C21.8735 51.5267 24.4759 52.6079 27.9678 52.6079C31.4596 52.6079 34.0127 51.5436 35.6268 49.4149C37.241 47.2863 38.0481 43.8399 38.0481 39.0758V4.82927Z"
+                />
+                <path
+                  fill="white"
+                  d="M86.9 61.8682C86.9 64.5353 84.9301 66.6975 82.5 66.6975H73.6595C71.2295 66.6975 69.2595 64.5353 69.2595 61.8682V4.82927C69.2595 2.16214 71.2295 0 73.6595 0H82.5C84.9301 0 86.9 2.16214 86.9 4.82927V61.8682Z"
+                />
+                <path
+                  fill="white"
+                  d="M0 83.2195C0 80.5524 1.96995 78.3902 4.4 78.3902H83.6C86.0301 78.3902 88 80.5524 88 83.2195V89.1707C88 91.8379 86.0301 94 83.6 94H4.4C1.96995 94 0 91.8379 0 89.1707V83.2195Z"
+                />
+              </svg>
+            </div>
+            <div className="social-media">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 30 30"
+                className="svg"
+              >
+                <path d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z" />
+              </svg>
+              <svg
+                className="svg"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
                 <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
               </svg>
-            </a>
-            <div className="text">Twitter</div>
-          </li>
-          <li className="iso-pro">
-            <span />
-            <span />
-            <span />
-            <a href>
-              <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" className="svg">
-                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+              <svg
+                className="svg"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 512"
+              >
+                <path d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z" />
               </svg>
-            </a>
-            <div className="text">Instagram</div>
-          </li>
-        </ul>
+            </div>
+          </div>
+        </div>
+        <div className="bottom-section">
+          <span className="title"></span>
+          <div className="row row1">
+            {contentData.map((item, index) => (
+              <div key={index} className="item">
+                <span className="big-text">{item.bigText}</span>
+                <span className="regular-text">{item.regularText}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </StyledWrapper>
   );
-}
+};
 
 const StyledWrapper = styled.div`
   .card {
-    max-width: fit-content;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    gap: 1rem;
-    backdrop-filter: blur(15px);
-    box-shadow:
-      inset 0 0 20px rgba(255, 255, 255, 0.192),
-      inset 0 0 5px rgba(255, 255, 255, 0.274),
-      0 5px 5px rgba(0, 0, 0, 0.164);
-    transition: 0.5s;
+    width: 230px;
+    border-radius: 20px;
+    background: #1b233d;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
   .card:hover {
-    animation: ease-out 5s;
-    background: rgba(173, 173, 173, 0.05);
+    transform: scale(1.05);
   }
 
-  .card ul {
-    padding: 1rem;
+  .card .top-section {
+    height: 150px;
+    border-radius: 15px;
     display: flex;
-    list-style: none;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
+    background: linear-gradient(45deg, rgb(4, 159, 187) 0%, rgb(80, 246, 255) 100%);
+    position: relative;
   }
 
-  .card ul li {
+  .card .top-section .border {
+    border-bottom-right-radius: 10px;
+    height: 30px;
+    width: 130px;
+    background: #1b233d;
+    position: relative;
+    transform: skew(-40deg);
+    box-shadow: -10px -10px 0 0 #1b233d;
+  }
+
+  .card .top-section .border::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 0;
+    right: -15px;
+    background: transparent;
+    border-top-left-radius: 10px;
+    box-shadow: -5px -5px 0 2px #1b233d;
+  }
+
+  .card .top-section::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: transparent;
+    height: 15px;
+    width: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: -5px -5px 0 2px #1b233d;
+  }
+
+  .card .top-section .icons {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card .top-section .icons .logo {
+    height: 100%;
+    aspect-ratio: 1;
+    padding: 7px 0 7px 15px;
+  }
+
+  .card .top-section .icons .social-media {
+    height: 100%;
+    padding: 8px 15px;
+    display: flex;
+    gap: 7px;
+  }
+
+  .card .top-section .icons .svg {
+    height: 100%;
+    fill: #1b233d;
+    transition: fill 0.3s, transform 0.3s;
     cursor: pointer;
   }
 
-  .svg {
-    transition: all 0.3s;
-    /* if you find some problems change w - h : 30px*/
-    padding: 1rem;
-    height: 60px;
-    width: 60px;
-    border-radius: 100%;
-    color: rgb(162, 29, 29);
-    fill: currentColor;
-    box-shadow:
-      inset 0 0 20px rgba(255, 255, 255, 0.3),
-      inset 0 0 5px rgba(255, 255, 255, 0.5),
-      0 5px 5px rgba(0, 0, 0, 0.164);
+  .card .top-section .icons .svg:hover {
+    fill: white;
+    transform: scale(1.1);
   }
 
-  .text {
-    opacity: 0;
-    border-radius: 5px;
+  .card .bottom-section {
+    margin-top: 15px;
+    padding: 10px 5px;
+  }
+
+  .card .bottom-section .title {
+    display: block;
+    font-size: 17px;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  .card .bottom-section .row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .card .bottom-section .row .item {
+    flex: 1;
+    text-align: center;
     padding: 5px;
-    transition: all 0.3s;
-    color: rgb(126, 36, 49);
-    background-color: rgba(255, 255, 255, 0.3);
-    position: absolute;
-    z-index: 9999;
-    box-shadow:
-      -5px 0 1px rgba(153, 153, 153, 0.2),
-      -10px 0 1px rgba(153, 153, 153, 0.2),
-      inset 0 0 20px rgba(255, 255, 255, 0.3),
-      inset 0 0 5px rgba(255, 255, 255, 0.5),
-      0 5px 5px rgba(0, 0, 0, 0.082);
+    color: rgba(170, 222, 243, 0.721);
   }
 
-  /*isometric prooyection*/
-  .iso-pro {
-    transition: 0.5s;
-  }
-  .iso-pro:hover a > .svg {
-    transform: translate(15px, -15px);
-    border-radius: 100%;
+  .card .bottom-section .row .item .big-text {
+    font-size: 12px;
+    display: block;
   }
 
-  .iso-pro:hover .text {
-    opacity: 1;
-    transform: translate(25px, -2px) skew(-5deg);
+  .card .bottom-section .row .item .regular-text {
+    font-size: 9px;
   }
 
-  .iso-pro:hover .svg {
-    transform: translate(5px, -5px);
+  .card .bottom-section .row .item:nth-child(2) {
+    border-left: 1px solid rgba(255, 255, 255, 0.126);
+    border-right: 1px solid rgba(255, 255, 255, 0.126);
   }
-
-  .iso-pro span {
-    opacity: 0;
-    position: absolute;
-    color:rgb(12, 23, 38);
-    border-color:rgb(186, 199, 215);
-    box-shadow:
-      inset 0 0 20px rgba(145, 136, 136, 0.3),
-      inset 0 0 5px rgba(255, 255, 255, 0.5),
-      0 5px 5px rgba(0, 0, 0, 0.164);
-    border-radius: 50%;
-    transition: all 0.3s;
-    height: 60px;
-    width: 60px;
-  }
-
-  .iso-pro:hover span {
-    opacity: 1;
-  }
-
-  .iso-pro:hover span:nth-child(1) {
-    opacity: 0.2;
-  }
-
-  .iso-pro:hover span:nth-child(2) {
-    opacity: 0.4;
-    transform: translate(5px, -5px);
-  }
-
-  .iso-pro:hover span:nth-child(3) {
-    opacity: 0.6;
-    transform: translate(10px, -10px);
-  }`;
+`;
 
 export default Card;

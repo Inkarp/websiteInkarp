@@ -40,7 +40,7 @@ const Careers = () => {
             {/* Sidebar Filter */}
             {/* <NewCareers /> */}
             <aside className="w-72 bg-white shadow-xl rounded-2xl p-6 space-y-4">
-                <h2 className="text-2xl font-bold text-gray-800">Filter Jobs</h2>
+                <h2 className="text-2xl font-bold text-gray-800 swing-top-bwd">Filter Jobs</h2>
                 <div className="space-y-2">
                     <label htmlFor="location" className="text-sm font-medium text-gray-600">
                         Location

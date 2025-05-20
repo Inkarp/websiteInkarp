@@ -16,6 +16,7 @@ import BlogsPage from "./components/pages/NewsAndEvents/BlogsPage";
 import EventsPage from "./components/pages/NewsAndEvents/EventsPage";
 import ProductProfile from "./components/pages/ProductProfile";
 import NotFound from "./components/pages/NotFound";
+import EventsNew from "./components/pages/NewsAndEvents/EventsNew";
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
           <Route path="/home" element={<HeroSection />} />
           <Route path="/catalyst-cue" element={<Catalyst />} />
           <Route path="/insights/blogs" element={<BlogsPage />} />
-          <Route path="/insights/news&events" element={<EventsPage />} />
+          {/* <Route path="/insights/news&events" element={<EventsPage />} /> */}
+          <Route path="/insights/news&events" element={<EventsNew />} />
           <Route path="/productProfile" element={<ProductProfile />} />
           <Route path="*" element={<NotFound />} />
         </Route>

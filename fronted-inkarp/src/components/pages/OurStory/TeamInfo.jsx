@@ -115,7 +115,7 @@ export default function TeamInfo() {
                     objectFit: 'cover',
                     borderRadius: '180px',
                     backfaceVisibility: 'hidden',
-                    border: '4px solid red',
+                    border: '0px solid red',
                     // padding: '10px',
                   }}
                 />
@@ -219,6 +219,8 @@ export default function TeamInfo() {
             {/* Regional Leadership below Natesh */}
             <div className="flex  gap-12 justify-start">
               {teamMembers.slice(2).map((member, idx) => renderCard(member, idx + 2))}
+              <div className="absolute top-[2/3] left-0 w-2.5/3 h-0.5 bg-red-400 translate-y-[-30px]" />
+          <div className="absolute top-[-30px] left-1/2 w-1 h-[30px] bg-red-400 transform -translate-x-1/2" />
             </div>
           </div>
 

@@ -48,7 +48,7 @@ export default function NavbarNew() {
               className={`block px-4 py-2 rounded-md transition-all duration-200 ${
                 isActive(path)
                   ? "bg-red-500 text-white shadow"
-                  : "text-black hover:bg-gray-100"
+                  : "text-black hover:bg-gray-300"
               }`}
             >
               {name}

@@ -143,8 +143,8 @@ export default function PickProduct() {
       variants={containerVariant}
     >
       <div className="text-center">
-        <h1 className="font-bold text-3xl text-black font-[MaxOT]">Pick a Product to Start</h1>
-        <p className="font-[Roboto] text-red-600 mt-1">
+        <h1 className="font-bold text-3xl text-black font-[MaxOT] swing-top-bwd">Pick a Product to Start</h1>
+        <p className="font-[Roboto] text-red-600 mt-1 swing-top-bwd">
           Our professional and well-trained staff is ready to assist.
         </p>
       </div>

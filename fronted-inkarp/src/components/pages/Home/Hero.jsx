@@ -67,22 +67,22 @@ export default function Hero() {
         transition={{ duration: 0.6 }}
         className="relative z-10 h-full flex flex-col items-center justify-center text-white text-center px-4"
       >
-        <span className="uppercase tracking-widest border px-4 py-1 rounded-full text-xs mb-4 inline-block">
+        <span className=" swing-top-bwd uppercase tracking-widest border px-4 py-1 rounded-full text-xs mb-4 inline-block">
           Best Solutions for Laboratory
         </span>
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight swing-top-bwd">
           {slides[current].title}
           <br />
           {slides[current].subtitle}
         </h1>
-        <motion.button
+        {/* <motion.button
           onClick={() => alert("More Details clicked!")}
           className="mt-6 bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
           More Details <span className="inline-block ml-2">↗</span>
-        </motion.button>
+        </motion.button> */}
       </motion.div>
 
       {/* Right-Side Controls */}
@@ -106,15 +106,16 @@ export default function Hero() {
       </div>
 
       {/* Watch Video Button */}
-      <motion.div
-        onClick={() => alert("Watch video clicked!")}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="absolute bottom-4 hover:bg-red-500 right-4 cursor-pointer bg-white/80 backdrop-blur-md flex items-center gap-2 px-5 py-3 rounded-full shadow"
+      <div   
+        // whileHover={{ scale: 1.05 }}
+        // whileTap={{ scale: 0.95 }}
+        className="absolute bottom-4 right-4 cursor-pointer bg-white/80  flex items-center gap-2 px-5 py-4 rounded-full shadow hover:text-red-500 transition-all duration-300"
       >
+        <div className="bg-red border-2 rounded-[50%] p-2">
         <Play className="w-4 h-4" />
+        </div>
         <span className="text-sm font-medium">Watch Video</span>
-      </motion.div>
+      </div>
     </div>
   );
 }
