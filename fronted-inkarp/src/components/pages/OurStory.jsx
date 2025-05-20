@@ -21,7 +21,7 @@ const OurStory = () => {
             <TrustedClients />
             <Quotes />  
             <ClientReviews />
-            <Team />
+            {/* <Team /> */}
             {/* <Card />   */}
             {/* <NewCard /> */}
             {/* <TeamButton /> */}

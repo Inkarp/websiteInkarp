@@ -7,19 +7,19 @@ const slides = [
     id: 1,
     title: "Advances of Science",
     subtitle: "Make Easier Life",
-    image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
+    image: "https://static.wixstatic.com/media/88aac0_7a16b3f5f3c443219743b1328910a67d~mv2.png",
   },
   {
     id: 2,
     title: "Precision for Progress",
     subtitle: "Innovation in Every Lab",
-    image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
+    image: "https://static.wixstatic.com/media/88aac0_c4682f9e957f40b2b8f63c2dce380533~mv2.png",
   },
   {
     id: 3,
     title: "Smart Technology",
     subtitle: "Smarter Research",
-    image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
+    image: "https://static.wixstatic.com/media/88aac0_7a16b3f5f3c443219743b1328910a67d~mv2.png",
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ const slides = [
     id: 5,
     title: "Future of Science",
     subtitle: "Starts Today",
-    image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
+    image: "https://static.wixstatic.com/media/88aac0_c4682f9e957f40b2b8f63c2dce380533~mv2.png",
   },
 ];
 
@@ -86,10 +86,10 @@ export default function Hero() {
       </motion.div>
 
       {/* Right-Side Controls */}
-      <div className=" bg-white p-4 absolute rounded-l-lg right-0 top-1/2 transform -translate-y-1/2 flex flex-col items-center gap-4 z-20">
+      <div className=" bg-white p-4 absolute rounded-l-xl right-0 top-1/2 transform -translate-y-1/2 flex flex-col items-center gap-4 z-20">
         <motion.button
           onClick={prevSlide}
-          className="bg-white/70 text-black p-2 rounded-full hover:bg-white shadow-md"
+          className="bg-gray-200/70 text-black p-2 rounded-full hover:bg-red-200 shadow-md"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
@@ -97,7 +97,7 @@ export default function Hero() {
         </motion.button>
         <motion.button
           onClick={nextSlide}
-          className="bg-white/70 text-black p-2 rounded-full hover:bg-white shadow-md"
+          className="bg-gray-200/70 text-black p-2 rounded-full hover:bg-red-200 shadow-md"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >

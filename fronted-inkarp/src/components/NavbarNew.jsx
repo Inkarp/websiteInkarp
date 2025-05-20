@@ -34,7 +34,7 @@ export default function NavbarNew() {
             <img
               src="inkarp old.svg"
               alt="Logo"
-              className="h-20 w-auto object-contain"
+              className="h-[150px] w-[500px] object-contain"
             />
           </Link>
         </div>
