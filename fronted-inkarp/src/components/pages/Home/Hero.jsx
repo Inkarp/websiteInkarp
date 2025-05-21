@@ -70,7 +70,7 @@ export default function Hero() {
         <span className=" swing-top-bwd uppercase tracking-widest border px-4 py-1 rounded-full text-xs mb-4 inline-block">
           Best Solutions for Laboratory
         </span>
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight swing-top-bwd">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight swing-top-bwd font-[MaxOT]">
           {slides[current].title}
           <br />
           {slides[current].subtitle}

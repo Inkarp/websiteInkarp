@@ -170,7 +170,7 @@ export default function TeamInfo() {
                 padding: '20px',
                 width: '100%',
                 color: 'black',
-                backgroundColor: "white",
+                backgroundColor: "#DCDCDC",
                 fontSize: '16px',
                 fontStyle: 'italic',
                 display: 'flex',

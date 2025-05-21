@@ -9,56 +9,56 @@ function ContactUs() {
       address: "Bengaluru, Karnataka",
       phone: "+91 9000000000",
       email: "bengaluru@inkarp.co.in",
-      top: "75%", left: "35%",
+      top: "79%", left: "30%",
     },
     {
       name: "Chennai",
       address: "Chennai, Tamil Nadu",
       phone: "+91 9000000001",
       email: "chennai@inkarp.co.in",
-      top: "82%", left: "45%",
+      top: "84%", left: "45%",
     },
     {
       name: "Kolkata",
       address: "Kolkata, West Bengal",
       phone: "+91 9000000002",
       email: "kolkata@inkarp.co.in",
-      top: "50%", left: "60%",
+      top: "50%", left: "68%",
     },
     {
       name: "Thiruvananthapuram",
       address: "Thiruvananthapuram, Kerala",
       phone: "+91 9000000003",
       email: "trivandrum@inkarp.co.in",
-      top: "93%", left: "36%",
+      top: "93%", left: "34%",
     },
     {
       name: "Ahmedabad",
       address: "Ahmedabad, Gujarat",
       phone: "+91 9000000004",
       email: "ahmedabad@inkarp.co.in",
-      top: "45%", left: "30%",
+      top: "50%", left: "15%",
     },
     {
       name: "Mumbai",
       address: "Mumbai, Maharashtra",
       phone: "+91 9000000005",
       email: "mumbai@inkarp.co.in",
-      top: "60%", left: "28%",
+      top: "63%", left: "20%",
     },
     {
       name: "Delhi",
       address: "Delhi, New Delhi",
       phone: "+91 9000000006",
       email: "delhi@inkarp.co.in",
-      top: "30%", left: "40%",
+      top: "33%", left: "36%",
     },
     {
       name: "Visakhapatnam",
       address: "Visakhapatnam, Andhra Pradesh",
       phone: "+91 9000000007",
       email: "vizag@inkarp.co.in",
-      top: "65%", left: "55%",
+      top: "68%", left: "55%",
     },
     {
       name: "Pune",
@@ -79,7 +79,7 @@ function ContactUs() {
       address: "Vadodara, Gujarat",
       phone: "+91 9000000010",
       email: "vadodara@inkarp.co.in",
-      top: "50%", left: "32%",
+      top: "55%", left: "15%",
     },
     {
       name: "Hyderabad",
@@ -119,11 +119,11 @@ function ContactUs() {
         }
       `}</style>
 
-      <section className="min-h-screen px-4 md:px-12 mx-auto">
+      <section className=" px-4 md:px-12 mx-auto">
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8">
 
           {/* Left Text */}
-          <div className="w-full lg:w-1/4 text-center lg:text-right space-y-4">
+          <div className="w-full lg:w-1/4 text-center lg:text-left space-y-4">
             <h2 className="text-3xl font-bold text-red-600">13+ Branches Across India</h2>
             <p className="text-gray-700 text-lg">Wherever you are, we’re nearby—ready to support, serve and simplify your scientific journey.</p>
           </div>
@@ -147,7 +147,7 @@ function ContactUs() {
                 }}
               >
                 {/* Ping Animation */}
-                <div className="relative z-50">
+                <div className="relative z-100">
                   <div className="w-4 h-4 bg-red-500 rounded-full location-ping absolute top-0 left-0" />
                   <div className="w-3 h-3 bg-red-700 rounded-full relative " />
                 </div>

@@ -7,7 +7,29 @@ function NewAbout() {
   return (
     <div className=" h-auto flex flex-col md:flex-row gap-8 p-6 ">
       {/* Left Section - Company Info */}
-      <div className="w-full md:w-3/5 rounded-xl bg-white p-4 flex flex-col items-center justify-center shadow-xl">
+
+      <div className="w-full md:w-3/5   flex flex-col items-center justify-center ">
+      <div className="relative w-full h-full overflow-hidden rounded-[15px] shadow-lg">
+      {/* Background Video */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        src="https://video.wixstatic.com/video/11062b_c4a9409cabea4e2eaa4afdda662b7eec/1080p/mp4/file.mp4"
+      />
+
+      {/* Poster image as fallback */}
+      <img
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-0 pointer-events-none"
+        src="https://static.wixstatic.com/media/11062b_c4a9409cabea4e2eaa4afdda662b7eecf000.jpg/v1/fill/w_475,h_796,al_c,q_85,usm_0.33_1.00_0.00,enc_avif,quality_auto/11062b_c4a9409cabea4e2eaa4afdda662b7eecf000.jpg"
+        alt="Background Poster"
+      />
+
+      {/* Optional overlay content */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-4xl font-bold bg-black/30">
         <h2 className="font-[MaxOT]">
           <DroppingText />
         </h2>
@@ -16,6 +38,9 @@ function NewAbout() {
           alt="Company"
           className="w-2/3 h-auto rounded-full object-cover"
         />
+      </div>
+    </div>
+        
         
         {/* ✅ Quotes Component Added Below Image */}
         {/* <div className="">

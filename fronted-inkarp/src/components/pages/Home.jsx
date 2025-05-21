@@ -15,6 +15,7 @@ import WhyChooseUsSection from './Home/WhyChooseUsSection';
 import Hero from './Home/Hero';
 import ServiceCarousal from './Home/ServiceCarousal';
 import HeroTextAnimation from './Home/HeroTextAnimation';
+import BackgroundVideoSection from './Home/BackgroundVideoSection';
 
 
 const Home = () => {
@@ -27,6 +28,7 @@ const Home = () => {
             <WhyChooseUsSection />
             <ExperienceSection />
             <NewAbout />
+            {/* <BackgroundVideoSection /> */}
             <Principles />
             <Offerings />  
             {/* <ServiceCarousal /> */}
