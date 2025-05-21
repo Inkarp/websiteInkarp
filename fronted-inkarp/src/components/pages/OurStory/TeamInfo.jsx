@@ -193,11 +193,11 @@ export default function TeamInfo() {
   return (
     <div  className="w-full relative py-16">
       {/* Background Image Section */}
-      <div className="relative w-full mx-auto h-auto flex items-start justify-between">
+      <div className="relative w-full mx-auto h-auto flex items-start justify-between ">
         <img
           src="inkarpBuilding-2.jpg"
           alt="Inkarp Building"
-          className="absolute top-0 left-0 w-full mx-auto h-[140vh] object-cover rounded-xl shadow-lg"
+          className="absolute top-0 left-0 w-full mx-auto h-[140vh] object-cover rounded-xl shadow-lg blur-[3px]"
 
           style={{ animation: 'fadeIn ease-in 2.5s forwards', zIndex: 0 }}
         />

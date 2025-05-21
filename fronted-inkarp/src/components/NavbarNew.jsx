@@ -24,17 +24,17 @@ export default function NavbarNew() {
 
   return (
     <>
-      <div className="flex flex-col h-full bg-gray-200 p-4 space-y-4 overflow-y-auto">
+      <div className="flex flex-col h-full bg-gray-200 p-4 space-y-1 overflow-y-auto">
         {/* Logo */}
         {/* <div className="fixed inset-0 -z-10 overflow-hidden">
           <img src="black.jpg" className="w-full h-full object-cover opacity-100" alt="background" />
         </div> */}
-        <div className="flex justify-center  ">
+        <div className="flex justify-between items-start ">
           <Link to="/">
             <img
               src="inkarp old.svg"
               alt="Logo"
-              className="h-[150px] w-[500px] object-fit"
+              className="h-[150px] mt--3 w-[500px] object-contain"
             />
           </Link>
         </div>
@@ -59,7 +59,7 @@ export default function NavbarNew() {
           <div>
             <button
               onClick={() => setInsightsOpen(!insightsOpen)}
-              className="flex items-center justify-between w-full px-4 py-2 rounded-md text-black hover:bg-gray-100 transition-all"
+              className="flex items-center justify-between w-full px-2 py-2 rounded-md text-black hover:bg-gray-100 transition-all"
             >
               <span>Insights & Updates</span>
               <ChevronDown className="h-4 w-4" />
