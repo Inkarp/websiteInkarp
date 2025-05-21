@@ -1,5 +1,6 @@
 import { Linkedin, Mail, Youtube, MessageCircle, Phone } from "lucide-react";
 import ContactForm from "./Contact/ContactForm";
+import LocationCards from "./Contact/LocationCards";
 
 function ContactUs() {
   const branches = [
@@ -179,9 +180,8 @@ function ContactUs() {
         </div>
 
         {/* Contact Form */}
-        <div className="mt-16">
-          <ContactForm />
-        </div>
+          <LocationCards />
+          <ContactForm  />
       </section>
     </>
   );

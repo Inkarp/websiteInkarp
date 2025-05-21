@@ -29,23 +29,23 @@ export default function NavbarNew() {
         {/* <div className="fixed inset-0 -z-10 overflow-hidden">
           <img src="black.jpg" className="w-full h-full object-cover opacity-100" alt="background" />
         </div> */}
-        <div className="flex justify-center">
+        <div className="flex justify-center  ">
           <Link to="/">
             <img
               src="inkarp old.svg"
               alt="Logo"
-              className="h-[150px] w-[500px] object-contain"
+              className="h-[150px] w-[500px] object-fit"
             />
           </Link>
         </div>
 
         {/* Nav Links */}
-        <nav className="flex-1 space-y-2 text-sm font-semibold pt-4">
+        <nav className="flex-1 space-y-2 text-md font-semibold ">
           {navLinks.map(({ name, path }) => (
             <Link
               key={name}
               to={path}
-              className={`block px-4 py-2 rounded-md transition-all duration-200 ${
+              className={`block px-3 py-2 rounded-md transition-all duration-200 ${
                 isActive(path)
                   ? "bg-red-500 text-white shadow"
                   : "text-black hover:bg-gray-300"
@@ -59,7 +59,7 @@ export default function NavbarNew() {
           <div>
             <button
               onClick={() => setInsightsOpen(!insightsOpen)}
-              className="flex items-center justify-between w-full px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100 transition-all"
+              className="flex items-center justify-between w-full px-4 py-2 rounded-md text-black hover:bg-gray-100 transition-all"
             >
               <span>Insights & Updates</span>
               <ChevronDown className="h-4 w-4" />
@@ -82,7 +82,7 @@ export default function NavbarNew() {
             )}
           </div>
           <Link to="catalyst-cue" className="mx-auto" >
-          <img src="catalystcue.svg" className="w-24 h-15" />
+          <img src="catalystcue.svg" className="ml-3 w-24 h-15" />
           </Link>
         </nav>
 

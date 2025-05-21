@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const ContactForm = () => {
   return(
- <section className="w-full px-6 py-12 md:py-20">
+ <section className="w-full px-6 py-12 md:py-20 z-[-10]">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-10">
         {/* Left Content */}
         <div className="lg:w-1/2 space-y-6">
