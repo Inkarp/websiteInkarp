@@ -2,7 +2,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
 import MainLayout from "./components/MainLayout";
-
 // Pages
 import Home from "./components/pages/Home";
 import OurStory from "./components/pages/OurStory";
@@ -17,6 +16,7 @@ import EventsPage from "./components/pages/NewsAndEvents/EventsPage";
 import ProductProfile from "./components/pages/ProductProfile";
 import NotFound from "./components/pages/NotFound";
 import EventsNew from "./components/pages/NewsAndEvents/EventsNew";
+import TermsAndConditions from "./components/pages/Footer/TermsAndConditions";
 
 function App() {
   return (
@@ -36,6 +36,7 @@ function App() {
           {/* <Route path="/insights/news&events" element={<EventsPage />} /> */}
           <Route path="/insights/news&events" element={<EventsNew />} />
           <Route path="/productProfile" element={<ProductProfile />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

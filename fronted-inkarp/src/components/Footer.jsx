@@ -9,6 +9,7 @@ import {
   Mail,
   PhoneCall,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const formRef = useRef(null);
@@ -107,7 +108,7 @@ const Footer = () => {
             <div>
               <h2 className="text-xl font-semibold mb-3" style={{ fontFamily: 'MaxOT' }}>Quick Links</h2>
               <ul className="space-y-2">
-                {['Home', 'Our Story','Verticals', 'Contact Us', 'CatalystCue', 'Blog', 'News & Events','Careers'].map((item, idx) => (
+                {['Home', 'Our Story', 'Verticals', 'Contact Us', 'CatalystCue', 'Blog', 'News & Events', 'Careers'].map((item, idx) => (
                   <li key={idx} style={{ fontFamily: 'roboto' }}>
                     <a href="#" className="hover:underline">
                       {item}
@@ -151,14 +152,23 @@ const Footer = () => {
             © {new Date().getFullYear()} <a href="#" className="hover:underline">Inkarp</a>. All Rights Reserved.
           </p>
           <ul className="flex flex-wrap justify-center sm:justify-end space-x-4">
-            {['Terms & Conditions', 'Privacy Policy', 'Terms and Conditions Of Sales and After Sales Service'].map((item, idx) => (
-              <li key={idx} className="text-md px-4">
-                <a href="#" className="hover:underline">
-                  {item}
-                </a>
-              </li>
-            ))}
+            <li>
+              <Link to="/terms-and-conditions" className="text-md px-4 hover:underline">
+                Terms & Conditions
+              </Link>
+            </li>
+            <li>
+              <Link to="/privacy-policy" className="text-md px-4 hover:underline">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link to="/terms-of-sales" className="text-md px-4 hover:underline">
+                Terms and Conditions Of Sales and After Sales Service
+              </Link>
+            </li>
           </ul>
+
         </div>
       </div>
     </footer>
