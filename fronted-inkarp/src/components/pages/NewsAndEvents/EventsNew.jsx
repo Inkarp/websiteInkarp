@@ -1,4 +1,4 @@
-import {React,useState} from 'react';
+import { React, useState } from 'react';
 
 const cardData = [
   {
@@ -105,7 +105,7 @@ const cardData = [
 
 
 const Card = ({ title, description, image }) => (
-  <div className="relative group w-[500px] h-[500px] rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-white transform transition-transform duration-500">
+  <div className="relative group w-[350px] h-[350px] rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-white transform transition-transform duration-500">
     <img
       src={image}
       alt={title}
@@ -254,9 +254,8 @@ export default function EventsNew() {
           </div>
         </div>
       </div>
-
       {/* Card Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredData.length > 0 ? (
           filteredData.map((card) => <Card key={card.id} {...card} />)
         ) : (

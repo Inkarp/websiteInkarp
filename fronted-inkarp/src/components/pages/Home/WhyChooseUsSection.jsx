@@ -84,7 +84,7 @@ export default function WhyChooseUsSection() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-6 swing-top-bwd">
           <button className="px-4 py-1 text-sm font-semibold border border-[#be0010] text-black rounded-full mb-4">
             WHY CHOOSE US?
           </button>

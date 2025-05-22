@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 
@@ -41,6 +41,14 @@ export default function Hero() {
   const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 5000); // 3 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
   return (
     <div className="relative w-[96%] mx-auto mt-2 h-[600px] rounded-none md:rounded-3xl overflow-hidden">
       <AnimatePresence mode="wait">
@@ -51,12 +59,13 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
         />
       </AnimatePresence>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40" />
+
 
       {/* Text Content */}
       <motion.div
@@ -67,6 +76,7 @@ export default function Hero() {
         transition={{ duration: 0.6 }}
         className="relative z-10 h-full flex flex-col items-center justify-center text-white text-center px-4"
       >
+        <input className="w-80 h-10 p-5 z-100 outline absolute top-5 right-10 rounded-full" placeholder="Search a product" />
         <span className=" swing-top-bwd uppercase tracking-widest border px-4 py-1 rounded-full text-xs mb-4 inline-block">
           Best Solutions for Laboratory
         </span>
@@ -106,13 +116,13 @@ export default function Hero() {
       </div>
 
       {/* Watch Video Button */}
-      <div   
+      <div
         // whileHover={{ scale: 1.05 }}
         // whileTap={{ scale: 0.95 }}
         className="absolute bottom-4 right-4 cursor-pointer bg-white/80  flex items-center gap-2 px-5 py-4 rounded-full shadow hover:text-red-500 transition-all duration-300"
       >
         <div className="bg-red border-2 rounded-[50%] p-2">
-        <Play className="w-4 h-4" />
+          <Play className="w-4 h-4" />
         </div>
         <span className="text-sm font-medium">Watch Video</span>
       </div>

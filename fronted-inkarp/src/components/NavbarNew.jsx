@@ -24,23 +24,23 @@ export default function NavbarNew() {
 
   return (
     <>
-      <div className="flex flex-col h-full bg-gray-200 p-4 space-y-1 overflow-y-auto">
+      <div className="flex flex-col h-full bg-gray-200 py-4 px-5 space-y-2 ">
         {/* Logo */}
         {/* <div className="fixed inset-0 -z-10 overflow-hidden">
           <img src="black.jpg" className="w-full h-full object-cover opacity-100" alt="background" />
         </div> */}
-        <div className="flex justify-between items-start ">
+        <div className="flex">
           <Link to="/">
             <img
               src="inkarp old.svg"
               alt="Logo"
-              className="h-[150px] mt--3 w-[500px] object-contain"
+              className="h-[100px] w-full object-cover "
             />
           </Link>
         </div>
 
         {/* Nav Links */}
-        <nav className="flex-1 space-y-2 text-md font-semibold ">
+        <nav className="flex-1 space-y-2 pt-5 text-md font-semibold ">
           {navLinks.map(({ name, path }) => (
             <Link
               key={name}
@@ -87,7 +87,7 @@ export default function NavbarNew() {
         </nav>
 
         {/* Bottom Actions */}
-        <div className="space-y-2 pt-6 border-t border-gray-200">
+        <div className="space-y-2 pt-5 border-t border-gray-200">
           <button
             onClick={() => setShowSearchModal(true)}
             className="flex items-center gap-2 px-4 py-2 w-full text-gray-700 hover:bg-gray-100 rounded-md"
