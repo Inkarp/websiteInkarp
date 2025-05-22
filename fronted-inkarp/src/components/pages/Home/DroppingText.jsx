@@ -114,7 +114,7 @@ export default function DroppingText() {
         }
       `}</style>
 
-      <h1 className="text-white px-5 text-2xl sm:text-4xl font-semibold z-10 relative">
+      <h1 className="text-white mt-10 px-5 text-2xl sm:text-4xl font-semibold z-10 relative">
         INKARP stands for{" "}
         <span className="dropping-texts text-red-500 inline-block w-[240px] text-left align-middle h-[40px] relative">
           <div>Innovation</div>

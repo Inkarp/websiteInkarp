@@ -23,13 +23,7 @@ const newsEvents = [
         description: 'Run for a cause and enjoy a fun-filled morning with family and friends.',
         image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png"
     },
-    //   {
-    //     id: 4,
-    //     title: 'Charity Fun Run',
-    //     date: 'May 5, 2025',
-    //     description: 'Run for a cause and enjoy a fun-filled morning with family and friends.',
-    //     image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png"
-    //   },
+   
 ];
 
 const Blogs = () => {

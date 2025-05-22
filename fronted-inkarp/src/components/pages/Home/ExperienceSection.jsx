@@ -76,7 +76,7 @@ export default function ExperienceSection() {
 
         {/* Right Column - Stats Grid */}
         <div
-          className={`w-full lg:w-1/2 grid grid-cols-2 sm:grid-cols-2 gap-4 md:gap-6 ${
+          className={`w-full lg:w-1/2 grid grid-cols-2 sm:grid-cols-2 gap-4 md:gap-6  ${
             visible ? "text-focus-in" : "opacity-0"
           }`}
         >
@@ -93,7 +93,7 @@ export default function ExperienceSection() {
 // Reusable card component
 function StatCard({ icon, title, subtitle }) {
   return (
-    <div className="bg-black/30 backdrop-blur-md p-4 sm:p-5 rounded-xl flex flex-col items-center text-center shadow-md transition">
+    <div className="bg-black/30 backdrop-blur-md p-4 sm:p-5 rounded-xl flex flex-col items-center text-center shadow-md transition hover:shadow-lg hover:scale-105">
       <div className="text-3xl sm:text-4xl mb-2">{icon}</div>
       <h3 className="text-xl sm:text-2xl font-bold">{title}</h3>
       <p className="text-sm sm:text-base mt-1">{subtitle}</p>

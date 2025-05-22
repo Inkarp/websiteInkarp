@@ -134,6 +134,8 @@ function ContactUs() {
               src="IndiaMap.png"
               alt="India Map"
               className="object-contain w-full h-full"
+              loading="lazy"
+              style={{ filter: "brightness(1.0)" }}
             />
 
             {branches.map((branch, index) => (

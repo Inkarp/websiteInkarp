@@ -19,7 +19,7 @@ const articles = [
     date: "May 9, 2025",
     author: "Inkarp Team",
     category: "Medical Research",
-    image: "https://xleb-demo.pbminfotech.com/demo1/wp-content/themes/xleb/images/tab.jpg",
+    image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
     content:
       "Discover efficient imaging and tissue analysis workflows using Inkarp’s advanced microscopy solutions.",
   },
@@ -29,20 +29,11 @@ const articles = [
     date: "May 8, 2025",
     author: "Inkarp Team",
     category: "Clinical Labs",
-    image: "https://xleb-demo.pbminfotech.com/demo1/wp-content/themes/xleb/images/tab.jpg",
+    image: "https://static.wixstatic.com/media/88aac0_15aa8aecbf5b45b391dab7df5bde448e~mv2.png",
     content:
       "Download a free lab manual to streamline contemporary specimen testing protocols using Inkarp systems.",
   },
-  {
-    id: 4,
-    title: "How Automation Drives Precision in Pharma QA",
-    date: "May 7, 2025",
-    author: "Inkarp Insights",
-    category: "Pharmaceutical",
-    image: "https://xleb-demo.pbminfotech.com/demo1/wp-content/themes/xleb/images/tab.jpg",
-    content:
-      "See how pharma teams are integrating automation tools like Mya 4 and Hei-VAP for regulatory-ready testing.",
-  },
+ 
 ];
 
 export default function FeaturedBlogs() {
@@ -136,7 +127,7 @@ export default function FeaturedBlogs() {
                 <motion.img
                   src={featured.image}
                   alt="featured"
-                  className="rounded-3xl w-full md:w-[40%] object-cover h-[320px]"
+                  className="rounded-3xl w-full md:w-[40%] object-cover h-full"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1.2 }}

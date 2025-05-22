@@ -34,13 +34,14 @@ export default function NavbarNew() {
             <img
               src="inkarp old.svg"
               alt="Logo"
-              className="h-[100px] w-full object-cover "
+              className="h-[100px] w-full object-cover"
+              loading="lazy"
             />
           </Link>
         </div>
 
         {/* Nav Links */}
-        <nav className="flex-1 space-y-2 pt-5 text-md font-semibold ">
+        <nav className="flex-1 space-y-2 pt-5 text-md font-semibold">
           {navLinks.map(({ name, path }) => (
             <Link
               key={name}
@@ -62,7 +63,7 @@ export default function NavbarNew() {
               className="flex items-center justify-between w-full px-2 py-2 rounded-md text-black hover:bg-gray-100 transition-all"
             >
               <span>Insights & Updates</span>
-              <ChevronDown className="h-4 w-4" />
+              <ChevronDown className="h-4 w-5 " color="red" />
             </button>
             {insightsOpen && (
               <div className="ml-4 space-y-1 mt-1">

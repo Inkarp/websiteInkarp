@@ -5,10 +5,10 @@ import Quotes from "../OurStory/Quotes";
 
 function NewAbout() {
   return (
-    <div className=" h-auto flex flex-col md:flex-row gap-8 p-6 ">
+    <div className=" h-auto w-[98%] mx-auto flex flex-col md:flex-row gap-8 p-6 ">
       {/* Left Section - Company Info */}
 
-      <div className="w-full md:w-3/5   flex flex-col items-center justify-center ">
+      <div className="w-full md:w-3/5 flex flex-col items-center justify-center ">
       <div className="relative w-full h-full overflow-hidden rounded-[15px] shadow-lg">
       {/* Background Video */}
       <video
@@ -36,7 +36,7 @@ function NewAbout() {
         <img
           src="inkarp.png"
           alt="Company"
-          className="w-2/3 h-auto rounded-full object-cover"
+          className="w-full h-auto rounded-full object-cover"
         />
       </div>
     </div>
