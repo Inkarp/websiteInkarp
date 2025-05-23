@@ -8,14 +8,14 @@ import NewAbout from './Home/NewAbout';
 import ExperienceSection from './Home/ExperienceSection';
 import Reviews from './Home/Reviews';
 import Card from './Home/Card';
-import Blogs from './Home/Blogs';
-import WhyHome from './Home/WhyHome';
+import Blogs from './Home/Blogs';;
 import FeaturedBlogs from './Home/FeaturedBlogs';
 import WhyChooseUsSection from './Home/WhyChooseUsSection';
 import Hero from './Home/Hero';
 import ServiceCarousal from './Home/ServiceCarousal';
 import HeroTextAnimation from './Home/HeroTextAnimation';
 import BackgroundVideoSection from './Home/BackgroundVideoSection';
+import Button from './UI/Button';
 
 
 const Home = () => {
@@ -35,6 +35,7 @@ const Home = () => {
             <FeaturedBlogs />        
             <NewsEvents />
             <Reviews />
+            <Button />
         </>
     );
 };

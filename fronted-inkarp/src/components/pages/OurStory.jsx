@@ -8,6 +8,7 @@ import TeamButton from "./OurStory/TeamButton";
 import TeamInfo from "./OurStory/TeamInfo";
 import TeamIntro from "./OurStory/TeamIntro";
 import TrustedClients from "./OurStory/TrustedClients";
+import Button from "./UI/Button";
 import NewCard from "./UI/NewCard";
 
 
@@ -21,6 +22,7 @@ const OurStory = () => {
             <TrustedClients />
             <Quotes />  
             <ClientReviews />
+            <Button />
             {/* <Team /> */}
             {/* <Card />   */}
             {/* <NewCard /> */}

@@ -19,6 +19,8 @@ export default function MainLayout() {
             src="inkarp.png"
             alt="Loading Logo"
             className="w-full h-full animate-zoomInOut"
+            loading="lazy"
+            style={{ filter: "brightness(1.0)" }}
           />
         </div>
         <style>{`

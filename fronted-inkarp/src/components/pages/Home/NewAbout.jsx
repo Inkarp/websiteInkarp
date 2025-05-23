@@ -11,7 +11,7 @@ function NewAbout() {
       <div className="w-full md:w-3/5 flex flex-col items-center justify-center ">
       <div className="relative w-full h-full overflow-hidden rounded-[15px] shadow-lg">
       {/* Background Video */}
-      <video
+      {/* <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         autoPlay
         loop
@@ -19,7 +19,7 @@ function NewAbout() {
         playsInline
         preload="auto"
         src="https://video.wixstatic.com/video/11062b_c4a9409cabea4e2eaa4afdda662b7eec/1080p/mp4/file.mp4"
-      />
+      /> */}
 
       {/* Poster image as fallback */}
       <img
@@ -29,7 +29,7 @@ function NewAbout() {
       />
 
       {/* Optional overlay content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-4xl font-bold bg-black/30">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-4xl font-bold bg-white">
         <h2 className="font-[MaxOT]">
           <DroppingText />
         </h2>

@@ -4,73 +4,73 @@ import styled from 'styled-components';
 const Button = () => {
   return (
     <StyledWrapper>
-      <button className="button" />
+      <button className="button">
+        <span className="button-text">Join us</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
+          className="svgIcon"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </button>
     </StyledWrapper>
   );
-}
+};
 
 const StyledWrapper = styled.div`
   .button {
-    position: relative;
-    background-color: transparent;
-    color: #e8e8e8;
-    font-size: 17px;
-    font-weight: 600;
-    border-radius: 10px;
-    width: 150px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
     border: none;
-    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
     cursor: pointer;
+    transition: all 0.3s ease;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(51, 51, 51, 0.2);
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-  }
-
-  .button::before {
-    content: "Know More";
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background: linear-gradient(135deg,#7b4397,#dc2430 );
-    transform: translate(0%,90%);
-    z-index: 99;
     position: relative;
-    transform-origin: bottom;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    color: white;
   }
 
-  .button::after {
-    content: "Join Us";
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #333;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    transform-origin: top;
-    transform: translate(0%,-100%);
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  .svgIcon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+    z-index: 2;
   }
 
-  .button:hover::before {
-    transform: translate(0%,0%);
+  .button-text {
+    position: absolute;
+    opacity: 0;
+    font-size: 13px;
+    color: white;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(20px);
+    z-index: 1;
   }
 
-  .button:hover::after {
-    transform: translate(0%,-200%);
+  .button:hover {
+    width: 140px;
+    border-radius: 50px;
+    background-color: rgb(91, 14, 35);
   }
 
-  .button:focus {
-    outline: none;
+  .button:hover .svgIcon {
+    transform: translateY(-200%);
   }
 
-  .button:active {
-    scale: 0.95;
-  }`;
+  .button:hover .button-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export default Button;
