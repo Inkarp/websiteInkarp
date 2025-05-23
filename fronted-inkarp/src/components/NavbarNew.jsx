@@ -79,6 +79,12 @@ export default function NavbarNew() {
                 >
                   News & Events
                 </Link>
+                <Link
+                  to="/insights/news&events/webinars"
+                  className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-md"
+                >
+                  Webinars
+                </Link>
               </div>
             )}
           </div>

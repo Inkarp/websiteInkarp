@@ -19,6 +19,7 @@ import EventsNew from "./components/pages/NewsAndEvents/EventsNew";
 import TermsAndConditions from "./components/pages/Footer/TermsAndConditions";
 import Contact from "./components/pages/Contact/Contact";
 import Events from "./components/pages/NewsAndEvents/Events";
+import WebinarsPage from "./components/pages/NewsAndEvents/WebinarsPage";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/insights/news&events" element={<EventsPage />} />
           {/* <Route path="/insights/news&events" element={<EventsNew />} /> */}
           {/* <Route path="/insights/news&events" element={<Events />} /> */}
+          <Route path="/insights/news&events/webinars" element={<WebinarsPage />} />
           <Route path="/productProfile" element={<ProductProfile />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="*" element={<NotFound />} />
