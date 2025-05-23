@@ -2,6 +2,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
 import MainLayout from "./components/MainLayout";
+
+// Pages
 import OurStory from "./Main/OurStory";
 import Home from "./Main/Home";
 import Verticals from "./Main/Verticals";
@@ -12,10 +14,11 @@ import WebinarsPage from "./components/pages/NewsAndEvents/WebinarsPage";
 import ProductProfile from "./Main/ProductProfile";
 import NotFound from "./Main/NotFound";
 import NewCareers from "./components/pages/Careers/NewCareers";
-import BlogsPage from "./components/pages/NewsAndEvents/BlogsPage";
 import EventsPage from "./components/pages/NewsAndEvents/EventsPage";
 import TermsAndConditions from "./components/pages/Footer/TermsAndConditions";
-// Pages
+import BlogsNew from "./components/pages/NewsAndEvents/BlogsNew";
+import EventDetails from "./components/pages/NewsAndEvents/EventDetails";
+
 
 
 function App() {
@@ -30,12 +33,10 @@ function App() {
           <Route path="/careers" element={<NewCareers />} />
           <Route path="/careers/positions" element={<Careers />} />
           <Route path="/contact" element={<ContactUs />} />
-          {/* <Route path="/home" element={<HeroSection />} /> */}
           <Route path="/catalyst-cue" element={<Catalyst />} />
-          <Route path="/insights/blogs" element={<BlogsPage />} />
+          <Route path="/insights/blogs" element={<BlogsNew />} />
+          <Route path="/events/:id" element={<EventDetails />} />
           <Route path="/insights/news&events" element={<EventsPage />} />
-          {/* <Route path="/insights/news&events" element={<EventsNew />} /> */}
-          {/* <Route path="/insights/news&events" element={<Events />} /> */}
           <Route path="/insights/news&events/webinars" element={<WebinarsPage />} />
           <Route path="/productProfile" element={<ProductProfile />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />

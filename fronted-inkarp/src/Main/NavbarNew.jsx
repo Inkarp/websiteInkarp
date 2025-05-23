@@ -63,7 +63,7 @@ export default function NavbarNew() {
               className="flex items-center justify-between w-full px-2 py-2 rounded-md text-black hover:bg-gray-100 transition-all"
             >
               <span>Insights & Updates</span>
-              <ChevronDown className="h-4 w-5 " color="red" />
+              <ChevronDown className="h-4 w-4 " color="red" />
             </button>
             {insightsOpen && (
               <div className="ml-4 space-y-1 mt-1">
