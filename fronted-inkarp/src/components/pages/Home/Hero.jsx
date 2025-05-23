@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { React,useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+
 
 const slides = [
   {

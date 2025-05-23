@@ -1,5 +1,5 @@
 import { Linkedin, Mail, Youtube, MessageCircle, Phone } from "lucide-react";
-
+import React from "react";
 
 function Contact() {
   const branches = [

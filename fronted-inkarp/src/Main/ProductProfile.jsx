@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowDownToLine } from "lucide-react";
-import Profile from "./ProductProfile/Profile";
+
 
 export default function ProductProfile  ()  {
   return (

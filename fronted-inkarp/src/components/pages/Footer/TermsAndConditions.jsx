@@ -11,7 +11,7 @@ export default function TermsAndConditions() {
   scale: 2,
   useCORS: true,
   foreignObjectRendering: false
-});
+});  
 
     const element = contentRef.current;
     

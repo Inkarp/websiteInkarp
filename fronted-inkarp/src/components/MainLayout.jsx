@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
-import NavbarNew from "./NavbarNew";
+import NavbarNew from "../Main/NavbarNew";
 
 export default function MainLayout() {
   const [isLoading, setIsLoading] = useState(true);
